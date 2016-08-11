@@ -22,7 +22,7 @@ submit your own work/packages):
    it somewhere else, you could use a domain name or organization name
    for the directory.
 #. Put a `package index file`_ within the directory you just made.
-   See the `Suggested Package Tags`_ section for ideas in what to put
+   See the `Suggested Package Tags`_ section for ideas on what to put
    in the package index ``tags`` field.
 #. Commit/push the changes you made to your fork.
 #. Submit a *pull request*.
