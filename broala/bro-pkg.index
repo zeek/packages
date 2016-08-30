@@ -1,0 +1,3 @@
+[bro-long-connections]
+url = https://github.com/broala/bro-long-connections
+tags = conn, log, notice
