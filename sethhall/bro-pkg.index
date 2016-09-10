@@ -1,3 +1,9 @@
 [credit-card-exposure]
 url = https://github.com/sethhall/credit-card-exposure
 tags = file analysis, credit card, cc, dlp, data loss
+description = Detect and log credit cards.
+
+[ssn-exposure]
+url = https://github.com/sethhall/ssn-exposure
+tags = file analysis, social security number, ssn, dlp, data loss
+description = Detect and log US Social Security numbers.
