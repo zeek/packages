@@ -1,0 +1,4 @@
+[scan-dstsample.bro]
+url = https://github.com/JonZeolla/bro-pkg-scripts/tree/scan-dstsample
+tags = test
+description = Minor update to scan.bro to add sampling of the destination IPs.
