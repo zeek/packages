@@ -1,0 +1,4 @@
+[scan-NG]
+url = https://github.com/initconf/scan-NG
+tags = scan, scan-detection 
+description = Clusterized scan-detection based of bro-1.5.3 scan-detection policies 
