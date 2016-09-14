@@ -1,0 +1,4 @@
+[scan-sampling]
+url = https://github.com/JonZeolla/scan-sampling
+tags = sumstats
+description = Modified version of scan.bro to add destination IP sampling.
