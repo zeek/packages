@@ -1,0 +1,4 @@
+[bro_notice_correlation]
+url = https://github.com/dopheide/bro_notice_correlation
+tags = notices, notice, correlation
+description = Adds support for multi-notice correlation. For more information, see http://blog.samoehlert.com/correlating-bro-notices or the talk from BroCon 2016.
