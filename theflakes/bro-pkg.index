@@ -1,4 +1,0 @@
-[bro-large_uploads]
-url = https://github.com/theflakes/bro-large_uploads
-tags = notices, uploads, conns
-description = Raise notices on outgoing files over X bytes in size, also raise notices for multiple large outgoing Tx's in Y time frame.
