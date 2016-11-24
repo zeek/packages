@@ -1,4 +1,1 @@
-[bro-sumstats-counttable]
-url = https://github.com/0xxon/bro-sumstats-counttable
-tags = sumstats, summary statistics
-description = Two-dimensional buckets for sumstats (count occurences per $str).
+https://github.com/0xxon/bro-sumstats-counttable
