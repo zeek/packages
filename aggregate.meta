@@ -1,0 +1,53 @@
+[0xxon/bro-sumstats-counttable]
+version = master
+url = https://github.com/0xxon/bro-sumstats-counttable
+
+[broala/bro-long-connections]
+version = master
+script_dir = scripts
+url = https://github.com/broala/bro-long-connections
+
+[dopheide/bro_notice_correlation]
+version = master
+url = https://github.com/dopheide/bro_notice_correlation
+
+[initconf/scan-NG]
+version = master
+script_dir = scripts
+url = https://github.com/initconf/scan-NG
+
+[jonzeolla/scan-sampling]
+script_dir = scripts
+description = Modified version of scan.bro to add destination IP sampling.
+tags = sumstats
+url = https://github.com/JonZeolla/scan-sampling
+version = 0.1.0
+
+[jsiwek/bro-test-package]
+plugin_dir = plugin/build
+build_command = ( cd plugin && ./configure --bro-dist=%(bro_dist)s && make )
+script_dir = plugin/scripts/Demo/Rot13
+description = An example Bro package for testing purposes.
+tags = example, test, bro plugin, broctl plugin, rot13, cipher
+url = https://github.com/jsiwek/bro-test-package
+version = 1.0.4
+
+[sethhall/credit-card-exposure]
+version = master
+script_dir = scripts
+url = https://github.com/sethhall/credit-card-exposure
+
+[sethhall/ssn-exposure]
+version = master
+script_dir = scripts
+url = https://github.com/sethhall/ssn-exposure
+
+[sethhall/domain-tld]
+version = master
+script_dir = scripts
+url = https://github.com/sethhall/domain-tld
+
+[theflakes/bro-large_uploads]
+version = master
+url = https://github.com/theflakes/bro-large_uploads
+

@@ -1,3 +1,1 @@
-[bro-test-package]
-url = https://github.com/jsiwek/bro-test-package
-tags = example, test, bro plugin, broctl plugin, rot13, cipher
+https://github.com/jsiwek/bro-test-package
