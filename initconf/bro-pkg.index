@@ -7,4 +7,3 @@ description = Clusterized scan-detection based of bro-1.5.3 scan-detection polic
 url = https://github.com/initconf/CVE-2017-5638_struts.git
 tags = CVE-2017-5638, apache struts
 description = detection for apache struts scans/exploitation  
-
