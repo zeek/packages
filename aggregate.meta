@@ -15,6 +15,8 @@ version = 0.0.5
 [corelight/bro-long-connections]
 version = master
 script_dir = scripts
+description = Find and log long-lived connections into a "conn_long" log.
+tags = conn
 url = https://github.com/corelight/bro-long-connections
 
 [dopheide/bro_notice_correlation]
