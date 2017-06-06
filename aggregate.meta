@@ -108,6 +108,8 @@ version = 1.0.0
 [sethhall/credit-card-exposure]
 version = master
 script_dir = scripts
+description = Detect credit card numbers in HTTP and SMTP with Bro.
+tags = credit cards, dlp, http, smtp, files
 url = https://github.com/sethhall/credit-card-exposure
 
 [sethhall/ssn-exposure]
