@@ -1,20 +1,74 @@
 [0xxon/bro-sumstats-counttable]
-version = master
+description = Two-dimensional buckets for sumstats (count occurences per $str).
+tags = sumstats, summary statistics
 url = https://github.com/0xxon/bro-sumstats-counttable
+version = 0.0.2
 
-[broala/bro-long-connections]
+[0xxon/bro-postgresql]
+plugin_dir = build
+build_command = ( ./configure --bro-dist=%(bro_dist)s --with-postresql-inc=`pg_config --includedir` --with-postresql-server-inc=`pg_config --includedir-server`  --with-postresql-lib=`pg_config --libdir` && make )
+description = A PostgreSQL reader and writer for Bro.
+tags = bro plugin, PostgreSQL, reader, writer, input
+url = https://github.com/0xxon/bro-postgresql
+version = 0.0.5
+
+[corelight/bro-long-connections]
 version = master
 script_dir = scripts
-url = https://github.com/broala/bro-long-connections
+url = https://github.com/corelight/bro-long-connections
 
 [dopheide/bro_notice_correlation]
 version = master
+description = Adds support for multi-notice correlation. For more information, see http://blog.samoehlert.com/correlating-bro-notices or the talk from BroCon 2016.
+tags = notices, notice, correlation
 url = https://github.com/dopheide/bro_notice_correlation
+
+[dopheide/venom]
+version = master
+description = https://security.web.cern.ch/security/venom.shtml
+tags = Venom, venom, VENOM, rootkit
+url = https://github.com/dopheide/venom
 
 [initconf/scan-NG]
 version = master
 script_dir = scripts
 url = https://github.com/initconf/scan-NG
+
+[initconf/CVE-2017-5638_struts.git]
+script_dir = scripts
+version = master
+url = https://github.com/initconf/CVE-2017-5638_struts.git
+
+[initconf/phish-analysis.git]
+script_dir = scripts
+version = master
+url = https://github.com/initconf/phish-analysis.git
+
+[j-gras/intel-extensions]
+script_dir = scripts
+description = Extensions for Bro's intelligence framework.
+tags = intel, expiration, removal, preserve files
+url = https://github.com/J-Gras/intel-extensions
+version = master
+
+[j-gras/add-json]
+script_dir = scripts
+description = Additional JSON-logging for Bro.
+tags = log, logging, JSON
+url = https://github.com/J-Gras/add-json
+version = master
+
+[j-gras/bro-af_packet-plugin]
+build_command = ./configure --bro-dist=%(bro_dist)s && make
+description = This plugin provides native AF_Packet support for Bro.
+tags = bro plugin, broctl plugin, packet source, af_packet
+depends = 
+	bro >=2.5.0
+plugin_dir = build
+test_command = cd tests && btest -d
+script_dir = scripts
+url = https://github.com/J-Gras/bro-af_packet-plugin
+version = 1.2.0
 
 [jonzeolla/scan-sampling]
 script_dir = scripts
@@ -24,13 +78,30 @@ url = https://github.com/JonZeolla/scan-sampling
 version = 0.1.0
 
 [jsiwek/bro-test-package]
-plugin_dir = plugin/build
-build_command = ( cd plugin && ./configure --bro-dist=%(bro_dist)s && make )
-script_dir = plugin/scripts/Demo/Rot13
+build_command = cd plugin && ./configure --bro-dist=%(bro_dist)s && make
 description = An example Bro package for testing purposes.
 tags = example, test, bro plugin, broctl plugin, rot13, cipher
+plugin_dir = plugin/build
+test_command = cd testing && btest -d tests
+script_dir = plugin/scripts/Demo/Rot13
 url = https://github.com/jsiwek/bro-test-package
-version = 1.0.4
+version = 1.0.5
+
+[jswaro/tcprs]
+build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
+description = TCP Retransmission and State Analyzer plugin for Bro.
+tags = bro plugin, TCP, retransmission, connection state, conn, input reader, protocol analyzer
+plugin_dir = build
+test_command = cd tests btest -d tcprs
+script_dir = scripts
+url = https://github.com/jswaro/tcprs
+version = 0.2.1
+
+[pgaulon/bro-notice-slack]
+description = Bro Notices through Slack webhook
+tags = bro plugin, notices, slack webhook
+url = https://github.com/pgaulon/bro-notice-slack
+version = 1.0.0
 
 [sethhall/credit-card-exposure]
 version = master
@@ -47,7 +118,20 @@ version = master
 script_dir = scripts
 url = https://github.com/sethhall/domain-tld
 
+[sethhall/bro-myricom]
+build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
+description = Packet source plugin that provides native Myricom SNF v3+v4 support.
+tags = packet source, plugin, myricom
+plugin_dir = build
+test_command = ( cd tests && btest -d )
+script_dir = scripts
+url = https://github.com/sethhall/bro-myricom
+version = 1.0.0
+
 [theflakes/bro-large_uploads]
-version = master
+description = Raise notices on outgoing files over X bytes in size.
+	Also raise notices for multiple large outgoing Tx's in Y time frame.
+tags = notices, uploads, conns
 url = https://github.com/theflakes/bro-large_uploads
+version = master
 
