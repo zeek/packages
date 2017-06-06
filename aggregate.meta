@@ -116,6 +116,8 @@ url = https://github.com/sethhall/credit-card-exposure
 [sethhall/ssn-exposure]
 version = master
 script_dir = scripts
+description = Detect US Social Security numbers in HTTP and SMTP with Bro.
+tags = ssn, social security number, dlp, files
 url = https://github.com/sethhall/ssn-exposure
 
 [sethhall/domain-tld]
