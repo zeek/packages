@@ -135,6 +135,13 @@ script_dir = scripts
 url = https://github.com/sethhall/bro-myricom
 version = 1.0.0
 
+[srozb/dns_axfr]
+version = master
+script_dir = scripts
+description = Find and notice DNS zone transfer attempts.
+tags = dns recon
+url = https://github.com/srozb/dns_axfr
+
 [theflakes/bro-large_uploads]
 description = Raise notices on outgoing files over X bytes in size.
 	Also raise notices for multiple large outgoing Tx's in Y time frame.
