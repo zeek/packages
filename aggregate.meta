@@ -31,6 +31,13 @@ description = https://security.web.cern.ch/security/venom.shtml
 tags = Venom, venom, VENOM, rootkit
 url = https://github.com/dopheide/venom
 
+[hhzzk/dns-tunnels]
+version = master
+script_dir = scripts
+description = Detect DNS Tunnels attack.
+tags = DNS, DNS Tunnels, DNS Tunneling
+url = https://github.com/hhzzk/dns-tunnels
+
 [initconf/scan-NG]
 version = master
 script_dir = scripts
@@ -99,11 +106,28 @@ script_dir = scripts
 url = https://github.com/jswaro/tcprs
 version = 0.2.1
 
+[ncsa/bro-interface-setup]
+plugin_dir = .
+description = A broctl plugin that helps you setup capture interfaces
+tags = bro plugin, interface, mtu
+url = https://github.com/ncsa/bro-interface-setup
+version = master
+
 [pgaulon/bro-notice-slack]
 description = Bro Notices through Slack webhook
 tags = bro plugin, notices, slack webhook
 url = https://github.com/pgaulon/bro-notice-slack
 version = 1.0.0
+
+[scebro/ldap-analyzer]
+build_command = ./configure --bro-dist=%(bro_dist)s && make
+description = LDAP write operations analyzer for Bro.
+tags = bro plugin, ldap analyzer, ldap
+scripts_dir = scripts
+plugin_dir = build
+test_command = cd tests && btest -d
+url = https://github.com/SoftwareConsultingEmporium/ldap-analyzer
+version = master
 
 [sethhall/credit-card-exposure]
 version = master
