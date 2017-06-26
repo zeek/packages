@@ -79,6 +79,15 @@ script_dir = scripts
 url = https://github.com/J-Gras/bro-af_packet-plugin
 version = 1.2.0
 
+[joesecurity/Joe-Sandbox-Bro]
+script_dir = scripts
+description = JoeSandbox-Bro extracts files from your internet connection
+	and analyzes them automatically on Joe Sandbox. Combined with Joe Sandbox's
+	reporting and alerting features you can build a powerful IDS.
+tags = file analysis, sandbox, malware, virus
+url = https://github.com/joesecurity/Joe-Sandbox-Bro
+version = master
+
 [jonzeolla/scan-sampling]
 script_dir = scripts
 description = Modified version of scan.bro to add destination IP sampling.
