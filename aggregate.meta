@@ -46,11 +46,15 @@ url = https://github.com/initconf/scan-NG
 [initconf/CVE-2017-5638_struts.git]
 script_dir = scripts
 version = master
+tags = CVE-2017-5638, struts
+desc = package to detect CVE-2017-5638 struts attack
 url = https://github.com/initconf/CVE-2017-5638_struts.git
 
 [initconf/phish-analysis.git]
 script_dir = scripts
 version = master
+tags = smtp, phish, urls, emails
+desc = suite of smtp related policies includes extracting and logging URLs in emails and smtp anomaly detection to help flag phishing emails
 url = https://github.com/initconf/phish-analysis.git
 
 [j-gras/intel-extensions]
@@ -78,6 +82,17 @@ test_command = cd tests && btest -d
 script_dir = scripts
 url = https://github.com/J-Gras/bro-af_packet-plugin
 version = 1.2.0
+
+[j-gras/bro-lognorm]
+build_command = ./configure --bro-dist=%(bro_dist)s && make
+description = This plugin provides liblognorm integration for Bro.
+tags = bro plugin, liblognorm, syslog
+depends = 
+	bro >=2.5.0
+plugin_dir = build
+test_command = cd tests && btest -d
+url = https://github.com/J-Gras/bro-lognorm
+version = 0.2.0
 
 [joesecurity/Joe-Sandbox-Bro]
 script_dir = scripts
@@ -130,13 +145,13 @@ version = 1.0.0
 
 [scebro/ldap-analyzer]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
-description = LDAP write operations analyzer for Bro.
+version = master
 tags = bro plugin, ldap analyzer, ldap
 scripts_dir = scripts
 plugin_dir = build
 test_command = cd tests && btest -d
+description = LDAP write operations analyzer for Bro.
 url = https://github.com/SoftwareConsultingEmporium/ldap-analyzer
-version = master
 
 [sethhall/credit-card-exposure]
 version = master
