@@ -41,20 +41,22 @@ url = https://github.com/hhzzk/dns-tunnels
 [initconf/scan-NG]
 version = master
 script_dir = scripts
+description = scan detection in 2.x world. Forward porting of bro-1.5.3 scan.bro accompanied with new heuristics and quicker detections
+tags = scan detection
 url = https://github.com/initconf/scan-NG
 
 [initconf/CVE-2017-5638_struts.git]
 script_dir = scripts
+description = package to detect CVE-2017-5638 struts attack
 version = master
 tags = CVE-2017-5638, struts
-desc = package to detect CVE-2017-5638 struts attack
 url = https://github.com/initconf/CVE-2017-5638_struts.git
 
 [initconf/phish-analysis.git]
 script_dir = scripts
+description = suite of smtp related policies includes extracting and logging URLs in emails and smtp anomaly detection to help flag phishing emails
 version = master
 tags = smtp, phish, urls, emails
-desc = suite of smtp related policies includes extracting and logging URLs in emails and smtp anomaly detection to help flag phishing emails
 url = https://github.com/initconf/phish-analysis.git
 
 [j-gras/intel-extensions]
@@ -179,9 +181,9 @@ description = Packet source plugin that provides native Myricom SNF v3+v4 suppor
 tags = packet source, plugin, myricom
 plugin_dir = build
 test_command = ( cd tests && btest -d )
-script_dir = scripts
+script_dir = scripts.not_used
 url = https://github.com/sethhall/bro-myricom
-version = 1.0.0
+version = 1.0.2
 
 [srozb/dns_axfr]
 version = master
