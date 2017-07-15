@@ -173,6 +173,8 @@ url = https://github.com/sethhall/ssn-exposure
 [sethhall/domain-tld]
 version = master
 script_dir = scripts
+description = A library for getting the "effective tld" of a domain name.
+tags = library, domain
 url = https://github.com/sethhall/domain-tld
 
 [sethhall/bro-myricom]
