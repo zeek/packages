@@ -187,6 +187,13 @@ script_dir = scripts.not_used
 url = https://github.com/sethhall/bro-myricom
 version = 1.0.2
 
+[sethhall/unknown-mime-type-discovery]
+script_dir = scripts
+description = A Bro package for finding new file signatures.
+tags = files, signature
+url = https://github.com/sethhall/unknown-mime-type-discovery
+version = master
+
 [srozb/dns_axfr]
 version = master
 script_dir = scripts
