@@ -19,6 +19,15 @@ description = Find and log long-lived connections into a "conn_long" log.
 tags = conn
 url = https://github.com/corelight/bro-long-connections
 
+[corelight/bro-xor-exe-plugin]
+build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
+plugin_dir = build
+description = A plugin to find Windows executables that have been XOR encoded.
+test_command = ( cd tests && btest -d )
+tags = plugin, pe, executable, malware
+url = https://github.com/corelight/bro-xor-exe-plugin
+version = master
+
 [dopheide/bro_notice_correlation]
 version = master
 description = Adds support for multi-notice correlation. For more information, see http://blog.samoehlert.com/correlating-bro-notices or the talk from BroCon 2016.
