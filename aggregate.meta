@@ -1,210 +1,219 @@
 [0xxon/bro-sumstats-counttable]
-description = Two-dimensional buckets for sumstats (count occurences per $str).
 tags = sumstats, summary statistics
+description = Two-dimensional buckets for sumstats (count occurences per $str).
 url = https://github.com/0xxon/bro-sumstats-counttable
 version = 0.0.2
 
 [0xxon/bro-postgresql]
-plugin_dir = build
+tags = bro plugin, PostgreSQL, reader, writer, input
 build_command = ( ./configure --bro-dist=%(bro_dist)s --with-postresql-inc=`pg_config --includedir` --with-postresql-server-inc=`pg_config --includedir-server`  --with-postresql-lib=`pg_config --libdir` && make )
 description = A PostgreSQL reader and writer for Bro.
-tags = bro plugin, PostgreSQL, reader, writer, input
+plugin_dir = build
 url = https://github.com/0xxon/bro-postgresql
 version = 0.0.5
 
 [corelight/bro-long-connections]
-version = master
-script_dir = scripts
-description = Find and log long-lived connections into a "conn_long" log.
 tags = conn
+version = master
+description = Find and log long-lived connections into a "conn_long" log.
+script_dir = scripts
 url = https://github.com/corelight/bro-long-connections
 
+[corelight/bro-xor-exe-plugin]
+tags = plugin, pe, executable, malware
+build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
+description = A plugin to find Windows executables that have been XOR encoded.
+test_command = ( cd tests && btest -d )
+plugin_dir = build
+url = https://github.com/corelight/bro-xor-exe-plugin
+version = master
+
 [dopheide/bro_notice_correlation]
+tags = notices, notice, correlation
 version = master
 description = Adds support for multi-notice correlation. For more information, see http://blog.samoehlert.com/correlating-bro-notices or the talk from BroCon 2016.
-tags = notices, notice, correlation
 url = https://github.com/dopheide/bro_notice_correlation
 
 [dopheide/venom]
+tags = Venom, venom, VENOM, rootkit
 version = master
 description = https://security.web.cern.ch/security/venom.shtml
-tags = Venom, venom, VENOM, rootkit
 url = https://github.com/dopheide/venom
 
 [hhzzk/dns-tunnels]
-version = master
-script_dir = scripts
-description = Detect DNS Tunnels attack.
 tags = DNS, DNS Tunnels, DNS Tunneling
+version = master
+description = Detect DNS Tunnels attack.
+script_dir = scripts
 url = https://github.com/hhzzk/dns-tunnels
 
 [initconf/scan-NG]
-version = master
-script_dir = scripts
-description = scan detection in 2.x world. Forward porting of bro-1.5.3 scan.bro accompanied with new heuristics and quicker detections
 tags = scan detection
+version = master
+description = scan detection in 2.x world. Forward porting of bro-1.5.3 scan.bro accompanied with new heuristics and quicker detections
+script_dir = scripts
 url = https://github.com/initconf/scan-NG
 
 [initconf/CVE-2017-5638_struts.git]
-script_dir = scripts
-description = package to detect CVE-2017-5638 struts attack
-version = master
 tags = CVE-2017-5638, struts
+version = master
+description = package to detect CVE-2017-5638 struts attack
+script_dir = scripts
 url = https://github.com/initconf/CVE-2017-5638_struts.git
 
 [initconf/phish-analysis.git]
-script_dir = scripts
-description = suite of smtp related policies includes extracting and logging URLs in emails and smtp anomaly detection to help flag phishing emails
-version = master
 tags = smtp, phish, urls, emails
+version = master
+description = suite of smtp related policies includes extracting and logging URLs in emails and smtp anomaly detection to help flag phishing emails
+script_dir = scripts
 url = https://github.com/initconf/phish-analysis.git
 
 [j-gras/intel-extensions]
-script_dir = scripts
-description = Extensions for Bro's intelligence framework.
 tags = intel, expiration, removal, preserve files
+description = Extensions for Bro's intelligence framework.
+script_dir = scripts
 url = https://github.com/J-Gras/intel-extensions
 version = master
 
 [j-gras/add-json]
-script_dir = scripts
-description = Additional JSON-logging for Bro.
 tags = log, logging, JSON
+description = Additional JSON-logging for Bro.
+script_dir = scripts
 url = https://github.com/J-Gras/add-json
 version = master
 
 [j-gras/bro-af_packet-plugin]
-build_command = ./configure --bro-dist=%(bro_dist)s && make
-description = This plugin provides native AF_Packet support for Bro.
 tags = bro plugin, broctl plugin, packet source, af_packet
+build_command = ./configure --bro-dist=%(bro_dist)s && make
+script_dir = scripts
+plugin_dir = build
 depends = 
 	bro >=2.5.0
-plugin_dir = build
 test_command = cd tests && btest -d
-script_dir = scripts
+description = This plugin provides native AF_Packet support for Bro.
 url = https://github.com/J-Gras/bro-af_packet-plugin
 version = 1.2.0
 
 [j-gras/bro-lognorm]
-build_command = ./configure --bro-dist=%(bro_dist)s && make
-description = This plugin provides liblognorm integration for Bro.
 tags = bro plugin, liblognorm, syslog
+build_command = ./configure --bro-dist=%(bro_dist)s && make
+plugin_dir = build
 depends = 
 	bro >=2.5.0
-plugin_dir = build
 test_command = cd tests && btest -d
+description = This plugin provides liblognorm integration for Bro.
 url = https://github.com/J-Gras/bro-lognorm
 version = 0.2.0
 
 [joesecurity/Joe-Sandbox-Bro]
-script_dir = scripts
+tags = file analysis, sandbox, malware, virus
 description = JoeSandbox-Bro extracts files from your internet connection
 	and analyzes them automatically on Joe Sandbox. Combined with Joe Sandbox's
 	reporting and alerting features you can build a powerful IDS.
-tags = file analysis, sandbox, malware, virus
+script_dir = scripts
 url = https://github.com/joesecurity/Joe-Sandbox-Bro
 version = master
 
 [jonzeolla/scan-sampling]
-script_dir = scripts
-description = Modified version of scan.bro to add destination IP sampling.
 tags = sumstats
+description = Modified version of scan.bro to add destination IP sampling.
+script_dir = scripts
 url = https://github.com/JonZeolla/scan-sampling
 version = 0.1.0
 
 [jsiwek/bro-test-package]
-build_command = cd plugin && ./configure --bro-dist=%(bro_dist)s && make
-description = An example Bro package for testing purposes.
 tags = example, test, bro plugin, broctl plugin, rot13, cipher
+build_command = cd plugin && ./configure --bro-dist=%(bro_dist)s && make
+script_dir = plugin/scripts/Demo/Rot13
 plugin_dir = plugin/build
 test_command = cd testing && btest -d tests
-script_dir = plugin/scripts/Demo/Rot13
+description = An example Bro package for testing purposes.
 url = https://github.com/jsiwek/bro-test-package
 version = 1.0.5
 
 [jswaro/tcprs]
-build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
-description = TCP Retransmission and State Analyzer plugin for Bro.
 tags = bro plugin, TCP, retransmission, connection state, conn, input reader, protocol analyzer
+build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
+script_dir = scripts
 plugin_dir = build
 test_command = cd tests btest -d tcprs
-script_dir = scripts
+description = TCP Retransmission and State Analyzer plugin for Bro.
 url = https://github.com/jswaro/tcprs
 version = 0.2.1
 
 [ncsa/bro-interface-setup]
-plugin_dir = .
-description = A broctl plugin that helps you setup capture interfaces
 tags = bro plugin, interface, mtu
+description = A broctl plugin that helps you setup capture interfaces
+plugin_dir = .
 url = https://github.com/ncsa/bro-interface-setup
 version = master
 
 [pgaulon/bro-notice-slack]
-description = Bro Notices through Slack webhook
 tags = bro plugin, notices, slack webhook
+description = Bro Notices through Slack webhook
 url = https://github.com/pgaulon/bro-notice-slack
 version = 1.0.0
 
 [scebro/ldap-analyzer]
-build_command = ./configure --bro-dist=%(bro_dist)s && make
-version = master
 tags = bro plugin, ldap analyzer, ldap
 scripts_dir = scripts
-plugin_dir = build
 test_command = cd tests && btest -d
+plugin_dir = build
+version = master
 description = LDAP write operations analyzer for Bro.
+build_command = ./configure --bro-dist=%(bro_dist)s && make
 url = https://github.com/SoftwareConsultingEmporium/ldap-analyzer
 
 [sethhall/credit-card-exposure]
-version = master
-script_dir = scripts
-description = Detect credit card numbers in HTTP and SMTP with Bro.
-test_command = ( cd tests && btest -d )
 tags = credit cards, dlp, http, smtp, files
+version = master
+description = Detect credit card numbers in HTTP and SMTP with Bro.
+script_dir = scripts
+test_command = ( cd tests && btest -d )
 url = https://github.com/sethhall/credit-card-exposure
 
 [sethhall/ssn-exposure]
-version = master
-script_dir = scripts
-description = Detect US Social Security numbers in HTTP and SMTP with Bro.
 tags = ssn, social security number, dlp, files
+version = master
+description = Detect US Social Security numbers in HTTP and SMTP with Bro.
+script_dir = scripts
 url = https://github.com/sethhall/ssn-exposure
 
 [sethhall/domain-tld]
-version = master
-script_dir = scripts
-description = A library for getting the "effective tld" of a domain name.
 tags = library, domain
+version = master
+description = A library for getting the "effective tld" of a domain name.
+script_dir = scripts
 url = https://github.com/sethhall/domain-tld
 
 [sethhall/bro-myricom]
-build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
-description = Packet source plugin that provides native Myricom SNF v3+v4 support.
 tags = packet source, plugin, myricom
+build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
+script_dir = scripts.not_used
 plugin_dir = build
 test_command = ( cd tests && btest -d )
-script_dir = scripts.not_used
+description = Packet source plugin that provides native Myricom SNF v3+v4 support.
 url = https://github.com/sethhall/bro-myricom
 version = 1.0.2
 
 [sethhall/unknown-mime-type-discovery]
-script_dir = scripts
-description = A Bro package for finding new file signatures.
 tags = files, signature
+description = A Bro package for finding new file signatures.
+script_dir = scripts
 url = https://github.com/sethhall/unknown-mime-type-discovery
 version = master
 
 [srozb/dns_axfr]
-version = master
-script_dir = scripts
-description = Find and notice DNS zone transfer attempts.
 tags = dns recon
+version = master
+description = Find and notice DNS zone transfer attempts.
+script_dir = scripts
 url = https://github.com/srozb/dns_axfr
 
 [theflakes/bro-large_uploads]
+tags = notices, uploads, conns
 description = Raise notices on outgoing files over X bytes in size.
 	Also raise notices for multiple large outgoing Tx's in Y time frame.
-tags = notices, uploads, conns
 url = https://github.com/theflakes/bro-large_uploads
 version = master
 
