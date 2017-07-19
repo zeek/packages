@@ -53,6 +53,15 @@ test_command = ( cd tests && btest -d )
 url = https://github.com/corelight/bro-shellshock
 version = master
 
+[corelight/top-dns]
+depends = 
+	bro/sethhall/domain-tld *
+description = Log the top DNS queries being requested.
+script_dir = scripts
+tags = dns, sumstats, log, measurement, top
+url = https://github.com/corelight/top-dns
+version = master
+
 [dopheide/bro_notice_correlation]
 description = Adds support for multi-notice correlation. For more information, see http://blog.samoehlert.com/correlating-bro-notices or the talk from BroCon 2016.
 tags = notices, notice, correlation
