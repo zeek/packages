@@ -106,11 +106,18 @@ version = master
 url = https://github.com/initconf/CVE-2017-5638_struts.git
 
 [initconf/phish-analysis.git]
-description = suite of smtp related policies includes extracting and logging URLs in emails and smtp anomaly detection to help flag phishing emails
+description = Suite of smtp related policies includes extracting and logging URLs from emails and various smtp anomaly detection heuristics to help flag phishing emails
 script_dir = scripts
 tags = smtp, phish, urls, emails
 version = master
 url = https://github.com/initconf/phish-analysis.git
+
+[initconf/smtp-url-analysis-no-db.git]
+description = Suite of smtp related policies includes extracting and logging URLs from emails and various smtp anomaly detection heuristics to help flag phishing emails
+script_dir = scripts
+tags = smtp, phish, urls, emails
+version = master
+url = https://github.com/initconf/smtp-url-analysis-no-db.git
 
 [j-gras/intel-extensions]
 description = Extensions for Bro's intelligence framework.
