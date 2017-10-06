@@ -87,6 +87,13 @@ tags = Venom, venom, VENOM, rootkit
 version = master
 url = https://github.com/dopheide/venom
 
+[fatemabw/bro-inventory-scripts]
+description = Find different type of OSes and AV software in your network traffic.
+script_dir = scripts
+tags = OS detection, Anti-Virus
+version = master
+url = https://github.com/fatemabw/bro-inventory-scripts
+
 [hhzzk/dns-tunnels]
 description = Detect DNS Tunnels attack.
 script_dir = scripts
@@ -229,7 +236,7 @@ description = A broctl plugin that helps you troubleshoot common problems
 plugin_dir = .
 tags = broctl plugin, troubleshoot
 url = https://github.com/ncsa/bro-doctor
-version = 1.16.2
+version = 1.17.1
 
 [ncsa/bro-is-darknet]
 description = This plugin adds a Site::is_darknet function.
