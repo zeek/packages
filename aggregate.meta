@@ -14,6 +14,15 @@ test_command = cd tests && btest -d
 version = 0.0.6
 url = https://github.com/0xxon/bro-postgresql
 
+[0xxon/bro-plugin-roca]
+build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
+description = Identify certificates potentially affected by CVE-2017-15361
+plugin_dir = build/Johanna_ROCA.tgz
+tags = certificates, CVE-2017-15361
+test_command = cd tests && btest -d
+url = https://github.com/0xxon/bro-plugin-roca
+version = 0.0.1
+
 [bro/bro-netmap]
 build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
 description = Packet source plugin that provides native Netmap support.
