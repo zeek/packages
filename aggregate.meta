@@ -80,6 +80,13 @@ tags = http log extend
 version = master
 url = https://github.com/corelight/log-add-http-post-bodies
 
+[corelight/log-add-vlan-everywhere]
+description = Add VLAN to all Bro logs.
+script_dir = scripts
+tags = log extend vlan
+version = master
+url = https://github.com/corelight/log-add-vlan-everywhere
+
 [corelight/top-dns]
 depends = 
 	bro/sethhall/domain-tld *
