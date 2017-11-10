@@ -196,6 +196,15 @@ tags = log, logging, JSON
 url = https://github.com/J-Gras/add-json
 version = master
 
+[j-gras/add-node-names]
+depends = 
+	bro >=2.5
+description = Adds cluster node name to logs.
+script_dir = scripts
+tags = log, logging, conn, add node name, add worker
+url = https://github.com/J-Gras/add-node-names
+version = master
+
 [j-gras/bro-af_packet-plugin]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
 depends = 
