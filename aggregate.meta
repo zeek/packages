@@ -23,6 +23,24 @@ test_command = cd tests && btest -d
 url = https://github.com/0xxon/bro-plugin-roca
 version = 0.0.1
 
+[apache/metron-bro-plugin-kafka]
+description = A Bro log writer plugin that sends logging output to Kafka.
+tags = log writer, bro plugin, kafka
+script_dir = scripts
+build_command = ./configure --bro-dist=%(bro_dist)s --with-librdkafka=%(LIBRDKAFKA_ROOT)s && make
+test_command = ( cd tests && btest -d )
+plugin_dir = build
+config_files = scripts/init.bro
+version = 0.1
+depends =
+	bro >=2.5.0
+	bro-pkg >=1.2
+external_depends =
+	librdkafka ~0.9.4
+user_vars =
+	LIBRDKAFKA_ROOT [/usr/local/lib] "Path to librdkafka installation tree"
+url = https://github.com/apache/metron-bro-plugin-kafka
+
 [bro/bro-netmap]
 build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
 description = Packet source plugin that provides native Netmap support.
