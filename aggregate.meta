@@ -200,6 +200,13 @@ test_command = ( cd tests && btest -d )
 version = master
 url = https://github.com/initconf/smtp-url-analysis
 
+[initconf/blacklist]
+description = package to manage blacklisted IP address ysing bro
+script_dir = scripts
+tags = blacklist
+version = master
+url = https://github.com/initconf/blacklist
+
 [j-gras/intel-extensions]
 description = Extensions for Bro's intelligence framework.
 script_dir = scripts
@@ -226,14 +233,14 @@ version = master
 [j-gras/bro-af_packet-plugin]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
 depends = 
+	bro-pkg >=1.2
 	bro >=2.5.0
 description = This plugin provides native AF_Packet support for Bro.
-plugin_dir = build
-script_dir = scripts
+plugin_dir = build/Bro_AF_Packet.tgz
 tags = bro plugin, broctl plugin, packet source, af_packet
 test_command = cd tests && btest -d
 url = https://github.com/J-Gras/bro-af_packet-plugin
-version = 1.2.0
+version = 1.3.0
 
 [j-gras/bro-lognorm]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
