@@ -207,6 +207,14 @@ tags = blacklist
 version = master
 url = https://github.com/initconf/blacklist
 
+[initconf/vnc-scanner]
+description = Simple policy to detect VNC (RFB) scanners based on src->dst connection counts
+script_dir = scripts
+tags = rfb, vnc, osx high sierra
+test_command = ( cd tests && btest -d )
+version = master
+url = https://github.com/initconf/vnc-scanner
+
 [j-gras/intel-extensions]
 description = Extensions for Bro's intelligence framework.
 script_dir = scripts
