@@ -33,12 +33,12 @@ description = A Bro log writer plugin that sends logging output to Kafka.
 external_depends = 
 	librdkafka ~0.9.4
 plugin_dir = build
-script_dir = scripts
+script_dir = build/scripts/Apache/Kafka
 tags = log writer, bro plugin, kafka
 test_command = ( cd tests && btest -d )
 user_vars = 
 	LIBRDKAFKA_ROOT [/usr/local/lib] "Path to librdkafka installation tree"
-version = master
+version = 0.1
 url = https://github.com/apache/metron-bro-plugin-kafka
 
 [bro/bro-netmap]
@@ -297,6 +297,15 @@ test_command = cd tests btest -d tcprs
 url = https://github.com/jswaro/tcprs
 version = 0.2.1
 
+[klehigh/find_smbv1]
+depends = 
+	bro >=2.5.0
+description = find SMBv1 activity
+script_dir = scripts
+tags = smb, logging
+url = https://github.com/klehigh/find_smbv1
+version = 1.0.0
+
 [ncsa/bro-interface-setup]
 description = A broctl plugin that helps you setup capture interfaces
 plugin_dir = .
@@ -308,9 +317,11 @@ version = master
 description = A broctl plugin that helps you troubleshoot common problems
 	For cluster-related checks, the package "add-node-names" is recommended.
 plugin_dir = .
+suggests = 
+	bro/j-gras/add-node-names *
 tags = broctl plugin, troubleshoot
 url = https://github.com/ncsa/bro-doctor
-version = 1.19.0
+version = 1.20.0
 
 [ncsa/bro-is-darknet]
 description = This plugin adds a Site::is_darknet function.
