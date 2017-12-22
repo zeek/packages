@@ -91,6 +91,13 @@ test_command = ( cd tests && btest -d )
 url = https://github.com/corelight/bro-shellshock
 version = master
 
+[corelight/conn-burst]
+description = Identify bursty connections (large and fast)
+script_dir = scripts
+tags = conn, burst
+url = https://github.com/corelight/conn-burst
+version = master
+
 [corelight/log-add-http-post-bodies]
 description = Add a POST body excerpt into the HTTP log
 script_dir = scripts
