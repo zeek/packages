@@ -294,6 +294,14 @@ test_command = cd testing && btest -d tests
 url = https://github.com/jsiwek/bro-test-package
 version = 1.0.5
 
+[jsiwek/bro_bitcoin]
+description = Detects Bitcoin, Litecoin, or other cryptocurrency
+	mining traffic that uses getwork, getblocktemplate, or Stratum mining
+	protocols over TCP or HTTP.
+tags = signatures, bitcoin, mining, cryptocurrency
+url = https://github.com/jsiwek/bro_bitcoin
+version = master
+
 [jswaro/tcprs]
 build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
 description = TCP Retransmission and State Analyzer plugin for Bro.
