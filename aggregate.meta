@@ -245,6 +245,15 @@ tags = log, logging, conn, add node name, add worker
 url = https://github.com/J-Gras/add-node-names
 version = master
 
+[j-gras/intel-seen-more]
+description = Additional seen-triggers for Bro's intelligence framework.
+script_dir = scripts
+suggests = 
+	bro/sethhall/domain-tld *
+tags = intel, seen
+url = https://github.com/J-Gras/intel-seen-more
+version = 0.1.0
+
 [j-gras/bro-af_packet-plugin]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
 depends = 
