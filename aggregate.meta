@@ -121,6 +121,15 @@ tags = dns, sumstats, log, measurement, top
 url = https://github.com/corelight/top-dns
 version = master
 
+[corelight/bro-community-id]
+build_command = ./configure --bro-dist=%(bro_dist)s && make
+description = "Community ID" flow hash support in conn.log
+script_dir = scripts/Corelight/CommunityID
+tags = bro plugin, conn, logging, community id, flow hashing, flow id, sha1, corelight
+test_command = cd tests && btest -d community-id
+url = https://github.com/corelight/bro-community-id
+version = master
+
 [dopheide/bro_notice_correlation]
 description = Adds support for multi-notice correlation. For more information, see http://blog.samoehlert.com/correlating-bro-notices or the talk from BroCon 2016.
 script_dir = scripts
@@ -252,7 +261,7 @@ suggests =
 	bro/sethhall/domain-tld *
 tags = intel, seen
 url = https://github.com/J-Gras/intel-seen-more
-version = 0.1.0
+version = 0.2.0
 
 [j-gras/bro-af_packet-plugin]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
