@@ -128,7 +128,7 @@ script_dir = scripts/Corelight/CommunityID
 tags = bro plugin, conn, logging, community id, flow hashing, flow id, sha1, corelight
 test_command = cd tests && btest -d community-id
 url = https://github.com/corelight/bro-community-id
-version = master
+version = 1.0
 
 [dopheide/bro_notice_correlation]
 description = Adds support for multi-notice correlation. For more information, see http://blog.samoehlert.com/correlating-bro-notices or the talk from BroCon 2016.
@@ -375,6 +375,19 @@ script_dir = scripts
 tags = bro plugin, scan detection
 test_command = (cd testing && btest -d)
 url = https://github.com/ncsa/bro-simple-scan
+version = master
+
+[ncsa/bro-zeromq-writer]
+build_command = ./configure --bro-dist=%(bro_dist)s --with-zmq=%(ZEROMQ_PREFIX)s && make
+description = ZeroMQ log writer.
+external_depends = 
+	zeromq >=3.2.0
+script_dir = scripts/NCSA/ZeroMQWriter
+tags = bro plugin, log writer, zeromq, 0mq
+test_command = make test
+user_vars = 
+	ZEROMQ_PREFIX [/usr/local] "ZeroMQ install prefix"
+url = https://github.com/ncsa/bro-zeromq-writer
 version = master
 
 [pgaulon/bro-notice-slack]
