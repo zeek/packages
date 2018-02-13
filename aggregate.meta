@@ -130,6 +130,13 @@ test_command = cd tests && btest -d community-id
 url = https://github.com/corelight/bro-community-id
 version = 1.0
 
+[corelight/json-streaming-logs]
+description = JSON streaming logs
+script_dir = scripts
+tags = logs, json, streaming, stream, filebeat, splunk_forwarder, logstash
+url = https://github.com/corelight/json-streaming-logs
+version = master
+
 [dopheide/bro_notice_correlation]
 description = Adds support for multi-notice correlation. For more information, see http://blog.samoehlert.com/correlating-bro-notices or the talk from BroCon 2016.
 script_dir = scripts
