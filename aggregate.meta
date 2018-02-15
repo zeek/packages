@@ -268,7 +268,7 @@ suggests =
 	bro/sethhall/domain-tld *
 tags = intel, seen
 url = https://github.com/J-Gras/intel-seen-more
-version = 0.2.0
+version = 0.2.1
 
 [j-gras/bro-af_packet-plugin]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
@@ -486,4 +486,21 @@ description = Raise notices on outgoing files over X bytes in size.
 tags = notices, uploads, conns
 url = https://github.com/theflakes/bro-large_uploads
 version = master
+
+[vitalyrepin/uap-bro]
+build_command = ./configure --bro-dist=%(bro_dist)s  && make
+config_files = scripts/init.bro
+depends = 
+	bro >=2.5.0
+	bro-pkg >=1.2
+description = User Agent Parser - Bro implementation based on uap-core
+external_depends = 
+	libyaml-cpp-dev ~0.5.2
+	libboost-regex-dev ~1.58.0
+plugin_dir = build
+script_dir = build/scripts/VR/UAP
+tags = bro plugin, uap, user_agent
+test_command = ( cd tests && btest -d )
+version = master
+url = https://github.com/vitalyrepin/uap-bro
 
