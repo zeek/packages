@@ -137,6 +137,13 @@ tags = logs, json, streaming, stream, filebeat, splunk_forwarder, logstash
 url = https://github.com/corelight/json-streaming-logs
 version = master
 
+[corelight/http-stalling-detector]
+description = Detect HTTP stalling attacks like slowloris.
+script_dir = scripts
+tags = http, DoS, attack, notice
+url = https://github.com/corelight/http-stalling-detector
+version = master
+
 [dopheide/bro_notice_correlation]
 description = Adds support for multi-notice correlation. For more information, see http://blog.samoehlert.com/correlating-bro-notices or the talk from BroCon 2016.
 script_dir = scripts
@@ -371,7 +378,7 @@ script_dir = scripts
 tags = bro plugin, site, darknet
 test_command = (cd testing && btest -d)
 url = https://github.com/ncsa/bro-is-darknet
-version = master
+version = 0.2
 
 [ncsa/bro-simple-scan]
 depends = 
@@ -489,7 +496,7 @@ version = master
 
 [vitalyrepin/uap-bro]
 build_command = ./configure --bro-dist=%(bro_dist)s  && make
-config_files = scripts/init.bro
+config_files = build/scripts/init.bro
 depends = 
 	bro >=2.5.0
 	bro-pkg >=1.2
