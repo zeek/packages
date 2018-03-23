@@ -245,6 +245,14 @@ test_command = ( cd tests && btest -d )
 version = master
 url = https://github.com/initconf/vnc-scanner
 
+[initconf/ftp-bruteforce]
+description = ftp-bruteforce
+script_dir = scripts
+tags = ftp, bruteforce, scan
+test_command = ( cd tests && btest -d )
+version = master
+url = https://github.com/initconf/ftp-bruteforce
+
 [j-gras/intel-extensions]
 description = Extensions for Bro's intelligence framework.
 script_dir = scripts
@@ -368,7 +376,7 @@ suggests =
 	bro/j-gras/add-node-names *
 tags = broctl plugin, troubleshoot
 url = https://github.com/ncsa/bro-doctor
-version = 1.20.0
+version = 1.21.3
 
 [ncsa/bro-is-darknet]
 description = This plugin adds a Site::is_darknet function.
@@ -397,7 +405,7 @@ description = ZeroMQ log writer.
 external_depends = 
 	zeromq >=3.2.0
 script_dir = scripts/NCSA/ZeroMQWriter
-tags = bro plugin, log writer, zeromq, 0mq
+tags = bro plugin, log writer, zeromq, zmq, 0mq, json
 test_command = make test
 user_vars = 
 	ZEROMQ_PREFIX [/usr/local] "ZeroMQ install prefix"
