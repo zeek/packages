@@ -200,6 +200,17 @@ tags = logging, log framework
 version = master
 url = https://github.com/hosom/log-filters
 
+[hosom/bro-napatech]
+build_command = (./configure --bro-dist=%(bro_dist)s && make)
+depends = 
+	bro-pkg >=1.2
+	bro >=2.5.0
+description = Packet source plugin that provides native support for NTAPI
+plugin_dir = build/Bro_Napatech.tgz
+tags = packet source, plugin, napatech, ntapi
+url = https://github.com/hosom/bro-napatech
+version = 0.1.0
+
 [initconf/scan-NG]
 description = scan detection in 2.x world. Forward porting of bro-1.5.3 scan.bro accompanied with new heuristics and quicker detections
 script_dir = scripts
