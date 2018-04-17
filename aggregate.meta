@@ -372,6 +372,20 @@ tags = smb, logging
 url = https://github.com/klehigh/find_smbv1
 version = 1.0.0
 
+[mitrecnd/bro-http2]
+build_command = ./configure --bro-dist=%(bro_dist)s && make
+depends = 
+	bro >=2.5.0
+description = A HTTP2 protocol analyzer for the Bro IDS.
+external_depends = 
+	libnghttp2>=1.11.0
+	libbrotlidec>=1.0.0
+script_dir = scripts
+tags = bro plugin, protocol analyzer, http2, intel
+test_command = make test
+url = https://github.com/MITRECND/bro-http2
+version = 0.3.0
+
 [ncsa/bro-interface-setup]
 description = A broctl plugin that helps you setup capture interfaces
 plugin_dir = .
