@@ -418,6 +418,22 @@ tags = bro plugin, notices, slack webhook
 url = https://github.com/pgaulon/bro-notice-slack
 version = 1.0.0
 
+[reservoirlabs/fix-ascii]
+build_command = ./configure --bro-dist=%(bro_dist)s && make
+description = ASCII FIX analyzer package
+script_dir = scripts/RLABS/FIX/
+tags = bro plugin, bro analyzer, ASCII FIX protocol analyzer
+url = https://github.com/reservoirlabs/fix-ascii
+version = master
+
+[reservoirlabs/fix-binary]
+build_command = ./configure --bro-dist=%(bro_dist)s && make
+description = binary FIX analyzer package
+script_dir = scripts/RLABS/FIX_SBE
+tags = bro plugin, bro analyzer, binary FIX protocol analyzer
+url = https://github.com/reservoirlabs/fix-binary
+version = master
+
 [salesforce/ja3]
 description = JA3 creates 32 character SSL client fingerprints and logs them as a field in ssl.log. These fingerprints can easily be shared as threat intelligence or used as correlation items for enhanced alerting and analysis. This package also adds JA3 to the Bro Intel Framework.
 	https://github.com/salesforce/ja3
