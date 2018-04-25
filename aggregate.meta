@@ -23,6 +23,22 @@ test_command = cd tests && btest -d
 url = https://github.com/0xxon/bro-plugin-roca
 version = 0.0.1
 
+[activecm/bro-mongodb.git]
+build_command = (./configure --bro-dist=%(bro_dist) && make)
+depends = mongodb >= 3.4
+description = Bro IDS/ MongoDB connector.
+tags = bro plugin, MongoDB, writer, security, conn, logging, rita
+version = master
+url = https://github.com/activecm/bro-mongodb.git
+
+[activecm/bro-rita.git]
+build_command = (./configure --bro-dist=%(bro_dist) && make)
+depends = mongodb >= 3.4
+description = RITA, Bro IDS connector.
+tags = bro plugin, MongoDB, writer, security, conn, logging, rita
+version = master
+url = https://github.com/activecm/bro-rita.git
+
 [apache/metron-bro-plugin-kafka]
 build_command = ./configure --bro-dist=%(bro_dist)s --with-librdkafka=%(LIBRDKAFKA_ROOT)s && make
 config_files = scripts/init.bro
