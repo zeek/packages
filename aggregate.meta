@@ -24,16 +24,14 @@ url = https://github.com/0xxon/bro-plugin-roca
 version = 0.0.1
 
 [activecm/bro-mongodb.git]
-build_command = (./configure --bro-dist=%(bro_dist) && make)
-depends = mongodb >= 3.4
+build_command = (./configure --bro-dist=%(bro_dist)s && make)
 description = Bro IDS/ MongoDB connector.
 tags = bro plugin, MongoDB, writer, security, conn, logging, rita
 version = master
 url = https://github.com/activecm/bro-mongodb.git
 
 [activecm/bro-rita.git]
-build_command = (./configure --bro-dist=%(bro_dist) && make)
-depends = mongodb >= 3.4
+build_command = (./configure --bro-dist=%(bro_dist)s && make)
 description = RITA, Bro IDS connector.
 tags = bro plugin, MongoDB, writer, security, conn, logging, rita
 version = master
@@ -181,6 +179,15 @@ plugin_dir = build/Bro_QUIC.tgz
 tags = plugin, analyzer, quic
 url = https://github.com/dopheide-esnet/bro-quic
 version = 0.1
+
+[endace/bro-dag]
+build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
+description = Packet source plugin that provides native support for Endace DAG capture cards.
+plugin_dir = build
+tags = packet source, plugin, dag, endace
+test_command = ( cd tests && btest -d )
+url = https://github.com/endace/bro-dag
+version = 0.1.5
 
 [fatemabw/bro-inventory-scripts]
 description = Find different type of OSes and AV software in your network traffic.
