@@ -524,13 +524,15 @@ url = https://github.com/sethhall/domain-tld
 
 [sethhall/bro-myricom]
 build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
+depends = 
+	bro-pkg >=1.2
 description = Packet source plugin that provides native Myricom SNF v3+v4 support.
-plugin_dir = build
+plugin_dir = build/Bro_Myricom.tgz
 script_dir = scripts.not_used
 tags = packet source, plugin, myricom
 test_command = ( cd tests && btest -d )
 url = https://github.com/sethhall/bro-myricom
-version = 1.0.2
+version = 1.0.4
 
 [sethhall/unknown-mime-type-discovery]
 description = A Bro package for finding new file signatures.
@@ -558,6 +560,13 @@ script_dir = scripts
 tags = dns recon
 version = master
 url = https://github.com/srozb/dns_axfr
+
+[srozb/http_csp]
+description = HTTP Content-Security-Policy report parser
+script_dir = scripts
+tags = CSP intel
+url = https://github.com/srozb/http_csp
+version = 1.0.0
 
 [theflakes/bro-large_uploads]
 description = Raise notices on outgoing files over X bytes in size.
