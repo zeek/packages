@@ -541,19 +541,6 @@ tags = files, signature
 url = https://github.com/sethhall/unknown-mime-type-discovery
 version = master
 
-[sethhall/bro-brainfuck]
-description = A brainfuck interpreter written completely in Bro scripts.
-	You probably shouldn't actually ever use this.  It's rather pointless
-	and was only written to say that I wrote the first language
-	interpreter in Bro.  If you do accidentally install it though, it
-	won't cause any trouble unless you actually use it to run a
-	Brainfuck program.
-script_dir = scripts
-tags = language, brainfuck, dumb, dontuse
-test_command = ( cd tests && btest -d )
-version = master
-url = https://github.com/sethhall/bro-brainfuck
-
 [srozb/dns_axfr]
 description = Find and notice DNS zone transfer attempts.
 script_dir = scripts
