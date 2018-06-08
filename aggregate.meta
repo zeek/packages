@@ -158,6 +158,16 @@ tags = http, DoS, attack, notice
 url = https://github.com/corelight/http-stalling-detector
 version = master
 
+[corelight/bro-quic]
+build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
+description = Detects the Google QUIC (GQUIC) protocol and adds "gquic"
+	to conn.log's "service" field.
+plugin_dir = build/Corelight_GQUIC.tgz
+script_dir = build/scripts/Corelight/GQUIC
+tags = plugin, analyzer, gquic, quic
+url = https://github.com/corelight/bro-quic
+version = master
+
 [dopheide/bro_notice_correlation]
 description = Adds support for multi-notice correlation. For more information, see http://blog.samoehlert.com/correlating-bro-notices or the talk from BroCon 2016.
 script_dir = scripts
@@ -187,7 +197,7 @@ plugin_dir = build
 tags = packet source, plugin, dag, endace
 test_command = ( cd tests && btest -d )
 url = https://github.com/endace/bro-dag
-version = 0.1.5
+version = v0.1.5
 
 [fatemabw/bro-inventory-scripts]
 description = Find different type of OSes and AV software in your network traffic.
@@ -292,7 +302,7 @@ description = Extensions for Bro's intelligence framework.
 script_dir = scripts
 tags = intel, expiration, removal, preserve files
 url = https://github.com/J-Gras/intel-extensions
-version = master
+version = v0.3.0
 
 [j-gras/add-json]
 description = Additional JSON-logging for Bro.
