@@ -194,10 +194,10 @@ version = 0.1
 build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
 description = Packet source plugin that provides native support for Endace DAG capture cards.
 plugin_dir = build
-tags = packet source, plugin, dag, endace
+tags = packet source, plugin, broctl plugin, dag, endace
 test_command = ( cd tests && btest -d )
 url = https://github.com/endace/bro-dag
-version = v0.1.5
+version = v0.2.0
 
 [fatemabw/bro-inventory-scripts]
 description = Find different type of OSes and AV software in your network traffic.
