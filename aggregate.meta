@@ -194,10 +194,10 @@ version = 0.1
 build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
 description = Packet source plugin that provides native support for Endace DAG capture cards.
 plugin_dir = build
-tags = packet source, plugin, dag, endace
+tags = packet source, plugin, broctl plugin, dag, endace
 test_command = ( cd tests && btest -d )
 url = https://github.com/endace/bro-dag
-version = v0.1.5
+version = v0.2.0
 
 [fatemabw/bro-inventory-scripts]
 description = Find different type of OSes and AV software in your network traffic.
@@ -444,18 +444,18 @@ script_dir = scripts
 tags = bro plugin, site, darknet
 test_command = (cd testing && btest -d)
 url = https://github.com/ncsa/bro-is-darknet
-version = 0.2
+version = 0.3
 
 [ncsa/bro-simple-scan]
 depends = 
 	bro >=2.5.1
-	bro/ncsa/bro-is-darknet *
+	bro/ncsa/bro-is-darknet >=0.3
 description = Simple, high performance tcp scan detection
 script_dir = scripts
 tags = bro plugin, scan detection
 test_command = (cd testing && btest -d)
 url = https://github.com/ncsa/bro-simple-scan
-version = master
+version = 1.0
 
 [ncsa/bro-zeromq-writer]
 build_command = ./configure --bro-dist=%(bro_dist)s --with-zmq=%(ZEROMQ_PREFIX)s && make
