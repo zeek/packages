@@ -190,6 +190,13 @@ tags = plugin, analyzer, quic
 url = https://github.com/dopheide-esnet/bro-quic
 version = 0.1
 
+[dovehawk/dovehawk]
+description = MISP+Bro. Dovehawk is a Bro Module to import MISP indicators to the Intel Framework automatically and report sightings directly back to MISP as they happen.
+script_dir = .
+tags = intel, MISP, sightings, signatures
+version = master
+url = https://github.com/tylabs/dovehawk
+
 [endace/bro-dag]
 build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
 description = Packet source plugin that provides native support for Endace DAG capture cards.
@@ -327,7 +334,7 @@ suggests =
 	bro/sethhall/domain-tld *
 tags = intel, seen
 url = https://github.com/J-Gras/intel-seen-more
-version = 0.2.1
+version = 0.3.0
 
 [j-gras/bro-af_packet-plugin]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
