@@ -424,7 +424,7 @@ script_dir = scripts
 tags = bro plugin, protocol analyzer, http2, intel
 test_command = make test
 url = https://github.com/MITRECND/bro-http2
-version = 0.3.0
+version = 0.4.0
 
 [ncsa/bro-interface-setup]
 description = A broctl plugin that helps you setup capture interfaces
@@ -451,7 +451,7 @@ script_dir = scripts
 tags = bro plugin, site, darknet
 test_command = (cd testing && btest -d)
 url = https://github.com/ncsa/bro-is-darknet
-version = 0.3
+version = 0.4
 
 [ncsa/bro-simple-scan]
 depends = 
@@ -475,6 +475,16 @@ test_command = make test
 user_vars = 
 	ZEROMQ_PREFIX [/usr/local] "ZeroMQ install prefix"
 url = https://github.com/ncsa/bro-zeromq-writer
+version = master
+
+[ntop/bro-pf_ring]
+build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
+description = Packet source plugin that provides native PF_RING support.
+plugin_dir = build
+script_dir = scripts
+tags = packet source, plugin, pf_ring
+test_command = ( cd tests && btest -d )
+url = https://github.com/ntop/bro-pf_ring
 version = master
 
 [pgaulon/bro-notice-slack]
