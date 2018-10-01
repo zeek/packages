@@ -462,7 +462,7 @@ script_dir = scripts
 tags = bro plugin, scan detection
 test_command = (cd testing && btest -d)
 url = https://github.com/ncsa/bro-simple-scan
-version = 1.0
+version = 1.1
 
 [ncsa/bro-zeromq-writer]
 build_command = ./configure --bro-dist=%(bro_dist)s --with-zmq=%(ZEROMQ_PREFIX)s && make
@@ -581,6 +581,15 @@ script_dir = scripts
 tags = CSP intel
 url = https://github.com/srozb/http_csp
 version = 1.0.0
+
+[tenzir/bro-vast]
+depends = 
+	bro >= 2.6-beta2-14
+description = A package that enables Bro to communicate with VAST
+script_dir = scripts
+tags = vast, intel
+url = https://github.com/tenzir/bro-vast
+version = master
 
 [theflakes/bro-large_uploads]
 description = Raise notices on outgoing files over X bytes in size.
