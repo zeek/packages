@@ -517,6 +517,13 @@ tags = intel, ssl, logging
 version = master
 url = https://github.com/salesforce/ja3
 
+[salesforce/hassh]
+description = HASSH is used to identify specific Client and Server SSH implementations. The fingerprints can be stored, searched and shared in the form of an MD5 fingerprint. This package logs components to ssh.log
+script_dir = bro
+tags = bro plugin, ssh, fingerprint, logging
+version = master
+url = https://github.com/salesforce/hassh
+
 [scebro/ldap-analyzer]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
 description = LDAP write operations analyzer for Bro.
