@@ -304,6 +304,18 @@ test_command = ( cd tests && btest -d )
 version = master
 url = https://github.com/initconf/ftp-bruteforce
 
+[irtimmer/bro-xdp_packet-plugin]
+build_command = ./configure --bro-dist=%(bro_dist)s && make
+depends = 
+	bro-pkg >=1.2
+	bro >=2.5.0
+description = This plugin provides native AF_XDP support for Bro.
+plugin_dir = build/itimmer_af_xdp.tgz
+tags = bro plugin, packet source, af_xdp
+test_command = cd tests && btest -d
+url = https://github.com/irtimmer/bro-xdp_packet-plugin
+version = master
+
 [j-gras/intel-extensions]
 description = Extensions for Bro's intelligence framework.
 script_dir = scripts
