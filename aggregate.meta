@@ -55,6 +55,12 @@ user_vars =
 version = 0.2
 url = https://github.com/apache/metron-bro-plugin-kafka
 
+[bricata/flow_labels]
+description = Provides mechanisms for managing and using institutional knowledge about a monitored environment to make informed observations of normal and abnormal network activity.
+tags = input, labels
+url = https://github.com/bricata/flow_labels
+version = master
+
 [bro/bro-netmap]
 build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
 description = Packet source plugin that provides native Netmap support.
