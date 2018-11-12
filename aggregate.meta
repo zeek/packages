@@ -212,6 +212,14 @@ test_command = ( cd tests && btest -d )
 url = https://github.com/endace/bro-dag
 version = v0.2.0
 
+[esnet/zeek_perfsonar_owamp]
+build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
+plugin_dir = build/PerfSONAR_OWAMP.tgz
+tags = plugin, analyzer, owamp, perfsonar
+test_command = cd tests && btest
+url = https://github.com/esnet/zeek_perfsonar_owamp
+version = master
+
 [fatemabw/bro-inventory-scripts]
 description = Find different type of OSes and AV software in your network traffic.
 script_dir = scripts
@@ -256,6 +264,15 @@ plugin_dir = build/Bro_Napatech.tgz
 tags = packet source, plugin, napatech, ntapi
 url = https://github.com/hosom/bro-napatech
 version = 0.1.0
+
+[hosom/bro-oui]
+depends = 
+	bro > 2.5.5
+description = Add OUI lookup to Bro.
+script_dir = scripts
+tags = oui, mac, dhcp
+version = 1.0.0
+url = https://github.com/hosom/bro-oui
 
 [initconf/scan-NG]
 description = scan detection in 2.x world. Forward porting of bro-1.5.3 scan.bro accompanied with new heuristics and quicker detections
