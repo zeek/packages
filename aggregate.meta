@@ -267,12 +267,22 @@ version = 0.1.0
 
 [hosom/bro-oui]
 depends = 
-	bro > 2.5.5
+	bro >=2.5.5
 description = Add OUI lookup to Bro.
 script_dir = scripts
 tags = oui, mac, dhcp
-version = 1.0.0
+version = 1.0.3
 url = https://github.com/hosom/bro-oui
+
+[hosom/bro-ja3]
+depends = 
+	bro >=2.6.0
+description = Generate and log ja3 ssl fingerprints
+script_dir = scripts
+tags = ja3, ssl, intel
+test_command = cd tests && btest -d btests
+version = 1.0.4
+url = https://github.com/hosom/bro-ja3
 
 [initconf/scan-NG]
 description = scan detection in 2.x world. Forward porting of bro-1.5.3 scan.bro accompanied with new heuristics and quicker detections
