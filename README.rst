@@ -1,12 +1,12 @@
 .. _bro/packages repository: https://github.com/bro/packages
-.. _Bro Package Manager: https://github.com/bro/package-manager
-.. _Bro package: http://bro-package-manager.readthedocs.io/en/stable/package.html
+.. _Zeek Package Manager: https://github.com/bro/package-manager
+.. _Zeek package: http://bro-package-manager.readthedocs.io/en/stable/package.html
 .. _package index file: http://bro-package-manager.readthedocs.io/en/stable/source.html#package-index-files
 
-Bro Package Source
-==================
+Zeek Package Source
+===================
 
-This is the default package source for the `Bro Package Manager`_.
+This is the default package source for the `Zeek Package Manager`_.
 
 Package Submission Process
 --------------------------
@@ -14,7 +14,7 @@ Package Submission Process
 Use the following process to submit packages (please only submit your
 own work/packages):
 
-#. Create a `Bro package`_.  Make sure to set the ``tags``
+#. Create a `Zeek package`_.  Make sure to set the ``tags``
    and ``description`` metadata fields to help people discover
    your package.
 #. Host your package's git repository at a public location.
