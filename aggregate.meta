@@ -1,26 +1,26 @@
-[0xxon/bro-sumstats-counttable]
+[0xxon/zeek-sumstats-counttable]
 description = Two-dimensional buckets for sumstats (count occurences per $str).
 tags = sumstats, summary statistics
 test_command = cd tests && btest -d
-url = https://github.com/0xxon/bro-sumstats-counttable
+url = https://github.com/0xxon/zeek-sumstats-counttable
 version = 0.0.3
 
-[0xxon/bro-postgresql]
+[0xxon/zeek-postgresql]
 build_command = ( ./configure --bro-dist=%(bro_dist)s --with-postgresql-inc=`pg_config --includedir` --with-postgresql-server-inc=`pg_config --includedir-server`  --with-postgresql-lib=`pg_config --libdir` && make )
 description = A PostgreSQL reader and writer for Bro.
 plugin_dir = build
 tags = bro plugin, PostgreSQL, reader, writer, input
 test_command = cd tests && btest -d
 version = 0.0.6
-url = https://github.com/0xxon/bro-postgresql
+url = https://github.com/0xxon/zeek-postgresql
 
-[0xxon/bro-plugin-roca]
+[0xxon/zeek-plugin-roca]
 build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
 description = Identify certificates potentially affected by CVE-2017-15361
 plugin_dir = build/Johanna_ROCA.tgz
 tags = certificates, CVE-2017-15361
 test_command = cd tests && btest -d
-url = https://github.com/0xxon/bro-plugin-roca
+url = https://github.com/0xxon/zeek-plugin-roca
 version = 0.0.1
 
 [activecm/bro-mongodb.git]
@@ -165,14 +165,14 @@ url = https://github.com/corelight/http-stalling-detector
 version = master
 
 [corelight/bro-quic]
-build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
+build_command = test -e %(bro_dist)s/bro-path-dev.in && ( ./configure --bro-dist=%(bro_dist)s && make ) || ( ./configure && make )
 description = Detects the Google QUIC (GQUIC) protocol and adds "gquic"
 	to conn.log's "service" field.
 plugin_dir = build/Corelight_GQUIC.tgz
 script_dir = build/scripts/Corelight/GQUIC
 tags = plugin, analyzer, gquic, quic
 url = https://github.com/corelight/bro-quic
-version = master
+version = v0.2
 
 [dopheide/bro_notice_correlation]
 description = Adds support for multi-notice correlation. For more information, see http://blog.samoehlert.com/correlating-bro-notices or the talk from BroCon 2016.
@@ -210,7 +210,7 @@ plugin_dir = build
 tags = packet source, plugin, broctl plugin, dag, endace
 test_command = ( cd tests && btest -d )
 url = https://github.com/endace/bro-dag
-version = v0.2.0
+version = v0.3.0
 
 [esnet/zeek_perfsonar_owamp]
 build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
@@ -283,6 +283,15 @@ tags = ja3, ssl, intel
 test_command = cd tests && btest -d btests
 version = 1.0.4
 url = https://github.com/hosom/bro-ja3
+
+[hosom/dummy-connections]
+depends = 
+	bro >=2.6.0
+description = Create dummy connection records.
+script_dir = scripts
+tags = connection
+version = 1.0.0
+url = https://github.com/hosom/dummy-connections
 
 [initconf/scan-NG]
 description = scan detection in 2.x world. Forward porting of bro-1.5.3 scan.bro accompanied with new heuristics and quicker detections
@@ -432,14 +441,15 @@ url = https://github.com/JonZeolla/scan-sampling
 version = 0.1.0
 
 [jsiwek/bro-test-package]
-build_command = cd plugin && ./configure --bro-dist=%(bro_dist)s && make
-description = An example Bro package for testing purposes.
+aliases = zeek-test-package bro-test-package
+build_command = cd plugin && ./configure && make
+description = An example Zeek package for testing purposes.
 plugin_dir = plugin/build
 script_dir = plugin/scripts/Demo/Rot13
 tags = example, test, bro plugin, broctl plugin, rot13, cipher
 test_command = cd testing && btest -d tests
 url = https://github.com/jsiwek/bro-test-package
-version = 1.0.5
+version = 1.0.6
 
 [jsiwek/bro_bitcoin]
 description = Detects Bitcoin, Litecoin, or other cryptocurrency
@@ -480,7 +490,7 @@ script_dir = scripts
 tags = bro plugin, protocol analyzer, http2, intel
 test_command = make test
 url = https://github.com/MITRECND/bro-http2
-version = 0.4.0
+version = 0.4.1
 
 [ncsa/bro-interface-setup]
 description = A broctl plugin that helps you setup capture interfaces
@@ -497,7 +507,7 @@ suggests =
 	bro/j-gras/add-node-names *
 tags = broctl plugin, troubleshoot
 url = https://github.com/ncsa/bro-doctor
-version = 1.21.3
+version = 1.21.4
 
 [ncsa/bro-is-darknet]
 description = This plugin adds a Site::is_darknet function.
