@@ -346,6 +346,14 @@ test_command = ( cd tests && btest -d )
 version = master
 url = https://github.com/initconf/ftp-bruteforce
 
+[initconf/detect-kaspersky]
+description = kaspersky
+script_dir = scripts
+tags = kaspersky antivirus
+test_command = ( cd tests && btest -d )
+version = master
+url = https://github.com/initconf/detect-kaspersky
+
 [irtimmer/bro-xdp_packet-plugin]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
 depends = 
@@ -517,7 +525,7 @@ script_dir = scripts
 tags = bro plugin, site, darknet
 test_command = (cd testing && btest -d)
 url = https://github.com/ncsa/bro-is-darknet
-version = 0.4
+version = 0.5
 
 [ncsa/bro-simple-scan]
 depends = 
@@ -589,6 +597,13 @@ script_dir = bro
 tags = bro plugin, ssh, fingerprint, logging
 version = master
 url = https://github.com/salesforce/hassh
+
+[salesforce/bro-sysmon]
+description = Zeek-Sysmon contains a python script that will read in a file, parse JSON Windows Event Logs, generate Zeek events, and forward them to Zeek.  Default Zeek-Sysmon scripts log output to files.
+script_dir = bro
+tags = broker, Windows, Event Logs, Sysmon, logging
+version = master
+url = https://github.com/salesforce/bro-sysmon
 
 [scebro/ldap-analyzer]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
