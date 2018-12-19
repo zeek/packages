@@ -37,6 +37,15 @@ tags = bro plugin, MongoDB, writer, security, conn, logging, rita
 version = master
 url = https://github.com/activecm/bro-rita.git
 
+[anthonykasza/indicator-rules]
+depemds = 
+	bro >= 2.6
+description = An extension to the Intel Framework. This package faciliates the creation of rules which Zeek can monitor for.
+script_dir = scripts
+tags = intel, signature, indicators, pure-script
+version = master
+url = https://github.com/anthonykasza/indicator-rules
+
 [apache/metron-bro-plugin-kafka]
 build_command = ./configure --bro-dist=%(bro_dist)s --with-librdkafka=%(LIBRDKAFKA_ROOT)s && make
 config_files = scripts/init.bro
