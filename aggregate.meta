@@ -442,7 +442,7 @@ url = https://github.com/J-Gras/bro-fuzzy-hashing
 version = 0.3.0
 
 [jbaggs/anomalous-dns]
-depends = https://github.com/sethhall/domain-tld
+depends = https://github.com/sethhall/domain-tld *
 description = A module for tracking and correlating abnormal DNS behavior. Detection of tunneling and C&C through connection duration and volume, request and answer size, DNS request type, and unique queries per domain.
 tags = bro scripting, dns, domain, notices
 version = master
@@ -686,13 +686,13 @@ tags = CSP intel
 url = https://github.com/srozb/http_csp
 version = 1.0.0
 
-[tenzir/bro-vast]
+[tenzir/zeek-vast]
 depends = 
 	bro >= 2.6-beta2-14
 description = A package that enables Bro to communicate with VAST
 script_dir = scripts
 tags = vast, intel
-url = https://github.com/tenzir/bro-vast
+url = https://github.com/tenzir/zeek-vast
 version = master
 
 [theflakes/bro-large_uploads]
