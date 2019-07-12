@@ -93,7 +93,7 @@ plugin_dir = build
 tags = plugin, pe, executable, malware
 test_command = ( cd tests && btest -d )
 url = https://github.com/corelight/bro-xor-exe-plugin
-version = master
+version = 1.0
 
 [corelight/bro-hardware]
 description = Scripts for cases where hardware device identifiers are discovered.
@@ -151,13 +151,13 @@ url = https://github.com/corelight/top-dns
 version = master
 
 [corelight/bro-community-id]
-build_command = ./configure --bro-dist=%(bro_dist)s && make
+build_command = ./configure && make
 description = "Community ID" flow hash support in conn.log
 script_dir = scripts/Corelight/CommunityID
 tags = bro plugin, conn, logging, community id, flow hashing, flow id, sha1, corelight
-test_command = cd tests && btest -d community-id
+test_command = cd tests && btest -c btest.cfg -d communityid
 url = https://github.com/corelight/bro-community-id
-version = 1.0
+version = 1.2
 
 [corelight/json-streaming-logs]
 description = JSON streaming logs
@@ -206,20 +206,27 @@ url = https://github.com/dopheide-esnet/bro-quic
 version = 0.1
 
 [dovehawk/dovehawk]
-description = MISP+Bro. Dovehawk is a Bro Module to import MISP indicators to the Intel Framework automatically and report sightings directly back to MISP as they happen.
+description = MISP+Zeek. Dovehawk is a Zeek Module to import MISP indicators to the Intel Framework and Signature Framework automatically. Reports sightings directly back to MISP as they happen. Supports Zeek Clusters.
 script_dir = .
-tags = intel, MISP, sightings, signatures
+tags = intel, MISP, sightings, signatures, threat intelligence, threat intel, cyber
 version = master
 url = https://github.com/tylabs/dovehawk
 
+[dovehawk/dovehawk_dns]
+description = Dovehawk.io Passive DNS Capture Module.
+script_dir = ./scripts/
+tags = dns, pdns, log, passive, dovehawk
+url = https://github.com/tylabs/dovehawk_dns
+version = master
+
 [endace/bro-dag]
-build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
+build_command = ( ./configure && make )
 description = Packet source plugin that provides native support for Endace DAG capture cards.
 plugin_dir = build
 tags = packet source, plugin, broctl plugin, dag, endace
 test_command = ( cd tests && btest -d )
 url = https://github.com/endace/bro-dag
-version = v0.3.0
+version = v0.3.1
 
 [esnet/zeek_perfsonar_owamp]
 build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
@@ -375,13 +382,6 @@ test_command = cd tests && btest -d
 url = https://github.com/irtimmer/bro-xdp_packet-plugin
 version = master
 
-[j-gras/intel-extensions]
-description = Extensions for Bro's intelligence framework.
-script_dir = scripts
-tags = intel, expiration, removal, preserve files
-url = https://github.com/J-Gras/intel-extensions
-version = v0.3.0
-
 [j-gras/add-json]
 description = Additional JSON-logging for Bro.
 script_dir = scripts
@@ -398,6 +398,22 @@ tags = log, logging, conn, add node name, add worker
 url = https://github.com/J-Gras/add-node-names
 version = master
 
+[j-gras/add-interfaces]
+depends = 
+	bro >=2.5
+description = Adds cluster node's interface to logs.
+script_dir = scripts
+tags = log, logging, conn, add interface, add worker
+url = https://github.com/J-Gras/add-interfaces
+version = master
+
+[j-gras/intel-extensions]
+description = Extensions for Bro's intelligence framework.
+script_dir = scripts
+tags = intel, removal, preserve files
+url = https://github.com/J-Gras/intel-extensions
+version = v0.4.0
+
 [j-gras/intel-seen-more]
 description = Additional seen-triggers for Bro's intelligence framework.
 script_dir = scripts
@@ -406,6 +422,15 @@ suggests =
 tags = intel, seen
 url = https://github.com/J-Gras/intel-seen-more
 version = 0.3.0
+
+[j-gras/intel-expire]
+credits = Jan Grashoefer <jan.grashoefer@gmail.com>
+description = Per item expiration for Zeek's intelligence framework.
+script_dir = scripts
+tags = intel, expiration
+test_command = cd testing && btest -d
+url = https://github.com/J-Gras/intel-expire
+version = master
 
 [j-gras/bro-af_packet-plugin]
 build_command = ./configure && make
@@ -480,7 +505,7 @@ script_dir = plugin/scripts/Demo/Rot13
 tags = example, test, bro plugin, broctl plugin, rot13, cipher
 test_command = cd testing && btest -d tests
 url = https://github.com/jsiwek/bro-test-package
-version = 1.0.6
+version = 1.0.7
 
 [jsiwek/bro_bitcoin]
 description = Detects Bitcoin, Litecoin, or other cryptocurrency
@@ -521,7 +546,7 @@ script_dir = scripts
 tags = bro plugin, protocol analyzer, http2, intel
 test_command = make test
 url = https://github.com/MITRECND/bro-http2
-version = 0.4.1
+version = 0.4.2
 
 [ncsa/bro-interface-setup]
 description = A broctl plugin that helps you setup capture interfaces
@@ -531,14 +556,14 @@ url = https://github.com/ncsa/bro-interface-setup
 version = master
 
 [ncsa/bro-doctor]
+depends = 
+	j-gras/add-node-names *
 description = A broctl plugin that helps you troubleshoot common problems
 	For cluster-related checks, the package "add-node-names" is recommended.
 plugin_dir = .
-suggests = 
-	bro/j-gras/add-node-names *
 tags = broctl plugin, troubleshoot
 url = https://github.com/ncsa/bro-doctor
-version = 1.21.4
+version = 2.0.0
 
 [ncsa/bro-is-darknet]
 description = This plugin adds a Site::is_darknet function.
@@ -691,7 +716,7 @@ description = HTTP Content-Security-Policy report parser
 script_dir = scripts
 tags = CSP intel
 url = https://github.com/srozb/http_csp
-version = 1.0.0
+version = 1.0.1
 
 [theflakes/bro-large_uploads]
 description = Raise notices on outgoing files over X bytes in size.
