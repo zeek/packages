@@ -205,6 +205,33 @@ tags = plugin, analyzer, quic
 url = https://github.com/dopheide-esnet/bro-quic
 version = 0.1
 
+[dopheide/zeek-ntp-monlist]
+depends = 
+	zeek >=2.6-744
+description = This script just replaces the old ntp-monlist script to work with Zeek 3.0.0+
+script_dir = scripts
+tags = ntp, NTP, monlist, ddos
+test_command = cd tests && btest -d ntp_tests
+version = master
+url = https://github.com/dopheide-esnet/zeek-ntp-monlist
+
+[dopheide/zeek-known-hosts-with-dns]
+description = This script expands the base known-hosts policy to include reverse DNS queries and syncs it across all workers.
+script_dir = scripts
+tags = known-hosts, known_hosts, dns
+test_command = cd tests && btest -d known_tests
+version = master
+url = https://github.com/dopheide-esnet/zeek-known-hosts-with-dns
+
+[dopheide/zeek-ssh-interesting-hostnames-with-known]
+depends = https://github.com/dopheide-esnet/zeek-known-hosts-with-dns *
+description = This script replaces the default ssh/interesting-hostnames and reduces the number of asyncrhonous when() calls made by Zeek.
+script_dir = scripts
+tags = dns, ssh, interesting-hostnames
+test_command = cd tests && btest -d ssh_tests
+version = master
+url = https://github.com/dopheide-esnet/zeek-ssh-interesting-hostnames-with-known
+
 [dovehawk/dovehawk]
 description = MISP+Zeek. Dovehawk is a Zeek Module to import MISP indicators to the Intel Framework and Signature Framework automatically. Reports sightings directly back to MISP as they happen. Supports Zeek Clusters.
 script_dir = .
@@ -563,7 +590,7 @@ description = A broctl plugin that helps you troubleshoot common problems
 plugin_dir = .
 tags = broctl plugin, troubleshoot
 url = https://github.com/ncsa/bro-doctor
-version = 2.0.0
+version = 2.0.1
 
 [ncsa/bro-is-darknet]
 description = This plugin adds a Site::is_darknet function.
