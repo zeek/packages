@@ -183,6 +183,13 @@ tags = plugin, analyzer, gquic, quic
 url = https://github.com/corelight/bro-quic
 version = v0.2
 
+[cybera/zeek-sniffpass]
+description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
+script_dir = bro
+tags = password, logging
+version = master
+url = https://github.com/cybera/zeek-sniffpass
+
 [dopheide/bro_notice_correlation]
 description = Adds support for multi-notice correlation. For more information, see http://blog.samoehlert.com/correlating-bro-notices or the talk from BroCon 2016.
 script_dir = scripts
@@ -220,7 +227,7 @@ description = This script expands the base known-hosts policy to include reverse
 script_dir = scripts
 tags = known-hosts, known_hosts, dns
 test_command = cd tests && btest -d known_tests
-version = master
+version = v1.0.0
 url = https://github.com/dopheide-esnet/zeek-known-hosts-with-dns
 
 [dopheide/zeek-ssh-interesting-hostnames-with-known]
