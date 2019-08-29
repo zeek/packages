@@ -649,6 +649,13 @@ tags = bro plugin, notices, slack webhook
 url = https://github.com/pgaulon/bro-notice-slack
 version = 1.0.0
 
+[precurse/zeek-httpattacks]
+description = Checks for HTTP anomalies typically used for attacking.
+script_dir = scripts
+tags = http, detection
+version = master
+url = https://github.com/precurse/zeek-httpattacks
+
 [reservoirlabs/fix-ascii]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
 description = ASCII FIX analyzer package
