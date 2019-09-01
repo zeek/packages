@@ -784,6 +784,12 @@ tags = CSP intel
 url = https://github.com/srozb/http_csp
 version = 1.0.1
 
+[tenzir/zeek-mac-ages]
+scripts_dir = scripts/tenzir/mac-ages
+tags = conn, mac
+url = https://github.com/tenzir/zeek-mac-ages
+version = master
+
 [theflakes/bro-large_uploads]
 description = Raise notices on outgoing files over X bytes in size.
 	Also raise notices for multiple large outgoing Tx's in Y time frame.
