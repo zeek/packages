@@ -474,6 +474,15 @@ test_command = cd testing && btest -d
 url = https://github.com/J-Gras/intel-expire
 version = master
 
+[j-gras/intel-limiter]
+credits = Jan Grashoefer <jan.grashoefer@gmail.com>
+description = Limiter for Zeek's intelligence framework.
+script_dir = scripts
+tags = intel, limits, threshold
+test_command = cd testing && btest -d
+url = https://github.com/J-Gras/intel-limiter
+version = master
+
 [j-gras/bro-af_packet-plugin]
 build_command = ./configure && make
 depends = 
@@ -575,6 +584,14 @@ script_dir = scripts
 tags = smb, logging
 url = https://github.com/klehigh/find_smbv1
 version = 1.0.0
+
+[lexibrent/zeek-EternalSafety]
+description = EternalSafety is a Zeek/Bro package for detecting potentially-dangerous SMBv1 protocol violations that encapsulate bugs exploited by the infamous Eternal* family of Windows exploits. It is capable of detecting EternalBlue, EternalSynergy/EternalRomance, EternalChampion, and the DoublePulsar backdoor. However, rather than identifying these exploits via simple signature-matching, *EternalSafety* instead implements a set of SMBv1 protocol invariants that encapsulate techniques used by each Eternal* exploit to trigger bugs in unpatched Windows systems. EternalSafety accurately and reliably identifies the EternalBlue, EternalSynergy and EternalRomance exploits, and the DoublePulsar backdoor implant. Due to limitations in Zeek's SMBv1 support, it has limited support for detecting EternalChampion via signature-matching. EternalSafety also identifies a range of other protocol violations, such as the use of unimplemented/unused SMBv1 commands, server-initiated changes in values that may only be set by an SMBv1 client, and incorrect interleaving of transaction types.
+script_dir = scripts
+tags = SMB, Windows, attack, notice, Eternal, SMBv1, EternalBlue
+test_command = cd tests && make test
+version = master
+url = https://github.com/lexibrent/zeek-EternalSafety
 
 [mitrecnd/bro-http2]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
