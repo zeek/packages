@@ -214,12 +214,12 @@ version = 0.1
 
 [dopheide/zeek-ntp-monlist]
 depends = 
-	zeek >=2.6-744
+	zeek >=3.0.0
 description = This script just replaces the old ntp-monlist script to work with Zeek 3.0.0+
 script_dir = scripts
 tags = ntp, NTP, monlist, ddos
 test_command = cd tests && btest -d ntp_tests
-version = master
+version = v1.0.1
 url = https://github.com/dopheide-esnet/zeek-ntp-monlist
 
 [dopheide/zeek-known-hosts-with-dns]
@@ -251,6 +251,24 @@ description = Dovehawk.io Passive DNS Capture Module.
 script_dir = ./scripts/
 tags = dns, pdns, log, passive, dovehawk
 url = https://github.com/tylabs/dovehawk_dns
+version = master
+
+[dovehawk/dovehawk_flow]
+description = Dovehawk Anonymized Outbound Flow Tracking
+script_dir = ./scripts/
+tags = netflow, connections, log, remote, dovehwak
+url = https://github.com/tylabs/dovehawk_flow
+version = 1.0.0
+
+[emojifier/emojifier]
+credits = Jan Grashoefer <jan.grashoefer@gmail.com>,
+	Matthias Grundmann <matthias.grundmann@kit.edu>,
+	Florian Jacob <florian.jacob@kit.edu>
+description = Set your logs on fire with Emojifier!
+script_dir = scripts
+tags = emoji, fire, emojifier
+test_command = cd testing && btest -d
+url = https://github.com/emojifier/emojifier
 version = master
 
 [endace/bro-dag]
@@ -658,6 +676,13 @@ user_vars =
 url = https://github.com/ncsa/bro-zeromq-writer
 version = master
 
+[nskelsey/aaalm]
+description = tag and group devices based on the LAN's structure
+script_dir = scripts
+tags = topology, mapping, visualization
+version = master
+url = https://github.com/nskelsey/aaalm
+
 [ntop/bro-pf_ring]
 build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
 description = Packet source plugin that provides native PF_RING support.
@@ -788,6 +813,15 @@ version = 1.0.1
 scripts_dir = scripts/tenzir/mac-ages
 tags = conn, mac
 url = https://github.com/tenzir/zeek-mac-ages
+version = master
+
+[tenzir/zeek-vast]
+depends = 
+	zeek >= 2.6-beta2-14
+description = A package that enables Zeek to communicate with VAST
+script_dir = scripts
+tags = vast, intel
+url = https://github.com/tenzir/zeek-vast
 version = master
 
 [theflakes/bro-large_uploads]
