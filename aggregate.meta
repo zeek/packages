@@ -214,12 +214,12 @@ version = 0.1
 
 [dopheide/zeek-ntp-monlist]
 depends = 
-	zeek >=3.0.0
+	zeek >=3.0.0-rc1
 description = This script just replaces the old ntp-monlist script to work with Zeek 3.0.0+
 script_dir = scripts
 tags = ntp, NTP, monlist, ddos
 test_command = cd tests && btest -d ntp_tests
-version = v1.0.1
+version = v1.0.2
 url = https://github.com/dopheide-esnet/zeek-ntp-monlist
 
 [dopheide/zeek-known-hosts-with-dns]
@@ -227,7 +227,7 @@ description = This script expands the base known-hosts policy to include reverse
 script_dir = scripts
 tags = known-hosts, known_hosts, dns
 test_command = cd tests && btest -d known_tests
-version = v1.0.0
+version = v1.0.1
 url = https://github.com/dopheide-esnet/zeek-known-hosts-with-dns
 
 [dopheide/zeek-ssh-interesting-hostnames-with-known]
@@ -236,7 +236,7 @@ description = This script replaces the default ssh/interesting-hostnames and red
 script_dir = scripts
 tags = dns, ssh, interesting-hostnames
 test_command = cd tests && btest -d ssh_tests
-version = master
+version = v1.0.1
 url = https://github.com/dopheide-esnet/zeek-ssh-interesting-hostnames-with-known
 
 [dovehawk/dovehawk]
@@ -287,6 +287,22 @@ tags = plugin, analyzer, owamp, perfsonar
 test_command = cd tests && btest
 url = https://github.com/esnet/zeek_perfsonar_owamp
 version = master
+
+[esnet/zeek-exporter]
+build_command = ./configure && make
+config_files = scripts/conf.dat
+credits = Vlad Grigorescu <vlad@es.net>
+depends = 
+	zeek >=2.6.0
+description = Prometheus exporter for Zeek performance data
+external_depends = 
+	cmake >=3.5
+	libcurl-devel *
+script_dir = scripts/ESnet/Zeek_Exporter
+tags = zeek plugin, performance, perf, stats, prometheus
+test_command = cd tests && btest -d
+url = https://github.com/esnet/zeek-exporter
+version = 0.1.0
 
 [fatemabw/bro-inventory-scripts]
 description = Find different type of OSes and AV software in your network traffic.
@@ -677,9 +693,9 @@ url = https://github.com/ncsa/bro-zeromq-writer
 version = master
 
 [nskelsey/aaalm]
-description = tag and group devices based on the LAN's structure
+description = Tag and group devices based on a LAN's structure
 script_dir = scripts
-tags = topology, mapping, visualization
+tags = topology, mapping, visualization, traceroute
 version = master
 url = https://github.com/nskelsey/aaalm
 
