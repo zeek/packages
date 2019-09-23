@@ -298,6 +298,7 @@ description = Prometheus exporter for Zeek performance data
 external_depends = 
 	cmake >=3.5
 	libcurl-devel *
+plugin_dir = ./build/ESnet_Zeek_Exporter.tgz
 script_dir = scripts/ESnet/Zeek_Exporter
 tags = zeek plugin, performance, perf, stats, prometheus
 test_command = cd tests && btest -d
