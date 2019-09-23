@@ -867,10 +867,10 @@ url = https://github.com/vitalyrepin/uap-bro
 
 [zeek/osquery-framework]
 depends = 
-	zeek >= 3.0.0
+	zeek >=3.0.0-rc1
 description = Osquery script framework for communicating with osquery endpoints
 script_dir = osquery-framework
 tags = osquery
-version = v0.1
+version = v0.4
 url = https://github.com/zeek/osquery-framework
 
