@@ -227,7 +227,7 @@ description = This script expands the base known-hosts policy to include reverse
 script_dir = scripts
 tags = known-hosts, known_hosts, dns
 test_command = cd tests && btest -d known_tests
-version = v1.0.1
+version = v1.0.2
 url = https://github.com/dopheide-esnet/zeek-known-hosts-with-dns
 
 [dopheide/zeek-ssh-interesting-hostnames-with-known]
@@ -259,6 +259,17 @@ script_dir = ./scripts/
 tags = netflow, connections, log, remote, dovehwak
 url = https://github.com/tylabs/dovehawk_flow
 version = 1.0.0
+
+[dw2102/S7Comm-Analyzer]
+build_command = ./configure && make
+credits = D. Wullen <d.wullen@gmx.de>
+description = Protocol parser for the Siemens S7Comm and S7CommPlus protocol.
+	Both parser are based on the Iso-Over-TCP protocol. Not all functions are covered
+	in this analyzer, it may not capture all of the packets.
+script_dir = scripts/
+tags = s7comm, zeek plugin, s7commplus, siemens, zeek, protocol analyzer
+version = master
+url = https://github.com/dw2102/S7Comm-Analyzer
 
 [emojifier/emojifier]
 credits = Jan Grashoefer <jan.grashoefer@gmail.com>,
@@ -556,7 +567,7 @@ version = 0.3.0
 depends = https://github.com/sethhall/domain-tld *
 description = A module for tracking and correlating abnormal DNS behavior. Detection of tunneling and C&C through connection duration and volume, request and answer size, DNS request type, and unique queries per domain.
 tags = bro scripting, dns, domain, notices
-version = master
+version = 1.0.0
 url = https://github.com/jbaggs/anomalous-dns
 
 [jmellander/BinaryHeap]
@@ -672,13 +683,13 @@ version = 0.5
 [ncsa/bro-simple-scan]
 depends = 
 	bro >=2.5.1
-	bro/ncsa/bro-is-darknet >=0.3
+	ncsa/bro-is-darknet >=0.3
 description = Simple, high performance tcp scan detection
 script_dir = scripts
 tags = bro plugin, scan detection
 test_command = (cd testing && btest -d)
 url = https://github.com/ncsa/bro-simple-scan
-version = 1.1
+version = 1.2
 
 [ncsa/bro-zeromq-writer]
 build_command = ./configure --bro-dist=%(bro_dist)s --with-zmq=%(ZEROMQ_PREFIX)s && make
