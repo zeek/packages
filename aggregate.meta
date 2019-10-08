@@ -37,6 +37,46 @@ tags = bro plugin, MongoDB, writer, security, conn, logging, rita
 version = master
 url = https://github.com/activecm/bro-rita.git
 
+[amzn/zeek-plugin-bacnet]
+build_command = ./configure && make
+description = Plugin that enables parsing of the BACnet standard building controls protocol
+script_dir = scripts
+tags = zeek plugin, protocol analyzer, log writer, ics, bacnet
+url = https://github.com/amzn/zeek-plugin-bacnet
+version = master
+
+[amzn/zeek-plugin-enip]
+build_command = ./configure && make
+description = Plugin that enables parsing of the Ethernet/IP and Common Industrial Protocol standards
+script_dir = scripts
+tags = zeek plugin, protocol analyzer, log writer, ics, enip, cip
+url = https://github.com/amzn/zeek-plugin-enip
+version = master
+
+[amzn/zeek-plugin-profinet]
+build_command = ./configure && make
+description = Plugin that enables parsing of the Profinet protocol
+script_dir = scripts
+tags = zeek plugin, protocol analyzer, log writer, ics, profinet
+url = https://github.com/amzn/zeek-plugin-profinet
+version = master
+
+[amzn/zeek-plugin-s7comm]
+build_command = ./configure && make
+description = Plugin that enables parsing of the S7 protocol
+script_dir = scripts
+tags = zeek plugin, protocol analyzer, log writer, ics, s7
+url = https://github.com/amzn/zeek-plugin-s7comm
+version = master
+
+[amzn/zeek-plugin-tds]
+build_command = ./configure && make
+description = Plugin that enables parsing of the Tabular Data Stream (TDS) protocol
+script_dir = scripts
+tags = zeek plugin, protocol analyzer, log writer, tds
+url = https://github.com/amzn/zeek-plugin-tds
+version = master
+
 [anthonykasza/indicator-rules]
 depemds = 
 	bro >= 2.6
@@ -764,6 +804,14 @@ description = binary FIX analyzer package
 script_dir = scripts/RLABS/FIX_SBE
 tags = bro plugin, bro analyzer, binary FIX protocol analyzer
 url = https://github.com/reservoirlabs/fix-binary
+version = master
+
+[reservoirlabs/sflow]
+build_command = ./configure --zeek-dist=%(zeek_dist)s && make
+description = sFlow analyzer package
+script_dir = scripts/RLABS/SFLOW/
+tags = zeek plugin, zeek analyzer, sFlow protocol analyzer
+url = https://github.com/reservoirlabs/sflow
 version = master
 
 [salesforce/ja3]
