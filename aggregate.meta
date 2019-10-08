@@ -458,6 +458,22 @@ test_command = ( cd tests && btest -d )
 version = master
 url = https://github.com/initconf/detect-kaspersky
 
+[initconf/ws-discovery-dos]
+description = udp-scan
+script_dir = scripts
+tags = ws-discovery, scan, dos, toshiba, copiers, scanners
+test_command = ( cd tests && btest -d )
+version = master
+url = https://github.com/initconf/ws-discovery-dos
+
+[initconf/Apple-RDP-net-assistant-DoS.git]
+description = udp-3283-DoS
+script_dir = scripts
+tags = net_listerner, Apple RDP, udp DoS
+test_command = ( cd tests && btest -d )
+version = master
+url = https://github.com/initconf/Apple-RDP-net-assistant-DoS.git
+
 [irtimmer/bro-xdp_packet-plugin]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
 depends = 
