@@ -678,6 +678,13 @@ test_command = cd tests btest -d tcprs
 url = https://github.com/jswaro/tcprs
 version = 0.2.1
 
+[justinazoff/zeek-jemalloc-profiling]
+description = A broctl plugin that enables jemalloc profiling
+plugin_dir = .
+tags = broctl, jemalloc, profiling
+url = https://github.com/JustinAzoff/zeek-jemalloc-profiling
+version = master
+
 [klehigh/find_smbv1]
 depends = 
 	bro >=2.5.0
