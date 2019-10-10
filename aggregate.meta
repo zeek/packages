@@ -23,6 +23,14 @@ test_command = cd tests && btest -d
 url = https://github.com/0xxon/zeek-plugin-roca
 version = 0.0.1
 
+[0xxon/zeek-tls-log-alternative]
+description = "This package generates a file called tls.log. The difference from ssl.log is that it is much more focused on logging all kinds of protocol features. This can be interesting for academic purposes - or if one is just interested in more information about specific features used in local TLS traffic."
+script_dir = scripts
+tags = TLS, SSL, X509, Certificates, PKI
+test_command = cd tests && make
+version = master
+url = https://github.com/0xxon/zeek-tls-log-alternative
+
 [activecm/bro-mongodb.git]
 build_command = (./configure --bro-dist=%(bro_dist)s && make)
 description = Bro IDS/ MongoDB connector.
