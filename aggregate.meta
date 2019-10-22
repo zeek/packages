@@ -96,20 +96,19 @@ url = https://github.com/anthonykasza/indicator-rules
 
 [apache/metron-bro-plugin-kafka]
 build_command = ./configure --bro-dist=%(bro_dist)s --with-librdkafka=%(LIBRDKAFKA_ROOT)s && make
-config_files = scripts/init.bro
 depends = 
 	bro >=2.5.0
 	bro-pkg >=1.2
 description = A Bro log writer plugin that sends logging output to Kafka.
 external_depends = 
-	librdkafka ~0.9.4
+	librdkafka ~0.11.5
 plugin_dir = build
 script_dir = build/scripts/Apache/Kafka
 tags = log writer, bro plugin, kafka
 test_command = ( cd tests && btest -d )
 user_vars = 
 	LIBRDKAFKA_ROOT [/usr/local/lib] "Path to librdkafka installation tree"
-version = 0.2
+version = 0.3
 url = https://github.com/apache/metron-bro-plugin-kafka
 
 [bricata/flow_labels]
@@ -286,6 +285,16 @@ tags = dns, ssh, interesting-hostnames
 test_command = cd tests && btest -d ssh_tests
 version = v1.0.1
 url = https://github.com/dopheide-esnet/zeek-ssh-interesting-hostnames-with-known
+
+[dopheide/zeek-notice-config]
+depends = 
+	zeek >=3.0.0-rc1
+description = This script enables easy customation of how notice actions are handled.  It's built to work with eZeekConfigurator, but that isn't required.
+script_dir = scripts
+tags = notice, configuration, ezeekonfigurator, ezk
+test_command = cd tests && btest -d notice_tests
+version = master
+url = https://github.com/dopheide-esnet/zeek-notice-config
 
 [dovehawk/dovehawk]
 description = MISP+Zeek. Dovehawk is a Zeek Module to import MISP indicators to the Intel Framework and Signature Framework automatically. Reports sightings directly back to MISP as they happen. Supports Zeek Clusters.
@@ -749,18 +758,18 @@ script_dir = scripts
 tags = bro plugin, site, darknet
 test_command = (cd testing && btest -d)
 url = https://github.com/ncsa/bro-is-darknet
-version = 0.5
+version = 0.6
 
 [ncsa/bro-simple-scan]
 depends = 
 	bro >=2.5.1
-	ncsa/bro-is-darknet >=0.3
+	ncsa/bro-is-darknet >=0.6
 description = Simple, high performance tcp scan detection
 script_dir = scripts
 tags = bro plugin, scan detection
 test_command = (cd testing && btest -d)
 url = https://github.com/ncsa/bro-simple-scan
-version = 1.2
+version = 1.3
 
 [ncsa/bro-zeromq-writer]
 build_command = ./configure --bro-dist=%(bro_dist)s --with-zmq=%(ZEROMQ_PREFIX)s && make
