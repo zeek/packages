@@ -579,10 +579,10 @@ version = v0.4.0
 description = Additional seen-triggers for Bro's intelligence framework.
 script_dir = scripts
 suggests = 
-	bro/sethhall/domain-tld *
+	sethhall/domain-tld *
 tags = intel, seen
 url = https://github.com/J-Gras/intel-seen-more
-version = 0.3.0
+version = 0.3.1
 
 [j-gras/intel-expire]
 credits = Jan Grashoefer <jan.grashoefer@gmail.com>
@@ -769,7 +769,7 @@ script_dir = scripts
 tags = bro plugin, scan detection
 test_command = (cd testing && btest -d)
 url = https://github.com/ncsa/bro-simple-scan
-version = 1.3
+version = 1.4
 
 [ncsa/bro-zeromq-writer]
 build_command = ./configure --bro-dist=%(bro_dist)s --with-zmq=%(ZEROMQ_PREFIX)s && make
@@ -859,6 +859,14 @@ script_dir = bro
 tags = broker, Windows, Event Logs, Sysmon, logging
 version = master
 url = https://github.com/salesforce/bro-sysmon
+
+[salesforce/GQUIC_Protocol_Analyzer]
+build_command = test -e %(bro_dist)s/bro-path-dev.in && ( ./configure --bro-dist=%(bro_dist)s && make ) || ( ./configure && make )
+description = Protocol analyzer that detects, dissects, fingerprints, and logs GQUIC traffic
+plugin_dir = build/Salesforce_GQUIC.tgz
+script_dir = scripts/Salesforce/GQUIC
+url = https://github.com/salesforce/GQUIC_Protocol_Analyzer
+version = master
 
 [scebro/ldap-analyzer]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
