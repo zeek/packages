@@ -666,7 +666,7 @@ tags = sumstats
 url = https://github.com/JonZeolla/scan-sampling
 version = 0.1.0
 
-[jsiwek/bro-test-package]
+[jsiwek/zeek-test-package]
 aliases = zeek-test-package bro-test-package
 build_command = cd plugin && ./configure && make
 description = An example Zeek package for testing purposes.
@@ -674,15 +674,18 @@ plugin_dir = plugin/build
 script_dir = plugin/scripts/Demo/Rot13
 tags = example, test, bro plugin, broctl plugin, rot13, cipher
 test_command = cd testing && btest -d tests
-url = https://github.com/jsiwek/bro-test-package
+url = https://github.com/jsiwek/zeek-test-package
 version = 1.0.8
 
-[jsiwek/bro_bitcoin]
+[jsiwek/zeek-cryptomining]
+aliases = zeek-cryptomining bro_bitcoin
+depends = bro-pkg >=1.5.0
 description = Detects Bitcoin, Litecoin, or other cryptocurrency
 	mining traffic that uses getwork, getblocktemplate, or Stratum mining
-	protocols over TCP or HTTP.
-tags = signatures, bitcoin, mining, cryptocurrency
-url = https://github.com/jsiwek/bro_bitcoin
+	protocols over TCP or HTTP.  This package used to be named "bro_bitcoin".
+tags = signatures, bitcoin, mining, cryptocurrency, cryptomining, cryptocoin
+test_command = cd testing && btest -d tests
+url = https://github.com/jsiwek/zeek-cryptomining
 version = master
 
 [jswaro/tcprs]
