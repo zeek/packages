@@ -688,6 +688,14 @@ test_command = cd testing && btest -d tests
 url = https://github.com/jsiwek/zeek-cryptomining
 version = master
 
+[jsiwek/zeek-print-log-info]
+depends = zeek >=3.0.0
+description = Gathers and prints field descriptions for all Zeek logs.
+	The default output format is CSV files.
+tags = log, logs, logging, introspection, csv
+url = https://github.com/jsiwek/zeek-print-log-info
+version = master
+
 [jswaro/tcprs]
 build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
 description = TCP Retransmission and State Analyzer plugin for Bro.
