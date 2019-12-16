@@ -230,6 +230,33 @@ tags = plugin, analyzer, gquic, quic
 url = https://github.com/corelight/bro-quic
 version = v0.2
 
+[corelight/zeek-jpeg]
+build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
+description = This package provides some basic analysis for JPEG files.
+script_dir = scripts/Zeek/JPEG
+tags = intel, files, jpeg, jpg
+test_command = cd tests && btest
+url = https://github.com/corelight/zeek-jpeg
+version = master
+
+[corelight/zeek-macho]
+build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
+description = This package provides some basic analysis for Mach-o files.
+script_dir = scripts/Zeek/MACHO
+tags = intel, files, mach-o, macho
+test_command = cd tests && btest
+url = https://github.com/corelight/zeek-macho
+version = master
+
+[corelight/zeek-elf]
+build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
+description = This package provides some basic analysis for ELF files.
+script_dir = scripts/Zeek/ELF
+tags = intel, files, elf
+test_command = cd tests && btest
+url = https://github.com/corelight/zeek-elf
+version = master
+
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
 script_dir = scripts
@@ -729,6 +756,13 @@ tags = SMB, Windows, attack, notice, Eternal, SMBv1, EternalBlue
 test_command = cd tests && make test
 version = master
 url = https://github.com/lexibrent/zeek-EternalSafety
+
+[mitre-attack/bzar]
+description = BZAR - Bro/Zeek ATT&CK-based Analytics and Reporting.
+script_dir = scripts
+tags = bzar, att&ck, attack, analytics, cyber analytics repository, car, smb, rpc, dce-rpc
+url = https://github.com/mitre-attack/bzar
+version = master
 
 [mitrecnd/bro-http2]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
