@@ -31,6 +31,21 @@ test_command = cd tests && make
 version = master
 url = https://github.com/0xxon/zeek-tls-log-alternative
 
+[0xxon/cve-2020-0601]
+description = "Test script for CVE-2020-0601. Please read Readme."
+script_dir = scripts
+test_command = cd testing && btest -d
+url = https://github.com/0xxon/cve-2020-0601
+version = master
+
+[0xxon/cve-2020-0601-plugin]
+build_command = ( ./configure && make )
+description = "Test script for CVE-2020-0601. Binary package, requires OpenSSL 1.1.x"
+script_dir = scripts
+test_command = cd testing && btest -d
+url = https://github.com/0xxon/cve-2020-0601-plugin
+version = master
+
 [activecm/bro-mongodb.git]
 build_command = (./configure --bro-dist=%(bro_dist)s && make)
 description = Bro IDS/ MongoDB connector.
@@ -793,7 +808,7 @@ description = A broctl plugin that helps you troubleshoot common problems
 plugin_dir = .
 tags = broctl plugin, troubleshoot
 url = https://github.com/ncsa/bro-doctor
-version = 2.0.1
+version = 2.0.2
 
 [ncsa/bro-is-darknet]
 description = This plugin adds a Site::is_darknet function.
@@ -884,9 +899,9 @@ url = https://github.com/reservoirlabs/sflow
 version = master
 
 [salesforce/ja3]
-description = JA3 creates 32 character SSL client fingerprints and logs them as a field in ssl.log. These fingerprints can easily be shared as threat intelligence or used as correlation items for enhanced alerting and analysis. This package also adds JA3 to the Bro Intel Framework.
+description = JA3 creates 32 character SSL client fingerprints and logs them as a field in ssl.log. These fingerprints can easily be shared as threat intelligence or used as correlation items for enhanced alerting and analysis. This package also adds JA3 to the Zeek Intel Framework.
 	https://github.com/salesforce/ja3
-script_dir = bro
+script_dir = zeek
 tags = intel, ssl, logging
 version = master
 url = https://github.com/salesforce/ja3
@@ -979,7 +994,7 @@ url = https://github.com/srozb/http_csp
 version = 1.0.1
 
 [tenzir/zeek-mac-ages]
-scripts_dir = scripts/tenzir/mac-ages
+script_dir = scripts/tenzir/mac-ages
 tags = conn, mac
 url = https://github.com/tenzir/zeek-mac-ages
 version = master
