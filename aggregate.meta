@@ -252,7 +252,7 @@ script_dir = scripts/Zeek/JPEG
 tags = intel, files, jpeg, jpg
 test_command = cd tests && btest
 url = https://github.com/corelight/zeek-jpeg
-version = master
+version = v0.1.0
 
 [corelight/zeek-macho]
 build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
@@ -261,7 +261,7 @@ script_dir = scripts/Zeek/MACHO
 tags = intel, files, mach-o, macho
 test_command = cd tests && btest
 url = https://github.com/corelight/zeek-macho
-version = master
+version = v0.1.0
 
 [corelight/zeek-elf]
 build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
@@ -270,7 +270,7 @@ script_dir = scripts/Zeek/ELF
 tags = intel, files, elf
 test_command = cd tests && btest
 url = https://github.com/corelight/zeek-elf
-version = master
+version = v0.1.0
 
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
@@ -993,6 +993,13 @@ tags = CSP intel
 url = https://github.com/srozb/http_csp
 version = 1.0.1
 
+[stratosphereips/IRC-Zeek-package]
+description = Zeek Package that extracts features of IRC communication
+script_dir = scripts
+tags = zeek plugin, zeekctl plugin, irc, features extraction
+url = https://github.com/stratosphereips/IRC-Zeek-package
+version = v1.1
+
 [tenzir/zeek-mac-ages]
 script_dir = scripts/tenzir/mac-ages
 tags = conn, mac
@@ -1014,6 +1021,17 @@ description = Raise notices on outgoing files over X bytes in size.
 tags = notices, uploads, conns
 url = https://github.com/theflakes/bro-large_uploads
 version = master
+
+[ukncsc/zeek-plugin-ikev2]
+build_command = ( ./configure --bro-dist=%(bro_dist)s  && make )
+depends = 
+	zeek >=3.0.0
+description = Plugin that enables parsing of the IKEv2 protocol
+script_dir = scripts
+tags = zeek plugin, protocol analyzer, log writer, vpn, ike, ikev2
+test_command = ( cd tests && btest -d )
+url = https://github.com/ukncsc/zeek-plugin-ikev2
+version = v0.1
 
 [vitalyrepin/uap-bro]
 build_command = ./configure --bro-dist=%(bro_dist)s  && make
@@ -1041,13 +1059,3 @@ tags = osquery
 version = v0.4
 url = https://github.com/zeek/osquery-framework
 
-[ukncsc/zeek-plugin-ikev2]
-url = https://github.com/ukncsc/zeek-plugin-ikev2
-version = master
-depends = 
-	zeek >=3.0.0
-description = Plugin that enables parsing of the IKEv2 protocol
-tags = zeek plugin, protocol analyzer, log writer, vpn, ike, ikev2
-script_dir = scripts
-build_command = ./configure --bro-dist=%(bro_dist)s  && make
-test_command = ( cd tests && btest -d )
