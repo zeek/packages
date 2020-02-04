@@ -1041,3 +1041,13 @@ tags = osquery
 version = v0.4
 url = https://github.com/zeek/osquery-framework
 
+[ukncsc/zeek-plugin-ikev2]
+url = https://github.com/ukncsc/zeek-plugin-ikev2
+version = master
+depends = 
+	zeek >=3.0.0
+description = Plugin that enables parsing of the IKEv2 protocol
+tags = zeek plugin, protocol analyzer, log writer, vpn, ike, ikev2
+script_dir = scripts
+build_command = ./configure --bro-dist=%(bro_dist)s  && make
+test_command = ( cd tests && btest -d )
