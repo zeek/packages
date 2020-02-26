@@ -644,17 +644,29 @@ test_command = cd testing && btest -d
 url = https://github.com/J-Gras/intel-limiter
 version = master
 
+[j-gras/zeek-af_packet-plugin]
+build_command = ./configure && make
+depends = 
+	zkg >=2.0
+	zeek >=3.0.0
+description = This plugin provides native AF_Packet support for Zeek.
+plugin_dir = build/Zeek_AF_Packet.tgz
+tags = zeek plugin, zeekctl plugin, packet source, af_packet
+test_command = cd tests && btest -d
+url = https://github.com/J-Gras/zeek-af_packet-plugin
+version = 2.0.0
+
 [j-gras/bro-af_packet-plugin]
 build_command = ./configure && make
 depends = 
-	bro-pkg >=1.2
-	bro >=2.5.0
-description = This plugin provides native AF_Packet support for Bro.
-plugin_dir = build/Bro_AF_Packet.tgz
-tags = bro plugin, broctl plugin, packet source, af_packet
+	zkg >=2.0
+	zeek >=3.0.0
+description = This plugin provides native AF_Packet support for Zeek.
+plugin_dir = build/Zeek_AF_Packet.tgz
+tags = zeek plugin, zeekctl plugin, packet source, af_packet
 test_command = cd tests && btest -d
 url = https://github.com/J-Gras/bro-af_packet-plugin
-version = 1.4.0
+version = 2.0.0
 
 [j-gras/bro-lognorm]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
@@ -682,7 +694,7 @@ version = 0.3.0
 depends = https://github.com/sethhall/domain-tld *
 description = A module for tracking and correlating abnormal DNS behavior. Detection of tunneling and C&C through connection duration and volume, request and answer size, DNS request type, and unique queries per domain.
 tags = bro scripting, dns, domain, notices
-version = 1.0.0
+version = 1.0.2
 url = https://github.com/jbaggs/anomalous-dns
 
 [jmellander/BinaryHeap]
@@ -777,6 +789,16 @@ description = BZAR - Bro/Zeek ATT&CK-based Analytics and Reporting.
 script_dir = scripts
 tags = bzar, att&ck, attack, analytics, cyber analytics repository, car, smb, rpc, dce-rpc
 url = https://github.com/mitre-attack/bzar
+version = master
+
+[mitre/icap]
+build_command = ./configure --bro-dist=%(bro_dist)s && make
+depends = 
+	bro >=2.5.0
+description = Internet Content Adaptation Protocol (ICAP) Analyzer for Bro and Zeek.
+script_dir = scripts
+tags = bro plugin, zeek plugin, protocol analyzer, internet content adaptation protocol, icap, https plain text
+url = https://github.com/mitre/icap
 version = master
 
 [mitrecnd/bro-http2]
@@ -995,10 +1017,9 @@ version = 1.0.1
 
 [stratosphereips/IRC-Zeek-package]
 description = Zeek Package that extracts features of IRC communication
-script_dir = scripts
-tags = zeek plugin, zeekctl plugin, irc, features extraction
+tags = zeek plugin, irc, features extraction
 url = https://github.com/stratosphereips/IRC-Zeek-package
-version = v1.1
+version = v1.2
 
 [tenzir/zeek-mac-ages]
 script_dir = scripts/tenzir/mac-ages
