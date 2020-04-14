@@ -62,6 +62,9 @@ url = https://github.com/activecm/bro-rita.git
 
 [amzn/zeek-plugin-bacnet]
 build_command = ./configure && make
+depends = 
+	zkg >=2.0
+	zeek >=3.0.0
 description = Plugin that enables parsing of the BACnet standard building controls protocol
 script_dir = scripts
 tags = zeek plugin, protocol analyzer, log writer, ics, bacnet
@@ -70,6 +73,9 @@ version = master
 
 [amzn/zeek-plugin-enip]
 build_command = ./configure && make
+depends = 
+	zkg >=2.0
+	zeek >=3.0.0
 description = Plugin that enables parsing of the Ethernet/IP and Common Industrial Protocol standards
 script_dir = scripts
 tags = zeek plugin, protocol analyzer, log writer, ics, enip, cip
@@ -78,6 +84,9 @@ version = master
 
 [amzn/zeek-plugin-profinet]
 build_command = ./configure && make
+depends = 
+	zkg >=2.0
+	zeek >=3.0.0
 description = Plugin that enables parsing of the Profinet protocol
 script_dir = scripts
 tags = zeek plugin, protocol analyzer, log writer, ics, profinet
@@ -86,6 +95,9 @@ version = master
 
 [amzn/zeek-plugin-s7comm]
 build_command = ./configure && make
+depends = 
+	zkg >=2.0
+	zeek >=3.0.0
 description = Plugin that enables parsing of the S7 protocol
 script_dir = scripts
 tags = zeek plugin, protocol analyzer, log writer, ics, s7
@@ -94,6 +106,9 @@ version = master
 
 [amzn/zeek-plugin-tds]
 build_command = ./configure && make
+depends = 
+	zkg >=2.0
+	zeek >=3.0.0
 description = Plugin that enables parsing of the Tabular Data Stream (TDS) protocol
 script_dir = scripts
 tags = zeek plugin, protocol analyzer, log writer, tds
@@ -212,15 +227,6 @@ tags = dns, sumstats, log, measurement, top
 url = https://github.com/corelight/top-dns
 version = master
 
-[corelight/bro-community-id]
-build_command = ./configure && make
-description = "Community ID" flow hash support in conn.log
-script_dir = scripts/Corelight/CommunityID
-tags = bro plugin, conn, logging, community id, flow hashing, flow id, sha1, corelight
-test_command = cd tests && btest -c btest.cfg -d communityid
-url = https://github.com/corelight/bro-community-id
-version = 1.2
-
 [corelight/json-streaming-logs]
 description = JSON streaming logs
 script_dir = scripts
@@ -245,6 +251,24 @@ tags = plugin, analyzer, gquic, quic
 url = https://github.com/corelight/bro-quic
 version = v0.2
 
+[corelight/zeek-community-id]
+build_command = ./configure && make
+description = "Community ID" flow hash support in conn.log
+script_dir = scripts/Corelight/CommunityID
+tags = bro plugin, conn, logging, community id, flow hashing, flow id, sha1, corelight
+test_command = cd tests && btest -c btest.cfg -d communityid
+url = https://github.com/corelight/zeek-community-id
+version = 1.2
+
+[corelight/zeek-elf]
+build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
+description = This package provides some basic analysis for ELF files.
+script_dir = scripts/Zeek/ELF
+tags = intel, files, elf
+test_command = cd tests && btest
+url = https://github.com/corelight/zeek-elf
+version = v0.1.0
+
 [corelight/zeek-jpeg]
 build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
 description = This package provides some basic analysis for JPEG files.
@@ -261,15 +285,6 @@ script_dir = scripts/Zeek/MACHO
 tags = intel, files, mach-o, macho
 test_command = cd tests && btest
 url = https://github.com/corelight/zeek-macho
-version = v0.1.0
-
-[corelight/zeek-elf]
-build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
-description = This package provides some basic analysis for ELF files.
-script_dir = scripts/Zeek/ELF
-tags = intel, files, elf
-test_command = cd tests && btest
-url = https://github.com/corelight/zeek-elf
 version = v0.1.0
 
 [cybera/zeek-sniffpass]
@@ -347,7 +362,7 @@ url = https://github.com/tylabs/dovehawk
 
 [dovehawk/dovehawk_dns]
 description = Dovehawk.io Passive DNS Capture Module.
-script_dir = ./scripts/
+script_dir = .
 tags = dns, pdns, log, passive, dovehawk
 url = https://github.com/tylabs/dovehawk_dns
 version = master
@@ -391,7 +406,7 @@ url = https://github.com/endace/bro-dag
 version = v0.3.1
 
 [esnet/zeek_perfsonar_owamp]
-build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
+build_command = ( ./configure --zeek-dist=%(zeek_dist)s && make )
 plugin_dir = build/PerfSONAR_OWAMP.tgz
 tags = plugin, analyzer, owamp, perfsonar
 test_command = cd tests && btest
@@ -438,13 +453,13 @@ version = master
 url = https://github.com/hhzzk/dns-tunnels
 
 [hosom/file-extraction]
-config_files = scripts/config.bro
+config_files = scripts/config.zeek
 depends = 
-	bro >=2.5.0
-description = Extract files from network traffic with Bro.
+	zeek >=3.0.0
+description = Extract files from network traffic with Zeek.
 script_dir = scripts
 tags = files, file extraction, file analysis
-version = master
+version = 2.0.3
 url = https://github.com/hosom/file-extraction
 
 [hosom/log-filters]
@@ -586,29 +601,32 @@ url = https://github.com/irtimmer/bro-xdp_packet-plugin
 version = master
 
 [j-gras/add-json]
-description = Additional JSON-logging for Bro.
+depends = 
+	zeek >=3.0
+description = Additional JSON-logging for Zeek.
 script_dir = scripts
 tags = log, logging, JSON
+test_command = cd tests && btest -d
 url = https://github.com/J-Gras/add-json
-version = 1.1.0
+version = 2.0.0
 
 [j-gras/add-node-names]
 depends = 
-	bro >=2.5
+	zeek >=2.5
 description = Adds cluster node name to logs.
 script_dir = scripts
 tags = log, logging, conn, add node name, add worker
 url = https://github.com/J-Gras/add-node-names
-version = master
+version = 2.0.0
 
 [j-gras/add-interfaces]
 depends = 
-	bro >=2.5
+	zeek >=3.0
 description = Adds cluster node's interface to logs.
 script_dir = scripts
 tags = log, logging, conn, add interface, add worker
 url = https://github.com/J-Gras/add-interfaces
-version = master
+version = 2.0.0
 
 [j-gras/intel-extensions]
 description = Extensions for Bro's intelligence framework.
@@ -784,6 +802,15 @@ test_command = cd tests && make test
 version = master
 url = https://github.com/lexibrent/zeek-EternalSafety
 
+[micrictor/spl-spt]
+credits = Michael Torres <mic.ric.tor@gmail.com>
+description = A package that creates a log for sequences of packet lengths and times,
+	allowing for new analytics based on these data features.
+script_dir = scripts
+tags = ssl, tls, spt, spl
+url = https://github.com/micrictor/spl-spt
+version = master
+
 [mitre-attack/bzar]
 description = BZAR - Bro/Zeek ATT&CK-based Analytics and Reporting.
 script_dir = scripts
@@ -830,7 +857,7 @@ description = A broctl plugin that helps you troubleshoot common problems
 plugin_dir = .
 tags = broctl plugin, troubleshoot
 url = https://github.com/ncsa/bro-doctor
-version = 2.0.2
+version = 2.0.4
 
 [ncsa/bro-is-darknet]
 description = This plugin adds a Site::is_darknet function.
@@ -1018,8 +1045,8 @@ version = 1.0.1
 [stratosphereips/IRC-Zeek-package]
 description = Zeek Package that extracts features of IRC communication
 tags = zeek plugin, irc, features extraction
+version = v1.4
 url = https://github.com/stratosphereips/IRC-Zeek-package
-version = v1.2
 
 [tenzir/zeek-mac-ages]
 script_dir = scripts/tenzir/mac-ages
