@@ -287,6 +287,16 @@ test_command = cd tests && btest
 url = https://github.com/corelight/zeek-macho
 version = v0.1.0
 
+[corelight/got_zoom]
+depends = 
+	bro >=2.5.5
+	ja3 *
+description = Detect Zoom traffic
+script_dir = scripts
+tags = TLS, SSL, JA3, Video conferencing, Video, Videoconferencing, Remote working, Zoom
+version = master
+url = https://github.com/corelight/got_zoom
+
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
 script_dir = scripts
