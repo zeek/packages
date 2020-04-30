@@ -921,10 +921,11 @@ url = https://github.com/ntop/bro-pf_ring
 version = master
 
 [pgaulon/zeek-notice-slack]
-description = Bro Notices through Slack webhook
-tags = bro plugin, notices, slack webhook
+aliases = zeek-notice-slack bro-notice-slack
+description = Zeek Notices through Slack webhook
+tags = zeek plugin, notices, slack webhook
 url = https://github.com/pgaulon/zeek-notice-slack
-version = 1.0.0
+version = 1.0.1
 
 [precurse/zeek-httpattacks]
 description = Checks for HTTP anomalies typically used for attacking.
@@ -967,8 +968,8 @@ url = https://github.com/salesforce/ja3
 
 [salesforce/hassh]
 description = HASSH is used to identify specific Client and Server SSH implementations. The fingerprints can be stored, searched and shared in the form of an MD5 fingerprint. This package logs components to ssh.log
-script_dir = bro
-tags = bro plugin, ssh, fingerprint, logging
+script_dir = zeek
+tags = zeek plugin, ssh, fingerprint, logging
 version = master
 url = https://github.com/salesforce/hassh
 
@@ -1036,6 +1037,17 @@ description = A Bro package for finding new file signatures.
 script_dir = scripts
 tags = files, signature
 url = https://github.com/sethhall/unknown-mime-type-discovery
+version = master
+
+[sirinsoftware/zeek-testimony-plugin.git]
+build_command = ./configure && make -C build
+depends = 
+	zkg >=2.0
+	zeek >=3.0.0
+description = This plugin provides Testimony support for Zeek.
+plugin_dir = build/Zeek_Testimony.tgz
+tags = zeek plugin, packet source, testimony
+url = https://github.com/MalakhatkoVadym/zeek-testimony-plugin.git
 version = master
 
 [srozb/dns_axfr]
