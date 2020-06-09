@@ -46,6 +46,13 @@ test_command = cd testing && btest -d
 url = https://github.com/0xxon/cve-2020-0601-plugin
 version = master
 
+[0xxon/cve-2020-13777]
+description = "Test script for CVE-2020-13777. Please read Readme."
+script_dir = scripts
+test_command = cd testing && btest -d
+url = https://github.com/0xxon/cve-2020-13777
+version = master
+
 [activecm/bro-mongodb.git]
 build_command = (./configure --bro-dist=%(bro_dist)s && make)
 description = Bro IDS/ MongoDB connector.
@@ -255,7 +262,7 @@ version = v0.2
 description = A Zeek script using Input Framework to get icann_tld, icann_domain, icann_host_subdomain, and is_trusted_domain from a DNS query.  The field icann_host_subdomain contains the remaining query nodes after the domain is removed.  The is_trusted_domain is populated from a separate Input Framework set.
 script_dir = scripts
 tags = domain, dns, tld, input
-version = 18.1.0.3
+version = v19.0.0
 url = https://github.com/corelight/icannTLD
 
 [corelight/zeek-community-id]
@@ -265,7 +272,7 @@ script_dir = scripts/Corelight/CommunityID
 tags = zeek plugin, conn, logging, community id, flow hashing, flow id, sha1, corelight
 test_command = cd tests && btest -c btest.cfg -d communityid
 url = https://github.com/corelight/zeek-community-id
-version = 1.3
+version = 1.4
 
 [corelight/zeek-elf]
 build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
