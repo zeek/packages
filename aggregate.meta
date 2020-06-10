@@ -46,6 +46,13 @@ test_command = cd testing && btest -d
 url = https://github.com/0xxon/cve-2020-0601-plugin
 version = master
 
+[0xxon/cve-2020-13777]
+description = "Test script for CVE-2020-13777. Please read Readme."
+script_dir = scripts
+test_command = cd testing && btest -d
+url = https://github.com/0xxon/cve-2020-13777
+version = master
+
 [activecm/bro-mongodb.git]
 build_command = (./configure --bro-dist=%(bro_dist)s && make)
 description = Bro IDS/ MongoDB connector.
@@ -251,6 +258,13 @@ tags = plugin, analyzer, gquic, quic
 url = https://github.com/corelight/bro-quic
 version = v0.2
 
+[corelight/icannTLD]
+description = A Zeek script using Input Framework to get icann_tld, icann_domain, icann_host_subdomain, and is_trusted_domain from a DNS query.  The field icann_host_subdomain contains the remaining query nodes after the domain is removed.  The is_trusted_domain is populated from a separate Input Framework set.
+script_dir = scripts
+tags = domain, dns, tld, input
+version = v19.0.0
+url = https://github.com/corelight/icannTLD
+
 [corelight/zeek-community-id]
 build_command = ./configure && cd build && make
 description = "Community ID" flow hash support in conn.log
@@ -258,7 +272,7 @@ script_dir = scripts/Corelight/CommunityID
 tags = zeek plugin, conn, logging, community id, flow hashing, flow id, sha1, corelight
 test_command = cd tests && btest -c btest.cfg -d communityid
 url = https://github.com/corelight/zeek-community-id
-version = 1.3
+version = 1.4
 
 [corelight/zeek-elf]
 build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
@@ -276,7 +290,7 @@ script_dir = scripts/Zeek/JPEG
 tags = intel, files, jpeg, jpg
 test_command = cd tests && btest
 url = https://github.com/corelight/zeek-jpeg
-version = v0.1.0
+version = v0.1.1
 
 [corelight/zeek-macho]
 build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
@@ -857,18 +871,18 @@ url = https://github.com/mitre/icap
 version = master
 
 [mitrecnd/bro-http2]
-build_command = ./configure --bro-dist=%(bro_dist)s && make
+build_command = ./configure --zeek-dist=%(zeek_dist)s && make
 depends = 
-	bro >=2.5.0
-description = A HTTP2 protocol analyzer for the Bro IDS.
+	zeek >=3.0.0
+description = A HTTP2 protocol analyzer for the Zeek NSM.
 external_depends = 
 	libnghttp2>=1.11.0
 	libbrotlidec>=1.0.0
 script_dir = scripts
-tags = bro plugin, protocol analyzer, http2, intel
+tags = zeek plugin, protocol analyzer, http2, intel
 test_command = make test
 url = https://github.com/MITRECND/bro-http2
-version = 0.4.2
+version = 0.5.0
 
 [ncsa/bro-interface-setup]
 description = A broctl plugin that helps you setup capture interfaces
@@ -1085,7 +1099,7 @@ version = 1.0.1
 [stratosphereips/IRC-Zeek-package]
 description = Zeek Package that extracts features of IRC communication
 tags = zeek plugin, irc, features extraction
-version = v1.4
+version = v1.6
 url = https://github.com/stratosphereips/IRC-Zeek-package
 
 [tenzir/zeek-mac-ages]
