@@ -164,6 +164,8 @@ url = https://github.com/bro/bro-netmap
 version = master
 
 [corelight/bro-long-connections]
+aliases = zeek-long-connections bro-long-connections
+depends = zkg >=2.0.7
 description = Find and log long-lived connections into a "conn_long" log.
 script_dir = scripts
 tags = conn
@@ -258,13 +260,6 @@ tags = plugin, analyzer, gquic, quic
 url = https://github.com/corelight/bro-quic
 version = v0.2
 
-[corelight/icannTLD]
-description = A Zeek script using Input Framework to get icann_tld, icann_domain, icann_host_subdomain, and is_trusted_domain from a DNS query.  The field icann_host_subdomain contains the remaining query nodes after the domain is removed.  The is_trusted_domain is populated from a separate Input Framework set.
-script_dir = scripts
-tags = domain, dns, tld, input
-version = v19.0.0
-url = https://github.com/corelight/icannTLD
-
 [corelight/zeek-community-id]
 build_command = ./configure && cd build && make
 description = "Community ID" flow hash support in conn.log
@@ -310,6 +305,20 @@ script_dir = scripts
 tags = TLS, SSL, JA3, Video conferencing, Video, Videoconferencing, Remote working, Zoom
 version = master
 url = https://github.com/corelight/got_zoom
+
+[corelight/callstranger-detector]
+description = Detects CallStranger (CVE) Exploitation Attempts
+script_dir = scripts
+tags = CallStranger, UPnP
+version = master
+url = https://github.com/corelight/callstranger-detector
+
+[corelight/icannTLD]
+description = A Zeek script using Input Framework to get icann_tld, icann_domain, icann_host_subdomain, and is_trusted_domain from a DNS query.  The field icann_host_subdomain contains the remaining query nodes after the domain is removed.  The is_trusted_domain is populated from a separate Input Framework set.
+script_dir = scripts
+tags = domain, dns, tld, input
+version = v19.0.0
+url = https://github.com/corelight/icannTLD
 
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
