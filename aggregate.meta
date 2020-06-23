@@ -752,10 +752,12 @@ url = https://github.com/J-Gras/bro-fuzzy-hashing
 version = 0.3.0
 
 [jbaggs/anomalous-dns]
-depends = https://github.com/sethhall/domain-tld *
+depends = 
+	zeek >=3.0.0
+	https://github.com/sethhall/domain-tld *
 description = A module for tracking and correlating abnormal DNS behavior. Detection of tunneling and C&C through connection duration and volume, request and answer size, DNS request type, and unique queries per domain.
 tags = bro scripting, dns, domain, notices
-version = 1.0.2
+version = 1.2.0
 url = https://github.com/jbaggs/anomalous-dns
 
 [jmellander/BinaryHeap]
@@ -794,7 +796,7 @@ version = 1.0.8
 
 [jsiwek/zeek-cryptomining]
 aliases = zeek-cryptomining bro_bitcoin
-depends = bro-pkg >=1.5.0
+depends = zkg >=2.0.7
 description = Detects Bitcoin, Litecoin, or other cryptocurrency
 	mining traffic that uses getwork, getblocktemplate, or Stratum mining
 	protocols over TCP or HTTP.  This package used to be named "bro_bitcoin".
@@ -1131,6 +1133,14 @@ description = Raise notices on outgoing files over X bytes in size.
 	Also raise notices for multiple large outgoing Tx's in Y time frame.
 tags = notices, uploads, conns
 url = https://github.com/theflakes/bro-large_uploads
+version = master
+
+[theparanoids/rdfp]
+credits = Jeff Atkinson <neslog@gmail.com>,
+	Copyright Verizon Media Group 2020
+description = The script will create a new log which will log the details which build the fingerprint and some additional information. The fingerprint is created by concatenating extracted fields from different data packets.  https://github.com/yahoo/rdfp
+script_dir = scripts
+url = https://github.com/theparanoids/rdfp
 version = master
 
 [ukncsc/zeek-plugin-ikev2]
