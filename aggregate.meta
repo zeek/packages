@@ -154,6 +154,13 @@ tags = input, labels
 url = https://github.com/bricata/flow_labels
 version = master
 
+[brimsec/geoip-conn]
+description = Adds additional fields to the conn.log for the data obtained via Zeek's GeoLocation feature (https://docs.zeek.org/en/current/frameworks/geoip.html).
+script_dir = zeek
+tags = conn, geolocation, logging
+version = master
+url = https://github.com/brimsec/geoip-conn
+
 [bro/bro-netmap]
 build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
 description = Packet source plugin that provides native Netmap support.
@@ -229,7 +236,7 @@ url = https://github.com/corelight/log-add-vlan-everywhere
 
 [corelight/top-dns]
 depends = 
-	bro/sethhall/domain-tld *
+	zeek/sethhall/domain-tld *
 description = Log the top DNS queries being requested.
 script_dir = scripts
 tags = dns, sumstats, log, measurement, top
@@ -276,7 +283,7 @@ script_dir = scripts/Zeek/ELF
 tags = intel, files, elf
 test_command = cd tests && btest
 url = https://github.com/corelight/zeek-elf
-version = v0.1.0
+version = v0.1.1
 
 [corelight/zeek-jpeg]
 build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
@@ -285,7 +292,7 @@ script_dir = scripts/Zeek/JPEG
 tags = intel, files, jpeg, jpg
 test_command = cd tests && btest
 url = https://github.com/corelight/zeek-jpeg
-version = v0.1.1
+version = v0.1.2
 
 [corelight/zeek-macho]
 build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
@@ -294,7 +301,7 @@ script_dir = scripts/Zeek/MACHO
 tags = intel, files, mach-o, macho
 test_command = cd tests && btest
 url = https://github.com/corelight/zeek-macho
-version = v0.1.0
+version = v0.1.1
 
 [corelight/got_zoom]
 depends = 
@@ -317,7 +324,7 @@ url = https://github.com/corelight/callstranger-detector
 description = A Zeek script using Input Framework to get icann_tld, icann_domain, icann_host_subdomain, and is_trusted_domain from a DNS query.  The field icann_host_subdomain contains the remaining query nodes after the domain is removed.  The is_trusted_domain is populated from a separate Input Framework set.
 script_dir = scripts
 tags = domain, dns, tld, input
-version = v19.0.0
+version = v19.0.1
 url = https://github.com/corelight/icannTLD
 
 [cybera/zeek-sniffpass]
@@ -792,7 +799,7 @@ script_dir = plugin/scripts/Demo/Rot13
 tags = example, test, bro plugin, broctl plugin, rot13, cipher
 test_command = cd testing && btest -d tests
 url = https://github.com/jsiwek/zeek-test-package
-version = 1.0.8
+version = 1.0.9
 
 [jsiwek/zeek-cryptomining]
 aliases = zeek-cryptomining bro_bitcoin
