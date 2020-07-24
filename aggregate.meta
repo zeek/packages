@@ -154,6 +154,13 @@ tags = input, labels
 url = https://github.com/bricata/flow_labels
 version = master
 
+[brimsec/geoip-conn]
+description = Adds additional fields to the conn.log for the data obtained via Zeek's GeoLocation feature (https://docs.zeek.org/en/current/frameworks/geoip.html).
+script_dir = zeek
+tags = conn, geolocation, logging
+version = master
+url = https://github.com/brimsec/geoip-conn
+
 [bro/bro-netmap]
 build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
 description = Packet source plugin that provides native Netmap support.
@@ -164,6 +171,8 @@ url = https://github.com/bro/bro-netmap
 version = master
 
 [corelight/bro-long-connections]
+aliases = zeek-long-connections bro-long-connections
+depends = zkg >=2.0.7
 description = Find and log long-lived connections into a "conn_long" log.
 script_dir = scripts
 tags = conn
@@ -227,7 +236,7 @@ url = https://github.com/corelight/log-add-vlan-everywhere
 
 [corelight/top-dns]
 depends = 
-	bro/sethhall/domain-tld *
+	zeek/sethhall/domain-tld *
 description = Log the top DNS queries being requested.
 script_dir = scripts
 tags = dns, sumstats, log, measurement, top
@@ -258,13 +267,6 @@ tags = plugin, analyzer, gquic, quic
 url = https://github.com/corelight/bro-quic
 version = v0.2
 
-[corelight/icannTLD]
-description = A Zeek script using Input Framework to get icann_tld, icann_domain, icann_host_subdomain, and is_trusted_domain from a DNS query.  The field icann_host_subdomain contains the remaining query nodes after the domain is removed.  The is_trusted_domain is populated from a separate Input Framework set.
-script_dir = scripts
-tags = domain, dns, tld, input
-version = v19.0.0
-url = https://github.com/corelight/icannTLD
-
 [corelight/zeek-community-id]
 build_command = ./configure && cd build && make
 description = "Community ID" flow hash support in conn.log
@@ -281,7 +283,7 @@ script_dir = scripts/Zeek/ELF
 tags = intel, files, elf
 test_command = cd tests && btest
 url = https://github.com/corelight/zeek-elf
-version = v0.1.0
+version = v0.1.1
 
 [corelight/zeek-jpeg]
 build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
@@ -290,7 +292,7 @@ script_dir = scripts/Zeek/JPEG
 tags = intel, files, jpeg, jpg
 test_command = cd tests && btest
 url = https://github.com/corelight/zeek-jpeg
-version = v0.1.1
+version = v0.1.2
 
 [corelight/zeek-macho]
 build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
@@ -299,7 +301,7 @@ script_dir = scripts/Zeek/MACHO
 tags = intel, files, mach-o, macho
 test_command = cd tests && btest
 url = https://github.com/corelight/zeek-macho
-version = v0.1.0
+version = v0.1.1
 
 [corelight/got_zoom]
 depends = 
@@ -310,6 +312,20 @@ script_dir = scripts
 tags = TLS, SSL, JA3, Video conferencing, Video, Videoconferencing, Remote working, Zoom
 version = master
 url = https://github.com/corelight/got_zoom
+
+[corelight/callstranger-detector]
+description = Detects CallStranger (CVE) Exploitation Attempts
+script_dir = scripts
+tags = CallStranger, UPnP
+version = master
+url = https://github.com/corelight/callstranger-detector
+
+[corelight/icannTLD]
+description = A Zeek script using Input Framework to get icann_tld, icann_domain, icann_host_subdomain, and is_trusted_domain from a DNS query.  The field icann_host_subdomain contains the remaining query nodes after the domain is removed.  The is_trusted_domain is populated from a separate Input Framework set.
+script_dir = scripts
+tags = domain, dns, tld, input
+version = v19.0.1
+url = https://github.com/corelight/icannTLD
 
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
@@ -743,10 +759,12 @@ url = https://github.com/J-Gras/bro-fuzzy-hashing
 version = 0.3.0
 
 [jbaggs/anomalous-dns]
-depends = https://github.com/sethhall/domain-tld *
+depends = 
+	zeek >=3.0.0
+	https://github.com/sethhall/domain-tld *
 description = A module for tracking and correlating abnormal DNS behavior. Detection of tunneling and C&C through connection duration and volume, request and answer size, DNS request type, and unique queries per domain.
 tags = bro scripting, dns, domain, notices
-version = 1.0.2
+version = 1.2.0
 url = https://github.com/jbaggs/anomalous-dns
 
 [jmellander/BinaryHeap]
@@ -781,11 +799,11 @@ script_dir = plugin/scripts/Demo/Rot13
 tags = example, test, bro plugin, broctl plugin, rot13, cipher
 test_command = cd testing && btest -d tests
 url = https://github.com/jsiwek/zeek-test-package
-version = 1.0.8
+version = 1.0.9
 
 [jsiwek/zeek-cryptomining]
 aliases = zeek-cryptomining bro_bitcoin
-depends = bro-pkg >=1.5.0
+depends = zkg >=2.0.7
 description = Detects Bitcoin, Litecoin, or other cryptocurrency
 	mining traffic that uses getwork, getblocktemplate, or Stratum mining
 	protocols over TCP or HTTP.  This package used to be named "bro_bitcoin".
@@ -1122,6 +1140,14 @@ description = Raise notices on outgoing files over X bytes in size.
 	Also raise notices for multiple large outgoing Tx's in Y time frame.
 tags = notices, uploads, conns
 url = https://github.com/theflakes/bro-large_uploads
+version = master
+
+[theparanoids/rdfp]
+credits = Jeff Atkinson <neslog@gmail.com>,
+	Copyright Verizon Media Group 2020
+description = The script will create a new log which will log the details which build the fingerprint and some additional information. The fingerprint is created by concatenating extracted fields from different data packets.  https://github.com/yahoo/rdfp
+script_dir = scripts
+url = https://github.com/theparanoids/rdfp
 version = master
 
 [ukncsc/zeek-plugin-ikev2]
