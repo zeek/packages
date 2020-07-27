@@ -186,7 +186,7 @@ plugin_dir = build
 tags = plugin, pe, executable, malware
 test_command = ( cd tests && btest -d )
 url = https://github.com/corelight/bro-xor-exe-plugin
-version = 1.0
+version = 1.2
 
 [corelight/bro-hardware]
 description = Scripts for cases where hardware device identifiers are discovered.
@@ -265,7 +265,7 @@ plugin_dir = build/Corelight_GQUIC.tgz
 script_dir = build/scripts/Corelight/GQUIC
 tags = plugin, analyzer, gquic, quic
 url = https://github.com/corelight/bro-quic
-version = v0.2
+version = v0.5
 
 [corelight/zeek-community-id]
 build_command = ./configure && cd build && make
@@ -1007,6 +1007,16 @@ script_dir = scripts/RLABS/SFLOW/
 tags = zeek plugin, zeek analyzer, sFlow protocol analyzer
 url = https://github.com/reservoirlabs/sflow
 version = master
+
+[rvictory/zeek-new-domains]
+credits = Ryan Victory
+depends = 
+	sethhall/domain-tld *
+description = Monitors for new domains being queried for and raises a notice for them
+script_dir = scripts
+tags = DNS
+version = master
+url = https://github.com/rvictory/zeek-new-domains
 
 [salesforce/ja3]
 description = JA3 creates 32 character SSL client fingerprints and logs them as a field in ssl.log. These fingerprints can easily be shared as threat intelligence or used as correlation items for enhanced alerting and analysis. This package also adds JA3 to the Zeek Intel Framework.
