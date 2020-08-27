@@ -342,6 +342,12 @@ tags = library, unit-testing, testing
 url = https://github.com/corelight/ztest
 version = master
 
+[corelight/detect-ransomware-filenames]
+description = Watch SMB transactions for files whose filename matches patterns known to be used by ransomware
+script_dir = scripts
+url = https://github.com/corelight/detect-ransomware-filenames
+version = master
+
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
 script_dir = scripts
