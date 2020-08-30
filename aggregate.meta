@@ -170,6 +170,15 @@ test_command = cd tests && btest -d -c btest.cfg
 url = https://github.com/bro/bro-netmap
 version = master
 
+[captainGeech42/zeek-bogon]
+author = Zander Work (@captainGeech42)
+description = Label bogon IPs in conn.log
+script_dir = scripts/
+tags = bogon, conn
+test_command = (cd tests && btest -d)
+url = https://github.com/captainGeech42/zeek-bogon
+version = v1.0.0
+
 [corelight/bro-long-connections]
 aliases = zeek-long-connections bro-long-connections
 depends = zkg >=2.0.7
