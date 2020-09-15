@@ -510,6 +510,15 @@ test_command = cd tests && btest -d
 url = https://github.com/esnet/zeek-exporter
 version = 0.1.0
 
+[esnet-security/logfilter]
+description = Enables plugins to write fine-grained policy for log filtering, modification, and path customization.
+credits = Vlad Grigorescu <vlad@es.net>
+tags = logs, filters, ESnet
+test_command = cd tests && make
+script_dir = ./scripts
+url = https://github.com/esnet-security/logfilter
+version = 1.0
+
 [fatemabw/bro-inventory-scripts]
 description = Find different type of OSes and AV software in your network traffic.
 script_dir = scripts
