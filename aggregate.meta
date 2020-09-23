@@ -444,7 +444,7 @@ url = https://github.com/dopheide-esnet/zeek-known-outbound
 description = MISP+Zeek. Dovehawk is a Zeek Module to import MISP indicators to the Intel Framework and Signature Framework automatically. Reports sightings directly back to MISP as they happen. Supports Zeek Clusters.
 script_dir = .
 tags = intel, MISP, sightings, signatures, threat intelligence, threat intel, cyber
-version = 1.02.001
+version = master
 url = https://github.com/tylabs/dovehawk
 
 [dovehawk/dovehawk_dns]
@@ -1250,4 +1250,29 @@ script_dir = osquery-framework
 tags = osquery
 version = v0.4
 url = https://github.com/zeek/osquery-framework
+
+[zeek/spicy-runtime]
+build_command = mkdir -p build && cd build && cmake -DSPICY_VERSION=%(spicy_version)s .. && make -j
+depends = 
+	zeek >=3.0
+	zkg >=2.3.0
+description = Provides the Spicy runtime environment
+tags = spicy
+test_command = zeek -N _Zeek::Spicy
+user_vars = 
+	spicy_version [master] "Spicy version to use"
+url = https://github.com/zeek/spicy-runtime
+version = master
+
+[zeek/spicy-tftp]
+build_command = ./configure --with-spicy=%(package_base)s/spicy-runtime && make
+depends = 
+	spicy-runtime *
+	zkg >=2.3.0
+description = A Spicy-based TFTP analyzer
+script_dir = scripts
+tags = zeek plugin, protocol analyzer, tftp, spicy
+test_command = cd tests && btest -d
+url = https://github.com/zeek/spicy-tftp
+version = master
 
