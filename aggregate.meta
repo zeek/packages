@@ -67,6 +67,14 @@ tags = bro plugin, MongoDB, writer, security, conn, logging, rita
 version = master
 url = https://github.com/activecm/bro-rita.git
 
+[amarokinc/remote_asn_geoip_conn]
+credits = Michael Portera @mportatoes
+description = Adds ASN and GeoIP data directly to conn.log for the REMOTE connection. The script checks the orig and resp host fields to determine which one is not defined as part of the local IP ranges and subsequently performs a lookup on the MaxMind ASN and GeoIP databases.
+script_dir = zeek
+tags = asn, geoip, conn, remote
+version = master
+url = https://github.com/amarokinc/remote_asn_geoip_conn
+
 [amzn/zeek-plugin-bacnet]
 build_command = ./configure && make
 depends = 
@@ -363,6 +371,15 @@ script_dir = scripts
 tags = stats
 url = https://github.com/corelight/my_stats
 version = v0.0.3
+
+[corelight/zerologon]
+corelight_name = Zerologon
+description = Detects Zerologon (CVE-2020-1472) attempts and exploits.
+script_dir = scripts
+summary = Detects Zerologon (CVE-2020-1472) attempts and exploits.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/zerologon
+version = master
 
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
@@ -759,7 +776,7 @@ plugin_dir = build/Zeek_AF_Packet.tgz
 tags = zeek plugin, zeekctl plugin, packet source, af_packet
 test_command = cd tests && btest -d
 url = https://github.com/J-Gras/zeek-af_packet-plugin
-version = 2.0.0
+version = 2.1.0
 
 [j-gras/bro-af_packet-plugin]
 build_command = ./configure && make
@@ -771,7 +788,7 @@ plugin_dir = build/Zeek_AF_Packet.tgz
 tags = zeek plugin, zeekctl plugin, packet source, af_packet
 test_command = cd tests && btest -d
 url = https://github.com/J-Gras/bro-af_packet-plugin
-version = 2.0.0
+version = 2.1.0
 
 [j-gras/bro-lognorm]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
@@ -1257,6 +1274,11 @@ depends =
 	zeek >=3.0
 	zkg >=2.3.0
 description = Provides the Spicy runtime environment
+external_depends = 
+	C++17 *
+	Bison >=3.4
+	Flex >=2.6
+	CMake >=3.15
 tags = spicy
 test_command = zeek -N _Zeek::Spicy
 user_vars = 
@@ -1265,11 +1287,12 @@ url = https://github.com/zeek/spicy-runtime
 version = master
 
 [zeek/spicy-tftp]
-build_command = ./configure --with-spicy=%(package_base)s/spicy-runtime && make
+build_command = ./configure --with-spicy=%(package_base)s/spicy-runtime && make -j
 depends = 
 	spicy-runtime *
 	zkg >=2.3.0
 description = A Spicy-based TFTP analyzer
+plugin_dir = build
 script_dir = scripts
 tags = zeek plugin, protocol analyzer, tftp, spicy
 test_command = cd tests && btest -d
