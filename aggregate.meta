@@ -381,6 +381,13 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/zerologon
 version = master
 
+[corelight/CVE-2020-16898]
+description = A network detection package for CVE-2020-16898 (Windows TCP/IP Remote Code Execution Vulnerability) AKA BadNeighbor
+script_dir = scripts
+tags = CVE-2020-16898, BadNeighbor
+version = master
+url = https://github.com/corelight/CVE-2020-16898
+
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
 script_dir = scripts
