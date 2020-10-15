@@ -461,7 +461,7 @@ url = https://github.com/dopheide-esnet/zeek-known-outbound
 description = MISP+Zeek. Dovehawk is a Zeek Module to import MISP indicators to the Intel Framework and Signature Framework automatically. Reports sightings directly back to MISP as they happen. Supports Zeek Clusters.
 script_dir = .
 tags = intel, MISP, sightings, signatures, threat intelligence, threat intel, cyber
-version = master
+version = 1.02.001
 url = https://github.com/tylabs/dovehawk
 
 [dovehawk/dovehawk_dns]
@@ -1060,6 +1060,28 @@ description = sFlow analyzer package
 script_dir = scripts/RLABS/SFLOW/
 tags = zeek plugin, zeek analyzer, sFlow protocol analyzer
 url = https://github.com/reservoirlabs/sflow
+version = master
+
+[reservoirlabs/zeek-pdf-analyzer]
+build_command = ./configure && make
+description = A PDF file analyzer for Zeek
+external_depends = 
+	podofo >=0.9.6
+script_dir = scripts/Analyzer/PDF
+tags = Zeek plugin, file analyzer, pdf
+test_command = cd tests && btest
+user_vars = 
+	PODOFO_PREFIX [/usr/include] "PoDoFo install prefix"
+url = https://github.com/reservoirlabs/zeek-pdf-analyzer
+version = master
+
+[reservoirlabs/zeek-zip-analyzer]
+build_command = ./configure && make
+description = A ZIP file analyzer for Zeek
+script_dir = scripts/Reservoir/Analyzer_ZIP
+tags = Zeek plugin, file analyzer, ZIP
+test_command = cd tests && btest
+url = https://github.com/reservoirlabs/zeek-zip-analyzer
 version = master
 
 [rvictory/zeek-new-domains]
