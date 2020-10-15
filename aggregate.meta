@@ -692,6 +692,14 @@ test_command = ( cd tests && btest -d )
 version = master
 url = https://github.com/initconf/Apple-RDP-net-assistant-DoS.git
 
+[initconf/CVE-2020-16898-Bad-Neighbor.git]
+description = CVE-2020-16898: Bad Neighbor
+script_dir = scripts
+tags = 
+test_command = ( cd tests && btest -d )
+version = master
+url = https://github.com/initconf/CVE-2020-16898-Bad-Neighbor.git
+
 [irtimmer/bro-xdp_packet-plugin]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
 depends = 
