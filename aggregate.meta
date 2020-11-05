@@ -1298,14 +1298,6 @@ test_command = ( cd tests && btest -d )
 url = https://github.com/ukncsc/zeek-plugin-ikev2
 version = v0.1
 
-[verizonmedia/rdfp]
-credits = Jeff Atkinson <neslog@gmail.com>,
-	Copyright Verizon Media Group 2020
-description = The script will create a new log which will log the details which build the fingerprint and some additional information. The fingerprint is created by concatenating extracted fields from different data packets.  https://github.com/yahoo/rdfp
-script_dir = scripts
-url = https://github.com/yahoo/rdfp
-version = master
-
 [vitalyrepin/uap-bro]
 build_command = ./configure --bro-dist=%(bro_dist)s  && make
 config_files = build/scripts/init.bro
