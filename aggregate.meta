@@ -193,7 +193,7 @@ depends = zkg >=2.0.7
 description = Find and log long-lived connections into a "conn_long" log.
 script_dir = scripts
 tags = conn
-version = master
+version = v1.0.1
 url = https://github.com/corelight/bro-long-connections
 
 [corelight/bro-xor-exe-plugin]
@@ -245,11 +245,11 @@ version = master
 url = https://github.com/corelight/log-add-http-post-bodies
 
 [corelight/log-add-vlan-everywhere]
-description = Add VLAN to all Bro logs.
+description = Add VLAN to all logs.
 script_dir = scripts
 tags = log extend vlan
-version = master
 url = https://github.com/corelight/log-add-vlan-everywhere
+version = v1.0.2
 
 [corelight/top-dns]
 depends = 
@@ -273,16 +273,6 @@ script_dir = scripts
 tags = http, DoS, attack, notice
 url = https://github.com/corelight/http-stalling-detector
 version = master
-
-[corelight/bro-quic]
-build_command = test -e %(bro_dist)s/bro-path-dev.in && ( ./configure --bro-dist=%(bro_dist)s && make ) || ( ./configure && make )
-description = Detects the Google QUIC (GQUIC) protocol and adds "gquic"
-	to conn.log's "service" field.
-plugin_dir = build/Corelight_GQUIC.tgz
-script_dir = build/scripts/Corelight/GQUIC
-tags = plugin, analyzer, gquic, quic
-url = https://github.com/corelight/bro-quic
-version = v0.5
 
 [corelight/zeek-community-id]
 build_command = ./configure && cd build && make
@@ -387,6 +377,17 @@ script_dir = scripts
 tags = CVE-2020-16898, BadNeighbor
 version = master
 url = https://github.com/corelight/CVE-2020-16898
+
+[corelight/zeek-quic]
+aliases = zeek-quic bro-quic
+build_command = test -e %(bro_dist)s/bro-path-dev.in && ( ./configure --bro-dist=%(bro_dist)s && make ) || ( ./configure && make )
+description = Detects the Google QUIC (GQUIC) protocol and adds "gquic"
+	to conn.log's "service" field.
+plugin_dir = build/Corelight_GQUIC.tgz
+script_dir = build/scripts/Corelight/GQUIC
+tags = plugin, analyzer, gquic, quic
+url = https://github.com/corelight/zeek-quic
+version = v0.6
 
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
@@ -818,7 +819,7 @@ plugin_dir = build/Zeek_AF_Packet.tgz
 tags = zeek plugin, zeekctl plugin, packet source, af_packet
 test_command = cd tests && btest -d
 url = https://github.com/J-Gras/zeek-af_packet-plugin
-version = 2.1.0
+version = 2.1.2
 
 [j-gras/bro-af_packet-plugin]
 build_command = ./configure && make
@@ -830,7 +831,7 @@ plugin_dir = build/Zeek_AF_Packet.tgz
 tags = zeek plugin, zeekctl plugin, packet source, af_packet
 test_command = cd tests && btest -d
 url = https://github.com/J-Gras/bro-af_packet-plugin
-version = 2.1.0
+version = 2.1.2
 
 [j-gras/bro-lognorm]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
@@ -860,7 +861,7 @@ depends =
 	https://github.com/sethhall/domain-tld *
 description = A module for tracking and correlating abnormal DNS behavior. Detection of tunneling and C&C through connection duration and volume, request and answer size, DNS request type, and unique queries per domain.
 tags = bro scripting, dns, domain, notices
-version = 1.2.0
+version = 1.2.2
 url = https://github.com/jbaggs/anomalous-dns
 
 [jmellander/BinaryHeap]
@@ -996,7 +997,7 @@ script_dir = scripts
 tags = zeek plugin, protocol analyzer, http2, intel
 test_command = make test
 url = https://github.com/MITRECND/bro-http2
-version = 0.5.1
+version = 0.5.2
 
 [ncsa/bro-interface-setup]
 description = A broctl plugin that helps you setup capture interfaces
@@ -1181,15 +1182,15 @@ description = Detect credit card numbers in HTTP and SMTP with Bro.
 script_dir = scripts
 tags = credit cards, dlp, http, smtp, files
 test_command = ( cd tests && btest -d )
-version = master
+version = 1.0.0
 url = https://github.com/sethhall/credit-card-exposure
 
 [sethhall/ssn-exposure]
-description = Detect US Social Security numbers in HTTP and SMTP with Bro.
+description = Detect US Social Security numbers in HTTP and SMTP.
 script_dir = scripts
 tags = ssn, social security number, dlp, files
-version = master
 url = https://github.com/sethhall/ssn-exposure
+version = 1.0.0
 
 [sethhall/domain-tld]
 description = A library for getting the "effective tld" of a domain name.
@@ -1211,11 +1212,11 @@ url = https://github.com/sethhall/bro-myricom
 version = 1.0.4
 
 [sethhall/unknown-mime-type-discovery]
-description = A Bro package for finding new file signatures.
+description = Help Zeek by finding unidentified file types.
 script_dir = scripts
 tags = files, signature
 url = https://github.com/sethhall/unknown-mime-type-discovery
-version = master
+version = v1.0.0
 
 [sethhall/zeek-log-all-http-headers]
 aliases = zeek-log-all-http-headers
