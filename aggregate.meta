@@ -75,6 +75,14 @@ tags = asn, geoip, conn, remote
 version = master
 url = https://github.com/amarokinc/remote_asn_geoip_conn
 
+[amarokinc/bad-asn]
+credits = Michael Portera @mportatoes, Hudson Carr
+description = Adds ASN reputation data of external IP addresses to notice.log if the ASN crosses a predetermined threshold as defined by circl.lu
+script_dir = zeek
+tags = asn, geoip, conn, remote
+version = master
+url = https://github.com/amarokinc/bad-asn
+
 [amzn/zeek-plugin-bacnet]
 build_command = ./configure && make
 depends = 
@@ -387,7 +395,7 @@ plugin_dir = build/Corelight_GQUIC.tgz
 script_dir = build/scripts/Corelight/GQUIC
 tags = plugin, analyzer, gquic, quic
 url = https://github.com/corelight/zeek-quic
-version = v0.6
+version = v0.6.1
 
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
