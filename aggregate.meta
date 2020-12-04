@@ -1276,6 +1276,17 @@ tags = CSP intel
 url = https://github.com/srozb/http_csp
 version = 1.0.1
 
+[stevesmoot/appid]
+build_command = make all
+credits = Steve Smoot <smoot@corelight.com>
+depends = 
+	bro/sethhall/domain-tld *
+description = Leverage nDPI and other info to make informed guess at the application for a connection.
+script_dir = .
+tags = nDPI application
+url = https://github.com/stevesmoot/appid
+version = master
+
 [stratosphereips/IRC-Zeek-package]
 description = Zeek Package that extracts features of IRC communication
 tags = zeek plugin, irc, features extraction
