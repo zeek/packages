@@ -273,7 +273,7 @@ description = JSON streaming logs
 script_dir = scripts
 tags = logs, json, streaming, stream, filebeat, splunk_forwarder, logstash
 url = https://github.com/corelight/json-streaming-logs
-version = master
+version = v3.0.0
 
 [corelight/http-stalling-detector]
 description = Detect HTTP stalling attacks like slowloris.
@@ -742,6 +742,22 @@ tags =
 test_command = ( cd tests && btest -d )
 version = master
 url = https://github.com/initconf/LetsEncrypt
+
+[initconf/RDP-bruteforce]
+description = rdp-bruteforce
+script_dir = scripts
+tags = rdp, bruteforce, scan
+test_command = ( cd tests && btest -d )
+version = master
+url = https://github.com/initconf/RDP-bruteforce
+
+[initconf/sip-attacks.git]
+description = sip-attacks
+script_dir = scripts
+tags = sip, voip
+test_command = ( cd tests && btest -d )
+version = master
+url = https://github.com/initconf/sip-attacks.git
 
 [irtimmer/bro-xdp_packet-plugin]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
