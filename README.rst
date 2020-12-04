@@ -26,5 +26,6 @@ own work/packages):
    it somewhere else, you could use a domain name or organization name
    for the directory.
 #. Put a `package index file`_ within the directory you just made.
+#. Add a COPYING or LICENSE file if not present.
 #. Commit/push the changes you made to your fork.
 #. Submit a *pull request*.
