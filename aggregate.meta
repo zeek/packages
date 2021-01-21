@@ -195,6 +195,80 @@ test_command = (cd tests && btest -d)
 url = https://github.com/captainGeech42/zeek-bogon
 version = v1.0.0
 
+[cisagov/icsnpp-bacnet]
+build_command = ./configure && make
+build_dir = build/ICSNPP_Bacnet.tgz
+credits = Stephen Kleinheider <stephen.kleinheider@inl.gov>
+depends = 
+	zkg >=2.0
+	zeek >=3.0.0
+description = BACnet plugin for parsing and logging of the BACnet (building automation and control) protocol - CISA ICSNPP
+script_dir = build/scripts/icsnpp/bacnet
+tags = bacnet, BACnet, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
+url = https://github.com/cisagov/icsnpp-bacnet
+version = master
+
+[cisagov/icsnpp-bsap-ip]
+build_command = ./configure && make
+build_dir = build/ICSNPP_Bsap_ip.tgz
+credits = Devin Vollmer <devin.vollmer@inl.gov>
+depends = 
+	zkg >=2.0
+	zeek >=3.0.0
+description = BSAP over IP plugin for parsing and logging of the BSAP protocol - CISA ICSNPP
+script_dir = build/scripts/icsnpp/bsap-ip
+tags = bsap, BSAP, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
+url = https://github.com/cisagov/icsnpp-bsap-ip
+version = master
+
+[cisagov/icsnpp-bsap-serial]
+build_command = ./configure && make
+build_dir = build/ICSNPP_Bsap_serial.tgz
+credits = Devin Vollmer <devin.vollmer@inl.gov>
+depends = 
+	zkg >=2.0
+	zeek >=3.0.0
+description = BSAP for Serial->Ethernet plugin for parsing and logging of the BSAP protocol - CISA ICSNPP
+script_dir = build/scripts/icsnpp/bsap-serial
+tags = bsap, BSAP, serial, Serial, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
+url = https://github.com/cisagov/icsnpp-bsap-serial
+version = master
+
+[cisagov/icsnpp-enip]
+build_command = ./configure && make
+build_dir = build/ICSNPP_Enip.tgz
+credits = Stephen Kleinheider <stephen.kleinheider@inl.gov>
+depends = 
+	zkg >=2.0
+	zeek >=3.0.0
+description = Ethernet/IP and CIP plugin for parsing and logging of the Ethernet/IP and CIP protocols - CISA ICSNPP
+script_dir = build/scripts/icsnpp/enip
+tags = enip, ENIP, cip, CIP, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
+url = https://github.com/cisagov/icsnpp-enip
+version = master
+
+[cisagov/icsnpp-dnp3]
+credits = Stephen Kleinheider <stephen.kleinheider@inl.gov>
+depends = 
+	zkg >=2.0
+	zeek >=3.0.0
+description = DNP3 script for detailed logging of the DNP3 protocol - CISA ICSNPP
+script_dir = scripts
+tags = dnp3, DNP3, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek scripting, log writer, protocol analyzer
+url = https://github.com/cisagov/icsnpp-dnp3
+version = master
+
+[cisagov/icsnpp-modbus]
+credits = Brett Rasmussen <brett.rasmussen@inl.gov> & Stephen Kleinheider <stephen.kleinheider@inl.gov>
+depends = 
+	zkg >=2.0
+	zeek >=3.0.0
+description = Modbus script for detailed logging of the Modbus protocol - CISA ICSNPP
+script_dir = scripts
+tags = modbus, Modbus, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek scripting, log writer, protocol analyzer
+url = https://github.com/cisagov/icsnpp-modbus
+version = master
+
 [corelight/bro-long-connections]
 aliases = zeek-long-connections bro-long-connections
 depends = zkg >=2.0.7
@@ -477,7 +551,7 @@ url = https://github.com/dopheide-esnet/zeek-known-outbound
 description = MISP+Zeek. Dovehawk is a Zeek Module to import MISP indicators to the Intel Framework and Signature Framework automatically. Reports sightings directly back to MISP as they happen. Supports Zeek Clusters.
 script_dir = .
 tags = intel, MISP, sightings, signatures, threat intelligence, threat intel, cyber
-version = 1.02.001
+version = 1.02.002
 url = https://github.com/tylabs/dovehawk
 
 [dovehawk/dovehawk_dns]
@@ -602,13 +676,13 @@ version = 2.0.3
 url = https://github.com/hosom/file-extraction
 
 [hosom/log-filters]
-config_files = scripts/config.bro
+config_files = scripts/config.zeek
 depends = 
-	bro >=2.5.0
+	zeek >=3.0.0
 description = Implement common log filters.
 script_dir = scripts
 tags = logging, log framework
-version = master
+version = main
 url = https://github.com/hosom/log-filters
 
 [hosom/bro-napatech]
@@ -1021,7 +1095,7 @@ script_dir = scripts
 tags = zeek plugin, protocol analyzer, http2, intel
 test_command = make test
 url = https://github.com/MITRECND/bro-http2
-version = 0.5.2
+version = 0.5.3
 
 [ncsa/bro-interface-setup]
 description = A broctl plugin that helps you setup capture interfaces
@@ -1361,7 +1435,7 @@ version = v0.4
 url = https://github.com/zeek/osquery-framework
 
 [zeek/spicy-runtime]
-build_command = mkdir -p build && cd build && cmake -DSPICY_VERSION=%(spicy_version)s .. && make -j
+build_command = mkdir -p build && cd build && cmake -DSPICY_VERSION=%(spicy_version)s .. && cmake --build .
 depends = 
 	zeek >=3.0
 	zkg >=2.3.0
