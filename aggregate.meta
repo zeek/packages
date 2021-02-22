@@ -779,6 +779,14 @@ test_command = ( cd tests && btest -d )
 version = v2.0-zeek-3.x.x
 url = https://github.com/initconf/ftp-bruteforce
 
+[initconf/detect-kaspersky]
+description = kaspersky
+script_dir = scripts
+tags = kaspersky antivirus
+test_command = ( cd tests && btest -d )
+version = v3
+url = https://github.com/initconf/detect-kaspersky
+
 [initconf/ws-discovery-dos]
 description = udp-scan
 script_dir = scripts
