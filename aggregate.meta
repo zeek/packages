@@ -285,7 +285,7 @@ plugin_dir = build
 tags = plugin, pe, executable, malware
 test_command = ( cd tests && btest -d )
 url = https://github.com/corelight/bro-xor-exe-plugin
-version = 1.2
+version = 2.0
 
 [corelight/bro-hardware]
 description = Scripts for cases where hardware device identifiers are discovered.
@@ -358,12 +358,14 @@ version = master
 
 [corelight/zeek-community-id]
 build_command = ./configure && cd build && make
+depends = 
+	zeek >=3.2.0
 description = "Community ID" flow hash support in conn.log
 script_dir = scripts/Corelight/CommunityID
 tags = zeek plugin, conn, logging, community id, flow hashing, flow id, sha1, corelight
 test_command = cd tests && btest -c btest.cfg -d communityid
 url = https://github.com/corelight/zeek-community-id
-version = 1.4
+version = 3.2.0
 
 [corelight/zeek-elf]
 build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
@@ -957,9 +959,9 @@ version = 0.3.0
 depends = 
 	zeek >=3.0.0
 	https://github.com/sethhall/domain-tld *
-description = A module for tracking and correlating abnormal DNS behavior. Detection of tunneling and C&C through connection duration and volume, request and answer size, DNS request type, and unique queries per domain.
-tags = bro scripting, dns, domain, notices
-version = 1.2.2
+description = A module for tracking and correlating abnormal DNS behavior. Detection of tunneling and C&C through connection duration and volume, request and answer size, DNS request type, and unique queries per domain. Statistical clasification of fast flux networks based on A records and ASNs.
+tags = zeek scripting, dns, domain, notices
+version = 1.2.4
 url = https://github.com/jbaggs/anomalous-dns
 
 [jmellander/BinaryHeap]
@@ -1265,16 +1267,6 @@ script_dir = scripts/Salesforce/GQUIC
 url = https://github.com/salesforce/GQUIC_Protocol_Analyzer
 version = master
 
-[scebro/ldap-analyzer]
-build_command = ./configure --bro-dist=%(bro_dist)s && make
-description = LDAP write operations analyzer for Bro.
-plugin_dir = build
-scripts_dir = scripts
-tags = bro plugin, ldap analyzer, ldap
-test_command = cd tests && btest -d
-version = master
-url = https://github.com/SoftwareConsultingEmporium/ldap-analyzer
-
 [sethhall/credit-card-exposure]
 description = Detect credit card numbers in HTTP and SMTP with Bro.
 script_dir = scripts
@@ -1464,4 +1456,12 @@ tags = zeek plugin, protocol analyzer, tftp, spicy
 test_command = cd tests && btest -d
 url = https://github.com/zeek/spicy-tftp
 version = master
+
+[zeek/spicy-analyzers]
+build_command = mkdir -p build && cd build && cmake .. && make -j
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+test_command = cd tests && SPICY_MODULE_PATH=$(pwd)/../build/spicy-modules btest -dj
+url = https://github.com/zeek/spicy-analyzers
+version = main
 
