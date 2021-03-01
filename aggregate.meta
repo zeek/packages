@@ -195,6 +195,15 @@ test_command = (cd tests && btest -d)
 url = https://github.com/captainGeech42/zeek-bogon
 version = v1.0.0
 
+[captainGeech42/zeek-intel-path]
+author = Zander Work (@captainGeech42)
+description = Extend Intel framework to alert on URL paths
+script_dir = scripts/
+tags = http, intel, path, url-path, uri
+test_command = (cd tests && btest -d)
+url = https://github.com/captainGeech42/zeek-intel-path
+version = main
+
 [cisagov/icsnpp-bacnet]
 build_command = ./configure && make
 build_dir = build/ICSNPP_Bacnet.tgz
@@ -1469,7 +1478,7 @@ version = master
 build_command = mkdir -p build && cd build && cmake .. && make -j
 plugin_dir = build/spicy-modules
 script_dir = analyzer
-test_command = cd tests && SPICY_MODULE_PATH=$(pwd)/../build/spicy-modules btest -dj
+test_command = cd tests && SPICY_MODULE_PATH=$(pwd)/../build/spicy-modules btest -dj -a zkg
 url = https://github.com/zeek/spicy-analyzers
 version = main
 
