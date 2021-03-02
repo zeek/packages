@@ -1284,6 +1284,22 @@ script_dir = scripts/Salesforce/GQUIC
 url = https://github.com/salesforce/GQUIC_Protocol_Analyzer
 version = master
 
+[seisollc/zeek-kafka]
+description = A Zeek log writer plugin that publishes to Kafka.
+tags = log writer, zeek plugin, kafka
+script_dir = build/scripts/Seiso/Kafka
+build_command = ./configure --with-librdkafka=%(LIBRDKAFKA_ROOT)s && make
+test_command = ( cd tests && btest -d )
+plugin_dir = build
+version = main
+depends =
+	zeek >=3.0.0
+	zkg >=2.0
+external_depends =
+	librdkafka ~1.4.2-RC1
+user_vars =
+	LIBRDKAFKA_ROOT [/usr/local/lib] "Path to librdkafka installation tree"
+
 [sethhall/credit-card-exposure]
 description = Detect credit card numbers in HTTP and SMTP with Bro.
 script_dir = scripts
