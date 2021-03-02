@@ -473,14 +473,16 @@ url = https://github.com/corelight/CVE-2020-16898
 
 [corelight/zeek-quic]
 aliases = zeek-quic bro-quic
-build_command = test -e %(bro_dist)s/bro-path-dev.in && ( ./configure --bro-dist=%(bro_dist)s && make ) || ( ./configure && make )
+build_command = ./configure && make
+depends = 
+	zeek >=4.0.0
 description = Detects the Google QUIC (GQUIC) protocol and adds "gquic"
 	to conn.log's "service" field.
 plugin_dir = build/Corelight_GQUIC.tgz
 script_dir = build/scripts/Corelight/GQUIC
 tags = plugin, analyzer, gquic, quic
 url = https://github.com/corelight/zeek-quic
-version = v0.6.1
+version = v0.7.0
 
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
@@ -1007,13 +1009,15 @@ version = 0.1.0
 [jsiwek/zeek-test-package]
 aliases = zeek-test-package bro-test-package
 build_command = cd plugin && ./configure && make
+depends = 
+	zeek >=4.0.0
 description = An example Zeek package for testing purposes.
 plugin_dir = plugin/build
 script_dir = plugin/scripts/Demo/Rot13
 tags = example, test, bro plugin, broctl plugin, rot13, cipher
 test_command = cd testing && btest -d tests
 url = https://github.com/jsiwek/zeek-test-package
-version = 1.0.9
+version = 1.1.0
 
 [jsiwek/zeek-cryptomining]
 aliases = zeek-cryptomining bro_bitcoin
@@ -1285,20 +1289,21 @@ url = https://github.com/salesforce/GQUIC_Protocol_Analyzer
 version = master
 
 [seisollc/zeek-kafka]
-description = A Zeek log writer plugin that publishes to Kafka.
-tags = log writer, zeek plugin, kafka
-script_dir = build/scripts/Seiso/Kafka
-build_command = ./configure --with-librdkafka=%(LIBRDKAFKA_ROOT)s && make
-test_command = ( cd tests && btest -d )
+build_command = ./configure --bro-dist=%(bro_dist)s --with-librdkafka=%(LIBRDKAFKA_ROOT)s && make
+depends = 
+	bro >=2.5.0
+	bro-pkg >=1.2
+description = A Bro log writer plugin that sends logging output to Kafka.
+external_depends = 
+	librdkafka ~0.11.5
 plugin_dir = build
-version = main
-depends =
-	zeek >=3.0.0
-	zkg >=2.0
-external_depends =
-	librdkafka ~1.4.2-RC1
-user_vars =
+script_dir = build/scripts/Apache/Kafka
+tags = log writer, bro plugin, kafka
+test_command = ( cd tests && btest -d )
+user_vars = 
 	LIBRDKAFKA_ROOT [/usr/local/lib] "Path to librdkafka installation tree"
+version = 0.3
+url = https://github.com/seisollc/zeek-kafka
 
 [sethhall/credit-card-exposure]
 description = Detect credit card numbers in HTTP and SMTP with Bro.
