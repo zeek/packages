@@ -178,13 +178,17 @@ version = master
 url = https://github.com/brimsec/geoip-conn
 
 [bro/bro-netmap]
-build_command = ./configure && cd build && make
+build_command = ./configure --with-netmap=%(netmap_root_dir)s && cd build && make
+depends = 
+	zeek >=3.1.0
 description = Packet source plugin that provides native Netmap support.
 plugin_dir = build
 tags = packet source, plugin, netmap
 test_command = cd tests && btest -d -c btest.cfg
+user_vars = 
+	netmap_root_dir [] "Root directory of Netmap installation"
 url = https://github.com/bro/bro-netmap
-version = master
+version = v2.0.0
 
 [captainGeech42/zeek-bogon]
 author = Zander Work (@captainGeech42)
@@ -483,6 +487,13 @@ script_dir = build/scripts/Corelight/GQUIC
 tags = plugin, analyzer, gquic, quic
 url = https://github.com/corelight/zeek-quic
 version = v0.7.0
+
+[corelight/zeek-openvpn]
+build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
+script_dir = scripts/zeek/openvpn
+test_command = cd tests && btest
+url = https://github.com/corelight/zeek-openvpn
+version = v0.0.1
 
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
