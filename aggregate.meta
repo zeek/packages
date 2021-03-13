@@ -89,10 +89,10 @@ depends =
 	zkg >=2.0
 	zeek >=3.0.0
 description = Plugin that enables parsing of the BACnet standard building controls protocol
-script_dir = scripts
+script_dir = scripts/BACnet
 tags = zeek plugin, protocol analyzer, log writer, ics, bacnet
 url = https://github.com/amzn/zeek-plugin-bacnet
-version = master
+version = 1.0.0
 
 [amzn/zeek-plugin-enip]
 build_command = ./configure && make
@@ -100,10 +100,10 @@ depends =
 	zkg >=2.0
 	zeek >=3.0.0
 description = Plugin that enables parsing of the Ethernet/IP and Common Industrial Protocol standards
-script_dir = scripts
+script_dir = scripts/ENIP
 tags = zeek plugin, protocol analyzer, log writer, ics, enip, cip
 url = https://github.com/amzn/zeek-plugin-enip
-version = master
+version = 1.1.0
 
 [amzn/zeek-plugin-profinet]
 build_command = ./configure && make
@@ -111,10 +111,10 @@ depends =
 	zkg >=2.0
 	zeek >=3.0.0
 description = Plugin that enables parsing of the Profinet protocol
-script_dir = scripts
+script_dir = scripts/PROFINET
 tags = zeek plugin, protocol analyzer, log writer, ics, profinet
 url = https://github.com/amzn/zeek-plugin-profinet
-version = master
+version = 1.1.0
 
 [amzn/zeek-plugin-s7comm]
 build_command = ./configure && make
@@ -122,10 +122,10 @@ depends =
 	zkg >=2.0
 	zeek >=3.0.0
 description = Plugin that enables parsing of the S7 protocol
-script_dir = scripts
+script_dir = scripts/S7comm
 tags = zeek plugin, protocol analyzer, log writer, ics, s7
 url = https://github.com/amzn/zeek-plugin-s7comm
-version = master
+version = 1.0.0
 
 [amzn/zeek-plugin-tds]
 build_command = ./configure && make
@@ -133,10 +133,10 @@ depends =
 	zkg >=2.0
 	zeek >=3.0.0
 description = Plugin that enables parsing of the Tabular Data Stream (TDS) protocol
-script_dir = scripts
+script_dir = scripts/TDS
 tags = zeek plugin, protocol analyzer, log writer, tds
 url = https://github.com/amzn/zeek-plugin-tds
-version = master
+version = 1.1.0
 
 [anthonykasza/indicator-rules]
 depemds = 
@@ -178,13 +178,17 @@ version = master
 url = https://github.com/brimsec/geoip-conn
 
 [bro/bro-netmap]
-build_command = ./configure && cd build && make
+build_command = ./configure --with-netmap=%(netmap_root_dir)s && cd build && make
+depends = 
+	zeek >=3.1.0
 description = Packet source plugin that provides native Netmap support.
 plugin_dir = build
 tags = packet source, plugin, netmap
 test_command = cd tests && btest -d -c btest.cfg
+user_vars = 
+	netmap_root_dir [] "Root directory of Netmap installation"
 url = https://github.com/bro/bro-netmap
-version = master
+version = v2.0.0
 
 [captainGeech42/zeek-bogon]
 author = Zander Work (@captainGeech42)
@@ -483,6 +487,13 @@ script_dir = build/scripts/Corelight/GQUIC
 tags = plugin, analyzer, gquic, quic
 url = https://github.com/corelight/zeek-quic
 version = v0.7.0
+
+[corelight/zeek-openvpn]
+build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
+script_dir = scripts/zeek/openvpn
+test_command = cd tests && btest
+url = https://github.com/corelight/zeek-openvpn
+version = v0.0.2
 
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
@@ -1310,7 +1321,7 @@ description = Detect credit card numbers in HTTP and SMTP with Bro.
 script_dir = scripts
 tags = credit cards, dlp, http, smtp, files
 test_command = ( cd tests && btest -d )
-version = 1.0.0
+version = 2.0.0
 url = https://github.com/sethhall/credit-card-exposure
 
 [sethhall/ssn-exposure]
@@ -1496,10 +1507,10 @@ url = https://github.com/zeek/spicy-tftp
 version = master
 
 [zeek/spicy-analyzers]
-build_command = mkdir -p build && cd build && cmake .. && make -j
+build_command = mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/plugin/bin/spicyz cmake .. && make -j
 plugin_dir = build/spicy-modules
 script_dir = analyzer
 test_command = cd tests && SPICY_MODULE_PATH=$(pwd)/../build/spicy-modules btest -dj -a zkg
 url = https://github.com/zeek/spicy-analyzers
-version = main
+version = v0.1.0
 
