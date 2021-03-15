@@ -177,19 +177,6 @@ tags = conn, geolocation, logging
 version = master
 url = https://github.com/brimsec/geoip-conn
 
-[bro/bro-netmap]
-build_command = ./configure --with-netmap=%(netmap_root_dir)s && cd build && make
-depends = 
-	zeek >=3.1.0
-description = Packet source plugin that provides native Netmap support.
-plugin_dir = build
-tags = packet source, plugin, netmap
-test_command = cd tests && btest -d -c btest.cfg
-user_vars = 
-	netmap_root_dir [] "Root directory of Netmap installation"
-url = https://github.com/bro/bro-netmap
-version = v2.0.0
-
 [captainGeech42/zeek-bogon]
 author = Zander Work (@captainGeech42)
 description = Label bogon IPs in conn.log
@@ -290,15 +277,6 @@ script_dir = scripts
 tags = conn
 version = v1.0.1
 url = https://github.com/corelight/bro-long-connections
-
-[corelight/bro-xor-exe-plugin]
-build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
-description = A plugin to find Windows executables that have been XOR encoded.
-plugin_dir = build
-tags = plugin, pe, executable, malware
-test_command = ( cd tests && btest -d )
-url = https://github.com/corelight/bro-xor-exe-plugin
-version = 2.0
 
 [corelight/bro-hardware]
 description = Scripts for cases where hardware device identifiers are discovered.
@@ -489,11 +467,21 @@ url = https://github.com/corelight/zeek-quic
 version = v0.7.0
 
 [corelight/zeek-openvpn]
-build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
+build_command = ./configure --zeek-dist=%(zeek_dist)s && make
+description = A Zeek OpenVPN Protocol Analyzer
 script_dir = scripts/zeek/openvpn
 test_command = cd tests && btest
 url = https://github.com/corelight/zeek-openvpn
-version = v0.0.2
+version = v0.0.9
+
+[corelight/zeek-xor-exe-plugin]
+build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
+description = A plugin to find Windows executables that have been XOR encoded.
+plugin_dir = build
+tags = plugin, pe, executable, malware
+test_command = ( cd tests && btest -d )
+url = https://github.com/corelight/zeek-xor-exe-plugin
+version = 2.0
 
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
@@ -1366,6 +1354,15 @@ tags = http
 version = v1.0.0
 url = https://github.com/sethhall/zeek-log-all-http-headers
 
+[sfinlon/cif-zeek]
+aliases = cif-zeek cif
+credits = Scott Finlon <finlon@gmail.com>
+description = Adds Collective Intelligence Framework (CIF) metadata to intel logs.
+script_dir = scripts
+tags = log, logging, intel, intelligenece, threat intelligence, ti, CIF
+url = https://github.com/sfinlon/cif-zeek
+version = 1.0
+
 [sirinsoftware/zeek-testimony-plugin.git]
 build_command = ./configure && make -C build
 depends = 
@@ -1475,37 +1472,6 @@ tags = osquery
 version = v0.4
 url = https://github.com/zeek/osquery-framework
 
-[zeek/spicy-runtime]
-build_command = mkdir -p build && cd build && cmake -DSPICY_VERSION=%(spicy_version)s .. && cmake --build .
-depends = 
-	zeek >=3.0
-	zkg >=2.3.0
-description = Provides the Spicy runtime environment
-external_depends = 
-	C++17 *
-	Bison >=3.4
-	Flex >=2.6
-	CMake >=3.15
-tags = spicy
-test_command = zeek -N _Zeek::Spicy
-user_vars = 
-	spicy_version [master] "Spicy version to use"
-url = https://github.com/zeek/spicy-runtime
-version = master
-
-[zeek/spicy-tftp]
-build_command = ./configure --with-spicy=%(package_base)s/spicy-runtime && make -j
-depends = 
-	spicy-runtime *
-	zkg >=2.3.0
-description = A Spicy-based TFTP analyzer
-plugin_dir = build
-script_dir = scripts
-tags = zeek plugin, protocol analyzer, tftp, spicy
-test_command = cd tests && btest -d
-url = https://github.com/zeek/spicy-tftp
-version = master
-
 [zeek/spicy-analyzers]
 build_command = mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/plugin/bin/spicyz cmake .. && make -j
 plugin_dir = build/spicy-modules
@@ -1513,4 +1479,17 @@ script_dir = analyzer
 test_command = cd tests && SPICY_MODULE_PATH=$(pwd)/../build/spicy-modules btest -dj -a zkg
 url = https://github.com/zeek/spicy-analyzers
 version = v0.1.0
+
+[zeek/zeek-netmap]
+build_command = ./configure --with-netmap=%(netmap_root_dir)s && cd build && make
+depends = 
+	zeek >=3.1.0
+description = Packet source plugin that provides native Netmap support.
+plugin_dir = build
+tags = packet source, plugin, netmap
+test_command = cd tests && btest -d -c btest.cfg
+user_vars = 
+	netmap_root_dir [] "Root directory of Netmap installation"
+url = https://github.com/zeek/zeek-netmap
+version = v2.0.0
 
