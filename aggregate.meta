@@ -1144,18 +1144,18 @@ script_dir = scripts
 tags = bro plugin, site, darknet
 test_command = (cd testing && btest -d)
 url = https://github.com/ncsa/bro-is-darknet
-version = 1.0
+version = 2.0
 
 [ncsa/bro-simple-scan]
 depends = 
-	bro >=2.5.1
-	ncsa/bro-is-darknet >=0.6
+	zeek >=3.0.0
+	ncsa/bro-is-darknet >=2.0
 description = Simple, high performance tcp scan detection
 script_dir = scripts
 tags = bro plugin, scan detection
 test_command = (cd testing && btest -d)
 url = https://github.com/ncsa/bro-simple-scan
-version = 2.0
+version = 3.0
 
 [ncsa/bro-zeromq-writer]
 build_command = ./configure --bro-dist=%(bro_dist)s --with-zmq=%(ZEROMQ_PREFIX)s && make
@@ -1472,13 +1472,21 @@ tags = osquery
 version = v0.4
 url = https://github.com/zeek/osquery-framework
 
+[zeek/spicy-plugin]
+build_command = mkdir -p build && cd build && cmake .. && make -j 4
+plugin_dir = build/plugin
+script_dir = plugin/scripts
+test_command = cd tests && btest -d -j 2
+url = https://github.com/zeek/spicy-plugin
+version = v0.99.1
+
 [zeek/spicy-analyzers]
-build_command = mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/plugin/bin/spicyz cmake .. && make -j
+build_command = mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/plugin/bin/spicyz cmake .. && make -j 2
 plugin_dir = build/spicy-modules
 script_dir = analyzer
 test_command = cd tests && SPICY_MODULE_PATH=$(pwd)/../build/spicy-modules btest -dj -a zkg
 url = https://github.com/zeek/spicy-analyzers
-version = v0.1.0
+version = v0.2.0
 
 [zeek/zeek-netmap]
 build_command = ./configure --with-netmap=%(netmap_root_dir)s && cd build && make
