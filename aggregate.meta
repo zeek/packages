@@ -269,15 +269,6 @@ tags = modbus, Modbus, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek scripting, log 
 url = https://github.com/cisagov/icsnpp-modbus
 version = master
 
-[corelight/bro-long-connections]
-aliases = zeek-long-connections bro-long-connections
-depends = zkg >=2.0.7
-description = Find and log long-lived connections into a "conn_long" log.
-script_dir = scripts
-tags = conn
-version = v1.0.1
-url = https://github.com/corelight/bro-long-connections
-
 [corelight/bro-hardware]
 description = Scripts for cases where hardware device identifiers are discovered.
 script_dir = scripts
@@ -472,7 +463,7 @@ description = A Zeek OpenVPN Protocol Analyzer
 script_dir = scripts/zeek/openvpn
 test_command = cd tests && btest
 url = https://github.com/corelight/zeek-openvpn
-version = v0.0.9
+version = v0.0.14
 
 [corelight/zeek-xor-exe-plugin]
 build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
@@ -482,6 +473,15 @@ tags = plugin, pe, executable, malware
 test_command = ( cd tests && btest -d )
 url = https://github.com/corelight/zeek-xor-exe-plugin
 version = 2.0
+
+[corelight/zeek-long-connections]
+aliases = zeek-long-connections bro-long-connections
+depends = zkg >=2.0.7
+description = Find and log long-lived connections into a "conn_long" log.
+script_dir = scripts
+tags = conn
+version = v1.1.0
+url = https://github.com/corelight/zeek-long-connections
 
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
@@ -1361,7 +1361,7 @@ description = Adds Collective Intelligence Framework (CIF) metadata to intel log
 script_dir = scripts
 tags = log, logging, intel, intelligenece, threat intelligence, ti, CIF
 url = https://github.com/sfinlon/cif-zeek
-version = 1.0
+version = 1.0.1
 
 [sirinsoftware/zeek-testimony-plugin.git]
 build_command = ./configure && make -C build
@@ -1474,19 +1474,21 @@ url = https://github.com/zeek/osquery-framework
 
 [zeek/spicy-plugin]
 build_command = mkdir -p build && cd build && cmake .. && make -j 4
+executables = build/plugin/bin/spicyz
 plugin_dir = build/plugin
 script_dir = plugin/scripts
 test_command = cd tests && btest -d -j 2
 url = https://github.com/zeek/spicy-plugin
-version = v0.99.1
+version = v0.99.3
 
 [zeek/spicy-analyzers]
 build_command = mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/plugin/bin/spicyz cmake .. && make -j 2
+depends = zeek/spicy-plugin *
 plugin_dir = build/spicy-modules
 script_dir = analyzer
 test_command = cd tests && SPICY_MODULE_PATH=$(pwd)/../build/spicy-modules btest -dj -a zkg
 url = https://github.com/zeek/spicy-analyzers
-version = v0.2.0
+version = v0.2.8
 
 [zeek/zeek-netmap]
 build_command = ./configure --with-netmap=%(netmap_root_dir)s && cd build && make
