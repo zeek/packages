@@ -3,15 +3,15 @@ description = Two-dimensional buckets for sumstats (count occurences per $str).
 tags = sumstats, summary statistics
 test_command = cd tests && btest -d
 url = https://github.com/0xxon/zeek-sumstats-counttable
-version = 0.0.3
+version = 0.0.4
 
 [0xxon/zeek-postgresql]
-build_command = ( ./configure --bro-dist=%(bro_dist)s --with-postgresql-inc=`pg_config --includedir` --with-postgresql-server-inc=`pg_config --includedir-server`  --with-postgresql-lib=`pg_config --libdir` && make )
-description = A PostgreSQL reader and writer for Bro.
+build_command = ( ./configure --with-postgresql-inc=`pg_config --includedir` --with-postgresql-server-inc=`pg_config --includedir-server` --with-postgresql-lib=`pg_config --libdir` && make )
+description = A PostgreSQL reader and writer for Zeek.
 plugin_dir = build
-tags = bro plugin, PostgreSQL, reader, writer, input
+tags = zeek plugin, PostgreSQL, reader, writer, input
 test_command = cd tests && btest -d
-version = 0.0.6
+version = 0.0.7
 url = https://github.com/0xxon/zeek-postgresql
 
 [0xxon/zeek-plugin-roca]
@@ -36,7 +36,7 @@ description = "Test script for CVE-2020-0601. Please read Readme."
 script_dir = scripts
 test_command = cd testing && btest -d
 url = https://github.com/0xxon/cve-2020-0601
-version = master
+version = v0.3
 
 [0xxon/cve-2020-0601-plugin]
 build_command = ( ./configure && make )
@@ -51,7 +51,7 @@ description = "Test script for CVE-2020-13777. Please read Readme."
 script_dir = scripts
 test_command = cd testing && btest -d
 url = https://github.com/0xxon/cve-2020-13777
-version = master
+version = main
 
 [activecm/bro-mongodb.git]
 build_command = (./configure --bro-dist=%(bro_dist)s && make)
@@ -201,37 +201,37 @@ build_dir = build/ICSNPP_Bacnet.tgz
 credits = Stephen Kleinheider <stephen.kleinheider@inl.gov>
 depends = 
 	zkg >=2.0
-	zeek >=3.0.0
+	zeek >=3.2.0
 description = BACnet plugin for parsing and logging of the BACnet (building automation and control) protocol - CISA ICSNPP
 script_dir = build/scripts/icsnpp/bacnet
 tags = bacnet, BACnet, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
 url = https://github.com/cisagov/icsnpp-bacnet
 version = master
 
-[cisagov/icsnpp-bsap-ip]
+[cisagov/icsnpp-bsap]
 build_command = ./configure && make
-build_dir = build/ICSNPP_Bsap_ip.tgz
+build_dir = build/ICSNPP_Bsap.tgz
 credits = Devin Vollmer <devin.vollmer@inl.gov>
 depends = 
 	zkg >=2.0
 	zeek >=3.0.0
 description = BSAP over IP plugin for parsing and logging of the BSAP protocol - CISA ICSNPP
-script_dir = build/scripts/icsnpp/bsap-ip
+script_dir = build/scripts/icsnpp/bsap
 tags = bsap, BSAP, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
-url = https://github.com/cisagov/icsnpp-bsap-ip
+url = https://github.com/cisagov/icsnpp-bsap
 version = master
 
-[cisagov/icsnpp-bsap-serial]
+[cisagov/icsnpp-ethercat]
 build_command = ./configure && make
-build_dir = build/ICSNPP_Bsap_serial.tgz
+build_dir = build/ICSNPP_Ethercat.tgz
 credits = Devin Vollmer <devin.vollmer@inl.gov>
 depends = 
 	zkg >=2.0
-	zeek >=3.0.0
-description = BSAP for Serial->Ethernet plugin for parsing and logging of the BSAP protocol - CISA ICSNPP
-script_dir = build/scripts/icsnpp/bsap-serial
-tags = bsap, BSAP, serial, Serial, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
-url = https://github.com/cisagov/icsnpp-bsap-serial
+	zeek >=4.0.0
+description = Ethercat plugin for parsing and logging of the Ethercat protocol - CISA ICSNPP
+script_dir = build/scripts/icsnpp/ethercat
+tags = ecat, ECAT, ethercat, Ethercat, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, packet analyzer
+url = https://github.com/cisagov/icsnpp-ethercat
 version = master
 
 [cisagov/icsnpp-enip]
