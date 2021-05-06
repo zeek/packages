@@ -16,7 +16,8 @@ own work/packages):
 
 #. Create a `Zeek package`_.  Make sure to set the ``tags``
    and ``description`` metadata fields to help people discover
-   your package.
+   your package. Also make sure you put your the license information
+   for your package in a COPYING or LICENSE file.
 #. Host your package's git repository at a public location.
    E.g. put it on GitHub.
 #. Fork this `zeek/packages repository`_ on GitHub.
