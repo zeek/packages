@@ -555,7 +555,7 @@ description = This script expands the base known-hosts policy to include reverse
 script_dir = scripts
 tags = known-hosts, known_hosts, dns
 test_command = cd tests && btest -d known_tests
-version = v1.1.3
+version = v1.1.5
 url = https://github.com/dopheide-esnet/zeek-known-hosts-with-dns
 
 [dopheide/zeek-ssh-interesting-hostnames-with-known]
@@ -564,7 +564,7 @@ description = This script replaces the default ssh/interesting-hostnames and red
 script_dir = scripts
 tags = dns, ssh, interesting-hostnames
 test_command = cd tests && btest -d ssh_tests
-version = v1.1.5
+version = v1.1.7
 url = https://github.com/dopheide-esnet/zeek-ssh-interesting-hostnames-with-known
 
 [dopheide/zeek-notice-config]
@@ -618,6 +618,13 @@ script_dir = scripts/
 tags = s7comm, zeek plugin, s7commplus, siemens, zeek, protocol analyzer
 version = master
 url = https://github.com/dw2102/S7Comm-Analyzer
+
+[elcabezzonn/http-header-count]
+description = a script that counts the client http headers.
+script_dir = scripts
+tags = http
+version = main
+url = https://github.com/elcabezzonn/http-header-count
 
 [emojifier/emojifier]
 credits = Jan Grashoefer <jan.grashoefer@gmail.com>,
@@ -1465,6 +1472,15 @@ script_dir = scripts
 url = https://github.com/theparanoids/rdfp
 version = master
 
+[thibaultbl/variation_coefficient]
+alias = coefficient_variation variation_coefficient
+credits = T. BLANC
+description = Implementing coefficient of variation (standard deviation / average), sort of relative standard deviation.
+script_dir = scripts
+tags = statistics, stats, sumstats, standard_deviation, variance
+url = https://github.com/thibaultbl/variation_coefficient
+version = main
+
 [ukncsc/zeek-plugin-ikev2]
 build_command = ( ./configure --bro-dist=%(bro_dist)s  && make )
 depends = 
@@ -1518,7 +1534,7 @@ plugin_dir = build/spicy-modules
 script_dir = analyzer
 test_command = cd tests && SPICY_MODULE_PATH=$(pwd)/../build/spicy-modules btest -d -j "${SPICY_ZKG_PROCESSES:-2}" -a zkg
 url = https://github.com/zeek/spicy-analyzers
-version = v0.2.16
+version = v0.2.19
 
 [zeek/zeek-netmap]
 build_command = ./configure --with-netmap=%(netmap_root_dir)s && cd build && make
