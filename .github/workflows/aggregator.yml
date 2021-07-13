@@ -9,6 +9,7 @@ on:
 
 jobs:
   aggregate-metadata:
+    if: github.repository == 'zeek/packages'
     runs-on: ubuntu-20.04
     env:
       ZKG_DEFAULT_SOURCE: https://zeek-bot:${{ secrets.ZEEK_BOT_TOKEN }}@github.com/${{ github.repository }}
