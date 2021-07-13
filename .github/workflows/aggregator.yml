@@ -15,6 +15,6 @@ jobs:
     steps:
       - name: zkg refresh
         run: |
-          git config --global user.name "Zeek Package Bot"
-          git config --global user.email "zeek-bot@zeek.org"
+          git config --global user.name zeek-bot
+          git config --global user.email info@zeek.org
           pip3 install zkg && zkg -vvv refresh --aggregate --fail-on-aggregate-problems --push
