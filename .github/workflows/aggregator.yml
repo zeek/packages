@@ -11,10 +11,10 @@ jobs:
   aggregate-metadata:
     runs-on: ubuntu-20.04
     env:
-      ZKG_DEFAULT_SOURCE: https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+      ZKG_DEFAULT_SOURCE: https://zeek-bot:${{ secrets.ZEEK_BOT_TOKEN }}@github.com/${{ github.repository }}
     steps:
       - name: zkg refresh
         run: |
           git config --global user.name "Zeek Package Bot"
-          git config --global user.email "package-bot@zeek.org"
+          git config --global user.email "zeek-bot@zeek.org"
           pip3 install zkg && zkg -vvv refresh --aggregate --fail-on-aggregate-problems --push
