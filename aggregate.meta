@@ -356,7 +356,7 @@ script_dir = scripts/Corelight/CommunityID
 tags = zeek plugin, conn, logging, community id, flow hashing, flow id, sha1, corelight
 test_command = cd tests && btest -c btest.cfg -d communityid
 url = https://github.com/corelight/zeek-community-id
-version = 3.2.0
+version = 3.2.1
 
 [corelight/zeek-elf]
 build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
