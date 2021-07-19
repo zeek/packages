@@ -511,6 +511,14 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/zeek-globload
 version = 1.0.0
 
+[corelight/zeek-notice-telegram]
+description = Package that extends the Notice Framework to include
+	`ACTION_TELEGRAM` for sending messages on notices over Telegram.
+script_dir = scripts
+summary = Send Notices over Telegram
+url = https://github.com/corelight/zeek-notice-telegram
+version = master
+
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
 script_dir = scripts
