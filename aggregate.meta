@@ -1541,7 +1541,7 @@ plugin_dir = build/spicy-modules
 script_dir = analyzer
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j "${SPICY_ZKG_PROCESSES:-2}"
 url = https://github.com/zeek/spicy-analyzers
-version = v0.2.20
+version = v0.2.21
 
 [zeek/zeek-netmap]
 build_command = ./configure --with-netmap=%(netmap_root_dir)s && cd build && make
