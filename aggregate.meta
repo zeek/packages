@@ -365,7 +365,7 @@ script_dir = scripts/Zeek/ELF
 tags = intel, files, elf
 test_command = cd tests && btest
 url = https://github.com/corelight/zeek-elf
-version = v0.1.1
+version = v0.1.2
 
 [corelight/zeek-jpeg]
 build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
