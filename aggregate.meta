@@ -376,13 +376,13 @@ url = https://github.com/corelight/zeek-elf
 version = v0.1.3
 
 [corelight/zeek-jpeg]
-build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
+build_command = ./configure --enable-debug && make
 description = This package provides some basic analysis for JPEG files.
 script_dir = scripts/Zeek/JPEG
 tags = intel, files, jpeg, jpg
 test_command = cd tests && btest
 url = https://github.com/corelight/zeek-jpeg
-version = v0.1.2
+version = v0.1.3
 
 [corelight/zeek-macho]
 build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
