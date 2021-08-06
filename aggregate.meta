@@ -53,6 +53,14 @@ test_command = cd testing && btest -d
 url = https://github.com/0xxon/cve-2020-13777
 version = main
 
+[0xxon/zeek-network-statistics]
+description = Perform regular network measurements and report results.
+script_dir = scripts
+tags = topk, sumstats
+test_command = cd tests && make
+version = main
+url = https://github.com/0xxon/zeek-network-statistics
+
 [activecm/bro-mongodb.git]
 build_command = (./configure --bro-dist=%(bro_dist)s && make)
 description = Bro IDS/ MongoDB connector.
