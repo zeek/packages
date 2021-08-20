@@ -164,6 +164,13 @@ tags = intel, signature, indicators, pure-script
 version = master
 url = https://github.com/anthonykasza/indicator-rules
 
+[anthonykasza/common-encodings]
+description = A Zeek package which provides common encodings and operations.
+script_dir = scripts
+tags = rc4, base64, bitshift, encoding
+version = 1.0.0
+url = https://github.com/anthonykasza/common-encodings/
+
 [apache/metron-bro-plugin-kafka]
 build_command = ./configure --bro-dist=%(bro_dist)s --with-librdkafka=%(LIBRDKAFKA_ROOT)s && make
 depends = 
