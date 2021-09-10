@@ -61,6 +61,10 @@ test_command = cd tests && make
 version = main
 url = https://github.com/0xxon/zeek-tls-log-alternative
 
+[0xxon/zeek-os-package-tracking]
+url = https://github.com/0xxon/zeek-os-package-tracking
+version = main
+
 [activecm/bro-mongodb.git]
 build_command = (./configure --bro-dist=%(bro_dist)s && make)
 description = Bro IDS/ MongoDB connector.
