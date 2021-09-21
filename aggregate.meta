@@ -350,6 +350,14 @@ tags = BIGIP, F5, firewall, RCE, CVE10.0, CVE10, CorelightResponse
 version = master
 url = https://github.com/corelight/CVE-2020-5902-F5BigIP
 
+[corelight/CVE-2021-38647]
+aliases = omigod
+description = A Zeek package which detects CVE-2021-38647 (AKA OMIGOD) exploit attempts
+script_dir = scripts
+tags = HTTP, OMI, WMI, Windows, CVE, CVE-2021-38647, exploit, RCE, RapidResponse
+version = v0.1.0
+url = https://github.com/corelight/CVE-2021-38647
+
 [corelight/detect-ransomware-filenames]
 description = Watch SMB transactions for files whose filename matches patterns known to be used by ransomware
 script_dir = scripts
