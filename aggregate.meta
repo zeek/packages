@@ -673,6 +673,13 @@ tags = http
 version = main
 url = https://github.com/elcabezzonn/http-header-count
 
+[elcabezzonn/smb2-remote-file-copy]
+description = a script that identifies remote file copies over smb2
+script_dir = scripts
+tags = smb2
+version = master
+url = https://github.com/elcabezzonn/smb2-remote-file-copy
+
 [emojifier/emojifier]
 credits = Jan Grashoefer <jan.grashoefer@gmail.com>,
 	Matthias Grundmann <matthias.grundmann@kit.edu>,
