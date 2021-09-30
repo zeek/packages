@@ -355,7 +355,8 @@ aliases = omigod
 description = A Zeek package which detects CVE-2021-38647 (AKA OMIGOD) exploit attempts
 script_dir = scripts
 tags = HTTP, OMI, WMI, Windows, CVE, CVE-2021-38647, exploit, RCE, RapidResponse
-version = v0.1.1
+test_command = cd testing && btest -c btest.cfg
+version = v0.1.2
 url = https://github.com/corelight/CVE-2021-38647
 
 [corelight/detect-ransomware-filenames]
