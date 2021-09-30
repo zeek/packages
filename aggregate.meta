@@ -1485,12 +1485,23 @@ version = 1.0.1
 build_command = make all
 credits = Steve Smoot <smoot@corelight.com>
 depends = 
-	bro/sethhall/domain-tld *
+	zeek/sethhall/domain-tld *
 description = Leverage nDPI and other info to make informed guess at the application for a connection.
 script_dir = .
 tags = nDPI application
 url = https://github.com/stevesmoot/appid
 version = master
+
+[stevesmoot/localcountry]
+depends = 
+	zeek >=4.0.0
+description = TODO: A more detailed description of LocalCountry.
+	It can span multiple lines, with this indentation.
+script_dir = scripts
+summary = TODO: A summary of LocalCountry in one line
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/stevesmoot/localcountry
+version = main
 
 [stratosphereips/IRC-Zeek-package]
 description = Zeek Package that extracts features of IRC communication
