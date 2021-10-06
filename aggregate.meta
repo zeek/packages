@@ -1199,7 +1199,7 @@ url = https://github.com/mitre/icap
 version = master
 
 [mitrecnd/bro-http2]
-build_command = ./configure --zeek-dist=%(zeek_dist)s && make
+build_command = ./configure && make
 depends = 
 	zeek >=3.0.0
 description = A HTTP2 protocol analyzer for the Zeek NSM.
@@ -1210,7 +1210,7 @@ script_dir = scripts
 tags = zeek plugin, protocol analyzer, http2, intel
 test_command = make test
 url = https://github.com/MITRECND/bro-http2
-version = 0.5.3
+version = 0.6.0
 
 [ncsa/bro-doctor]
 depends = 
