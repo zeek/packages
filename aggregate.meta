@@ -591,7 +591,7 @@ description = This script expands the base known-hosts policy to include reverse
 script_dir = scripts
 tags = known-hosts, known_hosts, dns
 test_command = cd tests && btest -d known_tests
-version = v1.1.5
+version = v1.1.6
 url = https://github.com/dopheide-esnet/zeek-known-hosts-with-dns
 
 [dopheide/zeek-ssh-interesting-hostnames-with-known]
