@@ -229,12 +229,12 @@ build_dir = build/ICSNPP_Bacnet.tgz
 credits = Stephen Kleinheider <stephen.kleinheider@inl.gov>
 depends = 
 	zkg >=2.0
-	zeek >=3.2.0
+	zeek >=4.0.0
 description = BACnet plugin for parsing and logging of the BACnet (building automation and control) protocol - CISA ICSNPP
 script_dir = build/scripts/icsnpp/bacnet
 tags = bacnet, BACnet, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
 url = https://github.com/cisagov/icsnpp-bacnet
-version = master
+version = main
 
 [cisagov/icsnpp-bsap]
 build_command = ./configure && make
@@ -242,12 +242,12 @@ build_dir = build/ICSNPP_Bsap.tgz
 credits = Devin Vollmer <devin.vollmer@inl.gov>
 depends = 
 	zkg >=2.0
-	zeek >=3.0.0
+	zeek >=4.0.0
 description = BSAP over IP plugin for parsing and logging of the BSAP protocol - CISA ICSNPP
 script_dir = build/scripts/icsnpp/bsap
 tags = bsap, BSAP, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
 url = https://github.com/cisagov/icsnpp-bsap
-version = master
+version = main
 
 [cisagov/icsnpp-dnp3]
 credits = Stephen Kleinheider <stephen.kleinheider@inl.gov>
@@ -258,7 +258,7 @@ description = DNP3 script for detailed logging of the DNP3 protocol - CISA ICSNP
 script_dir = scripts
 tags = dnp3, DNP3, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek scripting, log writer, protocol analyzer
 url = https://github.com/cisagov/icsnpp-dnp3
-version = master
+version = main
 
 [cisagov/icsnpp-enip]
 build_command = ./configure && make
@@ -266,12 +266,12 @@ build_dir = build/ICSNPP_Enip.tgz
 credits = Stephen Kleinheider <stephen.kleinheider@inl.gov>
 depends = 
 	zkg >=2.0
-	zeek >=3.0.0
+	zeek >=4.0.0
 description = Ethernet/IP and CIP plugin for parsing and logging of the Ethernet/IP and CIP protocols - CISA ICSNPP
 script_dir = build/scripts/icsnpp/enip
 tags = enip, ENIP, cip, CIP, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
 url = https://github.com/cisagov/icsnpp-enip
-version = master
+version = main
 
 [cisagov/icsnpp-ethercat]
 build_command = ./configure && make
@@ -284,7 +284,7 @@ description = Ethercat plugin for parsing and logging of the Ethercat protocol -
 script_dir = build/scripts/icsnpp/ethercat
 tags = ecat, ECAT, ethercat, Ethercat, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, packet analyzer
 url = https://github.com/cisagov/icsnpp-ethercat
-version = master
+version = main
 
 [cisagov/icsnpp-modbus]
 credits = Brett Rasmussen <brett.rasmussen@inl.gov> & Stephen Kleinheider <stephen.kleinheider@inl.gov>
@@ -295,7 +295,7 @@ description = Modbus script for detailed logging of the Modbus protocol - CISA I
 script_dir = scripts
 tags = modbus, Modbus, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek scripting, log writer, protocol analyzer
 url = https://github.com/cisagov/icsnpp-modbus
-version = master
+version = main
 
 [corelight/bro-drwatson]
 depends = 
