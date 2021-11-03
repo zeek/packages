@@ -1591,7 +1591,7 @@ plugin_dir = build/spicy-modules
 script_dir = analyzer
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j "${SPICY_ZKG_PROCESSES:-2}"
 url = https://github.com/zeek/spicy-analyzers
-version = v0.2.24
+version = v0.2.25
 
 [zeek/spicy-plugin]
 build_command = mkdir -p build && cd build && cmake .. && make -j "${SPICY_ZKG_PROCESSES:-4}"
