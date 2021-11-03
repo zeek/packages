@@ -171,8 +171,8 @@ url = https://github.com/anthonykasza/indicator-rules
 [anthonykasza/common-encodings]
 description = A Zeek package which provides common encodings and operations.
 script_dir = scripts
-tags = rc4, base64, bitshift, encoding
-version = 1.0.0
+tags = rc4, base64, bitshift, encoding, xor
+version = 1.0.1
 url = https://github.com/anthonykasza/common-encodings/
 
 [apache/metron-bro-plugin-kafka]
