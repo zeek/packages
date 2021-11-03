@@ -1397,6 +1397,18 @@ user_vars =
 version = v1.0.0
 url = https://github.com/seisollc/zeek-kafka
 
+[sethhall/bro-myricom]
+build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
+depends = 
+	bro-pkg >=1.2
+description = Packet source plugin that provides native Myricom SNF v3+v4 support.
+plugin_dir = build/Bro_Myricom.tgz
+script_dir = scripts.not_used
+tags = packet source, plugin, myricom
+test_command = ( cd tests && btest -d )
+url = https://github.com/sethhall/bro-myricom
+version = 1.0.4
+
 [sethhall/credit-card-exposure]
 description = Detect credit card numbers in HTTP and SMTP with Bro.
 script_dir = scripts
