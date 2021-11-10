@@ -547,6 +547,16 @@ test_command = make -C tests
 url = https://github.com/corelight/ztest
 version = master
 
+[corelight/CVE-2021-42292]
+depends = 
+	zeek >=3.0.0
+description = A package to detect CVE-2021-42292, a Microsoft Excel priviledge exploit.
+script_dir = scripts
+summary = A package to detect CVE-2021-42292, a Microsoft Excel priviledge exploit.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/CVE-2021-42292
+version = v0.1.0
+
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
 script_dir = scripts
