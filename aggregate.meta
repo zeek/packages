@@ -1304,6 +1304,15 @@ tags = http, detection
 version = master
 url = https://github.com/precurse/zeek-httpattacks
 
+[qintel/qsentry-zeek]
+aliases = qsentry-zeek qsentry qintel
+credits = Qintel Integrations <integrations-support@qintel.com>
+description = Adds Qintel QSentry metadata to intel logs.
+script_dir = qsentry
+tags = log, logging, intel, qintel, qsentry, intelligenece, threat intelligence, ti
+url = https://github.com/qintel/qsentry-zeek
+version = 1.0.0
+
 [reservoirlabs/fix-ascii]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
 description = ASCII FIX analyzer package
