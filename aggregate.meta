@@ -1595,6 +1595,17 @@ test_command = ( cd tests && btest -d )
 version = master
 url = https://github.com/vitalyrepin/uap-bro
 
+[zeek/hello-world]
+depends = 
+	zeek >=4.0.0
+description = A test package to verify that your Zeek installation
+	can install packages successfully.
+script_dir = scripts
+summary = Hello World!
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/zeek/hello-world
+version = v1.0.0
+
 [zeek/osquery-framework]
 depends = 
 	zeek >=3.0.0-rc1
