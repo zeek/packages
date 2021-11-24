@@ -557,6 +557,36 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/CVE-2021-42292
 version = v0.1.0
 
+[corelight/zeek-spicy-stun]
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && cmake .. && cmake --build .
+description = A Zeek STUN protocol analyzer based on Spicy.
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = A Zeek STUN protocol analyzer based on Spicy.
+test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+url = https://github.com/corelight/zeek-spicy-stun
+version = v0.2.0
+
+[corelight/zeek-spicy-ipsec]
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && cmake .. && cmake --build .
+description = An IPSec Zeek protocol analyzer based on Spicy.
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = An IPSec Zeek protocol analyzer based on Spicy.
+test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+url = https://github.com/corelight/zeek-spicy-ipsec
+version = v0.2.0
+
+[corelight/zeek-spicy-ospf]
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && cmake .. && cmake --build .
+description = A Zeek OSPF packet analyzer, based on Spicy.
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = A Zeek OSPF packet analyzer, based on Spicy.
+test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+url = https://github.com/corelight/zeek-spicy-ospf
+version = v0.1.0
+
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
 script_dir = scripts
