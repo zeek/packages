@@ -597,6 +597,16 @@ test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config
 url = https://github.com/corelight/zeek-spicy-ospf
 version = v0.1.0
 
+[corelight/zeek-spicy-openvpn]
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && cmake .. && cmake --build .
+description = A Zeek OpenVPN protocol analyzer, based on Spicy.
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = A Zeek OpenVPN protocol analyzer, based on Spicy.
+test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+url = https://github.com/corelight/zeek-spicy-openvpn
+version = v0.1.0
+
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
 script_dir = scripts
