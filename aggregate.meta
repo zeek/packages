@@ -558,7 +558,7 @@ url = https://github.com/corelight/CVE-2021-42292
 version = v0.1.0
 
 [corelight/zeek-spicy-facefish]
-build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && cmake .. && cmake --build .
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
 description = A Facefish rootkit detector, based on Spicy.
 plugin_dir = build/spicy-modules
 script_dir = analyzer
@@ -568,7 +568,7 @@ url = https://github.com/corelight/zeek-spicy-facefish
 version = v0.1.0
 
 [corelight/zeek-spicy-stun]
-build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && cmake .. && cmake --build .
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
 description = A Zeek STUN protocol analyzer based on Spicy.
 plugin_dir = build/spicy-modules
 script_dir = analyzer
@@ -578,7 +578,7 @@ url = https://github.com/corelight/zeek-spicy-stun
 version = v0.2.0
 
 [corelight/zeek-spicy-ipsec]
-build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && cmake .. && cmake --build .
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
 description = An IPSec Zeek protocol analyzer based on Spicy.
 plugin_dir = build/spicy-modules
 script_dir = analyzer
@@ -588,7 +588,7 @@ url = https://github.com/corelight/zeek-spicy-ipsec
 version = v0.2.1
 
 [corelight/zeek-spicy-ospf]
-build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && cmake .. && cmake --build .
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
 description = A Zeek OSPF packet analyzer, based on Spicy.
 plugin_dir = build/spicy-modules
 script_dir = analyzer
@@ -598,7 +598,7 @@ url = https://github.com/corelight/zeek-spicy-ospf
 version = v0.1.0
 
 [corelight/zeek-spicy-openvpn]
-build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && cmake .. && cmake --build .
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
 description = A Zeek OpenVPN protocol analyzer, based on Spicy.
 plugin_dir = build/spicy-modules
 script_dir = analyzer
