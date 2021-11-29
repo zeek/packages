@@ -607,6 +607,16 @@ test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config
 url = https://github.com/corelight/zeek-spicy-openvpn
 version = v0.1.0
 
+[corelight/zeek-spicy-wireguard]
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
+description = A Wireguard VPN protocol analyzer, based on Spicy.
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = A Wireguard VPN protocol analyzer, based on Spicy.
+test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+url = https://github.com/corelight/zeek-spicy-wireguard
+version = v0.1.0
+
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
 script_dir = scripts
@@ -1672,6 +1682,16 @@ script_dir = analyzer
 test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j "${SPICY_ZKG_PROCESSES:-2}"
 url = https://github.com/zeek/spicy-analyzers
 version = v0.2.28
+
+[zeek/spicy-ldap]
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
+description = An LDAP analyzer based on Spicy
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = LDAP analyzer
+test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+url = https://github.com/zeek/spicy-ldap
+version = v0.0.2
 
 [zeek/spicy-plugin]
 build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && cmake .. && make -j "${SPICY_ZKG_PROCESSES:-4}"
