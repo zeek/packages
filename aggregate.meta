@@ -575,7 +575,7 @@ script_dir = analyzer
 summary = A Zeek STUN protocol analyzer based on Spicy.
 test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/corelight/zeek-spicy-stun
-version = v0.2.0
+version = v0.2.1
 
 [corelight/zeek-spicy-ipsec]
 build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
