@@ -1700,7 +1700,7 @@ plugin_dir = build
 script_dir = scripts/Zeek/Spicy
 test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && btest -d -j "${SPICY_ZKG_PROCESSES:-4}"
 url = https://github.com/zeek/spicy-plugin
-version = v1.3.3
+version = v1.3.4
 
 [zeek/zeek-netmap]
 build_command = ./configure --with-netmap=%(netmap_root_dir)s && cd build && make
