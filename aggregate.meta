@@ -1683,6 +1683,36 @@ test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config
 url = https://github.com/zeek/spicy-analyzers
 version = v0.2.28
 
+[zeek/spicy-dhcp]
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
+description = Spicy-based analyzer for the DHCP protocol.
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = Spicy-based analyzer for the DHCP protocol
+test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+url = https://github.com/zeek/spicy-dhcp
+version = v0.0.1
+
+[zeek/spicy-dns]
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
+description = Spicy-based analyzer for the DNS protocol.
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = Spicy-based analyzer for the DNS protocol
+test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+url = https://github.com/zeek/spicy-dns
+version = v0.0.2
+
+[zeek/spicy-http]
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
+description = Spicy-based analyzer for the HTTP protocol.
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = Spicy-based analyzer for the HTTP protocol
+test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+url = https://github.com/zeek/spicy-http
+version = v0.0.1
+
 [zeek/spicy-ldap]
 build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
 description = An LDAP analyzer based on Spicy
@@ -1693,6 +1723,26 @@ test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config
 url = https://github.com/zeek/spicy-ldap
 version = v0.0.2
 
+[zeek/spicy-pe]
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
+description = Spicy-based analyzer for the Portable Executable (PE) image format
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = Spicy-based analyzer for the Portable Executable (PE) image format
+test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+url = https://github.com/zeek/spicy-pe
+version = v0.0.3
+
+[zeek/spicy-png]
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
+description = Spicy-based analyzer for the PNG file format.
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = Spicy-based analyzer for the PNG file format
+test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+url = https://github.com/zeek/spicy-png
+version = v0.0.2
+
 [zeek/spicy-plugin]
 build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && cmake .. && make -j "${SPICY_ZKG_PROCESSES:-4}"
 executables = build/bin/spicyz
@@ -1701,6 +1751,27 @@ script_dir = scripts/Zeek/Spicy
 test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && btest -d -j "${SPICY_ZKG_PROCESSES:-4}"
 url = https://github.com/zeek/spicy-plugin
 version = v1.3.4
+
+[zeek/spicy-tftp]
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
+description = Spicy-based analyzer for the TFTP protocol.
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = Spicy-based analyzer for the TFTP protocol
+test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+url = https://github.com/zeek/spicy-tftp
+version = v0.0.1
+
+[zeek/spicy-zip]
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
+description = TODO: A more detailed description of Archive.
+	It can span multiple lines, with this indention.
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = TODO: A summary of Archive in one line
+test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+url = https://github.com/zeek/spicy-zip
+version = v0.0.1
 
 [zeek/zeek-netmap]
 build_command = ./configure --with-netmap=%(netmap_root_dir)s && cd build && make
