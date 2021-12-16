@@ -359,6 +359,14 @@ test_command = cd testing && btest -c btest.cfg
 version = v0.1.2
 url = https://github.com/corelight/CVE-2021-38647
 
+[corelight/cve-2021-44228]
+description = A Zeek package which raises notices for RCE in Log4J (CVE-2021-44228).
+script_dir = scripts
+summary = A Zeek package which raises notices for RCE in Log4J (CVE-2021-44228).
+tags = HTTP, Apache, CVE, CVE-2021-44228, encoding, rapidresponse, Java, logging
+version = v0.3.0
+url = https://github.com/corelight/cve-2021-44228
+
 [corelight/detect-ransomware-filenames]
 description = Watch SMB transactions for files whose filename matches patterns known to be used by ransomware
 script_dir = scripts
