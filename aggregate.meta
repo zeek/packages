@@ -1022,6 +1022,14 @@ test_command = ( cd tests && btest -d )
 version = v2.0
 url = https://github.com/initconf/ws-discovery-dos
 
+[initconf/log4j.git]
+description = zeek package to identify log4j exploit attempts for  CVE-2021-44228
+script_dir = scripts
+tags = 
+test_command = ( cd tests && btest -d )
+version = main
+url = https://github.com/initconf/log4j.git
+
 [irtimmer/bro-xdp_packet-plugin]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
 depends = 
