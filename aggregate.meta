@@ -490,6 +490,15 @@ tags = conn
 version = v1.1.0
 url = https://github.com/corelight/zeek-long-connections
 
+[corelight/zeek-macho]
+build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
+description = This package provides some basic analysis for Mach-o files.
+script_dir = scripts/Zeek/MACHO
+tags = intel, files, mach-o, macho
+test_command = cd tests && btest
+url = https://github.com/corelight/zeek-macho
+version = v0.1.1
+
 [corelight/zeek-notice-telegram]
 description = Package that extends the Notice Framework to include
 	`ACTION_TELEGRAM` for sending messages on notices over Telegram.
@@ -691,6 +700,17 @@ tags = notice, known, services, outbound
 test_command = cd tests && btest -d outbound-tests
 version = master
 url = https://github.com/dopheide-esnet/zeek-known-outbound
+
+[dopheide/zeek-jetdirect]
+credits = dopheide@es.net, soehlert@es.net, jsdorn1@gmail.com
+depends = 
+	zeek >=2.0.0
+description = Detect exploit attempt of HP JetDirect printers
+script_dir = ./scripts
+tags = jetdirect, printer, cve-2017-2741
+test_command = cd tests && make
+url = https://github.com/dopheide-esnet/zeek-jetdirect
+version = 0.4
 
 [dovehawk/dovehawk]
 description = MISP+Zeek. Dovehawk is a Zeek Module to import MISP indicators to the Intel Framework and Signature Framework automatically. Reports sightings directly back to MISP as they happen. Supports Zeek Clusters.
@@ -1454,6 +1474,23 @@ script_dir = zeek
 tags = intel, ssl, logging
 version = master
 url = https://github.com/salesforce/ja3
+
+[seisollc/zeek-kafka]
+build_command = ./configure --with-librdkafka=%(LIBRDKAFKA_ROOT)s && make
+depends = 
+	zeek >=4.0.0
+	zkg >=2.0
+description = A Zeek log writer plugin that publishes to Kafka.
+external_depends = 
+	librdkafka ~1.4.2-RC1
+plugin_dir = build
+script_dir = build/scripts/Seiso/Kafka
+tags = log writer, zeek plugin, kafka
+test_command = cd tests && btest -d
+user_vars = 
+	LIBRDKAFKA_ROOT [/usr/local] "Path to librdkafka installation tree root"
+version = v1.0.0
+url = https://github.com/seisollc/zeek-kafka
 
 [sethhall/bro-myricom]
 build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
