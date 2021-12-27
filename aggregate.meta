@@ -53,14 +53,6 @@ test_command = cd tests && btest -d
 url = https://github.com/0xxon/zeek-sumstats-counttable
 version = 0.0.4
 
-[0xxon/zeek-tls-log-alternative]
-description = "This package generates a file called tls.log. The difference from ssl.log is that it is much more focused on logging all kinds of protocol features. This can be interesting for academic purposes - or if one is just interested in more information about specific features used in local TLS traffic."
-script_dir = scripts
-tags = TLS, SSL, X509, Certificates, PKI
-test_command = cd tests && make
-version = main
-url = https://github.com/0xxon/zeek-tls-log-alternative
-
 [0xxon/zeek-os-package-tracking]
 url = https://github.com/0xxon/zeek-os-package-tracking
 version = main
@@ -273,19 +265,6 @@ tags = enip, ENIP, cip, CIP, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, l
 url = https://github.com/cisagov/icsnpp-enip
 version = main
 
-[cisagov/icsnpp-ethercat]
-build_command = ./configure && make
-build_dir = build/ICSNPP_Ethercat.tgz
-credits = Devin Vollmer <devin.vollmer@inl.gov>
-depends = 
-	zkg >=2.0
-	zeek >=4.0.0
-description = Ethercat plugin for parsing and logging of the Ethercat protocol - CISA ICSNPP
-script_dir = build/scripts/icsnpp/ethercat
-tags = ecat, ECAT, ethercat, Ethercat, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, packet analyzer
-url = https://github.com/cisagov/icsnpp-ethercat
-version = main
-
 [cisagov/icsnpp-modbus]
 credits = Brett Rasmussen <brett.rasmussen@inl.gov> & Stephen Kleinheider <stephen.kleinheider@inl.gov>
 depends = 
@@ -306,13 +285,6 @@ tags = drwatson, http, windows
 test_command = ( cd tests && btest -d )
 url = https://github.com/corelight/bro-drwatson
 version = master
-
-[corelight/bro-hardware]
-description = Scripts for cases where hardware device identifiers are discovered.
-script_dir = scripts
-tags = hardware
-version = master
-url = https://github.com/corelight/bro-hardware
 
 [corelight/bro-shellshock]
 description = Discover successful ShellShock attacks.
@@ -389,13 +361,6 @@ script_dir = scripts
 tags = http, DoS, attack, notice
 url = https://github.com/corelight/http-stalling-detector
 version = master
-
-[corelight/icannTLD]
-description = A Zeek script using Input Framework to get icann_tld, icann_domain, icann_host_subdomain, and is_trusted_domain from a DNS query.  The field icann_host_subdomain contains the remaining query nodes after the domain is removed.  The is_trusted_domain is populated from a separate Input Framework set.
-script_dir = scripts
-tags = domain, dns, tld, input
-version = v19.0.1
-url = https://github.com/corelight/icannTLD
 
 [corelight/json-streaming-logs]
 description = JSON streaming logs
@@ -780,17 +745,6 @@ test_command = ( cd tests && btest -d )
 url = https://github.com/endace/zeek-dag
 version = v0.4
 
-[esnet-security/cve-2020-16898]
-credits = Vlad Grigorescu <vlad@es.net>
-depends = 
-	zeek >=2.6.0
-description = Detects CVE-2020-16898: "Bad Neighbor"
-script_dir = ./scripts
-tags = cve, cve-2020-16898, badneighbor
-test_command = cd tests && make
-url = https://github.com/esnet-security/cve-2020-16898
-version = v0.1
-
 [esnet-security/logfilter]
 credits = Vlad Grigorescu <vlad@es.net>
 description = Enables plugins to write fine-grained policy for log filtering, modification, and path customization.
@@ -958,14 +912,6 @@ tags = ftp, bruteforce, scan
 test_command = ( cd tests && btest -d )
 version = master
 url = https://github.com/initconf/icmp-scans.git
-
-[initconf/LetsEncrypt]
-description = LetsEncrypt
-script_dir = scripts
-tags = 
-test_command = ( cd tests && btest -d )
-version = master
-url = https://github.com/initconf/LetsEncrypt
 
 [initconf/phish-analysis]
 description = Suite of smtp related policies includes extracting and logging URLs from emails and various smtp anomaly detection heuristics to help flag phishing emails
@@ -1216,16 +1162,6 @@ test_command = cd testing && btest -d tests
 url = https://github.com/jsiwek/zeek-test-package
 version = 1.1.0
 
-[jswaro/tcprs]
-build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
-description = TCP Retransmission and State Analyzer plugin for Bro.
-plugin_dir = build
-script_dir = scripts
-tags = bro plugin, TCP, retransmission, connection state, conn, input reader, protocol analyzer
-test_command = cd tests btest -d tcprs
-url = https://github.com/jswaro/tcprs
-version = 0.2.1
-
 [justinazoff/zeek-jemalloc-profiling]
 description = A broctl plugin that enables jemalloc profiling
 plugin_dir = plugin
@@ -1242,29 +1178,12 @@ tags = smb, logging
 url = https://github.com/klehigh/find_smbv1
 version = 1.0.0
 
-[lexibrent/zeek-EternalSafety]
-description = EternalSafety is a Zeek/Bro package for detecting potentially-dangerous SMBv1 protocol violations that encapsulate bugs exploited by the infamous Eternal* family of Windows exploits. It is capable of detecting EternalBlue, EternalSynergy/EternalRomance, EternalChampion, and the DoublePulsar backdoor. However, rather than identifying these exploits via simple signature-matching, *EternalSafety* instead implements a set of SMBv1 protocol invariants that encapsulate techniques used by each Eternal* exploit to trigger bugs in unpatched Windows systems. EternalSafety accurately and reliably identifies the EternalBlue, EternalSynergy and EternalRomance exploits, and the DoublePulsar backdoor implant. Due to limitations in Zeek's SMBv1 support, it has limited support for detecting EternalChampion via signature-matching. EternalSafety also identifies a range of other protocol violations, such as the use of unimplemented/unused SMBv1 commands, server-initiated changes in values that may only be set by an SMBv1 client, and incorrect interleaving of transaction types.
-script_dir = scripts
-tags = SMB, Windows, attack, notice, Eternal, SMBv1, EternalBlue
-test_command = cd tests && make test
-version = master
-url = https://github.com/lexibrent/zeek-EternalSafety
-
 [micrictor/smbfp]
 credits = Michael Torres <mic.ric.tor@gmail.com>
 description = A package to create a fingerprint of SMB clients
 script_dir = scripts
 tags = smb, fingerprint
 url = https://github.com/micrictor/smbfp
-version = master
-
-[micrictor/spl-spt]
-credits = Michael Torres <mic.ric.tor@gmail.com>
-description = A package that creates a log for sequences of packet lengths and times,
-	allowing for new analytics based on these data features.
-script_dir = scripts
-tags = ssl, tls, spt, spl
-url = https://github.com/micrictor/spl-spt
 version = master
 
 [mitre-attack/bzar]
@@ -1348,13 +1267,6 @@ user_vars =
 	ZEROMQ_PREFIX [/usr/local] "ZeroMQ install prefix"
 url = https://github.com/ncsa/bro-zeromq-writer
 version = master
-
-[nskelsey/aaalm]
-description = Tag and group devices based on a LAN's structure
-script_dir = scripts
-tags = topology, mapping, visualization, traceroute
-version = master
-url = https://github.com/nskelsey/aaalm
 
 [ntop/bro-pf_ring]
 build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
@@ -1604,21 +1516,6 @@ tags = zeek plugin, irc, features extraction
 version = v1.6
 url = https://github.com/stratosphereips/IRC-Zeek-package
 
-[tenzir/zeek-mac-ages]
-script_dir = scripts/tenzir/mac-ages
-tags = conn, mac
-url = https://github.com/tenzir/zeek-mac-ages
-version = master
-
-[tenzir/zeek-vast]
-depends = 
-	zeek >= 2.6-beta2-14
-description = A package that enables Zeek to communicate with VAST
-script_dir = scripts
-tags = vast, intel
-url = https://github.com/tenzir/zeek-vast
-version = master
-
 [theflakes/bro-large_uploads]
 description = Raise notices on outgoing files over X bytes in size.
 	Also raise notices for multiple large outgoing Tx's in Y time frame.
@@ -1691,14 +1588,6 @@ tags = osquery
 version = v0.4
 url = https://github.com/zeek/osquery-framework
 
-[zeek/spicy-analyzers]
-build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && make -j "${SPICY_ZKG_PROCESSES:-2}"
-plugin_dir = build/spicy-modules
-script_dir = analyzer
-test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j "${SPICY_ZKG_PROCESSES:-2}"
-url = https://github.com/zeek/spicy-analyzers
-version = v0.2.28
-
 [zeek/spicy-dhcp]
 build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
 description = Spicy-based analyzer for the DHCP protocol.
@@ -1738,16 +1627,6 @@ summary = LDAP analyzer
 test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/zeek/spicy-ldap
 version = v0.0.4
-
-[zeek/spicy-pe]
-build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
-description = Spicy-based analyzer for the Portable Executable (PE) image format
-plugin_dir = build/spicy-modules
-script_dir = analyzer
-summary = Spicy-based analyzer for the Portable Executable (PE) image format
-test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
-url = https://github.com/zeek/spicy-pe
-version = v0.0.3
 
 [zeek/spicy-png]
 build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
