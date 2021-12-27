@@ -126,6 +126,17 @@ tags = zeek plugin, protocol analyzer, log writer, ics, enip, cip
 url = https://github.com/amzn/zeek-plugin-enip
 version = 1.1.0
 
+[amzn/zeek-plugin-profinet]
+build_command = ./configure && make
+depends = 
+	zkg >=2.0
+	zeek >=3.0.0
+description = Plugin that enables parsing of the Profinet protocol
+script_dir = scripts/PROFINET
+tags = zeek plugin, protocol analyzer, log writer, ics, profinet
+url = https://github.com/amzn/zeek-plugin-profinet
+version = 1.1.0
+
 [amzn/zeek-plugin-s7comm]
 build_command = ./configure && make
 depends = 
@@ -212,6 +223,19 @@ test_command = (cd tests && btest -d)
 url = https://github.com/captainGeech42/zeek-intel-path
 version = main
 
+[cisagov/icsnpp-bacnet]
+build_command = ./configure && make
+build_dir = build/ICSNPP_Bacnet.tgz
+credits = Stephen Kleinheider <stephen.kleinheider@inl.gov>
+depends = 
+	zkg >=2.0
+	zeek >=4.0.0
+description = BACnet plugin for parsing and logging of the BACnet (building automation and control) protocol - CISA ICSNPP
+script_dir = build/scripts/icsnpp/bacnet
+tags = bacnet, BACnet, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
+url = https://github.com/cisagov/icsnpp-bacnet
+version = main
+
 [cisagov/icsnpp-bsap]
 build_command = ./configure && make
 build_dir = build/ICSNPP_Bsap.tgz
@@ -234,6 +258,19 @@ description = DNP3 script for detailed logging of the DNP3 protocol - CISA ICSNP
 script_dir = scripts
 tags = dnp3, DNP3, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek scripting, log writer, protocol analyzer
 url = https://github.com/cisagov/icsnpp-dnp3
+version = main
+
+[cisagov/icsnpp-enip]
+build_command = ./configure && make
+build_dir = build/ICSNPP_Enip.tgz
+credits = Stephen Kleinheider <stephen.kleinheider@inl.gov>
+depends = 
+	zkg >=2.0
+	zeek >=4.0.0
+description = Ethernet/IP and CIP plugin for parsing and logging of the Ethernet/IP and CIP protocols - CISA ICSNPP
+script_dir = build/scripts/icsnpp/enip
+tags = enip, ENIP, cip, CIP, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
+url = https://github.com/cisagov/icsnpp-enip
 version = main
 
 [cisagov/icsnpp-ethercat]
@@ -500,6 +537,15 @@ test_command = ( cd tests && btest -d )
 url = https://github.com/corelight/zeek-xor-exe-plugin
 version = 2.0
 
+[corelight/zerologon]
+corelight_name = Zerologon
+description = Detects Zerologon (CVE-2020-1472) attempts and exploits.
+script_dir = scripts
+summary = Detects Zerologon (CVE-2020-1472) attempts and exploits.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/zerologon
+version = master
+
 [corelight/ztest]
 credits = Ryan Victory <ryan.victory@corelight.com>
 description = A Zeek Unit Testing Framework
@@ -549,6 +595,16 @@ test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config
 url = https://github.com/corelight/zeek-spicy-ipsec
 version = v0.2.1
 
+[corelight/zeek-spicy-ospf]
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
+description = A Zeek OSPF packet analyzer, based on Spicy.
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = A Zeek OSPF packet analyzer, based on Spicy.
+test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+url = https://github.com/corelight/zeek-spicy-ospf
+version = v0.1.0
+
 [corelight/zeek-spicy-openvpn]
 build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
 description = A Zeek OpenVPN protocol analyzer, based on Spicy.
@@ -558,6 +614,23 @@ summary = A Zeek OpenVPN protocol analyzer, based on Spicy.
 test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/corelight/zeek-spicy-openvpn
 version = v0.1.0
+
+[corelight/zeek-spicy-wireguard]
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
+description = A Wireguard VPN protocol analyzer, based on Spicy.
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = A Wireguard VPN protocol analyzer, based on Spicy.
+test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+url = https://github.com/corelight/zeek-spicy-wireguard
+version = v0.1.0
+
+[cybera/zeek-sniffpass]
+description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
+script_dir = scripts
+tags = password, logging
+version = master
+url = https://github.com/cybera/zeek-sniffpass
 
 [dopheide/bro_notice_correlation]
 description = Adds support for multi-notice correlation. For more information, see http://blog.samoehlert.com/correlating-bro-notices or the talk from BroCon 2016.
@@ -812,6 +885,16 @@ tags = connection
 version = 1.0.0
 url = https://github.com/hosom/dummy-connections
 
+[hosom/file-extraction]
+config_files = scripts/config.zeek
+depends = 
+	zeek >=3.0.0
+description = Extract files from network traffic with Zeek.
+script_dir = scripts
+tags = files, file extraction, file analysis
+version = 2.0.3
+url = https://github.com/hosom/file-extraction
+
 [hosom/log-filters]
 config_files = scripts/config.zeek
 depends = 
@@ -837,6 +920,13 @@ tags = blacklist
 version = master
 url = https://github.com/initconf/blacklist
 
+[initconf/CVE-2017-5638_struts]
+description = package to detect CVE-2017-5638 struts attack
+script_dir = scripts
+tags = CVE-2017-5638, struts
+version = master
+url = https://github.com/initconf/CVE-2017-5638_struts
+
 [initconf/CVE-2020-16898-Bad-Neighbor.git]
 description = CVE-2020-16898: Bad Neighbor
 script_dir = scripts
@@ -852,6 +942,14 @@ tags = kaspersky antivirus
 test_command = ( cd tests && btest -d )
 version = v3
 url = https://github.com/initconf/detect-kaspersky
+
+[initconf/ftp-bruteforce]
+description = ftp-bruteforce
+script_dir = scripts
+tags = ftp, bruteforce, scan
+test_command = ( cd tests && btest -d )
+version = v2.0-zeek-3.x.x
+url = https://github.com/initconf/ftp-bruteforce
 
 [initconf/icmp-scans.git]
 description = icmp-scans
@@ -994,6 +1092,17 @@ plugin_dir = build/JGras_FuzzyHashing.tgz
 tags = bro plugin
 test_command = cd tests && btest -d
 url = https://github.com/J-Gras/bro-fuzzy-hashing
+version = 0.3.0
+
+[j-gras/bro-lognorm]
+build_command = ./configure --bro-dist=%(bro_dist)s && make
+depends = 
+	bro >=2.5.0
+description = This plugin provides liblognorm integration for Bro.
+plugin_dir = build
+tags = bro plugin, liblognorm, syslog
+test_command = cd tests && btest -d
+url = https://github.com/J-Gras/bro-lognorm
 version = 0.3.0
 
 [j-gras/intel-expire]
