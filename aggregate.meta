@@ -175,23 +175,6 @@ tags = rc4, base64, bitshift, encoding, xor
 version = 1.0.1
 url = https://github.com/anthonykasza/common-encodings/
 
-[apache/metron-bro-plugin-kafka]
-build_command = ./configure --bro-dist=%(bro_dist)s --with-librdkafka=%(LIBRDKAFKA_ROOT)s && make
-depends = 
-	bro >=2.5.0
-	bro-pkg >=1.2
-description = A Bro log writer plugin that sends logging output to Kafka.
-external_depends = 
-	librdkafka ~0.11.5
-plugin_dir = build
-script_dir = build/scripts/Apache/Kafka
-tags = log writer, bro plugin, kafka
-test_command = ( cd tests && btest -d )
-user_vars = 
-	LIBRDKAFKA_ROOT [/usr/local/lib] "Path to librdkafka installation tree"
-version = 0.3
-url = https://github.com/apache/metron-bro-plugin-kafka
-
 [bricata/flow_labels]
 description = Provides mechanisms for managing and using institutional knowledge about a monitored environment to make informed observations of normal and abnormal network activity.
 tags = input, labels
@@ -490,6 +473,15 @@ tags = conn
 version = v1.1.0
 url = https://github.com/corelight/zeek-long-connections
 
+[corelight/zeek-macho]
+build_command = ./configure --enable-debug --zeek-dist=%(zeek_dist)s && make
+description = This package provides some basic analysis for Mach-o files.
+script_dir = scripts/Zeek/MACHO
+tags = intel, files, mach-o, macho
+test_command = cd tests && btest
+url = https://github.com/corelight/zeek-macho
+version = v0.1.1
+
 [corelight/zeek-notice-telegram]
 description = Package that extends the Notice Framework to include
 	`ACTION_TELEGRAM` for sending messages on notices over Telegram.
@@ -497,6 +489,14 @@ script_dir = scripts
 summary = Send Notices over Telegram
 url = https://github.com/corelight/zeek-notice-telegram
 version = master
+
+[corelight/zeek-openvpn]
+build_command = ./configure --zeek-dist=%(zeek_dist)s && make
+description = A Zeek OpenVPN Protocol Analyzer
+script_dir = scripts/zeek/openvpn
+test_command = cd tests && btest
+url = https://github.com/corelight/zeek-openvpn
+version = v0.0.14
 
 [corelight/zeek-quic]
 aliases = zeek-quic bro-quic
@@ -957,6 +957,14 @@ tags = smtp, phish, urls, emails
 test_command = ( cd tests && btest -d )
 version = master
 url = https://github.com/initconf/phish-analysis
+
+[initconf/RDP-bruteforce]
+description = rdp-bruteforce
+script_dir = scripts
+tags = rdp, bruteforce, scan
+test_command = ( cd tests && btest -d )
+version = master
+url = https://github.com/initconf/RDP-bruteforce
 
 [initconf/scan-NG]
 description = scan detection in 2.x world. Forward porting of bro-1.5.3 scan.bro accompanied with new heuristics and quicker detections
