@@ -780,6 +780,17 @@ test_command = ( cd tests && btest -d )
 url = https://github.com/endace/zeek-dag
 version = v0.4
 
+[esnet-security/cve-2020-16898]
+credits = Vlad Grigorescu <vlad@es.net>
+depends = 
+	zeek >=2.6.0
+description = Detects CVE-2020-16898: "Bad Neighbor"
+script_dir = ./scripts
+tags = cve, cve-2020-16898, badneighbor
+test_command = cd tests && make
+url = https://github.com/esnet-security/cve-2020-16898
+version = v0.1
+
 [esnet-security/logfilter]
 credits = Vlad Grigorescu <vlad@es.net>
 description = Enables plugins to write fine-grained policy for log filtering, modification, and path customization.
@@ -1245,6 +1256,15 @@ description = A package to create a fingerprint of SMB clients
 script_dir = scripts
 tags = smb, fingerprint
 url = https://github.com/micrictor/smbfp
+version = master
+
+[micrictor/spl-spt]
+credits = Michael Torres <mic.ric.tor@gmail.com>
+description = A package that creates a log for sequences of packet lengths and times,
+	allowing for new analytics based on these data features.
+script_dir = scripts
+tags = ssl, tls, spt, spl
+url = https://github.com/micrictor/spl-spt
 version = master
 
 [mitre-attack/bzar]
