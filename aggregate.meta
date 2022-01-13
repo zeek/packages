@@ -1077,11 +1077,11 @@ depends =
 	zeek >=4.0.0
 description = This plugin provides native AF_Packet support for Zeek.
 plugin_dir = build/Zeek_AF_Packet.tgz
-script_dir = scripts
+script_dir = scripts/af_packet
 tags = zeek plugin, zeekctl plugin, packet source, af_packet
 test_command = cd tests && btest -d
 url = https://github.com/J-Gras/bro-af_packet-plugin
-version = 3.0.1
+version = 3.0.2
 
 [j-gras/bro-fuzzy-hashing]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
@@ -1146,11 +1146,11 @@ depends =
 	zeek >=4.0.0
 description = This plugin provides native AF_Packet support for Zeek.
 plugin_dir = build/Zeek_AF_Packet.tgz
-script_dir = scripts
+script_dir = scripts/af_packet
 tags = zeek plugin, zeekctl plugin, packet source, af_packet
 test_command = cd tests && btest -d
 url = https://github.com/J-Gras/zeek-af_packet-plugin
-version = 3.0.1
+version = 3.0.2
 
 [jbaggs/anomalous-dns]
 depends = 
