@@ -297,6 +297,19 @@ tags = modbus, Modbus, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek scripting, log 
 url = https://github.com/cisagov/icsnpp-modbus
 version = main
 
+[cisagov/icsnpp-opcua-binary]
+build_command = ./configure && make
+build_dir = build/ICSNPP_OPCUA_Binary.tgz
+credits = Kent Kvarfordt <kent.kvarfordt@inl.gov>
+depends = 
+	zkg >=2.0
+	zeek >=4.0.0
+description = OPC Unified Architecture Binary plugin for parsing and logging of the OPC UA Binary protocol - CISA ICSNPP
+script_dir = build/scripts/icsnpp/opcua-binary
+tags = opcua, opcua_binary, opc, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
+url = https://github.com/cisagov/icsnpp-opcua-binary
+version = main
+
 [corelight/bro-drwatson]
 depends = 
 	https://github.com/corelight/bro-hardware *
