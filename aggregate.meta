@@ -606,7 +606,7 @@ script_dir = analyzer
 summary = An IPSec Zeek protocol analyzer based on Spicy.
 test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/corelight/zeek-spicy-ipsec
-version = v0.2.1
+version = v0.2.3
 
 [corelight/zeek-spicy-ospf]
 build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
@@ -1683,6 +1683,16 @@ tags = bro plugin, uap, user_agent
 test_command = ( cd tests && btest -d )
 version = master
 url = https://github.com/vitalyrepin/uap-bro
+
+[zeek-packages/zeek-agent-v2]
+depends = 
+	zeek >=4.0.0
+description = 
+script_dir = scripts
+summary = Framework collecting Zeek Agent information from endpoints
+test_command = cd tests && btest
+version = main
+url = https://github.com/zeek-packages/zeek-agent-v2
 
 [zeek/hello-world]
 depends = 
