@@ -1715,12 +1715,23 @@ version = v0.4
 url = https://github.com/zeek/osquery-framework
 
 [zeek/spicy-analyzers]
-build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && make -j "${SPICY_ZKG_PROCESSES:-2}"
-plugin_dir = build/spicy-modules
-script_dir = analyzer
-test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j "${SPICY_ZKG_PROCESSES:-2}"
+depends = http://github.com/zeek/spicy-dhcp >=0.0.1
+	http://github.com/zeek/spicy-dns >=0.0.2
+	http://github.com/zeek/spicy-http >=0.0.1
+	http://github.com/zeek/spicy-ldap >=0.0.2
+	http://github.com/zeek/spicy-pe >=0.0.3
+	http://github.com/zeek/spicy-png >=0.0.2
+	http://github.com/zeek/spicy-tftp >=0.0.1
+	http://github.com/zeek/spicy-zip >=0.0.1
+	http://github.com/corelight/zeek-spicy-facefish >=0.1.0
+	http://github.com/corelight/zeek-spicy-ipsec >=0.2.1
+	http://github.com/corelight/zeek-spicy-openvpn ==0.1.0
+	http://github.com/corelight/zeek-spicy-stun >=0.2.1
+	http://github.com/corelight/zeek-spicy-wireguard >=0.1.0
+description = Meta package for a number of Spicy-based analyzers.
+summary = Meta package for a number of Spicy-based analyzers
 url = https://github.com/zeek/spicy-analyzers
-version = v0.2.28
+version = v0.2.29
 
 [zeek/spicy-dhcp]
 build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
