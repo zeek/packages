@@ -380,6 +380,14 @@ tags = HTTP, Apache, CVE, CVE-2021-44228, encoding, rapidresponse, Java, logging
 version = v0.5.3
 url = https://github.com/corelight/cve-2021-44228
 
+[corelight/cve-2022-21907]
+depends = 
+	zeek >=3.0.0
+script_dir = scripts
+summary = A package to detect CVE-2022-21907
+url = https://github.com/corelight/cve-2022-21907
+version = v0.1.1
+
 [corelight/detect-ransomware-filenames]
 description = Watch SMB transactions for files whose filename matches patterns known to be used by ransomware
 script_dir = scripts
