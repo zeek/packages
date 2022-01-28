@@ -1539,7 +1539,7 @@ description = A library for getting the "effective tld" of a domain name.
 script_dir = scripts
 tags = library, domain
 url = https://github.com/sethhall/domain-tld
-version = v1.2.1
+version = v1.2.2
 
 [sethhall/ssn-exposure]
 description = Detect US Social Security numbers in HTTP and SMTP.
