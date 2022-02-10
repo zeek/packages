@@ -1699,7 +1699,7 @@ depends =
 description = 
 script_dir = scripts
 summary = Framework collecting Zeek Agent information from endpoints
-test_command = cd tests && btest
+test_command = make test
 version = main
 url = https://github.com/zeek-packages/zeek-agent-v2
 
