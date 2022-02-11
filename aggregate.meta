@@ -377,7 +377,7 @@ description = A Zeek package which raises notices for RCE in Log4J (CVE-2021-442
 script_dir = scripts
 summary = A Zeek package which raises notices for RCE in Log4J (CVE-2021-44228).
 tags = HTTP, Apache, CVE, CVE-2021-44228, encoding, rapidresponse, Java, logging
-version = v0.5.3
+version = v0.5.4
 url = https://github.com/corelight/cve-2021-44228
 
 [corelight/cve-2022-21907]
