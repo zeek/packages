@@ -416,7 +416,7 @@ version = master
 description = A Zeek script using Input Framework to get icann_tld, icann_domain, icann_host_subdomain, and is_trusted_domain from a DNS query.  The field icann_host_subdomain contains the remaining query nodes after the domain is removed.  The is_trusted_domain is populated from a separate Input Framework set.
 script_dir = scripts
 tags = domain, dns, tld, input
-version = v19.0.1
+version = v24.0.0
 url = https://github.com/corelight/icannTLD
 
 [corelight/json-streaming-logs]
