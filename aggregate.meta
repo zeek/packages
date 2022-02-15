@@ -14,6 +14,9 @@ url = https://github.com/0xxon/cve-2020-0601-plugin
 version = master
 
 [0xxon/cve-2020-13777]
+depends = 
+	zkg >=2.0
+	zeek >=4.0.0
 description = "Test script for CVE-2020-13777. Please read Readme."
 script_dir = scripts
 test_command = cd testing && btest -d
