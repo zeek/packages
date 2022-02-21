@@ -1148,6 +1148,8 @@ version = v0.4.0
 
 [j-gras/intel-limiter]
 credits = Jan Grashoefer <jan.grashoefer@gmail.com>
+depends = 
+	zeek >=3.0
 description = Limiter for Zeek's intelligence framework.
 script_dir = scripts
 tags = intel, limits, threshold
