@@ -1158,13 +1158,15 @@ url = https://github.com/J-Gras/intel-limiter
 version = master
 
 [j-gras/intel-seen-more]
-description = Additional seen-triggers for Bro's intelligence framework.
+depends = 
+	zeek >=3.2
+description = Additional seen-triggers for Zeek's intelligence framework.
 script_dir = scripts
 suggests = 
 	sethhall/domain-tld *
 tags = intel, seen
 url = https://github.com/J-Gras/intel-seen-more
-version = 0.3.1
+version = 0.4.0
 
 [j-gras/zeek-af_packet-plugin]
 build_command = ./configure && make
