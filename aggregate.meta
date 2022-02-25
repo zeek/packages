@@ -1155,7 +1155,7 @@ script_dir = scripts
 tags = intel, limits, threshold
 test_command = cd testing && btest -d
 url = https://github.com/J-Gras/intel-limiter
-version = master
+version = 1.0.0
 
 [j-gras/intel-seen-more]
 depends = 
