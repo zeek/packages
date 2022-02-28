@@ -1327,6 +1327,16 @@ test_command = make test
 url = https://github.com/MITRECND/bro-http2
 version = 0.6.0
 
+[mvlnetdev/dportmatch]
+credits = M. van Leeuwen
+depends = 
+	zeek >=2.6.3
+description = Zeek package to add a destination port to the meta fields in Zeek. It creates a notice when both the intel and the destination port matches. This adds a feature that can be used to reduce false positives.
+script_dir = scripts
+tags = Zeek package, dport, port, intel, dport match
+url = https://github.com/mvlnetdev/dportmatch
+version = main
+
 [ncsa/bro-doctor]
 depends = 
 	j-gras/add-node-names *
