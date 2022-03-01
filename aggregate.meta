@@ -1132,12 +1132,14 @@ version = 0.3.0
 
 [j-gras/intel-expire]
 credits = Jan Grashoefer <jan.grashoefer@gmail.com>
+depends = 
+	zeek >=3.0
 description = Per item expiration for Zeek's intelligence framework.
 script_dir = scripts
 tags = intel, expiration
 test_command = cd testing && btest -d
 url = https://github.com/J-Gras/intel-expire
-version = master
+version = v1.0.0
 
 [j-gras/intel-extensions]
 credits = Jan Grashoefer <jan.grashoefer@gmail.com>
