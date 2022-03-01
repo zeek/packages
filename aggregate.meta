@@ -1140,11 +1140,16 @@ url = https://github.com/J-Gras/intel-expire
 version = master
 
 [j-gras/intel-extensions]
-description = Extensions for Bro's intelligence framework.
+credits = Jan Grashoefer <jan.grashoefer@gmail.com>
+depends = 
+	zeek >=3.0
+description = Extensions for Zeek's intelligence framework.
+executables = utils/intel-mgr.py
 script_dir = scripts
-tags = intel, removal, preserve files
+tags = intel, remote control, preserve files
+test_command = cd testing && btest -d
 url = https://github.com/J-Gras/intel-extensions
-version = v0.4.0
+version = v0.5.0
 
 [j-gras/intel-limiter]
 credits = Jan Grashoefer <jan.grashoefer@gmail.com>
