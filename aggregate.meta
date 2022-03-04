@@ -1725,7 +1725,7 @@ description =
 script_dir = scripts
 summary = Framework collecting Zeek Agent information from endpoints
 test_command = make test
-version = v2.0.1
+version = v2.0.2
 url = https://github.com/zeek-packages/zeek-agent-v2
 
 [zeek/hello-world]
