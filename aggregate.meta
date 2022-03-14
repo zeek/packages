@@ -512,7 +512,8 @@ depends = zkg >=2.0.7
 description = Find and log long-lived connections into a "conn_long" log.
 script_dir = scripts
 tags = conn
-version = v1.1.0
+test_command = cd testing && btest -c btest.cfg
+version = v1.2.0
 url = https://github.com/corelight/zeek-long-connections
 
 [corelight/zeek-macho]
