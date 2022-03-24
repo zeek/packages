@@ -1454,9 +1454,11 @@ version = master
 url = https://github.com/salesforce/bro-sysmon
 
 [salesforce/GQUIC_Protocol_Analyzer]
-build_command = test -e %(bro_dist)s/bro-path-dev.in && ( ./configure --bro-dist=%(bro_dist)s && make ) || ( ./configure && make )
+build_command = ./configure && make
+depends = 
+	zkg >=2.0
+	zeek >=4.0.0
 description = Protocol analyzer that detects, dissects, fingerprints, and logs GQUIC traffic
-plugin_dir = build/Salesforce_GQUIC.tgz
 script_dir = scripts/Salesforce/GQUIC
 url = https://github.com/salesforce/GQUIC_Protocol_Analyzer
 version = master
