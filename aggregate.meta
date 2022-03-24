@@ -1436,52 +1436,6 @@ tags = log, logging, intel, qintel, qsentry, intelligenece, threat intelligence,
 url = https://github.com/qintel/qsentry-zeek
 version = 1.0.0
 
-[reservoirlabs/fix-ascii]
-build_command = ./configure --bro-dist=%(bro_dist)s && make
-description = ASCII FIX analyzer package
-script_dir = scripts/RLABS/FIX/
-tags = bro plugin, bro analyzer, ASCII FIX protocol analyzer
-url = https://github.com/reservoirlabs/fix-ascii
-version = master
-
-[reservoirlabs/fix-binary]
-build_command = ./configure --bro-dist=%(bro_dist)s && make
-description = binary FIX analyzer package
-script_dir = scripts/RLABS/FIX_SBE
-tags = bro plugin, bro analyzer, binary FIX protocol analyzer
-url = https://github.com/reservoirlabs/fix-binary
-version = master
-
-[reservoirlabs/sflow]
-build_command = ./configure --zeek-dist=%(zeek_dist)s && make
-description = sFlow analyzer package
-script_dir = scripts/RLABS/SFLOW/
-tags = zeek plugin, zeek analyzer, sFlow protocol analyzer
-url = https://github.com/reservoirlabs/sflow
-version = master
-
-[reservoirlabs/zeek-pdf-analyzer]
-build_command = ./configure && make
-description = A PDF file analyzer for Zeek
-external_depends = 
-	podofo >=0.9.6
-script_dir = scripts/Analyzer/PDF
-tags = Zeek plugin, file analyzer, pdf
-test_command = cd tests && btest
-user_vars = 
-	PODOFO_PREFIX [/usr/include] "PoDoFo install prefix"
-url = https://github.com/reservoirlabs/zeek-pdf-analyzer
-version = master
-
-[reservoirlabs/zeek-zip-analyzer]
-build_command = ./configure && make
-description = A ZIP file analyzer for Zeek
-script_dir = scripts/Reservoir/Analyzer_ZIP
-tags = Zeek plugin, file analyzer, ZIP
-test_command = cd tests && btest
-url = https://github.com/reservoirlabs/zeek-zip-analyzer
-version = master
-
 [rvictory/zeek-new-domains]
 credits = Ryan Victory
 depends = 
