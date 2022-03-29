@@ -1675,14 +1675,14 @@ version = master
 url = https://github.com/vitalyrepin/uap-bro
 
 [zeek-packages/zeek-agent-v2]
-build_command = git describe --always >scripts/version.dat || true
+build_command = git describe --always --long | sed 's/-[^-]*$//' >scripts/version.dat || true
 depends = 
 	zeek >=4.0.0
 description = 
 script_dir = scripts
 summary = Framework collecting Zeek Agent information from endpoints
 test_command = make test
-version = v2.0.2
+version = v2.1.0
 url = https://github.com/zeek-packages/zeek-agent-v2
 
 [zeek/hello-world]
