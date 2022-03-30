@@ -804,7 +804,7 @@ plugin_dir = build
 tags = packet source, zeek plugin, plugin, broctl plugin, zeekctl plugin, dag, endace
 test_command = ( cd tests && btest -d )
 url = https://github.com/endace/zeek-dag
-version = v0.4
+version = v0.5
 
 [esnet-security/cve-2020-16898]
 credits = Vlad Grigorescu <vlad@es.net>
