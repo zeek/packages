@@ -659,6 +659,26 @@ test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config
 url = https://github.com/corelight/zeek-spicy-wireguard
 version = v0.1.0
 
+[corelight/CVE-2022-24491]
+depends = 
+	zeek >=4.0.0
+description = A CVE-2022-24491 detector.
+script_dir = scripts
+summary = A CVE-2022-24491 detector.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/CVE-2022-24491
+version = v0.1.0
+
+[corelight/CVE-2022-24497]
+depends = 
+	zeek >=4.0.0
+description = A CVE-2022-24497 detector.
+script_dir = scripts
+summary = A CVE-2022-24497 detector.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/CVE-2022-24497
+version = v0.1.1
+
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
 script_dir = scripts
