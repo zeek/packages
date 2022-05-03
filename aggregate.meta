@@ -645,7 +645,7 @@ script_dir = analyzer
 summary = A Zeek STUN protocol analyzer based on Spicy.
 test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/corelight/zeek-spicy-stun
-version = v0.2.3
+version = v0.2.4
 
 [corelight/zeek-spicy-ipsec]
 build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
@@ -655,7 +655,7 @@ script_dir = analyzer
 summary = An IPSec Zeek protocol analyzer based on Spicy.
 test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/corelight/zeek-spicy-ipsec
-version = v0.2.7
+version = v0.2.8
 
 [corelight/zeek-spicy-ospf]
 build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
@@ -685,7 +685,7 @@ script_dir = analyzer
 summary = A Wireguard VPN protocol analyzer, based on Spicy.
 test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/corelight/zeek-spicy-wireguard
-version = v0.1.1
+version = v0.1.2
 
 [corelight/CVE-2022-24491]
 depends = 
