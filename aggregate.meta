@@ -1164,7 +1164,7 @@ script_dir = scripts/af_packet
 tags = zeek plugin, zeekctl plugin, packet source, af_packet
 test_command = cd tests && btest -d
 url = https://github.com/J-Gras/bro-af_packet-plugin
-version = 3.0.2
+version = 3.1.0
 
 [j-gras/bro-fuzzy-hashing]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
@@ -1244,7 +1244,7 @@ script_dir = scripts/af_packet
 tags = zeek plugin, zeekctl plugin, packet source, af_packet
 test_command = cd tests && btest -d
 url = https://github.com/J-Gras/zeek-af_packet-plugin
-version = 3.0.2
+version = 3.1.0
 
 [jbaggs/anomalous-dns]
 depends = 
