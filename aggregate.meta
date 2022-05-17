@@ -708,6 +708,17 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/CVE-2022-24497
 version = v0.1.1
 
+[corelight/cve-2022-26809]
+depends = 
+	zeek >=4.0.0
+description = CVE-2022-26809 is a DCE/RPC RCE exploit.
+	This package detects both attempts and successful exploits.
+script_dir = scripts
+summary = Detects attempts and exploits of CVE-2022-26809
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/cve-2022-26809
+version = v0.1.0
+
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
 script_dir = scripts
