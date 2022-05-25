@@ -1025,6 +1025,13 @@ tags = blacklist
 version = master
 url = https://github.com/initconf/blacklist
 
+[initconf/CVE-2017-5638_struts]
+description = package to detect CVE-2017-5638 struts attack
+script_dir = scripts
+tags = CVE-2017-5638, struts
+version = master
+url = https://github.com/initconf/CVE-2017-5638_struts
+
 [initconf/CVE-2020-16898-Bad-Neighbor.git]
 description = CVE-2020-16898: Bad Neighbor
 script_dir = scripts
