@@ -730,6 +730,26 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/cve-2022-22954
 version = v0.1.0
 
+[corelight/CVE-2022-23270-PPTP]
+depends = 
+	zeek >=4.0.0
+description = A package to detect CVE-2022-23270.
+script_dir = scripts
+summary = A package to detect CVE-2022-23270.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/CVE-2022-23270-PPTP
+version = master
+
+[corelight/CVE-2022-26937]
+depends = 
+	zeek >=4.0.0
+description = A Zeek package to detect CVE-2022-26937, a Windows NFS vulnerabilty.
+script_dir = scripts
+summary = A Zeek package to detect CVE-2022-26937, a Windows NFS vulnerabilty.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/CVE-2022-26937
+version = master
+
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
 script_dir = scripts
