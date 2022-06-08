@@ -803,7 +803,7 @@ description = This script replaces the default ssh/interesting-hostnames and red
 script_dir = scripts
 tags = dns, ssh, interesting-hostnames
 test_command = cd tests && btest -d ssh_tests
-version = v1.1.7
+version = v1.2.1
 url = https://github.com/dopheide-esnet/zeek-ssh-interesting-hostnames-with-known
 
 [dopheide/zeek-notice-config]
