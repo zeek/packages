@@ -1289,13 +1289,15 @@ url = https://github.com/J-Gras/zeek-af_packet-plugin
 version = 3.1.1
 
 [jbaggs/anomalous-dns]
+config_files = domain-whitelist.zeek, fast_flux-whitelist.zeek, recursive-whitelist.zeek, scripts/domain-whitelist.zeek, scripts/fast_flux-whitelist.zeek, scripts/recursive-whitelist.zeek
 depends = 
 	zeek >=3.0.0
-	https://github.com/sethhall/domain-tld *
-description = A module for tracking and correlating abnormal DNS behavior. Detection of tunneling and C&C through connection duration and volume, request and answer size, DNS request type, and unique queries per domain. Statistical clasification of fast flux networks based on A records and ASNs.
+	https://github.com/sethhall/domain-tld >=1.2.2
+description = A module for tracking and correlating abnormal DNS behavior. Detection of tunneling and C&C through connection duration and volume, request and answer size, DNS request type, and unique queries per domain. Statistical classification of fast flux networks based on A records and ASNs.
+script_dir = scripts
 tags = zeek scripting, dns, domain, notices
-version = 1.2.4
 url = https://github.com/jbaggs/anomalous-dns
+version = 2.0.0
 
 [jmellander/BinaryHeap]
 description = Binary Heap Implementation
