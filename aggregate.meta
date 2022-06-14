@@ -1289,7 +1289,7 @@ url = https://github.com/J-Gras/zeek-af_packet-plugin
 version = 3.1.1
 
 [jbaggs/anomalous-dns]
-config_files = domain-whitelist.zeek, fast_flux-whitelist.zeek, recursive-whitelist.zeek, scripts/domain-whitelist.zeek, scripts/fast_flux-whitelist.zeek, scripts/recursive-whitelist.zeek
+config_files = domain-whitelist.zeek, fast_flux-whitelist.zeek, recursive-whitelist.zeek, scripts/__load__.zeek, scripts/domain-whitelist.zeek, scripts/fast_flux-whitelist.zeek, scripts/recursive-whitelist.zeek
 depends = 
 	zeek >=3.0.0
 	https://github.com/sethhall/domain-tld >=1.2.2
@@ -1297,7 +1297,7 @@ description = A module for tracking and correlating abnormal DNS behavior. Detec
 script_dir = scripts
 tags = zeek scripting, dns, domain, notices
 url = https://github.com/jbaggs/anomalous-dns
-version = 2.0.0
+version = 2.0.1
 
 [jmellander/BinaryHeap]
 description = Binary Heap Implementation
