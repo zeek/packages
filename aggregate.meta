@@ -1372,13 +1372,14 @@ url = https://github.com/JustinAzoff/zeek-jemalloc-profiling
 version = master
 
 [klehigh/find_smbv1]
+credits = Mark Overholser converted to support newer Zeek
 depends = 
-	bro >=2.5.0
+	zeek >=2.5.0
 description = find SMBv1 activity
 script_dir = scripts
 tags = smb, logging
 url = https://github.com/klehigh/find_smbv1
-version = 1.0.0
+version = 1.0.2
 
 [micrictor/smbfp]
 credits = Michael Torres <mic.ric.tor@gmail.com>
