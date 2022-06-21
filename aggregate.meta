@@ -1579,14 +1579,14 @@ depends =
 	zkg >=2.0
 description = A Zeek log writer plugin that publishes to Kafka.
 external_depends = 
-	librdkafka ~1.4.2-RC1
+	librdkafka ~1.4.2
 plugin_dir = build
 script_dir = build/scripts/Seiso/Kafka
 tags = log writer, zeek plugin, kafka
 test_command = cd tests && btest -d
 user_vars = 
 	LIBRDKAFKA_ROOT [/usr/local] "Path to librdkafka installation tree root"
-version = v1.0.0
+version = v1.1.0-rc1
 url = https://github.com/seisollc/zeek-kafka
 
 [sethhall/bro-myricom]
