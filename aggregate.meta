@@ -1586,7 +1586,7 @@ tags = log writer, zeek plugin, kafka
 test_command = cd tests && btest -d
 user_vars = 
 	LIBRDKAFKA_ROOT [/usr/local] "Path to librdkafka installation tree root"
-version = v1.1.0-rc1
+version = v1.1.0
 url = https://github.com/seisollc/zeek-kafka
 
 [sethhall/bro-myricom]
