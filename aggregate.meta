@@ -303,7 +303,7 @@ url = https://github.com/cisagov/icsnpp-ethercat
 version = main
 
 [cisagov/icsnpp-genisys]
-build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
 credits = Seth Grover <seth.grover@inl.gov>
 depends = 
 	zkg >=2.12.0
@@ -629,7 +629,7 @@ url = https://github.com/corelight/CVE-2021-42292
 version = v0.1.0
 
 [corelight/zeek-spicy-facefish]
-build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
 description = A Facefish rootkit detector, based on Spicy.
 plugin_dir = build/spicy-modules
 script_dir = analyzer
@@ -639,7 +639,7 @@ url = https://github.com/corelight/zeek-spicy-facefish
 version = v0.1.0
 
 [corelight/zeek-spicy-stun]
-build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
 description = A Zeek STUN protocol analyzer based on Spicy.
 plugin_dir = build/spicy-modules
 script_dir = analyzer
@@ -649,7 +649,7 @@ url = https://github.com/corelight/zeek-spicy-stun
 version = v0.2.6
 
 [corelight/zeek-spicy-ipsec]
-build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
 description = An IPSec Zeek protocol analyzer based on Spicy.
 plugin_dir = build/spicy-modules
 script_dir = analyzer
@@ -659,7 +659,7 @@ url = https://github.com/corelight/zeek-spicy-ipsec
 version = v0.2.9
 
 [corelight/zeek-spicy-ospf]
-build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
 description = A Zeek OSPF packet analyzer, based on Spicy.
 plugin_dir = build/spicy-modules
 script_dir = analyzer
@@ -669,7 +669,7 @@ url = https://github.com/corelight/zeek-spicy-ospf
 version = v0.1.0
 
 [corelight/zeek-spicy-openvpn]
-build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
 description = A Zeek OpenVPN protocol analyzer, based on Spicy.
 plugin_dir = build/spicy-modules
 script_dir = analyzer
@@ -679,7 +679,7 @@ url = https://github.com/corelight/zeek-spicy-openvpn
 version = v0.1.4
 
 [corelight/zeek-spicy-wireguard]
-build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
 description = A Wireguard VPN protocol analyzer, based on Spicy.
 plugin_dir = build/spicy-modules
 script_dir = analyzer
@@ -1844,7 +1844,7 @@ url = https://github.com/zeek/spicy-http
 version = v0.0.4
 
 [zeek/spicy-ldap]
-build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=%(package_base)s/spicy-plugin/build/bin/spicyz cmake .. && cmake --build .
+build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
 description = An LDAP analyzer based on Spicy
 plugin_dir = build/spicy-modules
 script_dir = analyzer
