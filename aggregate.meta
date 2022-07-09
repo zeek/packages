@@ -7,11 +7,14 @@ version = master
 url = https://github.com/0xl3x1/zeek-EternalSafety
 
 [0xxon/cve-2020-0601]
+depends = 
+	zkg >=2.0
+	zeek >=4.0.0
 description = "Test script for CVE-2020-0601. Please read Readme."
 script_dir = scripts
 test_command = cd testing && btest -d
 url = https://github.com/0xxon/cve-2020-0601
-version = v0.3
+version = v0.4
 
 [0xxon/cve-2020-0601-plugin]
 build_command = ( ./configure && make )
