@@ -1903,7 +1903,7 @@ script_dir = analyzer
 summary = Spicy-based analyzer for the ZIP file format
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/zeek/spicy-zip
-version = v0.0.4
+version = v0.0.5
 
 [zeek/zeek-netmap]
 build_command = ./configure --with-netmap=%(netmap_root_dir)s && cd build && make
