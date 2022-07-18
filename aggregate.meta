@@ -1209,7 +1209,7 @@ script_dir = scripts/af_packet
 tags = zeek plugin, zeekctl plugin, packet source, af_packet
 test_command = cd tests && btest -d
 url = https://github.com/J-Gras/bro-af_packet-plugin
-version = 3.1.1
+version = 3.2.0
 
 [j-gras/bro-fuzzy-hashing]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
@@ -1289,7 +1289,7 @@ script_dir = scripts/af_packet
 tags = zeek plugin, zeekctl plugin, packet source, af_packet
 test_command = cd tests && btest -d
 url = https://github.com/J-Gras/zeek-af_packet-plugin
-version = 3.1.1
+version = 3.2.0
 
 [jbaggs/anomalous-dns]
 config_files = domain-whitelist.zeek, fast_flux-whitelist.zeek, recursive-whitelist.zeek, scripts/__load__.zeek, scripts/domain-whitelist.zeek, scripts/fast_flux-whitelist.zeek, scripts/recursive-whitelist.zeek
