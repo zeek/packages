@@ -1223,15 +1223,17 @@ url = https://github.com/J-Gras/bro-fuzzy-hashing
 version = 0.3.0
 
 [j-gras/bro-lognorm]
-build_command = ./configure --bro-dist=%(bro_dist)s && make
+build_command = ./configure && make
 depends = 
-	bro >=2.5.0
-description = This plugin provides liblognorm integration for Bro.
-plugin_dir = build
-tags = bro plugin, liblognorm, syslog
+	zkg >=2.0
+	zeek >=4.0.0
+description = This plugin provides liblognorm integration for Zeek.
+plugin_dir = build/Zeek_Lognorm.tgz
+script_dir = scripts/lognorm
+tags = zeek plugin, liblognorm, syslog
 test_command = cd tests && btest -d
 url = https://github.com/J-Gras/bro-lognorm
-version = 0.3.0
+version = 1.0.0
 
 [j-gras/intel-expire]
 credits = Jan Grashoefer <jan.grashoefer@gmail.com>
