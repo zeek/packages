@@ -481,7 +481,7 @@ description = Add VLAN to all logs.
 script_dir = scripts
 tags = log extend vlan
 url = https://github.com/corelight/log-add-vlan-everywhere
-version = v1.0.2
+version = v1.0.3
 
 [corelight/my_stats]
 description = This package dumps stats for troubleshooting.
