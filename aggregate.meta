@@ -1622,11 +1622,11 @@ url = https://github.com/sethhall/domain-tld
 version = v1.2.2
 
 [sethhall/ssn-exposure]
-description = Detect US Social Security numbers in HTTP and SMTP.
+description = Detect US Social Security numbers in HTTP and SMTP with Bro.
 script_dir = scripts
 tags = ssn, social security number, dlp, files
+version = 1.0.1
 url = https://github.com/sethhall/ssn-exposure
-version = 1.0.0
 
 [sethhall/unknown-mime-type-discovery]
 description = Help Zeek by finding unidentified file types.
