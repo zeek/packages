@@ -967,6 +967,20 @@ tags = dhcp, dhcpfp
 version = master
 url = https://github.com/fatemabw/kyd
 
+[fdekeers/igmp]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+credits = François De Keersmaeker <francois.dekeersmaeker@uclouvain.be>
+depends = 
+	zeek >=4.0.0
+description = A Spicy-based packet analyzer for the IGMP protocol.
+	Supports IGMPv1, v2 and v3.
+script_dir = scripts
+summary = IGMP packet analyzer in Spicy
+tags = igmp, zeek, spicy, packet analyzer, ids
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/zeek-plugins/igmp
+version = main
+
 [hhzzk/dns-tunnels]
 description = Detect DNS Tunnels attack.
 script_dir = scripts
