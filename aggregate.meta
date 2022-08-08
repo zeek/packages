@@ -981,6 +981,16 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/zeek-plugins/igmp
 version = main
 
+[fdekeers/mdns]
+build_command = ./configure && make
+credits = François De Keersmaeker <francois.dekeersmaeker@uclouvain.be>
+description = Multicast DNS (mDNS) package for Zeek
+script_dir = ./scripts
+tags = IDS, Zeek, mDNS
+test_command = cd tests && make
+url = https://github.com/zeek-plugins/mdns
+version = main
+
 [hhzzk/dns-tunnels]
 description = Detect DNS Tunnels attack.
 script_dir = scripts
