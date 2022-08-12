@@ -982,7 +982,6 @@ url = https://github.com/zeek-plugins/igmp
 version = main
 
 [fdekeers/mdns]
-build_command = ./configure && make
 credits = François De Keersmaeker <francois.dekeersmaeker@uclouvain.be>
 description = Multicast DNS (mDNS) package for Zeek
 script_dir = ./scripts
