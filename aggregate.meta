@@ -933,7 +933,7 @@ build_command = ./configure && make
 config_files = scripts/conf.dat
 credits = Vlad Grigorescu <vlad@es.net>
 depends = 
-	zeek >=2.6.0
+	zeek >=3.0.0
 description = Prometheus exporter for Zeek performance data
 external_depends = 
 	cmake >=3.5
@@ -942,7 +942,7 @@ plugin_dir = ./build/ESnet_Zeek_Exporter.tgz
 tags = zeek plugin, performance, perf, stats, prometheus
 test_command = cd tests && btest -d
 url = https://github.com/esnet/zeek-exporter
-version = 0.2
+version = 0.3
 
 [esnet/zeek_perfsonar_owamp]
 build_command = ( ./configure --zeek-dist=%(zeek_dist)s && make )
