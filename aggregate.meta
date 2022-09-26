@@ -140,6 +140,17 @@ tags = zeek plugin, protocol analyzer, log writer, ics, enip, cip
 url = https://github.com/amzn/zeek-plugin-enip
 version = 1.1.0
 
+[amzn/zeek-plugin-profinet]
+build_command = ./configure && make
+depends = 
+	zkg >=2.0
+	zeek >=3.0.0
+description = Plugin that enables parsing of the Profinet protocol
+script_dir = scripts/PROFINET
+tags = zeek plugin, protocol analyzer, log writer, ics, profinet
+url = https://github.com/amzn/zeek-plugin-profinet
+version = 1.1.0
+
 [amzn/zeek-plugin-s7comm]
 build_command = ./configure && make
 depends = 
