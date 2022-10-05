@@ -1317,19 +1317,6 @@ tags = intel, seen
 url = https://github.com/J-Gras/intel-seen-more
 version = 0.4.0
 
-[j-gras/zeek-af_packet-plugin]
-build_command = ./configure && make
-depends = 
-	zkg >=2.0
-	zeek >=4.0.0
-description = This plugin provides native AF_Packet support for Zeek.
-plugin_dir = build/Zeek_AF_Packet.tgz
-script_dir = scripts/af_packet
-tags = zeek plugin, zeekctl plugin, packet source, af_packet
-test_command = cd tests && btest -d
-url = https://github.com/J-Gras/zeek-af_packet-plugin
-version = 3.2.0
-
 [jbaggs/anomalous-dns]
 config_files = domain-whitelist.zeek, fast_flux-whitelist.zeek, recursive-whitelist.zeek, scripts/__load__.zeek, scripts/domain-whitelist.zeek, scripts/fast_flux-whitelist.zeek, scripts/recursive-whitelist.zeek
 depends = 
@@ -1943,6 +1930,19 @@ summary = Spicy-based analyzer for the ZIP file format
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/zeek/spicy-zip
 version = v0.0.5
+
+[zeek/zeek-af_packet-plugin]
+build_command = ./configure && make
+depends = 
+	zkg >=2.0
+	zeek >=4.0.0
+description = This plugin provides native AF_Packet support for Zeek.
+plugin_dir = build/Zeek_AF_Packet.tgz
+script_dir = scripts/af_packet
+tags = zeek plugin, zeekctl plugin, packet source, af_packet
+test_command = cd tests && btest -d
+url = https://github.com/zeek/zeek-af_packet-plugin
+version = 3.2.0
 
 [zeek/zeek-netmap]
 build_command = ./configure --with-netmap=%(netmap_root_dir)s && cd build && make
