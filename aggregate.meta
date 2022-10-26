@@ -1262,7 +1262,7 @@ script_dir = scripts/af_packet
 tags = zeek plugin, zeekctl plugin, packet source, af_packet
 test_command = cd tests && btest -d
 url = https://github.com/J-Gras/bro-af_packet-plugin
-version = 3.2.0
+version = 4.0.0
 
 [j-gras/bro-fuzzy-hashing]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
@@ -1958,7 +1958,7 @@ script_dir = scripts/af_packet
 tags = zeek plugin, zeekctl plugin, packet source, af_packet
 test_command = cd tests && btest -d
 url = https://github.com/zeek/zeek-af_packet-plugin
-version = 3.2.0
+version = 4.0.0
 
 [zeek/zeek-netmap]
 build_command = ./configure --with-netmap=%(netmap_root_dir)s && cd build && make
