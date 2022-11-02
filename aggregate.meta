@@ -1693,6 +1693,13 @@ tags = log, logging, intel, intelligenece, threat intelligence, ti, CIF
 url = https://github.com/sfinlon/cif-zeek
 version = 1.0.1
 
+[shodan/shodan-zeek]
+description = Get IP address information from the Shodan InternetDB.
+script_dir = scripts
+tags = zeek plugin, zeek scripting
+url = https://gitlab.com/shodan-public/shodan-zeek/
+version = master
+
 [sirinsoftware/zeek-testimony-plugin.git]
 build_command = ./configure && make -C build
 depends = 
