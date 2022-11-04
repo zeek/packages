@@ -1694,6 +1694,7 @@ url = https://github.com/sfinlon/cif-zeek
 version = 1.0.1
 
 [shodan/shodan-zeek]
+build_command = ./configure && make
 description = Get IP address information from the Shodan InternetDB.
 script_dir = scripts
 tags = zeek plugin, zeek scripting
