@@ -767,6 +767,14 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/CVE-2022-26937
 version = master
 
+[corelight/CVE-2022-3602]
+description = CVE-2022-3602 exploit Detection
+script_dir = scripts
+summary = Detection for CVE-2022-3602 - OpenSSL RCE/DOC v3.0.0 - v3.0.6
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/CVE-2022-3602
+version = v0.1.0
+
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
 script_dir = scripts
