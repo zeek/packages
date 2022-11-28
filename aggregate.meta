@@ -792,6 +792,16 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/CVE-2022-3602
 version = v0.1.0
 
+[corelight/boa-detector]
+depends = 
+	zeek >=4.0.0
+description = A vulnerable Boa web server detector.
+script_dir = scripts
+summary = A vulnerable Boa web server detector.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/boa-detector
+version = master
+
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
 script_dir = scripts
