@@ -800,7 +800,7 @@ script_dir = scripts
 summary = A vulnerable Boa web server detector.
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/boa-detector
-version = master
+version = v0.1.0
 
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
