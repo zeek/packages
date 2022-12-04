@@ -1968,7 +1968,7 @@ plugin_dir = build
 script_dir = scripts/Zeek/Spicy
 test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && btest -d -j "${SPICY_ZKG_PROCESSES:-4}"
 url = https://github.com/zeek/spicy-plugin
-version = v1.4.1
+version = v1.4.2
 
 [zeek/spicy-tftp]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
