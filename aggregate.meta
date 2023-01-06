@@ -1929,7 +1929,7 @@ script_dir = analyzer
 summary = Spicy-based analyzer for the HTTP protocol
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/zeek/spicy-http
-version = v0.0.4
+version = v0.0.5
 
 [zeek/spicy-ldap]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
@@ -1959,7 +1959,7 @@ script_dir = analyzer
 summary = Spicy-based analyzer for the PNG file format
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/zeek/spicy-png
-version = v0.0.4
+version = v0.0.5
 
 [zeek/spicy-plugin]
 build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && cmake .. && make -j "${SPICY_ZKG_PROCESSES:-4}"
