@@ -868,6 +868,16 @@ test_command = cd tests && btest -d notice_tests
 version = master
 url = https://github.com/dopheide-esnet/zeek-notice-config
 
+[dopheide/zeek-known-outbound]
+depends = 
+	zeek >=3.0.0
+description = This script provides the ability to monitor and throw notices for outbound connections to a list of watched countries. It also adds orig and resp country codes to conn.log. It depends on having libmaxmind configured for GeoIP lookups.
+script_dir = scripts
+tags = notice, known, services, outbound
+test_command = cd tests && btest -d outbound-tests
+version = master
+url = https://github.com/dopheide-esnet/zeek-known-outbound
+
 [dopheide/zeek-jetdirect]
 credits = dopheide@es.net, soehlert@es.net, jsdorn1@gmail.com
 depends = 
