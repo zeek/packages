@@ -1747,6 +1747,16 @@ tags = zeek plugin, packet source, testimony
 url = https://github.com/MalakhatkoVadym/zeek-testimony-plugin.git
 version = master
 
+[sithari/icmp-exfil-detection]
+credits = Rakesh Passa <rakesh4500@gmail.com>
+depends = 
+	zeek >=3.2.0
+description = Detects exfiltration of data over ICMP and writes to notice.log with the details of the exfil like duration, exfil size, source/dest ip, etc.
+script_dir = scripts
+tags = ICMP, exfil, exfiltration, protocol misuse
+version = main
+url = https://github.com/sithari/icmp-exfil-detection
+
 [srozb/dns_axfr]
 description = Find and notice DNS zone transfer attempts.
 script_dir = scripts
