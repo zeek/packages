@@ -1375,6 +1375,15 @@ tags = zeek scripting, dns, domain, notices
 url = https://github.com/jbaggs/anomalous-dns
 version = 2.0.1
 
+[jbaggs/wildcard-domain]
+depends = 
+	zeek >=3.0.0
+description = 
+script_dir = scripts
+tags = zeek scripting, intel
+url = https://github.com/jbaggs/wildcard-domain
+version = 1.0.0
+
 [jmellander/BinaryHeap]
 description = Binary Heap Implementation
 script_dir = scripts
