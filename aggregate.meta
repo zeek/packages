@@ -1378,11 +1378,11 @@ version = 2.0.1
 [jbaggs/wildcard-domain]
 depends = 
 	zeek >=3.0.0
-description = 
+description = This script adds a new Intel::WILDCARD_DOMAIN type that matches on the base domain name, regardless of what subdomain may be prepended to it.
 script_dir = scripts
 tags = zeek scripting, intel
 url = https://github.com/jbaggs/wildcard-domain
-version = 1.0.0
+version = 1.0.1
 
 [jmellander/BinaryHeap]
 description = Binary Heap Implementation
