@@ -1382,7 +1382,7 @@ description = This script adds a new Intel::WILDCARD_DOMAIN type that matches on
 script_dir = scripts
 tags = zeek scripting, intel
 url = https://github.com/jbaggs/wildcard-domain
-version = 1.0.1
+version = 1.0.2
 
 [jmellander/BinaryHeap]
 description = Binary Heap Implementation
