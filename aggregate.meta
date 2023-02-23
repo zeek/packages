@@ -79,6 +79,18 @@ url = https://github.com/0xxon/zeek-tls-log-alternative
 url = https://github.com/0xxon/zeek-os-package-tracking
 version = main
 
+[AmazingPP/zeek-capwap]
+build_command = ./configure && cd build && make
+depends = 
+	zkg >=2.0
+	zeek >=4.2.0
+script_dir = plugin/scripts
+summary = A Zeek CAPWAP packet analyzer
+tags = capwap, zeek, packet analyzer
+test_command = cd testing && btest -c btest.cfg -D
+url = https://github.com/AmazingPP/zeek-capwap
+version = v0.1.0
+
 [activecm/bro-mongodb.git]
 build_command = (./configure --bro-dist=%(bro_dist)s && make)
 description = Bro IDS/ MongoDB connector.
