@@ -375,6 +375,20 @@ test_command = cd tests && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-s7comm
 version = main
 
+[cisagov/icsnpp-synchrophasor]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+credits = Seth Grover <seth.grover@inl.gov>
+description = Synchrophasor (as defined in C37.118.2-2011 IEEE Standard for Synchrophasor
+	Data Transfer for Power Systems) defines a simple and direct method of data
+	transmission and accretion within a phasor measurement system.
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = Synchrophasor Data Transfer for Power Systems is a communication protocol for real-time communication between phasor measurement units (PMU), phasor data concentrators (PDC), and other applications
+tags = synchrophasor, power, SCADA, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
+test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+url = https://github.com/cisagov/icsnpp-synchrophasor
+version = main
+
 [corelight/bro-drwatson]
 depends = 
 	https://github.com/corelight/bro-hardware *
@@ -1810,11 +1824,29 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/stevesmoot/localcountry
 version = main
 
-[stratosphereips/IRC-Zeek-package]
+[stratosphereips/zeek-package-IRC]
 description = Zeek Package that extracts features of IRC communication
 tags = zeek plugin, irc, features extraction
 version = v1.6
-url = https://github.com/stratosphereips/IRC-Zeek-package
+url = https://github.com/stratosphereips/zeek-package-IRC
+
+[stratosphereips/zeek-package-detect-DoH]
+description = Detect DoH servers by adding a is_DoH field in ssl.log and add timeout to them so that the DoH connection won't take too long
+tags = zeek plugin, DoH, features extraction, ssl, DNS
+version = 1.0.0
+url = https://github.com/stratosphereips/zeek-package-detect-DoH
+
+[stratosphereips/zeek-package-ARP]
+description = Zeek Package that supports adding arp.log to zeek log files
+tags = zeek plugin, arp, features extraction
+version = 1.0.0
+url = https://github.com/stratosphereips/zeek-package-ARP
+
+[stratosphereips/zeek-package-log-gateway-IP]
+description = This script gets the gateway IP information taken from the dhcp logs, and adds a notice.log entry if the gateway address is identified
+tags = zeek plugin, Gateway IP, features extraction, notice
+version = 1.0.0
+url = https://github.com/stratosphereips/zeek-package-log-gateway-IP
 
 [tenzir/zeek-mac-ages]
 script_dir = scripts/tenzir/mac-ages
