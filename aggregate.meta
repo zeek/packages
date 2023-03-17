@@ -1015,6 +1015,14 @@ test_command = cd tests && btest -d known_tests
 version = main
 url = https://github.com/esnet-security/zeek-outbound-known-services-with-origflag
 
+[esnet-security/zeek_scram]
+description = Zeek script for interacting with the SCRAM client
+script_dir = scripts
+tags = scram, bhr
+test_command = cd tests && btest -d scram_tests
+version = master
+url = https://github.com/esnet-security/zeek_scram
+
 [esnet/zeek-exporter]
 build_command = ./configure && make
 config_files = scripts/conf.dat
