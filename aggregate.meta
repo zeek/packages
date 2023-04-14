@@ -957,6 +957,20 @@ tags = smb2
 version = master
 url = https://github.com/elcabezzonn/smb2-remote-file-copy
 
+[emnahum/zeek-pcapovertcp-plugin]
+build_command = ./configure && make
+credits = Erich Nahum <github@nahum.org>
+depends = 
+	zkg >=2.0
+	zeek >=4.0.0
+description = Provides PCAP over TCP support for Zeek.
+plugin_dir = build/Zeek_PcapOverTcp.tgz
+script_dir = scripts
+summary = Provides PCAP over TCP support for Zeek.
+tags = zeek plugin, zeekctl plugin, packet source, pcapovertcp, pcap
+url = https://github.com/emnahum/zeek-pcapovertcp-plugin
+version = v1.0.2
+
 [emojifier/emojifier]
 credits = Jan Grashoefer <jan.grashoefer@gmail.com>,
 	Matthias Grundmann <matthias.grundmann@kit.edu>,
