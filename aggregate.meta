@@ -1789,17 +1789,6 @@ tags = zeek plugin, zeek scripting
 url = https://gitlab.com/shodan-public/shodan-zeek/
 version = master
 
-[sirinsoftware/zeek-testimony-plugin.git]
-build_command = ./configure && make -C build
-depends = 
-	zkg >=2.0
-	zeek >=3.0.0
-description = This plugin provides Testimony support for Zeek.
-plugin_dir = build/Zeek_Testimony.tgz
-tags = zeek plugin, packet source, testimony
-url = https://github.com/MalakhatkoVadym/zeek-testimony-plugin.git
-version = master
-
 [sithari/icmp-exfil-detection]
 credits = Rakesh Passa <rakesh4500@gmail.com>
 depends = 
