@@ -1313,13 +1313,13 @@ version = 2.0.0
 
 [j-gras/add-json]
 depends = 
-	zeek >=3.0
+	zeek >=4.1
 description = Additional JSON-logging for Zeek.
 script_dir = scripts
 tags = log, logging, JSON
 test_command = cd tests && btest -d
 url = https://github.com/J-Gras/add-json
-version = 2.0.0
+version = 3.0.0
 
 [j-gras/add-node-names]
 depends = 
