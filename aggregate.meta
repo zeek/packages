@@ -712,7 +712,7 @@ script_dir = analyzer
 summary = An IPSec Zeek protocol analyzer based on Spicy.
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/corelight/zeek-spicy-ipsec
-version = v0.2.17
+version = v0.2.18
 
 [corelight/zeek-spicy-ospf]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
