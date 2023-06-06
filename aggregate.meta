@@ -2074,6 +2074,17 @@ test_command = cd tests && btest -d
 url = https://github.com/zeek/zeek-af_packet-plugin
 version = 4.0.0
 
+[zeek/zeek-more-hashes]
+build_command = ./configure && cd build && make
+description = Additional hashing functions for Zeek, started with MurmurHash3.
+name = MoreHashes
+plugin_dir = build
+script_dir = ./scripts/Zeek/MoreHashes
+tags = mmh3
+test_command = cd tests && btest -d -c btest.cfg
+url = https://github.com/zeek/zeek-more-hashes
+version = v0.2.0
+
 [zeek/zeek-netmap]
 build_command = ./configure --with-netmap=%(netmap_root_dir)s && cd build && make
 depends = 
