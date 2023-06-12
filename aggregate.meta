@@ -609,14 +609,6 @@ summary = Send Notices over Telegram
 url = https://github.com/corelight/zeek-notice-telegram
 version = master
 
-[corelight/zeek-openvpn]
-build_command = ./configure --zeek-dist=%(zeek_dist)s && make
-description = A Zeek OpenVPN Protocol Analyzer
-script_dir = scripts/zeek/openvpn
-test_command = cd tests && btest
-url = https://github.com/corelight/zeek-openvpn
-version = v0.0.14
-
 [corelight/zeek-quic]
 aliases = zeek-quic bro-quic
 build_command = ./configure && make
