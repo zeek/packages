@@ -1867,9 +1867,10 @@ url = https://github.com/tenzir/zeek-vast
 version = master
 
 [theflakes/bro-large_uploads]
+credits = Brian Kellogg
 description = Raise notices on outgoing files over X bytes in size.
 	Also raise notices for multiple large outgoing Tx's in Y time frame.
-tags = notices, uploads, conns
+tags = notices, uploads, conn
 url = https://github.com/theflakes/bro-large_uploads
 version = master
 
