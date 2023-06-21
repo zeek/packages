@@ -961,7 +961,7 @@ script_dir = scripts
 summary = Provides PCAP over TCP support for Zeek.
 tags = zeek plugin, zeekctl plugin, packet source, pcapovertcp, pcap
 url = https://github.com/emnahum/zeek-pcapovertcp-plugin
-version = v1.0.6
+version = v1.0.7
 
 [emojifier/emojifier]
 credits = Jan Grashoefer <jan.grashoefer@gmail.com>,
