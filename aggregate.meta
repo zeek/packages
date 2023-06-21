@@ -646,7 +646,7 @@ test_command = cd tests && btest -d -c btest.cfg -g smoke
 user_vars = 
 	nodejs_root_dir [] "Root directory of Node.js installation (leave blank for defaults)"
 url = https://github.com/corelight/zeekjs
-version = v0.9.2
+version = v0.9.3
 
 [corelight/zerologon]
 corelight_name = Zerologon
