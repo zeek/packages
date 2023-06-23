@@ -1632,6 +1632,30 @@ test_command = ( cd tests && btest -d )
 url = https://github.com/ntop/bro-pf_ring
 version = master
 
+[nttcom/zeek-parser-CCLinkFieldBasic]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=4.0.0
+description = TODO: A more detailed description of spicy_cc_link_basic.
+	It can span multiple lines, with this indentation.
+script_dir = scripts
+summary = TODO: A summary of spicy_cc_link_basic in one line
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/nttcom/zeek-parser-CCLinkFieldBasic
+version = main
+
+[nttcom/zeek-parser-CCLinkField-CCLinkControl]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=4.0.0
+description = TODO: A more detailed description of spicy_cc_link_noip.
+	It can span multiple lines, with this indentation.
+script_dir = scripts
+summary = TODO: A summary of spicy_cc_link_noip in one line
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/nttcom/zeek-parser-CCLinkField-CCLinkControl
+version = main
+
 [pgaulon/zeek-notice-slack]
 aliases = zeek-notice-slack bro-notice-slack
 description = Zeek Notices through Slack webhook
