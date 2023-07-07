@@ -1679,6 +1679,13 @@ tags = log, logging, intel, qintel, qsentry, intelligenece, threat intelligence,
 url = https://github.com/qintel/qsentry-zeek
 version = 1.0.0
 
+[reshadp/zeek-log-add-mac-addresses]
+description = Add MAC address to all logs.
+script_dir = scripts
+tags = log extend mac
+url = https://github.com/reshadp/zeek-log-add-mac-addresses
+version = main
+
 [rvictory/zeek-new-domains]
 credits = Ryan Victory
 depends = 
