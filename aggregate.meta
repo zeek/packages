@@ -1889,11 +1889,13 @@ url = https://github.com/tenzir/zeek-mac-ages
 version = master
 
 [tenzir/zeek-vast]
+aliases = tenzir
 depends = 
-	zeek >= 2.6-beta2-14
-description = A package that enables Zeek to communicate with VAST
+	zeek >=4.0.0
+description = This package is the official Zeek integration for Tenzir.
 script_dir = scripts
-tags = vast, intel
+summary = The official Tenzir integration for Zeek
+tags = tenzir, pipelines, logs, log shipping, postprocessor, rotation
 url = https://github.com/tenzir/zeek-vast
 version = master
 
