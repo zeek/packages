@@ -1694,6 +1694,14 @@ tags = zeek plugin, notices, slack webhook
 url = https://github.com/pgaulon/zeek-notice-slack
 version = 1.0.2
 
+[pgaulon/zeekjs-notice-slack]
+depends = zeekjs *
+description = Package extending the Notice Framework to include to send Notices via Slack webhooks.
+summary = Zeek Notices via Slack webhooks
+tags = zeekjs, zeek plugin, notices, slack, webhook
+url = https://github.com/pgaulon/zeekjs-notice-slack
+version = v0.0.4
+
 [precurse/zeek-httpattacks]
 description = Checks for HTTP anomalies typically used for attacking.
 script_dir = scripts
