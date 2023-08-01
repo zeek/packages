@@ -1700,7 +1700,7 @@ description = Package extending the Notice Framework to include to send Notices 
 summary = Zeek Notices via Slack webhooks
 tags = zeekjs, zeek plugin, notices, slack, webhook
 url = https://github.com/pgaulon/zeekjs-notice-slack
-version = v0.0.4
+version = v0.0.5
 
 [precurse/zeek-httpattacks]
 description = Checks for HTTP anomalies typically used for attacking.
