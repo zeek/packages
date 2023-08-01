@@ -816,6 +816,16 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/boa-detector
 version = v0.1.0
 
+[corelight/zeek-gozi-detector]
+depends = 
+	zeek >=4.0.0
+description = A Zeek based Gozi malware detector.
+script_dir = scripts
+summary = A Zeek based Gozi malware detector.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/zeek-gozi-detector
+version = v0.1.3
+
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
 script_dir = scripts
@@ -1495,6 +1505,27 @@ plugin_dir = plugin
 tags = broctl, jemalloc, profiling
 url = https://github.com/JustinAzoff/zeek-jemalloc-profiling
 version = master
+
+[keithjjones/zeek-njrat-detector]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=4.0.0
+description = A Zeek based njRAT detector.
+script_dir = analyzer
+summary = A Zeek based njRAT detector.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/keithjjones/zeek-njrat-detector
+version = v0.1.5
+
+[keithjjones/zeek-amadey-detector]
+depends = 
+	zeek >=4.0.0
+description = A Zeek based Amadey malware detector.
+script_dir = scripts
+summary = A Zeek based Amadey malware detector.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/keithjjones/zeek-amadey-detector
+version = v0.1.1
 
 [klehigh/find_smbv1]
 credits = Mark Overholser converted to support newer Zeek
