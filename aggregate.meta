@@ -1292,6 +1292,14 @@ test_command = ( cd tests && btest -d )
 version = main
 url = https://github.com/initconf/log4j.git
 
+[initconf/dns-heuristics]
+description = 
+script_dir = scripts
+tags = 
+test_command = ( cd tests && btest -d )
+version = main
+url = https://github.com/initconf/dns-heuristics
+
 [irtimmer/bro-xdp_packet-plugin]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
 depends = 
