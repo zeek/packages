@@ -249,6 +249,14 @@ test_command = (cd tests && btest -d)
 url = https://github.com/captainGeech42/zeek-intel-path
 version = main
 
+[chrisanag1985/suppress-ssl-notices]
+credits = Christos Anagnostopoulos
+description = A Module that tries to minimize the noise from the SSL::Invalid_Server_Cert notices.
+script_dir = scripts
+tags = notices, ssl
+version = v0.1
+url = https://github.com/chrisanag1985/suppress-ssl-notices
+
 [cisagov/icsnpp-bacnet]
 build_command = ./configure && make
 build_dir = build/ICSNPP_Bacnet.tgz
@@ -389,6 +397,16 @@ test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/b
 url = https://github.com/cisagov/icsnpp-synchrophasor
 version = main
 
+[corelight/boa-detector]
+depends = 
+	zeek >=4.0.0
+description = A vulnerable Boa web server detector.
+script_dir = scripts
+summary = A vulnerable Boa web server detector.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/boa-detector
+version = v0.1.0
+
 [corelight/bro-drwatson]
 depends = 
 	https://github.com/corelight/bro-hardware *
@@ -451,6 +469,16 @@ test_command = cd testing && btest -c btest.cfg
 version = v0.1.2
 url = https://github.com/corelight/CVE-2021-38647
 
+[corelight/CVE-2021-42292]
+depends = 
+	zeek >=3.0.0
+description = A package to detect CVE-2021-42292, a Microsoft Excel priviledge exploit.
+script_dir = scripts
+summary = A package to detect CVE-2021-42292, a Microsoft Excel priviledge exploit.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/CVE-2021-42292
+version = v0.1.0
+
 [corelight/cve-2021-44228]
 description = A Zeek package which raises notices for RCE in Log4J (CVE-2021-44228).
 script_dir = scripts
@@ -468,11 +496,88 @@ summary = A package to detect CVE-2022-21907
 url = https://github.com/corelight/cve-2022-21907
 version = v0.1.2
 
+[corelight/cve-2022-22954]
+depends = 
+	zeek >=4.0.0
+description = Detect CVE-2022-22954 attempts and exploits.
+	Also logs what data was returned to the attacker.
+script_dir = scripts
+summary = Detect CVE-2022-22954 attempts and exploits.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/cve-2022-22954
+version = v0.1.0
+
+[corelight/CVE-2022-23270-PPTP]
+depends = 
+	zeek >=4.0.0
+description = A package to detect CVE-2022-23270.
+script_dir = scripts
+summary = A package to detect CVE-2022-23270.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/CVE-2022-23270-PPTP
+version = master
+
+[corelight/CVE-2022-24491]
+depends = 
+	zeek >=4.0.0
+description = A CVE-2022-24491 detector.
+script_dir = scripts
+summary = A CVE-2022-24491 detector.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/CVE-2022-24491
+version = v0.1.3
+
+[corelight/CVE-2022-24497]
+depends = 
+	zeek >=4.0.0
+description = A CVE-2022-24497 detector.
+script_dir = scripts
+summary = A CVE-2022-24497 detector.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/CVE-2022-24497
+version = v0.1.1
+
+[corelight/cve-2022-26809]
+depends = 
+	zeek >=4.0.0
+description = CVE-2022-26809 is a DCE/RPC RCE exploit.
+	This package detects both attempts and successful exploits.
+script_dir = scripts
+summary = Detects attempts and exploits of CVE-2022-26809
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/cve-2022-26809
+version = v0.1.0
+
+[corelight/CVE-2022-26937]
+depends = 
+	zeek >=4.0.0
+description = A Zeek package to detect CVE-2022-26937, a Windows NFS vulnerabilty.
+script_dir = scripts
+summary = A Zeek package to detect CVE-2022-26937, a Windows NFS vulnerabilty.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/CVE-2022-26937
+version = master
+
+[corelight/CVE-2022-3602]
+description = CVE-2022-3602 exploit Detection
+script_dir = scripts
+summary = Detection for CVE-2022-3602 - OpenSSL RCE/DOC v3.0.0 - v3.0.6
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/CVE-2022-3602
+version = v0.1.0
+
 [corelight/detect-ransomware-filenames]
 description = Watch SMB transactions for files whose filename matches patterns known to be used by ransomware
 script_dir = scripts
 url = https://github.com/corelight/detect-ransomware-filenames
 version = master
+
+[corelight/ExtendIntel]
+description = A Zeek package to extend logging for Intel
+script_dir = scripts
+tags = intel
+version = main
+url = https://github.com/corelight/ExtendIntel
 
 [corelight/got_zoom]
 depends = 
@@ -573,6 +678,16 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/zeek-globload
 version = 1.0.0
 
+[corelight/zeek-gozi-detector]
+depends = 
+	zeek >=4.0.0
+description = A Zeek based Gozi malware detector.
+script_dir = scripts
+summary = A Zeek based Gozi malware detector.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/zeek-gozi-detector
+version = v0.1.3
+
 [corelight/zeek-jpeg]
 build_command = ./configure --enable-debug && make
 description = This package provides some basic analysis for JPEG files.
@@ -622,6 +737,66 @@ tags = plugin, analyzer, gquic, quic
 url = https://github.com/corelight/zeek-quic
 version = v0.7.0
 
+[corelight/zeek-spicy-facefish]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+description = A Facefish rootkit detector, based on Spicy.
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = A Facefish rootkit detector, based on Spicy.
+test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+url = https://github.com/corelight/zeek-spicy-facefish
+version = v0.1.1
+
+[corelight/zeek-spicy-ipsec]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+description = An IPSec Zeek protocol analyzer based on Spicy.
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = An IPSec Zeek protocol analyzer based on Spicy.
+test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+url = https://github.com/corelight/zeek-spicy-ipsec
+version = v0.2.18
+
+[corelight/zeek-spicy-openvpn]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+description = A Zeek OpenVPN protocol analyzer, based on Spicy.
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = A Zeek OpenVPN protocol analyzer, based on Spicy.
+test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+url = https://github.com/corelight/zeek-spicy-openvpn
+version = v0.1.6
+
+[corelight/zeek-spicy-ospf]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+description = A Zeek OSPF packet analyzer, based on Spicy.
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = A Zeek OSPF packet analyzer, based on Spicy.
+test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+url = https://github.com/corelight/zeek-spicy-ospf
+version = v0.1.4
+
+[corelight/zeek-spicy-stun]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+description = A Zeek STUN protocol analyzer based on Spicy.
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = A Zeek STUN protocol analyzer based on Spicy.
+test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+url = https://github.com/corelight/zeek-spicy-stun
+version = v0.2.10
+
+[corelight/zeek-spicy-wireguard]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+description = A Wireguard VPN protocol analyzer, based on Spicy.
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = A Wireguard VPN protocol analyzer, based on Spicy.
+test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+url = https://github.com/corelight/zeek-spicy-wireguard
+version = v0.1.3
+
 [corelight/zeek-xor-exe-plugin]
 build_command = ( ./configure && make )
 description = A plugin to find Windows executables that have been XOR encoded.
@@ -665,166 +840,6 @@ tags = library, unit-testing, testing
 test_command = make -C tests
 url = https://github.com/corelight/ztest
 version = master
-
-[corelight/CVE-2021-42292]
-depends = 
-	zeek >=3.0.0
-description = A package to detect CVE-2021-42292, a Microsoft Excel priviledge exploit.
-script_dir = scripts
-summary = A package to detect CVE-2021-42292, a Microsoft Excel priviledge exploit.
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/corelight/CVE-2021-42292
-version = v0.1.0
-
-[corelight/zeek-spicy-facefish]
-build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
-description = A Facefish rootkit detector, based on Spicy.
-plugin_dir = build/spicy-modules
-script_dir = analyzer
-summary = A Facefish rootkit detector, based on Spicy.
-test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
-url = https://github.com/corelight/zeek-spicy-facefish
-version = v0.1.1
-
-[corelight/zeek-spicy-stun]
-build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
-description = A Zeek STUN protocol analyzer based on Spicy.
-plugin_dir = build/spicy-modules
-script_dir = analyzer
-summary = A Zeek STUN protocol analyzer based on Spicy.
-test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
-url = https://github.com/corelight/zeek-spicy-stun
-version = v0.2.10
-
-[corelight/zeek-spicy-ipsec]
-build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
-description = An IPSec Zeek protocol analyzer based on Spicy.
-plugin_dir = build/spicy-modules
-script_dir = analyzer
-summary = An IPSec Zeek protocol analyzer based on Spicy.
-test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
-url = https://github.com/corelight/zeek-spicy-ipsec
-version = v0.2.18
-
-[corelight/zeek-spicy-ospf]
-build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
-description = A Zeek OSPF packet analyzer, based on Spicy.
-plugin_dir = build/spicy-modules
-script_dir = analyzer
-summary = A Zeek OSPF packet analyzer, based on Spicy.
-test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
-url = https://github.com/corelight/zeek-spicy-ospf
-version = v0.1.4
-
-[corelight/zeek-spicy-openvpn]
-build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
-description = A Zeek OpenVPN protocol analyzer, based on Spicy.
-plugin_dir = build/spicy-modules
-script_dir = analyzer
-summary = A Zeek OpenVPN protocol analyzer, based on Spicy.
-test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
-url = https://github.com/corelight/zeek-spicy-openvpn
-version = v0.1.6
-
-[corelight/zeek-spicy-wireguard]
-build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
-description = A Wireguard VPN protocol analyzer, based on Spicy.
-plugin_dir = build/spicy-modules
-script_dir = analyzer
-summary = A Wireguard VPN protocol analyzer, based on Spicy.
-test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
-url = https://github.com/corelight/zeek-spicy-wireguard
-version = v0.1.3
-
-[corelight/CVE-2022-24491]
-depends = 
-	zeek >=4.0.0
-description = A CVE-2022-24491 detector.
-script_dir = scripts
-summary = A CVE-2022-24491 detector.
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/corelight/CVE-2022-24491
-version = v0.1.3
-
-[corelight/CVE-2022-24497]
-depends = 
-	zeek >=4.0.0
-description = A CVE-2022-24497 detector.
-script_dir = scripts
-summary = A CVE-2022-24497 detector.
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/corelight/CVE-2022-24497
-version = v0.1.1
-
-[corelight/cve-2022-26809]
-depends = 
-	zeek >=4.0.0
-description = CVE-2022-26809 is a DCE/RPC RCE exploit.
-	This package detects both attempts and successful exploits.
-script_dir = scripts
-summary = Detects attempts and exploits of CVE-2022-26809
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/corelight/cve-2022-26809
-version = v0.1.0
-
-[corelight/cve-2022-22954]
-depends = 
-	zeek >=4.0.0
-description = Detect CVE-2022-22954 attempts and exploits.
-	Also logs what data was returned to the attacker.
-script_dir = scripts
-summary = Detect CVE-2022-22954 attempts and exploits.
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/corelight/cve-2022-22954
-version = v0.1.0
-
-[corelight/CVE-2022-23270-PPTP]
-depends = 
-	zeek >=4.0.0
-description = A package to detect CVE-2022-23270.
-script_dir = scripts
-summary = A package to detect CVE-2022-23270.
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/corelight/CVE-2022-23270-PPTP
-version = master
-
-[corelight/CVE-2022-26937]
-depends = 
-	zeek >=4.0.0
-description = A Zeek package to detect CVE-2022-26937, a Windows NFS vulnerabilty.
-script_dir = scripts
-summary = A Zeek package to detect CVE-2022-26937, a Windows NFS vulnerabilty.
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/corelight/CVE-2022-26937
-version = master
-
-[corelight/CVE-2022-3602]
-description = CVE-2022-3602 exploit Detection
-script_dir = scripts
-summary = Detection for CVE-2022-3602 - OpenSSL RCE/DOC v3.0.0 - v3.0.6
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/corelight/CVE-2022-3602
-version = v0.1.0
-
-[corelight/boa-detector]
-depends = 
-	zeek >=4.0.0
-description = A vulnerable Boa web server detector.
-script_dir = scripts
-summary = A vulnerable Boa web server detector.
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/corelight/boa-detector
-version = v0.1.0
-
-[corelight/zeek-gozi-detector]
-depends = 
-	zeek >=4.0.0
-description = A Zeek based Gozi malware detector.
-script_dir = scripts
-summary = A Zeek based Gozi malware detector.
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/corelight/zeek-gozi-detector
-version = v0.1.3
 
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
