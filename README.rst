@@ -2,6 +2,7 @@
 .. _Zeek Package Manager: https://github.com/zeek/package-manager
 .. _Zeek package: https://docs.zeek.org/projects/package-manager/en/stable/package.html
 .. _package index file: https://docs.zeek.org/projects/package-manager/en/stable/source.html#package-index-files
+.. _pre-commit: https://pre-commit.com/
 
 Zeek Package Source
 ===================
@@ -28,4 +29,5 @@ own work/packages):
    for the directory.
 #. Put a `package index file`_ within the directory you just made.
 #. Commit/push the changes you made to your fork.
+#. Optional: Use `pre-commit`_ to verify your changes by running ``pre-commit run -a``.
 #. Submit a *pull request*.
