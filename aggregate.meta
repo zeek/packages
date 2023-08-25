@@ -42,6 +42,10 @@ test_command = cd tests && make
 version = main
 url = https://github.com/0xxon/zeek-network-statistics
 
+[0xxon/zeek-os-package-tracking]
+url = https://github.com/0xxon/zeek-os-package-tracking
+version = main
+
 [0xxon/zeek-plugin-roca]
 build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
 description = Identify certificates potentially affected by CVE-2017-15361
@@ -74,10 +78,6 @@ tags = TLS, SSL, X509, Certificates, PKI
 test_command = cd tests && make
 version = main
 url = https://github.com/0xxon/zeek-tls-log-alternative
-
-[0xxon/zeek-os-package-tracking]
-url = https://github.com/0xxon/zeek-os-package-tracking
-version = main
 
 [AmazingPP/zeek-capwap]
 build_command = ./configure && cd build && make
@@ -185,6 +185,13 @@ tags = zeek plugin, protocol analyzer, log writer, tds
 url = https://github.com/amzn/zeek-plugin-tds
 version = 1.1.0
 
+[anthonykasza/common-encodings]
+description = A Zeek package which provides common encodings and operations.
+script_dir = scripts
+tags = rc4, base64, bitshift, encoding, xor
+version = 1.0.1
+url = https://github.com/anthonykasza/common-encodings/
+
 [anthonykasza/indicator-rules]
 depemds = 
 	bro >= 2.6
@@ -193,13 +200,6 @@ script_dir = scripts
 tags = intel, signature, indicators, pure-script
 version = master
 url = https://github.com/anthonykasza/indicator-rules
-
-[anthonykasza/common-encodings]
-description = A Zeek package which provides common encodings and operations.
-script_dir = scripts
-tags = rc4, base64, bitshift, encoding, xor
-version = 1.0.1
-url = https://github.com/anthonykasza/common-encodings/
 
 [apache/metron-bro-plugin-kafka]
 build_command = ./configure --bro-dist=%(bro_dist)s --with-librdkafka=%(LIBRDKAFKA_ROOT)s && make
@@ -397,6 +397,94 @@ test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/b
 url = https://github.com/cisagov/icsnpp-synchrophasor
 version = main
 
+[corelight/CVE-2020-16898]
+description = A network detection package for CVE-2020-16898 (Windows TCP/IP Remote Code Execution Vulnerability) AKA BadNeighbor
+script_dir = scripts
+tags = CVE-2020-16898, BadNeighbor
+version = master
+url = https://github.com/corelight/CVE-2020-16898
+
+[corelight/CVE-2020-5902-F5BigIP]
+description = A network detection package for CVE-2020-5902, a CVE10.0 vulnerability affecting F5 Networks, Inc BIG-IP devices.
+script_dir = scripts
+tags = BIGIP, F5, firewall, RCE, CVE10.0, CVE10, CorelightResponse
+version = master
+url = https://github.com/corelight/CVE-2020-5902-F5BigIP
+
+[corelight/CVE-2021-38647]
+aliases = omigod
+description = A Zeek package which detects CVE-2021-38647 (AKA OMIGOD) exploit attempts
+script_dir = scripts
+tags = HTTP, OMI, WMI, Windows, CVE, CVE-2021-38647, exploit, RCE, RapidResponse
+test_command = cd testing && btest -c btest.cfg
+version = v0.1.2
+url = https://github.com/corelight/CVE-2021-38647
+
+[corelight/CVE-2021-42292]
+depends = 
+	zeek >=3.0.0
+description = A package to detect CVE-2021-42292, a Microsoft Excel priviledge exploit.
+script_dir = scripts
+summary = A package to detect CVE-2021-42292, a Microsoft Excel priviledge exploit.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/CVE-2021-42292
+version = v0.1.0
+
+[corelight/CVE-2022-23270-PPTP]
+depends = 
+	zeek >=4.0.0
+description = A package to detect CVE-2022-23270.
+script_dir = scripts
+summary = A package to detect CVE-2022-23270.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/CVE-2022-23270-PPTP
+version = master
+
+[corelight/CVE-2022-24491]
+depends = 
+	zeek >=4.0.0
+description = A CVE-2022-24491 detector.
+script_dir = scripts
+summary = A CVE-2022-24491 detector.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/CVE-2022-24491
+version = v0.1.3
+
+[corelight/CVE-2022-24497]
+depends = 
+	zeek >=4.0.0
+description = A CVE-2022-24497 detector.
+script_dir = scripts
+summary = A CVE-2022-24497 detector.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/CVE-2022-24497
+version = v0.1.1
+
+[corelight/CVE-2022-26937]
+depends = 
+	zeek >=4.0.0
+description = A Zeek package to detect CVE-2022-26937, a Windows NFS vulnerabilty.
+script_dir = scripts
+summary = A Zeek package to detect CVE-2022-26937, a Windows NFS vulnerabilty.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/CVE-2022-26937
+version = master
+
+[corelight/CVE-2022-3602]
+description = CVE-2022-3602 exploit Detection
+script_dir = scripts
+summary = Detection for CVE-2022-3602 - OpenSSL RCE/DOC v3.0.0 - v3.0.6
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/CVE-2022-3602
+version = v0.1.0
+
+[corelight/ExtendIntel]
+description = A Zeek package to extend logging for Intel
+script_dir = scripts
+tags = intel
+version = main
+url = https://github.com/corelight/ExtendIntel
+
 [corelight/boa-detector]
 depends = 
 	zeek >=4.0.0
@@ -446,39 +534,6 @@ tags = conn, burst
 url = https://github.com/corelight/conn-burst
 version = master
 
-[corelight/CVE-2020-16898]
-description = A network detection package for CVE-2020-16898 (Windows TCP/IP Remote Code Execution Vulnerability) AKA BadNeighbor
-script_dir = scripts
-tags = CVE-2020-16898, BadNeighbor
-version = master
-url = https://github.com/corelight/CVE-2020-16898
-
-[corelight/CVE-2020-5902-F5BigIP]
-description = A network detection package for CVE-2020-5902, a CVE10.0 vulnerability affecting F5 Networks, Inc BIG-IP devices.
-script_dir = scripts
-tags = BIGIP, F5, firewall, RCE, CVE10.0, CVE10, CorelightResponse
-version = master
-url = https://github.com/corelight/CVE-2020-5902-F5BigIP
-
-[corelight/CVE-2021-38647]
-aliases = omigod
-description = A Zeek package which detects CVE-2021-38647 (AKA OMIGOD) exploit attempts
-script_dir = scripts
-tags = HTTP, OMI, WMI, Windows, CVE, CVE-2021-38647, exploit, RCE, RapidResponse
-test_command = cd testing && btest -c btest.cfg
-version = v0.1.2
-url = https://github.com/corelight/CVE-2021-38647
-
-[corelight/CVE-2021-42292]
-depends = 
-	zeek >=3.0.0
-description = A package to detect CVE-2021-42292, a Microsoft Excel priviledge exploit.
-script_dir = scripts
-summary = A package to detect CVE-2021-42292, a Microsoft Excel priviledge exploit.
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/corelight/CVE-2021-42292
-version = v0.1.0
-
 [corelight/cve-2021-44228]
 description = A Zeek package which raises notices for RCE in Log4J (CVE-2021-44228).
 script_dir = scripts
@@ -507,36 +562,6 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/cve-2022-22954
 version = v0.1.0
 
-[corelight/CVE-2022-23270-PPTP]
-depends = 
-	zeek >=4.0.0
-description = A package to detect CVE-2022-23270.
-script_dir = scripts
-summary = A package to detect CVE-2022-23270.
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/corelight/CVE-2022-23270-PPTP
-version = master
-
-[corelight/CVE-2022-24491]
-depends = 
-	zeek >=4.0.0
-description = A CVE-2022-24491 detector.
-script_dir = scripts
-summary = A CVE-2022-24491 detector.
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/corelight/CVE-2022-24491
-version = v0.1.3
-
-[corelight/CVE-2022-24497]
-depends = 
-	zeek >=4.0.0
-description = A CVE-2022-24497 detector.
-script_dir = scripts
-summary = A CVE-2022-24497 detector.
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/corelight/CVE-2022-24497
-version = v0.1.1
-
 [corelight/cve-2022-26809]
 depends = 
 	zeek >=4.0.0
@@ -548,36 +573,11 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/cve-2022-26809
 version = v0.1.0
 
-[corelight/CVE-2022-26937]
-depends = 
-	zeek >=4.0.0
-description = A Zeek package to detect CVE-2022-26937, a Windows NFS vulnerabilty.
-script_dir = scripts
-summary = A Zeek package to detect CVE-2022-26937, a Windows NFS vulnerabilty.
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/corelight/CVE-2022-26937
-version = master
-
-[corelight/CVE-2022-3602]
-description = CVE-2022-3602 exploit Detection
-script_dir = scripts
-summary = Detection for CVE-2022-3602 - OpenSSL RCE/DOC v3.0.0 - v3.0.6
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/corelight/CVE-2022-3602
-version = v0.1.0
-
 [corelight/detect-ransomware-filenames]
 description = Watch SMB transactions for files whose filename matches patterns known to be used by ransomware
 script_dir = scripts
 url = https://github.com/corelight/detect-ransomware-filenames
 version = master
-
-[corelight/ExtendIntel]
-description = A Zeek package to extend logging for Intel
-script_dir = scripts
-tags = intel
-version = main
-url = https://github.com/corelight/ExtendIntel
 
 [corelight/got_zoom]
 depends = 
@@ -848,6 +848,72 @@ tags = password, logging
 version = master
 url = https://github.com/cybera/zeek-sniffpass
 
+[dopheide/bro-quic]
+build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
+description = Attempt to identify QUIC protocol
+plugin_dir = build/Bro_QUIC.tgz
+tags = plugin, analyzer, quic
+url = https://github.com/dopheide-esnet/bro-quic
+version = 0.1
+
+[dopheide/zeek-jetdirect]
+credits = dopheide@es.net, soehlert@es.net, jsdorn1@gmail.com
+depends = 
+	zeek >=2.0.0
+description = Detect exploit attempt of HP JetDirect printers
+script_dir = ./scripts
+tags = jetdirect, printer, cve-2017-2741
+test_command = cd tests && make
+url = https://github.com/dopheide-esnet/zeek-jetdirect
+version = 0.4
+
+[dopheide/zeek-known-hosts-with-dns]
+description = This script expands the base known-hosts policy to include reverse DNS queries and syncs it across all workers.
+script_dir = scripts
+tags = known-hosts, known_hosts, dns
+test_command = cd tests && btest -d known_tests
+version = v1.2.4
+url = https://github.com/dopheide-esnet/zeek-known-hosts-with-dns
+
+[dopheide/zeek-known-outbound]
+depends = 
+	zeek >=3.0.0
+description = This script provides the ability to monitor and throw notices for outbound connections to a list of watched countries. It also adds orig and resp country codes to conn.log. It depends on having libmaxmind configured for GeoIP lookups.
+script_dir = scripts
+tags = notice, known, services, outbound
+test_command = cd tests && btest -d outbound-tests
+version = master
+url = https://github.com/dopheide-esnet/zeek-known-outbound
+
+[dopheide/zeek-notice-config]
+depends = 
+	zeek >=3.0.0-rc1
+description = This script enables easy customation of how notice actions are handled.  It's built to work with eZeekConfigurator, but that isn't required.
+script_dir = scripts
+tags = notice, configuration, ezeekonfigurator, ezk
+test_command = cd tests && btest -d notice_tests
+version = master
+url = https://github.com/dopheide-esnet/zeek-notice-config
+
+[dopheide/zeek-ntp-monlist]
+depends = 
+	zeek >=3.0.0-rc1
+description = This script just replaces the old ntp-monlist script to work with Zeek 3.0.0+
+script_dir = scripts
+tags = ntp, NTP, monlist, ddos
+test_command = cd tests && btest -d ntp_tests
+version = v1.0.2
+url = https://github.com/dopheide-esnet/zeek-ntp-monlist
+
+[dopheide/zeek-ssh-interesting-hostnames-with-known]
+depends = zeek/dopheide/zeek-known-hosts-with-dns *
+description = This script replaces the default ssh/interesting-hostnames and reduces the number of asyncrhonous when() calls made by Zeek.
+script_dir = scripts
+tags = dns, ssh, interesting-hostnames
+test_command = cd tests && btest -d ssh_tests
+version = v1.2.1
+url = https://github.com/dopheide-esnet/zeek-ssh-interesting-hostnames-with-known
+
 [dopheide/bro_notice_correlation]
 description = Adds support for multi-notice correlation. For more information, see http://blog.samoehlert.com/correlating-bro-notices or the talk from BroCon 2016.
 script_dir = scripts
@@ -861,72 +927,6 @@ script_dir = scripts
 tags = Venom, venom, VENOM, rootkit
 version = master
 url = https://github.com/dopheide/venom
-
-[dopheide/bro-quic]
-build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
-description = Attempt to identify QUIC protocol
-plugin_dir = build/Bro_QUIC.tgz
-tags = plugin, analyzer, quic
-url = https://github.com/dopheide-esnet/bro-quic
-version = 0.1
-
-[dopheide/zeek-ntp-monlist]
-depends = 
-	zeek >=3.0.0-rc1
-description = This script just replaces the old ntp-monlist script to work with Zeek 3.0.0+
-script_dir = scripts
-tags = ntp, NTP, monlist, ddos
-test_command = cd tests && btest -d ntp_tests
-version = v1.0.2
-url = https://github.com/dopheide-esnet/zeek-ntp-monlist
-
-[dopheide/zeek-known-hosts-with-dns]
-description = This script expands the base known-hosts policy to include reverse DNS queries and syncs it across all workers.
-script_dir = scripts
-tags = known-hosts, known_hosts, dns
-test_command = cd tests && btest -d known_tests
-version = v1.2.4
-url = https://github.com/dopheide-esnet/zeek-known-hosts-with-dns
-
-[dopheide/zeek-ssh-interesting-hostnames-with-known]
-depends = zeek/dopheide/zeek-known-hosts-with-dns *
-description = This script replaces the default ssh/interesting-hostnames and reduces the number of asyncrhonous when() calls made by Zeek.
-script_dir = scripts
-tags = dns, ssh, interesting-hostnames
-test_command = cd tests && btest -d ssh_tests
-version = v1.2.1
-url = https://github.com/dopheide-esnet/zeek-ssh-interesting-hostnames-with-known
-
-[dopheide/zeek-notice-config]
-depends = 
-	zeek >=3.0.0-rc1
-description = This script enables easy customation of how notice actions are handled.  It's built to work with eZeekConfigurator, but that isn't required.
-script_dir = scripts
-tags = notice, configuration, ezeekonfigurator, ezk
-test_command = cd tests && btest -d notice_tests
-version = master
-url = https://github.com/dopheide-esnet/zeek-notice-config
-
-[dopheide/zeek-known-outbound]
-depends = 
-	zeek >=3.0.0
-description = This script provides the ability to monitor and throw notices for outbound connections to a list of watched countries. It also adds orig and resp country codes to conn.log. It depends on having libmaxmind configured for GeoIP lookups.
-script_dir = scripts
-tags = notice, known, services, outbound
-test_command = cd tests && btest -d outbound-tests
-version = master
-url = https://github.com/dopheide-esnet/zeek-known-outbound
-
-[dopheide/zeek-jetdirect]
-credits = dopheide@es.net, soehlert@es.net, jsdorn1@gmail.com
-depends = 
-	zeek >=2.0.0
-description = Detect exploit attempt of HP JetDirect printers
-script_dir = ./scripts
-tags = jetdirect, printer, cve-2017-2741
-test_command = cd tests && make
-url = https://github.com/dopheide-esnet/zeek-jetdirect
-version = 0.4
 
 [dovehawk/dovehawk]
 description = MISP+Zeek. Dovehawk is a Zeek Module to import MISP indicators to the Intel Framework and Signature Framework automatically. Reports sightings directly back to MISP as they happen. Supports Zeek Clusters.
@@ -1010,6 +1010,14 @@ test_command = ( cd tests && btest -d )
 url = https://github.com/endace/zeek-dag
 version = v0.5
 
+[esnet-security/Zeek-Known-Services-With-OrigFlag]
+description = This script expands the base known-services policy to include is_local_orig flag to indicate if the service was discovered from non-local nets (is_local_orig =F) or from local nets (is_local_orig=T).
+script_dir = scripts
+tags = known-services, known_services
+test_command = cd tests && btest -d known_tests
+version = main
+url = https://github.com/esnet-security/Zeek-Known-Services-With-OrigFlag
+
 [esnet-security/cve-2020-16898]
 credits = Vlad Grigorescu <vlad@es.net>
 depends = 
@@ -1029,14 +1037,6 @@ tags = logs, filters, ESnet
 test_command = cd tests && make
 url = https://github.com/esnet-security/logfilter
 version = 1.0
-
-[esnet-security/Zeek-Known-Services-With-OrigFlag]
-description = This script expands the base known-services policy to include is_local_orig flag to indicate if the service was discovered from non-local nets (is_local_orig =F) or from local nets (is_local_orig=T).
-script_dir = scripts
-tags = known-services, known_services
-test_command = cd tests && btest -d known_tests
-version = main
-url = https://github.com/esnet-security/Zeek-Known-Services-With-OrigFlag
 
 [esnet-security/zeek-outbound-known-services-with-origflag]
 description = This script expands the base known-services policy to include is_local_orig flag to indicate if an outbound service was discovered from non-local nets (is_local_orig =F) or from local nets (is_local_orig=T).
@@ -1190,13 +1190,6 @@ test_command = ( cd tests && btest -d )
 version = master
 url = https://github.com/initconf/Apple-RDP-net-assistant-DoS.git
 
-[initconf/blacklist]
-description = package to manage blacklisted IP address ysing bro
-script_dir = scripts
-tags = blacklist
-version = master
-url = https://github.com/initconf/blacklist
-
 [initconf/CVE-2017-5638_struts]
 description = package to detect CVE-2017-5638 struts attack
 script_dir = scripts
@@ -1212,6 +1205,29 @@ test_command = ( cd tests && btest -d )
 version = master
 url = https://github.com/initconf/CVE-2020-16898-Bad-Neighbor.git
 
+[initconf/LetsEncrypt]
+description = LetsEncrypt
+script_dir = scripts
+tags = 
+test_command = ( cd tests && btest -d )
+version = master
+url = https://github.com/initconf/LetsEncrypt
+
+[initconf/RDP-bruteforce]
+description = rdp-bruteforce
+script_dir = scripts
+tags = rdp, bruteforce, scan
+test_command = ( cd tests && btest -d )
+version = master
+url = https://github.com/initconf/RDP-bruteforce
+
+[initconf/blacklist]
+description = package to manage blacklisted IP address ysing bro
+script_dir = scripts
+tags = blacklist
+version = master
+url = https://github.com/initconf/blacklist
+
 [initconf/detect-kaspersky]
 description = kaspersky
 script_dir = scripts
@@ -1219,6 +1235,14 @@ tags = kaspersky antivirus
 test_command = ( cd tests && btest -d )
 version = v3
 url = https://github.com/initconf/detect-kaspersky
+
+[initconf/dns-heuristics]
+description = 
+script_dir = scripts
+tags = 
+test_command = ( cd tests && btest -d )
+version = main
+url = https://github.com/initconf/dns-heuristics
 
 [initconf/ftp-bruteforce]
 description = ftp-bruteforce
@@ -1236,13 +1260,13 @@ test_command = ( cd tests && btest -d )
 version = master
 url = https://github.com/initconf/icmp-scans.git
 
-[initconf/LetsEncrypt]
-description = LetsEncrypt
+[initconf/log4j.git]
+description = zeek package to identify log4j exploit attempts for  CVE-2021-44228
 script_dir = scripts
 tags = 
 test_command = ( cd tests && btest -d )
-version = master
-url = https://github.com/initconf/LetsEncrypt
+version = main
+url = https://github.com/initconf/log4j.git
 
 [initconf/phish-analysis]
 description = Suite of smtp related policies includes extracting and logging URLs from emails and various smtp anomaly detection heuristics to help flag phishing emails
@@ -1251,14 +1275,6 @@ tags = smtp, phish, urls, emails
 test_command = ( cd tests && btest -d )
 version = master
 url = https://github.com/initconf/phish-analysis
-
-[initconf/RDP-bruteforce]
-description = rdp-bruteforce
-script_dir = scripts
-tags = rdp, bruteforce, scan
-test_command = ( cd tests && btest -d )
-version = master
-url = https://github.com/initconf/RDP-bruteforce
 
 [initconf/scan-NG]
 description = scan detection in 2.x world. Forward porting of bro-1.5.3 scan.bro accompanied with new heuristics and quicker detections
@@ -1298,22 +1314,6 @@ tags = ws-discovery, scan, dos, toshiba, copiers, scanners
 test_command = ( cd tests && btest -d )
 version = v2.0
 url = https://github.com/initconf/ws-discovery-dos
-
-[initconf/log4j.git]
-description = zeek package to identify log4j exploit attempts for  CVE-2021-44228
-script_dir = scripts
-tags = 
-test_command = ( cd tests && btest -d )
-version = main
-url = https://github.com/initconf/log4j.git
-
-[initconf/dns-heuristics]
-description = 
-script_dir = scripts
-tags = 
-test_command = ( cd tests && btest -d )
-version = main
-url = https://github.com/initconf/dns-heuristics
 
 [irtimmer/bro-xdp_packet-plugin]
 build_command = ./configure --bro-dist=%(bro_dist)s && make
@@ -1529,6 +1529,16 @@ tags = broctl, jemalloc, profiling
 url = https://github.com/JustinAzoff/zeek-jemalloc-profiling
 version = master
 
+[keithjjones/zeek-amadey-detector]
+depends = 
+	zeek >=4.0.0
+description = A Zeek based Amadey malware detector.
+script_dir = scripts
+summary = A Zeek based Amadey malware detector.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/keithjjones/zeek-amadey-detector
+version = v0.1.1
+
 [keithjjones/zeek-njrat-detector]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
 depends = 
@@ -1539,16 +1549,6 @@ summary = A Zeek based njRAT detector.
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/keithjjones/zeek-njrat-detector
 version = v0.1.6
-
-[keithjjones/zeek-amadey-detector]
-depends = 
-	zeek >=4.0.0
-description = A Zeek based Amadey malware detector.
-script_dir = scripts
-summary = A Zeek based Amadey malware detector.
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/keithjjones/zeek-amadey-detector
-version = v0.1.1
 
 [klehigh/find_smbv1]
 credits = Mark Overholser converted to support newer Zeek
@@ -1686,18 +1686,6 @@ test_command = ( cd tests && btest -d )
 url = https://github.com/ntop/bro-pf_ring
 version = master
 
-[nttcom/zeek-parser-CCLinkFieldBasic]
-build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
-depends = 
-	zeek >=4.0.0
-description = TODO: A more detailed description of spicy_cc_link_basic.
-	It can span multiple lines, with this indentation.
-script_dir = scripts
-summary = TODO: A summary of spicy_cc_link_basic in one line
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/nttcom/zeek-parser-CCLinkFieldBasic
-version = main
-
 [nttcom/zeek-parser-CCLinkField-CCLinkControl]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
 depends = 
@@ -1708,6 +1696,18 @@ script_dir = scripts
 summary = TODO: A summary of spicy_cc_link_noip in one line
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/nttcom/zeek-parser-CCLinkField-CCLinkControl
+version = main
+
+[nttcom/zeek-parser-CCLinkFieldBasic]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=4.0.0
+description = TODO: A more detailed description of spicy_cc_link_basic.
+	It can span multiple lines, with this indentation.
+script_dir = scripts
+summary = TODO: A summary of spicy_cc_link_basic in one line
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/nttcom/zeek-parser-CCLinkFieldBasic
 version = main
 
 [pgaulon/zeek-notice-slack]
@@ -1758,13 +1758,6 @@ tags = DNS
 version = master
 url = https://github.com/rvictory/zeek-new-domains
 
-[salesforce/bro-sysmon]
-description = Zeek-Sysmon contains a python script that will read in a file, parse JSON Windows Event Logs, generate Zeek events, and forward them to Zeek.  Default Zeek-Sysmon scripts log output to files.
-script_dir = bro
-tags = broker, Windows, Event Logs, Sysmon, logging
-version = master
-url = https://github.com/salesforce/bro-sysmon
-
 [salesforce/GQUIC_Protocol_Analyzer]
 build_command = ./configure && make
 depends = 
@@ -1774,6 +1767,13 @@ description = Protocol analyzer that detects, dissects, fingerprints, and logs G
 script_dir = scripts/Salesforce/GQUIC
 url = https://github.com/salesforce/GQUIC_Protocol_Analyzer
 version = master
+
+[salesforce/bro-sysmon]
+description = Zeek-Sysmon contains a python script that will read in a file, parse JSON Windows Event Logs, generate Zeek events, and forward them to Zeek.  Default Zeek-Sysmon scripts log output to files.
+script_dir = bro
+tags = broker, Windows, Event Logs, Sysmon, logging
+version = master
+url = https://github.com/salesforce/bro-sysmon
 
 [salesforce/hassh]
 description = HASSH is used to identify specific Client and Server SSH implementations. The fingerprints can be stored, searched and shared in the form of an MD5 fingerprint. This package logs components to ssh.log
@@ -1920,6 +1920,12 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/stevesmoot/localcountry
 version = main
 
+[stratosphereips/zeek-package-ARP]
+description = Zeek Package that supports adding arp.log to zeek log files
+tags = zeek plugin, arp, features extraction
+version = 1.0.0
+url = https://github.com/stratosphereips/zeek-package-ARP
+
 [stratosphereips/zeek-package-IRC]
 description = Zeek Package that extracts features of IRC communication
 tags = zeek plugin, irc, features extraction
@@ -1931,12 +1937,6 @@ description = Detect DoH servers by adding a is_DoH field in ssl.log and add tim
 tags = zeek plugin, DoH, features extraction, ssl, DNS
 version = 1.0.0
 url = https://github.com/stratosphereips/zeek-package-detect-DoH
-
-[stratosphereips/zeek-package-ARP]
-description = Zeek Package that supports adding arp.log to zeek log files
-tags = zeek plugin, arp, features extraction
-version = 1.0.0
-url = https://github.com/stratosphereips/zeek-package-ARP
 
 [stratosphereips/zeek-package-log-gateway-IP]
 description = This script gets the gateway IP information taken from the dhcp logs, and adds a notice.log entry if the gateway address is identified
@@ -2109,16 +2109,6 @@ test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/b
 url = https://github.com/zeek/spicy-pe
 version = v0.0.9
 
-[zeek/spicy-png]
-build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
-description = Spicy-based analyzer for the PNG file format.
-plugin_dir = build/spicy-modules
-script_dir = analyzer
-summary = Spicy-based analyzer for the PNG file format
-test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
-url = https://github.com/zeek/spicy-png
-version = v0.0.5
-
 [zeek/spicy-plugin]
 build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && cmake .. && make -j "${SPICY_ZKG_PROCESSES:-4}"
 depends = zeek >=5.0.0
@@ -2128,6 +2118,16 @@ script_dir = scripts/Zeek/Spicy
 test_command = unset -v CXX CXXFLAGS LD LDFLAGS && cd tests && btest -d -j "${SPICY_ZKG_PROCESSES:-4}"
 url = https://github.com/zeek/spicy-plugin
 version = v1.5.3
+
+[zeek/spicy-png]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+description = Spicy-based analyzer for the PNG file format.
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = Spicy-based analyzer for the PNG file format
+test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+url = https://github.com/zeek/spicy-png
+version = v0.0.5
 
 [zeek/spicy-tftp]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
