@@ -218,6 +218,13 @@ user_vars =
 version = 0.3
 url = https://github.com/apache/metron-bro-plugin-kafka
 
+[awelzel/zeek-conn-footprint]
+description = Regularly log footprints of long running connections.
+script_dir = ./scripts
+tags = debugging, footprint, connection, memory
+url = https://github.com/awelzel/zeek-conn-footprint
+version = v0.2.1
+
 [bricata/flow_labels]
 description = Provides mechanisms for managing and using institutional knowledge about a monitored environment to make informed observations of normal and abnormal network activity.
 tags = input, labels
