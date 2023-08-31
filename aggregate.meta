@@ -261,7 +261,7 @@ credits = Christos Anagnostopoulos
 description = A Module that tries to minimize the noise from the SSL::Invalid_Server_Cert notices.
 script_dir = scripts
 tags = notices, ssl
-version = v0.1
+version = v0.1.1
 url = https://github.com/chrisanag1985/suppress-ssl-notices
 
 [cisagov/icsnpp-bacnet]
