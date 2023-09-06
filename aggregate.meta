@@ -617,6 +617,13 @@ tags = domain, dns, tld, input
 version = v24.0.0
 url = https://github.com/corelight/icannTLD
 
+[corelight/json-streaming-logs]
+description = JSON streaming logs
+script_dir = scripts
+tags = logs, json, streaming, stream, filebeat, splunk_forwarder, logstash
+url = https://github.com/corelight/json-streaming-logs
+version = v3.0.0
+
 [corelight/log-add-http-post-bodies]
 description = Add a POST body excerpt into the HTTP log
 script_dir = scripts
