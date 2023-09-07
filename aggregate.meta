@@ -837,6 +837,15 @@ user_vars =
 url = https://github.com/corelight/zeekjs
 version = v0.9.4
 
+[corelight/zeekjs-notice-telegram]
+depends = zeekjs *
+description = Package that extends the Notice Framework to include
+	`ACTION_TELEGRAM` for sending messages on notices over Telegram using ZeekJS.
+script_dir = scripts
+summary = Send Notices over Telegram (ZeekJS edition)
+url = https://github.com/corelight/zeekjs-notice-telegram
+version = master
+
 [corelight/zerologon]
 corelight_name = Zerologon
 description = Detects Zerologon (CVE-2020-1472) attempts and exploits.
