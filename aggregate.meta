@@ -843,6 +843,7 @@ description = Package that extends the Notice Framework to include
 	`ACTION_TELEGRAM` for sending messages on notices over Telegram using ZeekJS.
 script_dir = scripts
 summary = Send Notices over Telegram (ZeekJS edition)
+test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/zeekjs-notice-telegram
 version = master
 
