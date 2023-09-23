@@ -1710,6 +1710,17 @@ test_command = ( cd tests && btest -d )
 url = https://github.com/ntop/bro-pf_ring
 version = master
 
+[nttcom/zeek-parser-Bacnet]
+depends = 
+	zeek >=4.0.0
+description = TODO: A more detailed description of icsnpp-bacnet.
+	It can span multiple lines, with this indentation.
+script_dir = scripts
+summary = TODO: A summary of icsnpp-bacnet in one line
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/nttcom/zeek-parser-Bacnet
+version = main
+
 [nttcom/zeek-parser-CCLinkField-CCLinkControl]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
 depends = 
@@ -1732,6 +1743,66 @@ script_dir = scripts
 summary = TODO: A summary of spicy_cc_link_basic in one line
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/nttcom/zeek-parser-CCLinkFieldBasic
+version = main
+
+[nttcom/zeek-parser-CIFS-COM]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=4.0.0
+description = TODO: A more detailed description of test.
+	It can span multiple lines, with this indentation.
+script_dir = scripts
+summary = TODO: A summary of test in one line
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/nttcom/zeek-parser-CIFS-COM
+version = main
+
+[nttcom/zeek-parser-CIFS-NBNS-COM]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=4.0.0
+description = TODO: A more detailed description of zeek-parser-NBNS.
+	It can span multiple lines, with this indentation.
+script_dir = scripts
+summary = TODO: A summary of zeek-parser-NBNS in one line
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/nttcom/zeek-parser-CIFS-NBNS-COM
+version = main
+
+[nttcom/zeek-parser-DHCPv4-COM]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=4.0.0
+description = TODO: A more detailed description of zeek-parser-DHCPv4-COM.
+	It can span multiple lines, with this indentation.
+script_dir = scripts
+summary = TODO: A summary of zeek-parser-DHCPv4-COM in one line
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/nttcom/zeek-parser-DHCPv4-COM
+version = main
+
+[nttcom/zeek-parser-DHCPv6-COM]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=4.0.0
+description = TODO: A more detailed description of zeek-parser-DHCPV6.
+	It can span multiple lines, with this indentation.
+script_dir = scripts
+summary = TODO: A summary of zeek-parser-DHCPV6 in one line
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/nttcom/zeek-parser-DHCPv6-COM
+version = main
+
+[nttcom/zeek-parser-SSDP-COM]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=4.0.0
+description = TODO: A more detailed description of zeek-parser-SSDP.
+	It can span multiple lines, with this indentation.
+script_dir = scripts
+summary = TODO: A summary of zeek-parser-SSDP in one line
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/nttcom/zeek-parser-SSDP-COM
 version = main
 
 [pgaulon/zeek-notice-slack]
