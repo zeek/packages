@@ -1993,6 +1993,14 @@ tags = CSP intel
 url = https://github.com/srozb/http_csp
 version = 1.0.1
 
+[stevesmoot/zeek_metainfo]
+description = Create schemas in many forms for local Zeek installation/configuration.  JSON, markup text, Avro, html so far.
+script_dir = scripts
+tags = schema, docs, json, avro
+test_command = (cd testing && btest -d)
+url = https://github.com/corelight/zeek_metainfo
+version = main
+
 [stevesmoot/appid]
 build_command = make all
 credits = Steve Smoot <smoot@corelight.com>
