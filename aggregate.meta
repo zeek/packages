@@ -815,10 +815,11 @@ version = v0.1.4
 build_command = ( ./configure && make )
 description = A plugin to find Windows executables that have been XOR encoded.
 plugin_dir = build
+script_dir = scripts
 tags = plugin, pe, executable, malware
 test_command = ( cd tests && btest -d )
 url = https://github.com/corelight/zeek-xor-exe-plugin
-version = 3.0
+version = 4.0
 
 [corelight/zeekjs]
 build_command = ./configure --with-nodejs=%(nodejs_root_dir)s && cd build && make
