@@ -812,14 +812,14 @@ url = https://github.com/corelight/zeek-spicy-wireguard
 version = v0.1.4
 
 [corelight/zeek-xor-exe-plugin]
-build_command = ( ./configure && make )
+build_command = ./configure && make
 description = A plugin to find Windows executables that have been XOR encoded.
 plugin_dir = build
-script_dir = scripts
+script_dir = scripts/Corelight/PE_XOR
 tags = plugin, pe, executable, malware
-test_command = ( cd tests && btest -d )
+test_command = cd tests && btest -d
 url = https://github.com/corelight/zeek-xor-exe-plugin
-version = 4.0
+version = 4.1
 
 [corelight/zeekjs]
 build_command = ./configure --with-nodejs=%(nodejs_root_dir)s && cd build && make
@@ -1853,6 +1853,24 @@ script_dir = scripts
 tags = DNS
 version = master
 url = https://github.com/rvictory/zeek-new-domains
+
+[saiiman/zeek-exfil-detect]
+build_command = ./configure && cd build && make
+depends = 
+	zeek >=5.1.0
+description = This package offers the possibility of exfiltration detection through statistical analysis methods.
+	For this purpose, all connections are added to a baseline, subdivided according to their source
+	ip address and destination port. The baseline is then used to perform statistical anomaly detection.
+	Anomalies in the baseline are considered as data exfiltrations.
+	The severity of the anomaly is recorded using a score between 0 and 1.
+script_dir = scripts
+suggests = 
+	https://github.com/salesforce/ja3 branch=master
+summary = This package offers the possibility of exfiltration detection through statistical analysis methods.
+tags = conn, exfil, exfiltration, TA0010
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/SECUINFRA/zeek-exfil-detect
+version = main
 
 [salesforce/bro-sysmon]
 description = Zeek-Sysmon contains a python script that will read in a file, parse JSON Windows Event Logs, generate Zeek events, and forward them to Zeek.  Default Zeek-Sysmon scripts log output to files.
