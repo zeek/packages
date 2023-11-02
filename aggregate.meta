@@ -700,7 +700,7 @@ script_dir = scripts
 summary = A Zeek based Gozi malware detector.
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/zeek-gozi-detector
-version = v0.1.8
+version = v0.1.9
 
 [corelight/zeek-jpeg]
 build_command = ./configure --enable-debug && make
