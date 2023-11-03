@@ -1562,7 +1562,7 @@ script_dir = scripts
 summary = A Zeek based Amadey malware detector.
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/keithjjones/zeek-amadey-detector
-version = v0.1.10
+version = v0.1.11
 
 [keithjjones/zeek-njrat-detector]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
