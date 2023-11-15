@@ -1573,7 +1573,7 @@ script_dir = analyzer
 summary = A Zeek based njRAT detector.
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/keithjjones/zeek-njrat-detector
-version = v0.1.14
+version = v0.1.15
 
 [klehigh/find_smbv1]
 credits = Mark Overholser converted to support newer Zeek
