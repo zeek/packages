@@ -201,6 +201,13 @@ tags = intel, signature, indicators, pure-script
 version = master
 url = https://github.com/anthonykasza/indicator-rules
 
+[anthonykasza/ja4]
+description = An implementation of the JA4 standard in a Zeek package.
+script_dir = scripts
+tags = ja4, tls, ssl, fingerprint
+version = main
+url = https://github.com/anthonykasza/ja4
+
 [apache/metron-bro-plugin-kafka]
 build_command = ./configure --bro-dist=%(bro_dist)s --with-librdkafka=%(LIBRDKAFKA_ROOT)s && make
 depends = 
