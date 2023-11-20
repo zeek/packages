@@ -202,6 +202,8 @@ version = master
 url = https://github.com/anthonykasza/indicator-rules
 
 [anthonykasza/ja4]
+depends = 
+	zeek >=5.0.0
 description = An implementation of the JA4 standard in a Zeek package.
 script_dir = scripts
 tags = ja4, tls, ssl, fingerprint
