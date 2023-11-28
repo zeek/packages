@@ -651,6 +651,13 @@ tags = log extend vlan
 url = https://github.com/corelight/log-add-vlan-everywhere
 version = v1.0.3
 
+[corelight/my_stats]
+description = This package dumps stats for troubleshooting.
+script_dir = scripts
+tags = stats
+url = https://github.com/corelight/my_stats
+version = v0.0.3
+
 [corelight/pingback]
 description = A Zeek package which detects ICMP ping tunnels created by the Pingback tool
 script_dir = scripts
