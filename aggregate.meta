@@ -880,6 +880,12 @@ test_command = make -C tests
 url = https://github.com/corelight/ztest
 version = master
 
+[cyberUniBO/Zeek-Pcap-Features-Extractor]
+description = Zeek Package that extracts features from pcap files
+tags = zeek plugin, pcap files, features extraction, feature extractor
+version = main
+url = https://github.com/MichelangeloFlorio/Zeek-Pcap-Features-Extractor
+
 [cybera/zeek-sniffpass]
 description = Sniffpass will alert on cleartext passwords discovered in HTTP POST requests
 script_dir = scripts
