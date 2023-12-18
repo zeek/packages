@@ -1924,6 +1924,13 @@ tags = intel, ssl, logging
 version = master
 url = https://github.com/salesforce/ja3
 
+[sandialabs/gait]
+description = Adds fields to conn and ssl logs useful for fingeprinting and timing analysis
+script_dir = zeek
+tags = conn, tcp, ssl, fingerprinting
+version = main
+url = https://github.com/sandialabs/gait
+
 [seisollc/zeek-kafka]
 build_command = ./configure --with-librdkafka=%(LIBRDKAFKA_ROOT)s && make
 depends = 
