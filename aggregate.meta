@@ -253,7 +253,7 @@ version = master
 description = Adds additional fields to the conn.log for the data obtained via Zeek's GeoLocation feature (https://docs.zeek.org/en/current/frameworks/geoip.html).
 script_dir = zeek
 tags = conn, geolocation, logging
-version = master
+version = main
 url = https://github.com/brimsec/geoip-conn
 
 [captainGeech42/zeek-bogon]
