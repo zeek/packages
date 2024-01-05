@@ -2246,7 +2246,7 @@ script_dir = analyzer
 summary = LDAP analyzer
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/zeek/spicy-ldap
-version = v0.0.14
+version = v0.0.15
 
 [zeek/spicy-pe]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
