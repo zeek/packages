@@ -693,7 +693,7 @@ script_dir = scripts/Zeek/ELF
 tags = intel, files, elf
 test_command = cd tests && btest
 url = https://github.com/corelight/zeek-elf
-version = v0.1.3
+version = v0.1.4
 
 [corelight/zeek-globload]
 build_command = ./configure && cd build && make
