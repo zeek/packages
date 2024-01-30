@@ -1047,13 +1047,13 @@ version = master
 [endace/zeek-dag]
 aliases = zeek-dag bro-dag
 build_command = ( ./configure && make )
-depends = bro >=2.6.0
+depends = zeek >=2.6.0
 description = Packet source plugin that provides native support for Endace DAG card and EndaceProbe Application Dock packet capture.
-plugin_dir = build
+plugin_dir = build/Endace_DAG.tgz
 tags = packet source, zeek plugin, plugin, broctl plugin, zeekctl plugin, dag, endace
 test_command = ( cd tests && btest -d )
 url = https://github.com/endace/zeek-dag
-version = v0.5
+version = v0.6
 
 [esnet-security/cve-2020-16898]
 credits = Vlad Grigorescu <vlad@es.net>
