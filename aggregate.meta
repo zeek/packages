@@ -2336,3 +2336,11 @@ user_vars =
 url = https://github.com/zeek/zeek-netmap
 version = v2.0.0
 
+[zeek/zeek-perf-support]
+build_command = ./configure && cmake --build build
+description = 
+summary = perf support
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/zeek/zeek-perf-support
+version = v0.1.0
+
