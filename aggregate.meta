@@ -1742,18 +1742,6 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/nttcom/zeek-parser-Bacnet
 version = main
 
-[nttcom/zeek-parser-CCLinkField-CCLinkControl]
-build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
-depends = 
-	zeek >=4.0.0
-description = TODO: A more detailed description of spicy_cc_link_noip.
-	It can span multiple lines, with this indentation.
-script_dir = scripts
-summary = TODO: A summary of spicy_cc_link_noip in one line
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/nttcom/zeek-parser-CCLinkField-CCLinkControl
-version = main
-
 [nttcom/zeek-parser-CCLinkFieldBasic]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
 depends = 
@@ -1764,6 +1752,42 @@ script_dir = scripts
 summary = TODO: A summary of spicy_cc_link_basic in one line
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/nttcom/zeek-parser-CCLinkFieldBasic
+version = main
+
+[nttcom/zeek-parser-CCLinkIENoIP]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=4.0.0
+description = TODO: A more detailed description of zeek-parser-CCLinkIENoIP.
+	It can span multiple lines, with this indentation.
+script_dir = scripts
+summary = TODO: A summary of zeek-parser-CCLinkIENoIP in one line
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/nttcom/zeek-parser-CCLinkIENoIP
+version = main
+
+[nttcom/zeek-parser-CCLinkTSNPTP]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=4.0.0
+description = TODO: A more detailed description of zeek-parser-CCLinkTSNPTP.
+	It can span multiple lines, with this indentation.
+script_dir = scripts
+summary = TODO: A summary of zeek-parser-CCLinkTSNPTP in one line
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/nttcom/zeek-parser-CCLinkTSNPTP
+version = main
+
+[nttcom/zeek-parser-CCLinkTSNSLMP]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=4.0.0
+description = TODO: A more detailed description of zeek-parser-CCLinkTSNSLMP.
+	It can span multiple lines, with this indentation.
+script_dir = scripts
+summary = TODO: A summary of zeek-parser-CCLinkTSNSLMP in one line
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/nttcom/zeek-parser-CCLinkTSNSLMP
 version = main
 
 [nttcom/zeek-parser-CIFS-COM]
