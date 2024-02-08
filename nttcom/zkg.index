@@ -1,6 +1,8 @@
 https://github.com/nttcom/zeek-parser-Bacnet
-https://github.com/nttcom/zeek-parser-CCLinkField-CCLinkControl
 https://github.com/nttcom/zeek-parser-CCLinkFieldBasic
+https://github.com/nttcom/zeek-parser-CCLinkIENoIP
+https://github.com/nttcom/zeek-parser-CCLinkTSNPTP
+https://github.com/nttcom/zeek-parser-CCLinkTSNSLMP
 https://github.com/nttcom/zeek-parser-CIFS-COM
 https://github.com/nttcom/zeek-parser-CIFS-NBNS-COM
 https://github.com/nttcom/zeek-parser-DHCPv4-COM
