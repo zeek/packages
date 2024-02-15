@@ -46,15 +46,6 @@ url = https://github.com/0xxon/zeek-network-statistics
 url = https://github.com/0xxon/zeek-os-package-tracking
 version = main
 
-[0xxon/zeek-plugin-roca]
-build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
-description = Identify certificates potentially affected by CVE-2017-15361
-plugin_dir = build/Johanna_ROCA.tgz
-tags = certificates, CVE-2017-15361
-test_command = cd tests && btest -d
-url = https://github.com/0xxon/zeek-plugin-roca
-version = 0.0.1
-
 [0xxon/zeek-postgresql]
 build_command = ( ./configure --with-postgresql-inc=`pg_config --includedir` --with-postgresql-server-inc=`pg_config --includedir-server` --with-postgresql-lib=`pg_config --libdir` && make )
 description = A PostgreSQL reader and writer for Zeek.
@@ -90,20 +81,6 @@ tags = capwap, zeek, packet analyzer
 test_command = cd testing && btest -c btest.cfg -D
 url = https://github.com/AmazingPP/zeek-capwap
 version = v0.1.0
-
-[activecm/bro-mongodb.git]
-build_command = (./configure --bro-dist=%(bro_dist)s && make)
-description = Bro IDS/ MongoDB connector.
-tags = bro plugin, MongoDB, writer, security, conn, logging, rita
-version = master
-url = https://github.com/activecm/bro-mongodb.git
-
-[activecm/bro-rita.git]
-build_command = (./configure --bro-dist=%(bro_dist)s && make)
-description = RITA, Bro IDS connector.
-tags = bro plugin, MongoDB, writer, security, conn, logging, rita
-version = master
-url = https://github.com/activecm/bro-rita.git
 
 [activecm/zeek-open-connections]
 aliases = zeek-open-connections bro-open-connections
@@ -192,15 +169,6 @@ tags = rc4, base64, bitshift, encoding, xor
 version = 1.0.1
 url = https://github.com/anthonykasza/common-encodings/
 
-[anthonykasza/indicator-rules]
-depemds = 
-	bro >= 2.6
-description = An extension to the Intel Framework. This package faciliates the creation of rules which Zeek can monitor for.
-script_dir = scripts
-tags = intel, signature, indicators, pure-script
-version = master
-url = https://github.com/anthonykasza/indicator-rules
-
 [anthonykasza/ja4]
 config_files = scripts/config.zeek
 depends = 
@@ -211,23 +179,6 @@ tags = ja4, tls, ssl, fingerprint, clienthello, handshake, encryption
 test_command = cd testing && btest -c btest.cfg
 version = main
 url = https://github.com/anthonykasza/ja4
-
-[apache/metron-bro-plugin-kafka]
-build_command = ./configure --bro-dist=%(bro_dist)s --with-librdkafka=%(LIBRDKAFKA_ROOT)s && make
-depends = 
-	bro >=2.5.0
-	bro-pkg >=1.2
-description = A Bro log writer plugin that sends logging output to Kafka.
-external_depends = 
-	librdkafka ~0.11.5
-plugin_dir = build
-script_dir = build/scripts/Apache/Kafka
-tags = log writer, bro plugin, kafka
-test_command = ( cd tests && btest -d )
-user_vars = 
-	LIBRDKAFKA_ROOT [/usr/local/lib] "Path to librdkafka installation tree"
-version = 0.3
-url = https://github.com/apache/metron-bro-plugin-kafka
 
 [awelzel/zeek-conn-footprint]
 description = Regularly log footprints of long running connections.
@@ -242,12 +193,6 @@ depends =
 script_dir = ./scripts
 url = https://github.com/awelzel/zeekjs-misp
 version = main
-
-[bricata/flow_labels]
-description = Provides mechanisms for managing and using institutional knowledge about a monitored environment to make informed observations of normal and abnormal network activity.
-tags = input, labels
-url = https://github.com/bricata/flow_labels
-version = master
 
 [brimsec/geoip-conn]
 description = Adds additional fields to the conn.log for the data obtained via Zeek's GeoLocation feature (https://docs.zeek.org/en/current/frameworks/geoip.html).
@@ -434,44 +379,12 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/boa-detector
 version = v0.1.0
 
-[corelight/bro-drwatson]
-depends = 
-	https://github.com/corelight/bro-hardware *
-description = Discover and log information discovered in Microsoft DrWatson messages.
-script_dir = scripts
-tags = drwatson, http, windows
-test_command = ( cd tests && btest -d )
-url = https://github.com/corelight/bro-drwatson
-version = master
-
-[corelight/bro-hardware]
-description = Scripts for cases where hardware device identifiers are discovered.
-script_dir = scripts
-tags = hardware
-version = master
-url = https://github.com/corelight/bro-hardware
-
-[corelight/bro-shellshock]
-description = Discover successful ShellShock attacks.
-script_dir = scripts
-tags = shellshock, detect, scripts
-test_command = ( cd tests && btest -d )
-url = https://github.com/corelight/bro-shellshock
-version = master
-
 [corelight/callstranger-detector]
 description = Detects CallStranger (CVE) Exploitation Attempts
 script_dir = scripts
 tags = CallStranger, UPnP
 version = master
 url = https://github.com/corelight/callstranger-detector
-
-[corelight/conn-burst]
-description = Identify bursty connections (large and fast)
-script_dir = scripts
-tags = conn, burst
-url = https://github.com/corelight/conn-burst
-version = master
 
 [corelight/CVE-2020-16898]
 description = A network detection package for CVE-2020-16898 (Windows TCP/IP Remote Code Execution Vulnerability) AKA BadNeighbor
@@ -616,13 +529,6 @@ tags = TLS, SSL, JA3, Video conferencing, Video, Videoconferencing, Remote worki
 version = master
 url = https://github.com/corelight/got_zoom
 
-[corelight/http-stalling-detector]
-description = Detect HTTP stalling attacks like slowloris.
-script_dir = scripts
-tags = http, DoS, attack, notice
-url = https://github.com/corelight/http-stalling-detector
-version = master
-
 [corelight/icannTLD]
 description = A Zeek script using Input Framework to get icann_tld, icann_domain, icann_host_subdomain, and is_trusted_domain from a DNS query.  The field icann_host_subdomain contains the remaining query nodes after the domain is removed.  The is_trusted_domain is populated from a separate Input Framework set.
 script_dir = scripts
@@ -637,13 +543,6 @@ tags = logs, json, streaming, stream, filebeat, splunk_forwarder, logstash
 test_command = cd testing && btest -d -c btest.cfg
 url = https://github.com/corelight/json-streaming-logs
 version = v3.1.0
-
-[corelight/log-add-http-post-bodies]
-description = Add a POST body excerpt into the HTTP log
-script_dir = scripts
-tags = http log extend
-version = master
-url = https://github.com/corelight/log-add-http-post-bodies
 
 [corelight/log-add-vlan-everywhere]
 description = Add VLAN to all logs.
@@ -665,15 +564,6 @@ script_dir = scripts
 tags = C2, ICMP, RAT, Windows, Malware
 version = v0.1.2
 url = https://github.com/corelight/pingback
-
-[corelight/top-dns]
-depends = 
-	zeek/sethhall/domain-tld *
-description = Log the top DNS queries being requested.
-script_dir = scripts
-tags = dns, sumstats, log, measurement, top
-url = https://github.com/corelight/top-dns
-version = master
 
 [corelight/zeek-community-id]
 build_command = ./configure && cd build && make
@@ -893,14 +783,6 @@ tags = password, logging
 version = master
 url = https://github.com/cybera/zeek-sniffpass
 
-[dopheide/bro-quic]
-build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
-description = Attempt to identify QUIC protocol
-plugin_dir = build/Bro_QUIC.tgz
-tags = plugin, analyzer, quic
-url = https://github.com/dopheide-esnet/bro-quic
-version = 0.1
-
 [dopheide/zeek-jetdirect]
 credits = dopheide@es.net, soehlert@es.net, jsdorn1@gmail.com
 depends = 
@@ -959,20 +841,6 @@ test_command = cd tests && btest -d ssh_tests
 version = v1.2.1
 url = https://github.com/dopheide-esnet/zeek-ssh-interesting-hostnames-with-known
 
-[dopheide/bro_notice_correlation]
-description = Adds support for multi-notice correlation. For more information, see http://blog.samoehlert.com/correlating-bro-notices or the talk from BroCon 2016.
-script_dir = scripts
-tags = notices, notice, correlation
-version = master
-url = https://github.com/dopheide/bro_notice_correlation
-
-[dopheide/venom]
-description = Attempts to detect an attacker calling to the VENOM Linux Rootkit https://security.web.cern.ch/security/venom.shtml
-script_dir = scripts
-tags = Venom, venom, VENOM, rootkit
-version = master
-url = https://github.com/dopheide/venom
-
 [dovehawk/dovehawk]
 description = MISP+Zeek. Dovehawk is a Zeek Module to import MISP indicators to the Intel Framework and Signature Framework automatically. Reports sightings directly back to MISP as they happen. Supports Zeek Clusters.
 script_dir = .
@@ -986,13 +854,6 @@ script_dir = .
 tags = dns, pdns, log, passive, dovehawk
 url = https://github.com/tylabs/dovehawk_dns
 version = master
-
-[dovehawk/dovehawk_flow]
-description = Dovehawk Anonymized Outbound Flow Tracking
-script_dir = ./scripts/
-tags = netflow, connections, log, remote, dovehwak
-url = https://github.com/tylabs/dovehawk_flow
-version = 1.0.0
 
 [dw2102/S7Comm-Analyzer]
 build_command = ./configure && make
@@ -1123,13 +984,6 @@ test_command = cd tests && btest
 url = https://github.com/esnet/zeek_perfsonar_owamp
 version = master
 
-[fatemabw/bro-inventory-scripts]
-description = Find different type of OSes and AV software in your network traffic.
-script_dir = scripts
-tags = OS detection, Anti-Virus
-version = master
-url = https://github.com/fatemabw/bro-inventory-scripts
-
 [fatemabw/kyd]
 description = KYD creates DHCP client hashes and logs the fingerprints and associated device information in a separate log file 'dhcpfp.log. The Unknown fingerprints can easily be queried to the Fingerbanks API using the 'dhcp-unknown.py' script provided in this package, resulting dhcp-db-extend output file can be appended to the local dhcp-db.bro, and also can be shared with the community using dhcp-db-FBQ file generated by the python script.
 	https://github.com/fatemabw/kyd
@@ -1161,52 +1015,6 @@ test_command = cd tests && make
 url = https://github.com/zeek-plugins/mdns
 version = main
 
-[hhzzk/dns-tunnels]
-description = Detect DNS Tunnels attack.
-script_dir = scripts
-tags = DNS, DNS Tunnels, DNS Tunneling
-version = master
-url = https://github.com/hhzzk/dns-tunnels
-
-[hosom/bro-ja3]
-depends = 
-	bro >=2.6.0
-description = Generate and log ja3 ssl fingerprints
-script_dir = scripts
-tags = ja3, ssl, intel
-test_command = cd tests && btest -d btests
-version = 1.0.4
-url = https://github.com/hosom/bro-ja3
-
-[hosom/bro-napatech]
-build_command = (./configure --bro-dist=%(bro_dist)s && make)
-depends = 
-	bro-pkg >=1.2
-	bro >=2.5.0
-description = Packet source plugin that provides native support for NTAPI
-plugin_dir = build/Bro_Napatech.tgz
-tags = packet source, plugin, napatech, ntapi
-url = https://github.com/hosom/bro-napatech
-version = 0.1.0
-
-[hosom/bro-oui]
-depends = 
-	bro >=2.5.5
-description = Add OUI lookup to Bro.
-script_dir = scripts
-tags = oui, mac, dhcp
-version = 1.0.3
-url = https://github.com/hosom/bro-oui
-
-[hosom/dummy-connections]
-depends = 
-	bro >=2.6.0
-description = Create dummy connection records.
-script_dir = scripts
-tags = connection
-version = 1.0.0
-url = https://github.com/hosom/dummy-connections
-
 [hosom/file-extraction]
 config_files = scripts/config.zeek
 depends = 
@@ -1216,38 +1024,6 @@ script_dir = scripts
 tags = files, file extraction, file analysis
 version = 2.0.3
 url = https://github.com/hosom/file-extraction
-
-[hosom/log-filters]
-config_files = scripts/config.zeek
-depends = 
-	zeek >=3.0.0
-description = Implement common log filters.
-script_dir = scripts
-tags = logging, log framework
-version = main
-url = https://github.com/hosom/log-filters
-
-[initconf/Apple-RDP-net-assistant-DoS.git]
-description = udp-3283-DoS
-script_dir = scripts
-tags = net_listerner, Apple RDP, udp DoS
-test_command = ( cd tests && btest -d )
-version = master
-url = https://github.com/initconf/Apple-RDP-net-assistant-DoS.git
-
-[initconf/blacklist]
-description = package to manage blacklisted IP address ysing bro
-script_dir = scripts
-tags = blacklist
-version = master
-url = https://github.com/initconf/blacklist
-
-[initconf/CVE-2017-5638_struts]
-description = package to detect CVE-2017-5638 struts attack
-script_dir = scripts
-tags = CVE-2017-5638, struts
-version = master
-url = https://github.com/initconf/CVE-2017-5638_struts
 
 [initconf/CVE-2020-16898-Bad-Neighbor.git]
 description = CVE-2020-16898: Bad Neighbor
@@ -1305,14 +1081,6 @@ test_command = ( cd tests && btest -d )
 version = main
 url = https://github.com/initconf/log4j.git
 
-[initconf/phish-analysis]
-description = Suite of smtp related policies includes extracting and logging URLs from emails and various smtp anomaly detection heuristics to help flag phishing emails
-script_dir = scripts
-tags = smtp, phish, urls, emails
-test_command = ( cd tests && btest -d )
-version = master
-url = https://github.com/initconf/phish-analysis
-
 [initconf/RDP-bruteforce]
 description = rdp-bruteforce
 script_dir = scripts
@@ -1344,14 +1112,6 @@ test_command = ( cd tests && btest -d )
 version = master
 url = https://github.com/initconf/smtp-url-analysis
 
-[initconf/vnc-scanner]
-description = Simple policy to detect VNC (RFB) scanners based on src->dst connection counts
-script_dir = scripts
-tags = rfb, vnc, osx high sierra
-test_command = ( cd tests && btest -d )
-version = master
-url = https://github.com/initconf/vnc-scanner
-
 [initconf/ws-discovery-dos]
 description = udp-scan
 script_dir = scripts
@@ -1359,18 +1119,6 @@ tags = ws-discovery, scan, dos, toshiba, copiers, scanners
 test_command = ( cd tests && btest -d )
 version = v2.0
 url = https://github.com/initconf/ws-discovery-dos
-
-[irtimmer/bro-xdp_packet-plugin]
-build_command = ./configure --bro-dist=%(bro_dist)s && make
-depends = 
-	bro-pkg >=1.2
-	bro >=2.5.0
-description = This plugin provides native AF_XDP support for Bro.
-plugin_dir = build/itimmer_af_xdp.tgz
-tags = bro plugin, packet source, af_xdp
-test_command = cd tests && btest -d
-url = https://github.com/irtimmer/bro-xdp_packet-plugin
-version = master
 
 [j-gras/add-interfaces]
 depends = 
@@ -1412,17 +1160,6 @@ tags = zeek plugin, zeekctl plugin, packet source, af_packet
 test_command = cd tests && btest -d
 url = https://github.com/J-Gras/bro-af_packet-plugin
 version = 4.0.0
-
-[j-gras/bro-fuzzy-hashing]
-build_command = ./configure --bro-dist=%(bro_dist)s && make
-depends = 
-	bro >=2.5.0
-description = This plugin provides fuzzy hashing for Bro.
-plugin_dir = build/JGras_FuzzyHashing.tgz
-tags = bro plugin
-test_command = cd tests && btest -d
-url = https://github.com/J-Gras/bro-fuzzy-hashing
-version = 0.3.0
 
 [j-gras/bro-lognorm]
 build_command = ./configure && make
@@ -1502,29 +1239,6 @@ tags = zeek scripting, intel
 url = https://github.com/jbaggs/wildcard-domain
 version = 1.1.0
 
-[jmellander/BinaryHeap]
-description = Binary Heap Implementation
-script_dir = scripts
-tags = zeek, zeek.org, BinaryHeap
-url = https://github.com/jmellander/BinaryHeap
-version = master
-
-[joesecurity/Joe-Sandbox-Bro]
-description = JoeSandbox-Bro extracts files from your internet connection
-	and analyzes them automatically on Joe Sandbox. Combined with Joe Sandbox's
-	reporting and alerting features you can build a powerful IDS.
-script_dir = scripts
-tags = file analysis, sandbox, malware, virus
-url = https://github.com/joesecurity/Joe-Sandbox-Bro
-version = master
-
-[jonzeolla/scan-sampling]
-description = Modified version of scan.bro to add destination IP sampling.
-script_dir = scripts
-tags = sumstats
-url = https://github.com/JonZeolla/scan-sampling
-version = 0.1.0
-
 [jsiwek/zeek-cryptomining]
 aliases = zeek-cryptomining bro_bitcoin
 depends = zkg >=2.0.7
@@ -1556,16 +1270,6 @@ tags = example, test, bro plugin, broctl plugin, rot13, cipher
 test_command = cd testing && btest -d tests
 url = https://github.com/jsiwek/zeek-test-package
 version = 1.1.0
-
-[jswaro/tcprs]
-build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
-description = TCP Retransmission and State Analyzer plugin for Bro.
-plugin_dir = build
-script_dir = scripts
-tags = bro plugin, TCP, retransmission, connection state, conn, input reader, protocol analyzer
-test_command = cd tests btest -d tcprs
-url = https://github.com/jswaro/tcprs
-version = 0.2.1
 
 [justinazoff/zeek-jemalloc-profiling]
 description = A broctl plugin that enables jemalloc profiling
@@ -1622,23 +1326,6 @@ tags = ssl, tls, spt, spl
 url = https://github.com/micrictor/spl-spt
 version = master
 
-[mitre-attack/bzar]
-description = BZAR - Bro/Zeek ATT&CK-based Analytics and Reporting.
-script_dir = scripts
-tags = bzar, att&ck, attack, analytics, cyber analytics repository, car, smb, rpc, dce-rpc
-url = https://github.com/mitre-attack/bzar
-version = master
-
-[mitre/icap]
-build_command = ./configure --bro-dist=%(bro_dist)s && make
-depends = 
-	bro >=2.5.0
-description = Internet Content Adaptation Protocol (ICAP) Analyzer for Bro and Zeek.
-script_dir = scripts
-tags = bro plugin, zeek plugin, protocol analyzer, internet content adaptation protocol, icap, https plain text
-url = https://github.com/mitre/icap
-version = master
-
 [mitrecnd/bro-http2]
 build_command = ./configure && make
 depends = 
@@ -1673,13 +1360,6 @@ tags = broctl plugin, troubleshoot
 url = https://github.com/ncsa/bro-doctor
 version = 2.0.4
 
-[ncsa/bro-interface-setup]
-description = A broctl plugin that helps you setup capture interfaces
-plugin_dir = .
-tags = bro plugin, interface, mtu
-url = https://github.com/ncsa/bro-interface-setup
-version = master
-
 [ncsa/bro-is-darknet]
 description = This plugin adds a Site::is_darknet function.
 	This is useful for scripts that track scan attempts or other probes.
@@ -1700,19 +1380,6 @@ tags = bro plugin, scan detection
 test_command = (cd testing && btest -d)
 url = https://github.com/ncsa/bro-simple-scan
 version = 4.0
-
-[ncsa/bro-zeromq-writer]
-build_command = ./configure --bro-dist=%(bro_dist)s --with-zmq=%(ZEROMQ_PREFIX)s && make
-description = ZeroMQ log writer.
-external_depends = 
-	zeromq >=3.2.0
-script_dir = scripts/NCSA/ZeroMQWriter
-tags = bro plugin, log writer, zeromq, zmq, 0mq, json
-test_command = make test
-user_vars = 
-	ZEROMQ_PREFIX [/usr/local] "ZeroMQ install prefix"
-url = https://github.com/ncsa/bro-zeromq-writer
-version = master
 
 [nskelsey/aaalm]
 description = Tag and group devices based on a LAN's structure
@@ -1916,13 +1583,6 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/SECUINFRA/zeek-exfil-detect
 version = main
 
-[salesforce/bro-sysmon]
-description = Zeek-Sysmon contains a python script that will read in a file, parse JSON Windows Event Logs, generate Zeek events, and forward them to Zeek.  Default Zeek-Sysmon scripts log output to files.
-script_dir = bro
-tags = broker, Windows, Event Logs, Sysmon, logging
-version = master
-url = https://github.com/salesforce/bro-sysmon
-
 [salesforce/GQUIC_Protocol_Analyzer]
 build_command = ./configure && make
 depends = 
@@ -1971,18 +1631,6 @@ user_vars =
 	LIBRDKAFKA_ROOT [/usr/local] "Path to librdkafka installation tree root"
 version = v1.2.0
 url = https://github.com/seisollc/zeek-kafka
-
-[sethhall/bro-myricom]
-build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
-depends = 
-	bro-pkg >=1.2
-description = Packet source plugin that provides native Myricom SNF v3+v4 support.
-plugin_dir = build/Bro_Myricom.tgz
-script_dir = scripts.not_used
-tags = packet source, plugin, myricom
-test_command = ( cd tests && btest -d )
-url = https://github.com/sethhall/bro-myricom
-version = 1.0.4
 
 [sethhall/credit-card-exposure]
 description = Detect credit card numbers in HTTP and SMTP with Bro.
@@ -2055,13 +1703,6 @@ script_dir = scripts
 tags = dns recon
 version = master
 url = https://github.com/srozb/dns_axfr
-
-[srozb/http_csp]
-description = HTTP Content-Security-Policy report parser
-script_dir = scripts
-tags = CSP intel
-url = https://github.com/srozb/http_csp
-version = 1.0.1
 
 [stevesmoot/zeek_metainfo]
 description = Create schemas in many forms for local Zeek installation/configuration.  JSON, markup text, Avro, html so far.
@@ -2169,23 +1810,6 @@ tags = zeek plugin, protocol analyzer, log writer, vpn, ike, ikev2
 test_command = ( cd tests && btest -d )
 url = https://github.com/ukncsc/zeek-plugin-ikev2
 version = v0.1
-
-[vitalyrepin/uap-bro]
-build_command = ./configure --bro-dist=%(bro_dist)s  && make
-config_files = build/scripts/init.bro
-depends = 
-	bro >=2.5.0
-	bro-pkg >=1.2
-description = User Agent Parser - Bro implementation based on uap-core
-external_depends = 
-	libyaml-cpp-dev ~0.5.2
-	libboost-regex-dev ~1.58.0
-plugin_dir = build
-script_dir = build/scripts/VR/UAP
-tags = bro plugin, uap, user_agent
-test_command = ( cd tests && btest -d )
-version = master
-url = https://github.com/vitalyrepin/uap-bro
 
 [zeek-packages/zeek-agent-v2]
 build_command = git describe --always --long | sed 's/-[^-]*$//' >scripts/version.dat || true
