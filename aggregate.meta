@@ -394,6 +394,22 @@ test_command = cd tests && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-opcua-binary
 version = main
 
+[cisagov/icsnpp-profinet-io-cm]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake -DCMAKE_BUILD_TYPE=Debug .. && cmake --build .
+credits = Taegan Williams <taegan.williams@inl.gov>
+depends = 
+	zeek >=6.0.3
+description = Profinet I/O Context Manager uses traditional Ethernet hardware and software to define a network that
+	structures the task of exchanging data, alarms and diagnostics with programmable controllers
+	and other automation controllers
+plugin_dir = build/spicy-modules
+script_dir = analyzer
+summary = Profinet I/O Context Manager (as defined in Profinet Fieldbus Specification IEC 61158-6-10:2019)
+tags = profinet, profinet io cm, pn_io, power, SCADA, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/cisagov/icsnpp-profinet-io-cm
+version = main
+
 [cisagov/icsnpp-s7comm]
 build_command = ./configure && make
 build_dir = build/ICSNPP_S7comm.tgz
