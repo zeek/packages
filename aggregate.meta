@@ -760,6 +760,14 @@ test_command = cd tests && btest
 url = https://github.com/corelight/zeek-macho
 version = v0.1.1
 
+[corelight/zeek-nats-log-writer]
+build_command = ./configure && cmake --build build
+description = NATS.io log writer support
+summary = NATS.io log writer support
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/zeek-nats-log-writer
+version = v0.1.0
+
 [corelight/zeek-notice-telegram]
 description = Package that extends the Notice Framework to include
 	`ACTION_TELEGRAM` for sending messages on notices over Telegram.
@@ -1176,6 +1184,14 @@ tags = IDS, Zeek, mDNS
 test_command = cd tests && make
 url = https://github.com/zeek-plugins/mdns
 version = main
+
+[foxio/ja4]
+credits = Anthony Kasza, Caleb Yu, John Althouse
+description = A Zeek package which provides JA4+ network fingerprinting.
+script_dir = zeek
+tags = ja4, tls, ssl, fingerprint, fingerprinting, ja4s, ja4h, ja4x, ja4ssh, ja4l, ja4+, ja3
+version = v0.18.1
+url = https://github.com/FoxIO-LLC/ja4
 
 [hhzzk/dns-tunnels]
 description = Detect DNS Tunnels attack.
