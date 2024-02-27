@@ -19,3 +19,8 @@ jobs:
           git config --global user.name zeek-bot
           git config --global user.email info@zeek.org
           pip3 install zkg && zkg -vvv refresh --aggregate --fail-on-aggregate-problems --push
+      - name: refresh package website
+        run: |
+          curl -H "Accept: application/vnd.github+json" \
+          -H "Authorization: token ${{ secrets.ZEEK_BOT_TOKEN }}" --request POST \
+          --data '{"event_type": "aggregate-update"}' https://api.github.com/repos/zeek/package-website/dispatchers
