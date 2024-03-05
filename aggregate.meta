@@ -2254,7 +2254,6 @@ url = https://github.com/zeek/osquery-framework
 depends = http://github.com/zeek/spicy-dhcp >=0.0.1
 	http://github.com/zeek/spicy-dns >=0.0.2
 	http://github.com/zeek/spicy-http >=0.0.1
-	http://github.com/zeek/spicy-ldap >=0.0.2
 	http://github.com/zeek/spicy-pe >=0.0.3
 	http://github.com/zeek/spicy-png >=0.0.2
 	http://github.com/zeek/spicy-tftp >=0.0.1
@@ -2262,7 +2261,7 @@ depends = http://github.com/zeek/spicy-dhcp >=0.0.1
 description = Meta package for a number of Spicy-based analyzers.
 summary = Meta package for a number of Spicy-based analyzers
 url = https://github.com/zeek/spicy-analyzers
-version = v0.2.31
+version = v0.2.32
 
 [zeek/spicy-dhcp]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
@@ -2272,7 +2271,7 @@ script_dir = analyzer
 summary = Spicy-based analyzer for the DHCP protocol
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/zeek/spicy-dhcp
-version = v0.0.7
+version = v0.0.8
 
 [zeek/spicy-dns]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
@@ -2302,7 +2301,7 @@ script_dir = analyzer
 summary = LDAP analyzer
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/zeek/spicy-ldap
-version = v0.0.15
+version = v0.0.16
 
 [zeek/spicy-pe]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
