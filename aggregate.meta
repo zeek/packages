@@ -632,6 +632,17 @@ tags = TLS, SSL, JA3, Video conferencing, Video, Videoconferencing, Remote worki
 version = master
 url = https://github.com/corelight/got_zoom
 
+[corelight/hassh]
+depends = 
+	zeek >=4.0.0
+description = HASSH is used to identify specific Client and Server SSH implementations. The fingerprints can be stored, searched and shared in the form of an MD5 fingerprint. This package logs components to ssh.log
+script_dir = scripts
+summary = SSH client and server fingerprints.
+tags = bro plugin, ssh, fingerprint, logging
+test_command = cd testing && btest -c btest.cfg
+version = v1.0.0
+url = https://github.com/corelight/hassh
+
 [corelight/http-stalling-detector]
 description = Detect HTTP stalling attacks like slowloris.
 script_dir = scripts
@@ -1964,13 +1975,6 @@ description = Protocol analyzer that detects, dissects, fingerprints, and logs G
 script_dir = scripts/Salesforce/GQUIC
 url = https://github.com/salesforce/GQUIC_Protocol_Analyzer
 version = master
-
-[salesforce/hassh]
-description = HASSH is used to identify specific Client and Server SSH implementations. The fingerprints can be stored, searched and shared in the form of an MD5 fingerprint. This package logs components to ssh.log
-script_dir = zeek
-tags = zeek plugin, ssh, fingerprint, logging
-version = master
-url = https://github.com/salesforce/hassh
 
 [salesforce/ja3]
 description = JA3 creates 32 character SSL client fingerprints and logs them as a field in ssl.log. These fingerprints can easily be shared as threat intelligence or used as correlation items for enhanced alerting and analysis. This package also adds JA3 to the Zeek Intel Framework.
