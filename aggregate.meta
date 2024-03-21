@@ -1197,11 +1197,12 @@ url = https://github.com/zeek-plugins/mdns
 version = main
 
 [foxio/ja4]
-credits = Anthony Kasza, Caleb Yu, John Althouse
-description = A Zeek package which provides JA4+ network fingerprinting.
+credits = John Althouse
+depends = zeek >=6.0.0
+description = Official Zeek package for JA4+ network fingerprinting.
 script_dir = zeek
-tags = ja4, tls, ssl, fingerprint, fingerprinting, ja4s, ja4h, ja4x, ja4ssh, ja4l, ja4+, ja3
-version = v0.18.1
+tags = ja4, fingerprint, fingerprinting, ja4s, ja4h, ja4x, ja4ssh, ja4l, ja4t, ja4+, ja4plus, ja3
+version = v0.18.2
 url = https://github.com/FoxIO-LLC/ja4
 
 [hhzzk/dns-tunnels]
