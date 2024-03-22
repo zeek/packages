@@ -702,6 +702,16 @@ tags = dns, sumstats, log, measurement, top
 url = https://github.com/corelight/top-dns
 version = master
 
+[corelight/zeek-asyncrat-detector]
+depends = 
+	zeek >=4.0.0
+description = An AsyncRAT malware detector.
+script_dir = scripts
+summary = An AsyncRAT malware detector.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/zeek-asyncrat-detector
+version = v0.1.2
+
 [corelight/zeek-community-id]
 build_command = ./configure && cd build && make
 depends = 
