@@ -619,7 +619,7 @@ version = master
 description = A Zeek package to extend logging for Intel
 script_dir = scripts
 tags = intel
-version = main
+version = v1.0.0
 url = https://github.com/corelight/ExtendIntel
 
 [corelight/got_zoom]
@@ -651,10 +651,10 @@ url = https://github.com/corelight/http-stalling-detector
 version = master
 
 [corelight/icannTLD]
-description = A Zeek script using Input Framework to get icann_tld, icann_domain, icann_host_subdomain, and is_trusted_domain from a DNS query.  The field icann_host_subdomain contains the remaining query nodes after the domain is removed.  The is_trusted_domain is populated from a separate Input Framework set.
+description = v27.10.0 - A Zeek script using Input Framework to get icann_tld, icann_domain, icann_host_subdomain, and is_trusted_domain from a DNS query.  The field icann_host_subdomain contains the remaining query nodes after the domain is removed.  The is_trusted_domain is populated from a separate Input Framework set.
 script_dir = scripts
 tags = domain, dns, tld, input
-version = v24.0.0
+version = v27.10.0
 url = https://github.com/corelight/icannTLD
 
 [corelight/json-streaming-logs]
