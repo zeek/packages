@@ -1120,6 +1120,13 @@ test_command = cd tests && make
 url = https://github.com/esnet-security/logfilter
 version = 1.0
 
+[esnet-security/zeek-ebury]
+description = This script attempts to detect the Ebury ssh backdoor based on having base64 in the ssh client string.
+script_dir = scripts
+tags = ssh, ebury
+version = main
+url = https://github.com/esnet-security/zeek-ebury
+
 [esnet-security/Zeek-Known-Services-With-OrigFlag]
 description = This script expands the base known-services policy to include is_local_orig flag to indicate if the service was discovered from non-local nets (is_local_orig =F) or from local nets (is_local_orig=T).
 script_dir = scripts
