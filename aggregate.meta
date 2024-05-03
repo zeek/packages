@@ -1659,6 +1659,34 @@ tags = smb, logging
 url = https://github.com/klehigh/find_smbv1
 version = 1.0.2
 
+[mbispham/zeekjs-redis]
+build_command = ./configure \
+	--install-npm-dependencies=%(install_npm_dependencies)s \
+	--install-redis-cli=%(install_redis_cli)s \
+	--redis-conf-path=%(redis_conf_path)s \
+	--redis-socket-path=%(redis_socket_path)s \
+	--start-redis-server=%(start_redis_server)s && \
+	cd build && make
+depends = 
+	zeek >=4.2.0
+description = A zkg package that uses ZeekJS to overwrite
+	the Logging Framework to output Zeek logs to Redis.
+	Each log id type is associated with a unique key.
+	For example, conn.log should be stored in the key
+	zeek_conn_logs.
+script_dir = scripts
+summary = Zeek Logs to Redis (ZeekJS Version)
+tags = redis, logging, intel, javascript, js, plugin
+test_command = cat img/banner.txt > /dev/pts/1 2>&1 < /dev/pts/1 && cd testing && btest -c btest.cfg
+user_vars = 
+	install_npm_dependencies [] "Install npm dependencies (N/y)"
+	install_redis_cli [] "Install redis-cli https://redis.io/docs/connect/cli/ (N/y)"
+	redis_conf_path [] "Path for Redis configuration file (/etc/redis/redis.conf)"
+	redis_socket_path [] "Path for Redis socket (/var/run/redis/redis.sock)"
+	start_redis_server [] "Setup a local redis server (N/y)"
+url = https://github.com/mbispham/zeekjs-redis
+version = main
+
 [micrictor/smbfp]
 credits = Michael Torres <mic.ric.tor@gmail.com>
 description = A package to create a fingerprint of SMB clients
