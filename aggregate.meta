@@ -640,7 +640,7 @@ script_dir = scripts
 summary = SSH client and server fingerprints.
 tags = bro plugin, ssh, fingerprint, logging
 test_command = cd testing && btest -c btest.cfg
-version = v1.0.0
+version = v1.0.1
 url = https://github.com/corelight/hassh
 
 [corelight/http-stalling-detector]
