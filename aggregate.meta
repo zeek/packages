@@ -61,7 +61,7 @@ description = A PostgreSQL reader and writer for Zeek.
 plugin_dir = build
 tags = zeek plugin, PostgreSQL, reader, writer, input
 test_command = cd tests && btest -d
-version = 0.0.7
+version = 0.0.8
 url = https://github.com/0xxon/zeek-postgresql
 
 [0xxon/zeek-sumstats-counttable]
