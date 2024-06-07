@@ -1765,12 +1765,12 @@ url = https://github.com/ncsa/bro-simple-scan
 version = 4.0
 
 [ncsa/bro-zeromq-writer]
-build_command = ./configure --bro-dist=%(bro_dist)s --with-zmq=%(ZEROMQ_PREFIX)s && make
+build_command = ./configure --with-zmq=%(ZEROMQ_PREFIX)s && make
 description = ZeroMQ log writer.
 external_depends = 
 	zeromq >=3.2.0
 script_dir = scripts/NCSA/ZeroMQWriter
-tags = bro plugin, log writer, zeromq, zmq, 0mq, json
+tags = zeek plugin, log writer, zeromq, zmq, 0mq, json
 test_command = make test
 user_vars = 
 	ZEROMQ_PREFIX [/usr/local] "ZeroMQ install prefix"
