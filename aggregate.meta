@@ -1714,7 +1714,7 @@ script_dir = scripts
 tags = zeek plugin, protocol analyzer, http2, intel
 test_command = make test
 url = https://github.com/MITRECND/bro-http2
-version = 0.6.0
+version = 0.6.1
 
 [mvlnetdev/dportmatch]
 credits = M. van Leeuwen
