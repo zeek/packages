@@ -282,6 +282,21 @@ tags = notices, ssl
 version = v0.1.1
 url = https://github.com/chrisanag1985/suppress-ssl-notices
 
+[cisagov/ACID]
+credits = Jake Steele <jsteele@mitre.org>, Jack Cyprus <jcyprus@mitre.org>, Otis Alexander <oalexander@mitre.org>
+depends = 
+	zeek >=4.0.0
+	http://github.com/cisagov/icsnpp-bacnet *
+	http://github.com/cisagov/icsnpp-enip *
+	http://github.com/cisagov/icsnpp-s7comm *
+description = ATT&CK-based Control-system Indicator Detection (ACID) is a collection of Zeek scripts designed to detect
+	ATT&CK for ICS behaviors on OT protocols. These events are reported through the Zeek Notice framework.
+script_dir = scripts
+summary = ACID is a collection of OT protocol indicator scripts focused on ATT&CK for ICS behaviors.
+tags = ics, OT, attack, ATT&CK, mitre, cisa, OT protocol, detection, notices, input, logging, CIP, S7comm, bacnet, icsnpp
+url = https://github.com/cisagov/ACID
+version = main
+
 [cisagov/icsnpp-bacnet]
 build_command = ./configure && make
 build_dir = build/ICSNPP_Bacnet.tgz
