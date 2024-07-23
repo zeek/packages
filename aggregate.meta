@@ -365,6 +365,19 @@ test_command = cd tests && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-ethercat
 version = main
 
+[cisagov/icsnpp-ge-srtp.git]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=6.0.0
+description = GE-SRTP is a proprietary protocol used for communication between a GE PLC and a GE HMI.
+	The GE-SRTP protocol parser is based off of the research paper that can be accessed at https://digitalcommons.newhaven.edu/electricalcomputerengineering-facpubs/70/
+	Like Modbus, the GE-SRTP protocol can read both discrete and analog inputs.
+script_dir = scripts
+summary = GE_-SRTP is a proprietary protocol used for communication between a GE PLC and a GE HMI.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/cisagov/icsnpp-ge-srtp.git
+version = develop
+
 [cisagov/icsnpp-genisys]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
 credits = Seth Grover <seth.grover@inl.gov>
