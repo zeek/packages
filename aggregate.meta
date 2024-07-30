@@ -644,10 +644,10 @@ url = https://github.com/corelight/detect-ransomware-filenames
 version = master
 
 [corelight/ExtendIntel]
-description = v2.0 - A Zeek package to extend logging for Intel
+description = v3.0 - A Zeek package to extend logging for Intel
 script_dir = scripts
 tags = intel
-version = v2.0.0
+version = v3.0.0
 url = https://github.com/corelight/ExtendIntel
 
 [corelight/got_zoom]
