@@ -325,18 +325,6 @@ test_command = cd tests && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-bsap
 version = main
 
-[cisagov/icsnpp-dnp3]
-credits = Stephen Kleinheider <stephen.kleinheider@inl.gov>
-depends = 
-	zkg >=2.0
-	zeek >=3.0.0
-description = DNP3 script for detailed logging of the DNP3 protocol - CISA ICSNPP
-script_dir = scripts
-tags = dnp3, DNP3, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek scripting, log writer, protocol analyzer
-test_command = cd tests && btest -c btest.cfg
-url = https://github.com/cisagov/icsnpp-dnp3
-version = main
-
 [cisagov/icsnpp-enip]
 build_command = ./configure && make
 build_dir = build/ICSNPP_Enip.tgz
