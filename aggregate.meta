@@ -111,7 +111,7 @@ depends = zkg >=2.0.7
 description = Find and log open, long-lived connections into "open_conn", "open_ssl", and "open_http" logs.
 script_dir = scripts
 tags = conn
-version = v1.2.0
+version = v1.2.1
 url = https://github.com/activecm/zeek-open-connections
 
 [amarokinc/bad-asn]
