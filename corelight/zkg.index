@@ -29,6 +29,7 @@ https://github.com/corelight/log-add-vlan-everywhere
 https://github.com/corelight/my_stats
 https://github.com/corelight/pingback
 https://github.com/corelight/top-dns
+https://github.com/corelight/zeek-agenttesla-detector
 https://github.com/corelight/zeek-asyncrat-detector
 https://github.com/corelight/zeek-community-id
 https://github.com/corelight/zeek-elf
@@ -38,6 +39,7 @@ https://github.com/corelight/zeek-jpeg
 https://github.com/corelight/zeek-long-connections
 https://github.com/corelight/zeek-macho
 https://github.com/corelight/zeek-nats-log-writer
+https://github.com/corelight/zeek-netsupport-detector
 https://github.com/corelight/zeek-notice-telegram
 https://github.com/corelight/zeek-quic
 https://github.com/corelight/zeek-spicy-facefish
@@ -46,6 +48,7 @@ https://github.com/corelight/zeek-spicy-openvpn
 https://github.com/corelight/zeek-spicy-ospf
 https://github.com/corelight/zeek-spicy-stun
 https://github.com/corelight/zeek-spicy-wireguard
+https://github.com/corelight/zeek-strrat-detector
 https://github.com/corelight/zeek-xor-exe-plugin
 https://github.com/corelight/zeekjs
 https://github.com/corelight/zeekjs-notice-telegram
