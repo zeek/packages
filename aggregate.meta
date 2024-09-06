@@ -2472,7 +2472,7 @@ test_command = cd tests && btest -d -c btest.cfg
 user_vars = 
 	netmap_root_dir [] "Root directory of Netmap installation"
 url = https://github.com/zeek/zeek-netmap
-version = v2.0.0
+version = v2.0.1
 
 [zeek/zeek-perf-support]
 build_command = ./configure && cmake --build build
