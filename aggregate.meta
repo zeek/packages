@@ -835,7 +835,7 @@ script_dir = scripts
 summary = A Zeek base NetSupport detector. NetSupport is often abused by attackers in malware.
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/zeek-netsupport-detector
-version = master
+version = v0.1.0
 
 [corelight/zeek-notice-telegram]
 description = Package that extends the Notice Framework to include
