@@ -190,7 +190,7 @@ description = A Zeek package which provides common encodings and operations.
 script_dir = scripts
 tags = rc4, base64, bitshift, encoding, xor
 version = 1.0.1
-url = https://github.com/anthonykasza/common-encodings/
+url = https://github.com/anthonykasza/common-encodings
 
 [anthonykasza/indicator-rules]
 depemds = 
@@ -211,6 +211,16 @@ tags = ja4, tls, ssl, fingerprint, clienthello, handshake, encryption
 test_command = cd testing && btest -c btest.cfg
 version = main
 url = https://github.com/anthonykasza/ja4
+
+[anthonykasza/ssl-extensions]
+depends = 
+	zeek >=6.1.0
+description = A proof-of-concept demonstrating scriptland parsing and event routing for all SSL extensions
+script_dir = scripts
+tags = tls, ssl, experimental
+test_command = cd testing && btest -c btest.cfg
+version = main
+url = https://github.com/anthonykasza/ssl-extensions
 
 [apache/metron-bro-plugin-kafka]
 build_command = ./configure --bro-dist=%(bro_dist)s --with-librdkafka=%(LIBRDKAFKA_ROOT)s && make
@@ -1346,6 +1356,14 @@ script_dir = scripts
 tags = logging, log framework
 version = main
 url = https://github.com/hosom/log-filters
+
+[initconf/2024-09-cups-linux-rce]
+description = 
+script_dir = scripts
+tags = 
+test_command = ( cd tests && btest -d )
+version = main
+url = https://github.com/initconf/2024-09-cups-linux-rce
 
 [initconf/Apple-RDP-net-assistant-DoS.git]
 description = udp-3283-DoS
