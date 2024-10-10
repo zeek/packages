@@ -273,7 +273,7 @@ script_dir = scripts/
 tags = bogon, conn
 test_command = (cd tests && btest -d)
 url = https://github.com/captainGeech42/zeek-bogon
-version = v1.0.0
+version = v1.0.1
 
 [captainGeech42/zeek-intel-path]
 author = Zander Work (@captainGeech42)
