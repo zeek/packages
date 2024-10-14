@@ -575,7 +575,7 @@ description = A package to detect CVE-2022-21907
 script_dir = scripts
 summary = A package to detect CVE-2022-21907
 url = https://github.com/corelight/cve-2022-21907
-version = v0.1.2
+version = v0.1.3
 
 [corelight/cve-2022-22954]
 depends = 
