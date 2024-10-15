@@ -635,7 +635,7 @@ depends =
 description = A Zeek package to detect CVE-2022-26937, a Windows NFS vulnerabilty.
 script_dir = scripts
 summary = A Zeek package to detect CVE-2022-26937, a Windows NFS vulnerabilty.
-test_command = cd testing && btest -c btest.cfg
+test_command = make test
 url = https://github.com/corelight/CVE-2022-26937
 version = master
 
