@@ -586,7 +586,7 @@ script_dir = scripts
 summary = Detect CVE-2022-22954 attempts and exploits.
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/cve-2022-22954
-version = v0.1.0
+version = v0.2.0
 
 [corelight/CVE-2022-23270-PPTP]
 depends = 
