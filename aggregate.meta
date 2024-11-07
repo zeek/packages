@@ -2453,7 +2453,7 @@ script_dir = analyzer
 summary = Spicy-based analyzer for the ZIP file format
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/zeek/spicy-zip
-version = v0.0.6
+version = v0.0.7
 
 [zeek/zeek-af_packet-plugin]
 build_command = ./configure && make
