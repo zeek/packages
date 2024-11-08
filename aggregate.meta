@@ -855,6 +855,16 @@ summary = Send Notices over Telegram
 url = https://github.com/corelight/zeek-notice-telegram
 version = master
 
+[corelight/zeek-quasarrat-detector]
+depends = 
+	zeek >=4.0.0
+description = An QuasarRAT malware detector.
+script_dir = scripts
+summary = An QuasarRAT malware detector.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/zeek-quasarrat-detector
+version = main
+
 [corelight/zeek-quic]
 aliases = zeek-quic bro-quic
 build_command = ./configure && make
