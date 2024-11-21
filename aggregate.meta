@@ -2508,5 +2508,5 @@ description =
 summary = perf support
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/zeek/zeek-perf-support
-version = v0.3.0
+version = v0.4.0
 
