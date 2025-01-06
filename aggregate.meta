@@ -1279,6 +1279,17 @@ test_command = cd tests && btest
 url = https://github.com/esnet/zeek_perfsonar_owamp
 version = master
 
+[evantypanski/spicy-redis]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=4.0.0
+description = Spicy-based analyzer for Redis
+script_dir = scripts
+summary = Spicy-based analyzer for Redis
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/evantypanski/spicy-redis
+version = main
+
 [fatemabw/bro-inventory-scripts]
 description = Find different type of OSes and AV software in your network traffic.
 script_dir = scripts
