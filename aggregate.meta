@@ -406,6 +406,19 @@ test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/b
 url = https://github.com/cisagov/icsnpp-genisys
 version = main
 
+[cisagov/icsnpp-hart-ip]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=6.1.0
+description = HART-IP is the IP extension of the Highway Addressable Remote Transducer (HART) protocol.
+	The HART protocol is a hybrid analog+digital industrial automation open protocol.
+	It is currently maintained by the FieldComm Group (https://www.fieldcommgroup.org/).
+script_dir = scripts
+summary = HART-IP is the IP extension of the Highway Addressable Remote Transducer (HART) protocol.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/cisagov/icsnpp-hart-ip
+version = main
+
 [cisagov/icsnpp-modbus]
 credits = Brett Rasmussen <brett.rasmussen@inl.gov> & Stephen Kleinheider <stephen.kleinheider@inl.gov>
 depends = 
@@ -416,6 +429,18 @@ script_dir = scripts
 tags = modbus, Modbus, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek scripting, log writer, protocol analyzer
 test_command = cd tests && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-modbus
+version = main
+
+[cisagov/icsnpp-omron-fins]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=6.1.0
+description = ICSNPP-Omron-FINS is a Spicy based Zeek plugin for
+	parsing and logging fields within the Omron FINS protocol.
+script_dir = scripts
+summary = ICSNPP-Omron-FINS (Factory Interface Network) over UDP
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/cisagov/icsnpp-omron-fins
 version = main
 
 [cisagov/icsnpp-opcua-binary]
