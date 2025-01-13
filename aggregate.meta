@@ -1509,7 +1509,7 @@ url = https://github.com/initconf/RDP-bruteforce
 description = scan detection in 2.x world. Forward porting of bro-1.5.3 scan.bro accompanied with new heuristics and quicker detections
 script_dir = scripts
 tags = scan detection
-version = master
+version = v3.0
 url = https://github.com/initconf/scan-NG
 
 [initconf/sip-attacks.git]
