@@ -2458,7 +2458,7 @@ script_dir = analyzer
 summary = Spicy-based analyzer for the Portable Executable (PE) image format
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/zeek/spicy-pe
-version = v0.0.12
+version = v0.0.13
 
 [zeek/spicy-plugin]
 build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && cmake .. && make -j "${SPICY_ZKG_PROCESSES:-4}"
