@@ -870,7 +870,7 @@ script_dir = scripts
 summary = A Zeek base NetSupport detector. NetSupport is often abused by attackers in malware.
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/zeek-netsupport-detector
-version = v0.1.0
+version = v0.1.1
 
 [corelight/zeek-notice-telegram]
 description = Package that extends the Notice Framework to include
@@ -888,7 +888,7 @@ script_dir = scripts
 summary = An QuasarRAT malware detector.
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/zeek-quasarrat-detector
-version = main
+version = v0.1.1
 
 [corelight/zeek-quic]
 aliases = zeek-quic bro-quic
