@@ -2523,7 +2523,7 @@ script_dir = ./scripts/Zeek/MoreHashes
 tags = mmh3
 test_command = cd tests && btest -d -c btest.cfg
 url = https://github.com/zeek/zeek-more-hashes
-version = v0.2.0
+version = v0.3.0
 
 [zeek/zeek-netmap]
 build_command = ./configure --with-netmap=%(netmap_root_dir)s && cd build && make
@@ -2544,5 +2544,5 @@ description =
 summary = perf support
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/zeek/zeek-perf-support
-version = v0.4.0
+version = v0.5.0
 
