@@ -2024,6 +2024,18 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/nttcom/zeek-parser-DHCPv6-COM
 version = main
 
+[nttcom/zeek-parser-OmronFINS]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=4.0.0
+description = TODO: A more detailed description of zeek-parser-OmronFINS.
+	It can span multiple lines, with this indentation.
+script_dir = scripts
+summary = TODO: A summary of zeek-parser-OmronFINS in one line
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/nttcom/zeek-parser-OmronFINS
+version = main
+
 [nttcom/zeek-parser-SSDP-COM]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
 depends = 
