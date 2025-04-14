@@ -931,7 +931,7 @@ script_dir = analyzer
 summary = A Zeek OpenVPN protocol analyzer, based on Spicy.
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/corelight/zeek-spicy-openvpn
-version = v0.1.8
+version = v0.1.9
 
 [corelight/zeek-spicy-ospf]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
@@ -999,7 +999,7 @@ test_command = cd tests && btest -d -c btest.cfg -g smoke
 user_vars = 
 	nodejs_root_dir [] "Root directory of Node.js installation (leave blank for defaults)"
 url = https://github.com/corelight/zeekjs
-version = v0.16.0
+version = v0.17.0
 
 [corelight/zeekjs-notice-telegram]
 depends = zeekjs *
