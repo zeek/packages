@@ -4,12 +4,13 @@ https://github.com/cisagov/icsnpp-bsap
 https://github.com/cisagov/icsnpp-dnp3
 https://github.com/cisagov/icsnpp-enip
 https://github.com/cisagov/icsnpp-ethercat
-https://github.com/cisagov/icsnpp-ge-srtp.git
+https://github.com/cisagov/icsnpp-ge-srtp
 https://github.com/cisagov/icsnpp-genisys
 https://github.com/cisagov/icsnpp-hart-ip
 https://github.com/cisagov/icsnpp-modbus
 https://github.com/cisagov/icsnpp-omron-fins
 https://github.com/cisagov/icsnpp-opcua-binary
 https://github.com/cisagov/icsnpp-profinet-io-cm
+https://github.com/cisagov/icsnpp-roc-plus
 https://github.com/cisagov/icsnpp-s7comm
 https://github.com/cisagov/icsnpp-synchrophasor
