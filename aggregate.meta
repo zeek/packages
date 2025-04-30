@@ -375,7 +375,7 @@ test_command = cd tests && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-ethercat
 version = main
 
-[cisagov/icsnpp-ge-srtp.git]
+[cisagov/icsnpp-ge-srtp]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
 depends = 
 	zeek >=6.0.0
@@ -385,7 +385,7 @@ description = GE-SRTP is a proprietary protocol used for communication between a
 script_dir = scripts
 summary = GE_-SRTP is a proprietary protocol used for communication between a GE PLC and a GE HMI.
 test_command = cd testing && btest -c btest.cfg
-url = https://github.com/cisagov/icsnpp-ge-srtp.git
+url = https://github.com/cisagov/icsnpp-ge-srtp
 version = develop
 
 [cisagov/icsnpp-genisys]
@@ -471,6 +471,18 @@ summary = Profinet I/O Context Manager (as defined in Profinet Fieldbus Specific
 tags = profinet, profinet io cm, pn_io, power, SCADA, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-profinet-io-cm
+version = main
+
+[cisagov/icsnpp-roc-plus]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=6.1.0
+description = ICSNPP-ROC-Plus is a Spicy based Zeek plugin for
+	parsing and logging fields within the ROC Plus protocol.
+script_dir = scripts
+summary = ICSNPP-ROC-Plus over UDP
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/cisagov/icsnpp-roc-plus
 version = main
 
 [cisagov/icsnpp-s7comm]
@@ -2490,7 +2502,7 @@ script_dir = analyzer
 summary = Spicy-based analyzer for the PNG file format
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/zeek/spicy-png
-version = v0.0.6
+version = v0.0.7
 
 [zeek/spicy-tftp]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
@@ -2525,6 +2537,14 @@ tags = zeek plugin, zeekctl plugin, packet source, af_packet
 test_command = cd tests && btest -d
 url = https://github.com/zeek/zeek-af_packet-plugin
 version = 4.0.0
+
+[zeek/zeek-cluster-backend-nats]
+build_command = ./configure && cmake --build build
+description = 
+summary = NATS.io based cluster backend
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/zeek/zeek-cluster-backend-nats
+version = v0.0.3
 
 [zeek/zeek-more-hashes]
 build_command = ./configure && cd build && make
