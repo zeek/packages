@@ -2412,6 +2412,21 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/zeek/hello-world
 version = v1.0.0
 
+[zeek/logschema]
+depends = 
+	zeek >=5.2.0
+description = This package generates schemas for Zeek's logs.
+	For every log your Zeek installation produces, the schema describes each log
+	field including name, type, docstring, and more. The package supports JSON Schema,
+	CSV, a Zeek log to capture schema information, and a custom JSON representation.
+	It understands Zeek's log customization in detail. The schema export code is
+	extensible, allowing you to produce your own schemas.
+script_dir = scripts
+summary = Log data schema generation
+test_command = cd testing && ./btest.sh
+url = https://github.com/zeek/logschema
+version = main
+
 [zeek/osquery-framework]
 depends = 
 	zeek >=3.0.0-rc1
