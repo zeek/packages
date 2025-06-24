@@ -335,6 +335,18 @@ test_command = cd tests && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-bsap
 version = main
 
+[cisagov/icsnpp-c1222]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=4.0.0
+description = ANSI C12.22/IEEE Std 1703 describe a protocol for transporting ANSI C12.19 table data over networks,
+	for the purpose of interoperability among communications modules and meters.
+script_dir = scripts
+summary = ANSI C12.22 is the American National Standard for Protocol Specification for Interfacing to Data Communication Networks.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/cisagov/icsnpp-c1222
+version = main
+
 [cisagov/icsnpp-dnp3]
 credits = Stephen Kleinheider <stephen.kleinheider@inl.gov>
 depends = 
