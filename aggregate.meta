@@ -467,7 +467,7 @@ script_dir = build/scripts/icsnpp/opcua-binary
 tags = opcua, opcua_binary, opc, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
 test_command = cd tests && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-opcua-binary
-version = main
+version = v1.0.0
 
 [cisagov/icsnpp-profinet-io-cm]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake -DCMAKE_BUILD_TYPE=Debug .. && cmake --build .
