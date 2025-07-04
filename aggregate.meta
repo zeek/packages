@@ -1023,7 +1023,7 @@ test_command = cd tests && btest -d -c btest.cfg -g smoke
 user_vars = 
 	nodejs_root_dir [] "Root directory of Node.js installation (leave blank for defaults)"
 url = https://github.com/corelight/zeekjs
-version = v0.17.1
+version = v0.18.0
 
 [corelight/zeekjs-notice-telegram]
 depends = zeekjs *
