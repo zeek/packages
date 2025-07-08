@@ -64,6 +64,15 @@ test_command = cd tests && btest -d
 version = 0.0.8
 url = https://github.com/0xxon/zeek-postgresql
 
+[0xxon/zeek-sshprebannermessage]
+depends = 
+	zeek >=4.0.0
+script_dir = scripts
+summary = Log SSH pre banner messages
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/0xxon/zeek-sshprebannermessage
+version = main
+
 [0xxon/zeek-sumstats-counttable]
 description = Two-dimensional buckets for sumstats (count occurences per $str).
 tags = sumstats, summary statistics
