@@ -875,7 +875,7 @@ description = Find and log long-lived connections into a "conn_long" log.
 script_dir = scripts
 tags = conn
 test_command = cd testing && btest -c btest.cfg
-version = v1.3.1
+version = v1.3.2
 url = https://github.com/corelight/zeek-long-connections
 
 [corelight/zeek-macho]
