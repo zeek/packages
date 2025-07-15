@@ -411,7 +411,7 @@ version = develop
 
 [cisagov/icsnpp-genisys]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
-credits = Seth Grover <seth.grover@inl.gov>
+credits = Seth Grover <seth.grover@inl.gov>, Jason Rush <jason.rush@inl.gov
 description = Genisys is a protocol defined by Union Switch & Signal for communicating with
 	SCADA field devices, commonly used in the railway industry.
 	It is similar in purpose to Modbus. Genisys was designed for use over serial
@@ -420,7 +420,7 @@ description = Genisys is a protocol defined by Union Switch & Signal for communi
 	over the same connection.  The servers are identified by a one-octet server address.
 	"Genisys" is a trademark of Union Switch & Signal.
 plugin_dir = build/spicy-modules
-script_dir = analyzer
+script_dir = scripts
 summary = Genisys is a protocol defined by Union Switch & Signal for communicating with SCADA field devices, commonly used in the railway industry.
 tags = genisys, railway, SCADA, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
