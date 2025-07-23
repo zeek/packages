@@ -496,12 +496,14 @@ version = main
 
 [cisagov/icsnpp-roc-plus]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+credits = Jason Rush <jason.rush@inl.gov>
 depends = 
 	zeek >=6.1.0
 description = ICSNPP-ROC-Plus is a Spicy based Zeek plugin for
 	parsing and logging fields within the ROC Plus protocol.
 script_dir = scripts
 summary = ICSNPP-ROC-Plus over UDP
+tags = ROC-PLUS, ROCPLUS, ROC, ROC+, roc-plus, rocplus, roc, roc+, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-roc-plus
 version = main
