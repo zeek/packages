@@ -255,6 +255,13 @@ tags = debugging, footprint, connection, memory
 url = https://github.com/awelzel/zeek-conn-footprint
 version = v0.2.1
 
+[awelzel/zeekctl-systemd]
+description = A Zeekctl plugin that hooks install and start to run Zeek using systemd
+plugin_dir = plugin
+tags = zeekctl, systemd, supervisor
+url = https://github.com/awelzel/zeekctl-systemd
+version = v0.1.0
+
 [awelzel/zeekjs-misp]
 depends = 
 	zeekjs >=0.9.0
