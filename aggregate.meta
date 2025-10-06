@@ -1157,13 +1157,6 @@ tags = notices, notice, correlation
 version = master
 url = https://github.com/dopheide/bro_notice_correlation
 
-[dopheide/venom]
-description = Attempts to detect an attacker calling to the VENOM Linux Rootkit https://security.web.cern.ch/security/venom.shtml
-script_dir = scripts
-tags = Venom, venom, VENOM, rootkit
-version = master
-url = https://github.com/dopheide/venom
-
 [dovehawk/dovehawk]
 description = MISP+Zeek. Dovehawk is a Zeek Module to import MISP indicators to the Intel Framework and Signature Framework automatically. Reports sightings directly back to MISP as they happen. Supports Zeek Clusters.
 script_dir = .
