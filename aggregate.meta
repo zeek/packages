@@ -333,7 +333,7 @@ depends =
 description = BACnet plugin for parsing and logging of the BACnet (building automation and control) protocol - CISA ICSNPP
 script_dir = build/scripts/icsnpp/bacnet
 tags = bacnet, BACnet, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
-test_command = cd tests && btest -c btest.cfg
+test_command = cd testing && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-bacnet
 version = main
 
@@ -347,7 +347,7 @@ depends =
 description = BSAP over IP plugin for parsing and logging of the BSAP protocol - CISA ICSNPP
 script_dir = build/scripts/icsnpp/bsap
 tags = bsap, BSAP, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
-test_command = cd tests && btest -c btest.cfg
+test_command = cd testing && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-bsap
 version = main
 
