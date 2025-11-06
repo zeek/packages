@@ -399,7 +399,7 @@ depends =
 description = Ethercat plugin for parsing and logging of the Ethercat protocol - CISA ICSNPP
 script_dir = build/scripts/icsnpp/ethercat
 tags = ecat, ECAT, ethercat, Ethercat, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, packet analyzer
-test_command = cd tests && btest -c btest.cfg
+test_command = cd testing && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-ethercat
 version = main
 
