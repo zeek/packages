@@ -385,7 +385,7 @@ depends =
 description = Ethernet/IP and CIP plugin for parsing and logging of the Ethernet/IP and CIP protocols - CISA ICSNPP
 script_dir = build/scripts/icsnpp/enip
 tags = enip, ENIP, cip, CIP, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
-test_command = cd tests && btest -c btest.cfg
+test_command = cd testing && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-enip
 version = main
 
