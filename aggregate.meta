@@ -371,7 +371,7 @@ depends =
 description = DNP3 script for detailed logging of the DNP3 protocol - CISA ICSNPP
 script_dir = scripts
 tags = dnp3, DNP3, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek scripting, log writer, protocol analyzer
-test_command = cd tests && btest -c btest.cfg
+test_command = cd testing && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-dnp3
 version = main
 
