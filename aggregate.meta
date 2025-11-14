@@ -2475,7 +2475,7 @@ script_dir = scripts
 summary = Log data schema generation
 test_command = cd testing && ./btest.sh
 url = https://github.com/zeek/logschema
-version = v2.0.0
+version = v2.0.1
 
 [zeek/osquery-framework]
 depends = 
