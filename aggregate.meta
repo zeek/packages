@@ -269,6 +269,12 @@ script_dir = ./scripts
 url = https://github.com/awelzel/zeekjs-misp
 version = main
 
+[awelzel/zeekjs-udp-logging]
+description = JavaScript based logging via UDP
+script_dir = ./scripts
+url = https://github.com/awelzel/zeekjs-udp-logging
+version = main
+
 [bricata/flow_labels]
 description = Provides mechanisms for managing and using institutional knowledge about a monitored environment to make informed observations of normal and abnormal network activity.
 tags = input, labels
