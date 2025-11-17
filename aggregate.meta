@@ -1942,7 +1942,7 @@ script_dir = scripts
 tags = bro plugin, site, darknet
 test_command = (cd testing && btest -d)
 url = https://github.com/ncsa/bro-is-darknet
-version = 2.1
+version = 2.2
 
 [ncsa/bro-simple-scan]
 depends = 
