@@ -902,6 +902,18 @@ test_command = cd tests && btest
 url = https://github.com/corelight/zeek-macho
 version = v0.1.1
 
+[corelight/zeek-mercury-npf]
+build_command = ./configure && cmake --build build
+depends = 
+	zeek >=4.0.0
+description = TODO: A more detailed description of Mercury.
+	It can span multiple lines, with this indentation.
+script_dir = scripts
+summary = TODO: A summary of Mercury in one line
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/zeek-mercury-npf
+version = main
+
 [corelight/zeek-nats-log-writer]
 build_command = ./configure && cmake --build build
 description = NATS.io log writer support
