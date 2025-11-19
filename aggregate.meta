@@ -531,7 +531,7 @@ depends =
 description = S7Comm & S7Comm Plus plugin for parsing and logging of the S7Comm, S7Comm Plus and COTP protocols - CISA ICSNPP
 script_dir = build/scripts/icsnpp/s7comm
 tags = s7comm, s7comm-plus, s7plus, S7comm, S7Comm, S7CommPlus, Siemens, siemens, s7, S7, cotp, COTP, iso_cotp, ISO_COTP, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
-test_command = cd tests && btest -c btest.cfg
+test_command = cd testing && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-s7comm
 version = main
 
@@ -547,7 +547,7 @@ plugin_dir = build/spicy-modules
 script_dir = analyzer
 summary = Synchrophasor Data Transfer for Power Systems is a communication protocol for real-time communication between phasor measurement units (PMU), phasor data concentrators (PDC), and other applications
 tags = synchrophasor, power, SCADA, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
-test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+test_command = cd testing && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/cisagov/icsnpp-synchrophasor
 version = main
 
