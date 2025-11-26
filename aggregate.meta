@@ -1387,7 +1387,7 @@ url = https://github.com/fatemabw/kyd
 
 [fdekeers/igmp]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
-credits = François De Keersmaeker <francois.dekeersmaeker@uclouvain.be>
+credits = François De Keersmaeker <francois.dekeersmaeker+github@proton.me>
 depends = 
 	zeek >=4.0.0
 description = A Spicy-based packet analyzer for the IGMP protocol.
