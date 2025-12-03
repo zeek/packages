@@ -774,7 +774,7 @@ script_dir = scripts
 tags = logs, json, streaming, stream, filebeat, splunk_forwarder, logstash
 test_command = cd testing && btest -d -c btest.cfg
 url = https://github.com/corelight/json-streaming-logs
-version = v3.1.0
+version = v3.2.0
 
 [corelight/log-add-http-post-bodies]
 description = Add a POST body excerpt into the HTTP log
