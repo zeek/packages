@@ -777,7 +777,7 @@ url = https://github.com/corelight/json-streaming-logs
 version = v3.2.0
 
 [corelight/log-add-http-post-bodies]
-description = Add a POST body excerpt into the HTTP log
+description = Add a POST body excerpt into the HTTP log.
 script_dir = scripts
 tags = http log extend
 version = master
