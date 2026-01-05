@@ -2429,6 +2429,16 @@ tags = statistics, stats, sumstats, standard_deviation, variance
 url = https://github.com/thibaultbl/variation_coefficient
 version = main
 
+[torqvana/zeek-pqc]
+alias = zeek-pqc pqc
+credits = Torqvana
+depends = zeek >=8.0.3
+description = Detection of Post-Quantum Cryptography (PQC) in SSL and SSH.
+script_dir = scripts
+tags = pqc discovery, pqc transition, key exchange, ssh, ssl
+url = https://github.com/torqvana/zeek-pqc
+version = main
+
 [ukncsc/zeek-plugin-ikev2]
 build_command = ( ./configure --bro-dist=%(bro_dist)s  && make )
 depends = 
