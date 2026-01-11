@@ -908,7 +908,7 @@ depends =
 	zeek >=4.0.0
 description = TODO: A more detailed description of Mercury.
 	It can span multiple lines, with this indentation.
-script_dir = scripts
+script_dir = mercury
 summary = TODO: A summary of Mercury in one line
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/zeek-mercury-npf
