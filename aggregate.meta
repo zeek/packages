@@ -1964,7 +1964,7 @@ script_dir = scripts
 tags = bro plugin, scan detection
 test_command = (cd testing && btest -d)
 url = https://github.com/ncsa/bro-simple-scan
-version = 4.0
+version = 4.1
 
 [ncsa/bro-zeromq-writer]
 build_command = ./configure --with-zmq=%(ZEROMQ_PREFIX)s && make
