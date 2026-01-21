@@ -2605,7 +2605,7 @@ script_dir = scripts
 summary = Spicy-based analyzer for the TFTP protocol
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/zeek/spicy-tftp
-version = v0.0.5
+version = v0.0.6
 
 [zeek/spicy-zip]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
