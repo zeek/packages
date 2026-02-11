@@ -2662,6 +2662,16 @@ user_vars =
 url = https://github.com/zeek/zeek-netmap
 version = v2.0.1
 
+[zeek/zeek-packet-source-udp]
+build_command = mkdir build && cmake ../ && make
+description = An opinionated Zeek packet source for the cloud.
+name = zeek-packet-source-udp
+plugin_dir = build
+tags = udp zeek vxlan geneve io_uring recvmmsg
+test_command = true
+url = https://github.com/zeek/zeek-packet-source-udp
+version = main
+
 [zeek/zeek-perf-support]
 build_command = ./configure && cmake --build build
 description = 
