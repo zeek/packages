@@ -2663,7 +2663,7 @@ url = https://github.com/zeek/zeek-netmap
 version = v2.0.1
 
 [zeek/zeek-packet-source-udp]
-build_command = mkdir build && cd build && cmake ../ && make -j
+build_command = mkdir build && cd build && cmake ../ && make
 description = An opinionated Zeek packet source for the cloud.
 name = zeek-packet-source-udp
 plugin_dir = build
