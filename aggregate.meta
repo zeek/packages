@@ -883,6 +883,14 @@ test_command = cd tests && btest
 url = https://github.com/corelight/zeek-jpeg
 version = v0.1.3
 
+[corelight/zeek-log-writer-nats]
+build_command = ./configure && cmake --build build
+description = NATS.io log writer support
+summary = NATS.io log writer support
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/zeek-log-writer-nats
+version = v0.2.0
+
 [corelight/zeek-long-connections]
 aliases = zeek-long-connections bro-long-connections
 depends = zkg >=2.0.7
@@ -913,14 +921,6 @@ summary = TODO: A summary of Mercury in one line
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/zeek-mercury-npf
 version = main
-
-[corelight/zeek-nats-log-writer]
-build_command = ./configure && cmake --build build
-description = NATS.io log writer support
-summary = NATS.io log writer support
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/corelight/zeek-nats-log-writer
-version = v0.1.0
 
 [corelight/zeek-netsupport-detector]
 depends = 
