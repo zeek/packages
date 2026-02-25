@@ -64,6 +64,15 @@ test_command = cd tests && btest -d
 version = 0.0.8
 url = https://github.com/0xxon/zeek-postgresql
 
+[0xxon/zeek-sshprebannermessage]
+depends = 
+	zeek >=4.0.0
+script_dir = scripts
+summary = Log SSH pre banner messages
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/0xxon/zeek-sshprebannermessage
+version = main
+
 [0xxon/zeek-sumstats-counttable]
 description = Two-dimensional buckets for sumstats (count occurences per $str).
 tags = sumstats, summary statistics
@@ -190,7 +199,7 @@ description = A Zeek package which provides common encodings and operations.
 script_dir = scripts
 tags = rc4, base64, bitshift, encoding, xor
 version = 1.0.1
-url = https://github.com/anthonykasza/common-encodings/
+url = https://github.com/anthonykasza/common-encodings
 
 [anthonykasza/indicator-rules]
 depemds = 
@@ -211,6 +220,16 @@ tags = ja4, tls, ssl, fingerprint, clienthello, handshake, encryption
 test_command = cd testing && btest -c btest.cfg
 version = main
 url = https://github.com/anthonykasza/ja4
+
+[anthonykasza/ssl-extensions]
+depends = 
+	zeek >=6.1.0
+description = A proof-of-concept demonstrating scriptland parsing and event routing for all SSL extensions
+script_dir = scripts
+tags = tls, ssl, experimental
+test_command = cd testing && btest -c btest.cfg
+version = main
+url = https://github.com/anthonykasza/ssl-extensions
 
 [apache/metron-bro-plugin-kafka]
 build_command = ./configure --bro-dist=%(bro_dist)s --with-librdkafka=%(LIBRDKAFKA_ROOT)s && make
@@ -236,11 +255,24 @@ tags = debugging, footprint, connection, memory
 url = https://github.com/awelzel/zeek-conn-footprint
 version = v0.2.1
 
+[awelzel/zeekctl-systemd]
+description = A Zeekctl plugin that hooks install and start to run Zeek using systemd
+plugin_dir = plugin
+tags = zeekctl, systemd, supervisor
+url = https://github.com/awelzel/zeekctl-systemd
+version = v0.1.0
+
 [awelzel/zeekjs-misp]
 depends = 
 	zeekjs >=0.9.0
 script_dir = ./scripts
 url = https://github.com/awelzel/zeekjs-misp
+version = main
+
+[awelzel/zeekjs-udp-logging]
+description = JavaScript based logging via UDP
+script_dir = ./scripts
+url = https://github.com/awelzel/zeekjs-udp-logging
 version = main
 
 [bricata/flow_labels]
@@ -263,7 +295,7 @@ script_dir = scripts/
 tags = bogon, conn
 test_command = (cd tests && btest -d)
 url = https://github.com/captainGeech42/zeek-bogon
-version = v1.0.0
+version = v1.0.1
 
 [captainGeech42/zeek-intel-path]
 author = Zander Work (@captainGeech42)
@@ -307,7 +339,7 @@ depends =
 description = BACnet plugin for parsing and logging of the BACnet (building automation and control) protocol - CISA ICSNPP
 script_dir = build/scripts/icsnpp/bacnet
 tags = bacnet, BACnet, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
-test_command = cd tests && btest -c btest.cfg
+test_command = cd testing && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-bacnet
 version = main
 
@@ -321,8 +353,20 @@ depends =
 description = BSAP over IP plugin for parsing and logging of the BSAP protocol - CISA ICSNPP
 script_dir = build/scripts/icsnpp/bsap
 tags = bsap, BSAP, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
-test_command = cd tests && btest -c btest.cfg
+test_command = cd testing && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-bsap
+version = main
+
+[cisagov/icsnpp-c1222]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=4.0.0
+description = ANSI C12.22/IEEE Std 1703 describe a protocol for transporting ANSI C12.19 table data over networks,
+	for the purpose of interoperability among communications modules and meters.
+script_dir = scripts
+summary = ANSI C12.22 is the American National Standard for Protocol Specification for Interfacing to Data Communication Networks.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/cisagov/icsnpp-c1222
 version = main
 
 [cisagov/icsnpp-dnp3]
@@ -333,7 +377,7 @@ depends =
 description = DNP3 script for detailed logging of the DNP3 protocol - CISA ICSNPP
 script_dir = scripts
 tags = dnp3, DNP3, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek scripting, log writer, protocol analyzer
-test_command = cd tests && btest -c btest.cfg
+test_command = cd testing && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-dnp3
 version = main
 
@@ -347,7 +391,7 @@ depends =
 description = Ethernet/IP and CIP plugin for parsing and logging of the Ethernet/IP and CIP protocols - CISA ICSNPP
 script_dir = build/scripts/icsnpp/enip
 tags = enip, ENIP, cip, CIP, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
-test_command = cd tests && btest -c btest.cfg
+test_command = cd testing && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-enip
 version = main
 
@@ -361,11 +405,11 @@ depends =
 description = Ethercat plugin for parsing and logging of the Ethercat protocol - CISA ICSNPP
 script_dir = build/scripts/icsnpp/ethercat
 tags = ecat, ECAT, ethercat, Ethercat, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, packet analyzer
-test_command = cd tests && btest -c btest.cfg
+test_command = cd testing && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-ethercat
 version = main
 
-[cisagov/icsnpp-ge-srtp.git]
+[cisagov/icsnpp-ge-srtp]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
 depends = 
 	zeek >=6.0.0
@@ -375,12 +419,12 @@ description = GE-SRTP is a proprietary protocol used for communication between a
 script_dir = scripts
 summary = GE_-SRTP is a proprietary protocol used for communication between a GE PLC and a GE HMI.
 test_command = cd testing && btest -c btest.cfg
-url = https://github.com/cisagov/icsnpp-ge-srtp.git
-version = develop
+url = https://github.com/cisagov/icsnpp-ge-srtp
+version = main
 
 [cisagov/icsnpp-genisys]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
-credits = Seth Grover <seth.grover@inl.gov>
+credits = Seth Grover <seth.grover@inl.gov>, Jason Rush <jason.rush@inl.gov
 description = Genisys is a protocol defined by Union Switch & Signal for communicating with
 	SCADA field devices, commonly used in the railway industry.
 	It is similar in purpose to Modbus. Genisys was designed for use over serial
@@ -389,11 +433,24 @@ description = Genisys is a protocol defined by Union Switch & Signal for communi
 	over the same connection.  The servers are identified by a one-octet server address.
 	"Genisys" is a trademark of Union Switch & Signal.
 plugin_dir = build/spicy-modules
-script_dir = analyzer
+script_dir = scripts
 summary = Genisys is a protocol defined by Union Switch & Signal for communicating with SCADA field devices, commonly used in the railway industry.
 tags = genisys, railway, SCADA, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
-test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+test_command = cd testing && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/cisagov/icsnpp-genisys
+version = main
+
+[cisagov/icsnpp-hart-ip]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=6.1.0
+description = HART-IP is the IP extension of the Highway Addressable Remote Transducer (HART) protocol.
+	The HART protocol is a hybrid analog+digital industrial automation open protocol.
+	It is currently maintained by the FieldComm Group (https://www.fieldcommgroup.org/).
+script_dir = scripts
+summary = HART-IP is the IP extension of the Highway Addressable Remote Transducer (HART) protocol.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/cisagov/icsnpp-hart-ip
 version = main
 
 [cisagov/icsnpp-modbus]
@@ -406,6 +463,18 @@ script_dir = scripts
 tags = modbus, Modbus, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek scripting, log writer, protocol analyzer
 test_command = cd tests && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-modbus
+version = v2.0.0
+
+[cisagov/icsnpp-omron-fins]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=6.1.0
+description = ICSNPP-Omron-FINS is a Spicy based Zeek plugin for
+	parsing and logging fields within the Omron FINS protocol.
+script_dir = scripts
+summary = ICSNPP-Omron-FINS (Factory Interface Network) over UDP
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/cisagov/icsnpp-omron-fins
 version = main
 
 [cisagov/icsnpp-opcua-binary]
@@ -420,7 +489,7 @@ script_dir = build/scripts/icsnpp/opcua-binary
 tags = opcua, opcua_binary, opc, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
 test_command = cd tests && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-opcua-binary
-version = main
+version = v2.0.0
 
 [cisagov/icsnpp-profinet-io-cm]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake -DCMAKE_BUILD_TYPE=Debug .. && cmake --build .
@@ -438,6 +507,20 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-profinet-io-cm
 version = main
 
+[cisagov/icsnpp-roc-plus]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+credits = Jason Rush <jason.rush@inl.gov>
+depends = 
+	zeek >=6.1.0
+description = ICSNPP-ROC-Plus is a Spicy based Zeek plugin for
+	parsing and logging fields within the ROC Plus protocol.
+script_dir = scripts
+summary = ICSNPP-ROC-Plus over UDP
+tags = ROC-PLUS, ROCPLUS, ROC, ROC+, roc-plus, rocplus, roc, roc+, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/cisagov/icsnpp-roc-plus
+version = main
+
 [cisagov/icsnpp-s7comm]
 build_command = ./configure && make
 build_dir = build/ICSNPP_S7comm.tgz
@@ -448,7 +531,7 @@ depends =
 description = S7Comm & S7Comm Plus plugin for parsing and logging of the S7Comm, S7Comm Plus and COTP protocols - CISA ICSNPP
 script_dir = build/scripts/icsnpp/s7comm
 tags = s7comm, s7comm-plus, s7plus, S7comm, S7Comm, S7CommPlus, Siemens, siemens, s7, S7, cotp, COTP, iso_cotp, ISO_COTP, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
-test_command = cd tests && btest -c btest.cfg
+test_command = cd testing && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-s7comm
 version = main
 
@@ -464,7 +547,7 @@ plugin_dir = build/spicy-modules
 script_dir = analyzer
 summary = Synchrophasor Data Transfer for Power Systems is a communication protocol for real-time communication between phasor measurement units (PMU), phasor data concentrators (PDC), and other applications
 tags = synchrophasor, power, SCADA, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
-test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+test_command = cd testing && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/cisagov/icsnpp-synchrophasor
 version = main
 
@@ -565,7 +648,7 @@ description = A package to detect CVE-2022-21907
 script_dir = scripts
 summary = A package to detect CVE-2022-21907
 url = https://github.com/corelight/cve-2022-21907
-version = v0.1.2
+version = v0.1.3
 
 [corelight/cve-2022-22954]
 depends = 
@@ -576,7 +659,7 @@ script_dir = scripts
 summary = Detect CVE-2022-22954 attempts and exploits.
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/cve-2022-22954
-version = v0.1.0
+version = v0.2.0
 
 [corelight/CVE-2022-23270-PPTP]
 depends = 
@@ -625,7 +708,7 @@ depends =
 description = A Zeek package to detect CVE-2022-26937, a Windows NFS vulnerabilty.
 script_dir = scripts
 summary = A Zeek package to detect CVE-2022-26937, a Windows NFS vulnerabilty.
-test_command = cd testing && btest -c btest.cfg
+test_command = make test
 url = https://github.com/corelight/CVE-2022-26937
 version = master
 
@@ -679,10 +762,10 @@ url = https://github.com/corelight/http-stalling-detector
 version = master
 
 [corelight/icannTLD]
-description = v27.10.0 - A Zeek script using Input Framework to get icann_tld, icann_domain, icann_host_subdomain, and is_trusted_domain from a DNS query.  The field icann_host_subdomain contains the remaining query nodes after the domain is removed.  The is_trusted_domain is populated from a separate Input Framework set.
+description = v28.0.0 - A Zeek script using Input Framework to get icann_tld, icann_domain, icann_host_subdomain, and is_trusted_domain from a DNS query.  The field icann_host_subdomain contains the remaining query nodes after the domain is removed.  The is_trusted_domain is populated from a separate Input Framework set.
 script_dir = scripts
 tags = domain, dns, tld, input
-version = v27.10.0
+version = v28.0.0
 url = https://github.com/corelight/icannTLD
 
 [corelight/json-streaming-logs]
@@ -691,10 +774,10 @@ script_dir = scripts
 tags = logs, json, streaming, stream, filebeat, splunk_forwarder, logstash
 test_command = cd testing && btest -d -c btest.cfg
 url = https://github.com/corelight/json-streaming-logs
-version = v3.1.0
+version = v3.2.0
 
 [corelight/log-add-http-post-bodies]
-description = Add a POST body excerpt into the HTTP log
+description = Add a POST body excerpt into the HTTP log.
 script_dir = scripts
 tags = http log extend
 version = master
@@ -718,7 +801,7 @@ version = v0.0.3
 description = A Zeek package which detects ICMP ping tunnels created by the Pingback tool
 script_dir = scripts
 tags = C2, ICMP, RAT, Windows, Malware
-version = v0.1.2
+version = v0.1.3
 url = https://github.com/corelight/pingback
 
 [corelight/top-dns]
@@ -748,7 +831,7 @@ script_dir = scripts
 summary = An AsyncRAT malware detector.
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/zeek-asyncrat-detector
-version = v0.1.2
+version = v0.1.3
 
 [corelight/zeek-community-id]
 build_command = ./configure && cd build && make
@@ -789,7 +872,7 @@ script_dir = scripts
 summary = A Zeek based Gozi malware detector.
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/zeek-gozi-detector
-version = v0.1.10
+version = v0.1.11
 
 [corelight/zeek-jpeg]
 build_command = ./configure --enable-debug && make
@@ -800,6 +883,14 @@ test_command = cd tests && btest
 url = https://github.com/corelight/zeek-jpeg
 version = v0.1.3
 
+[corelight/zeek-log-writer-nats]
+build_command = ./configure && cmake --build build
+description = NATS.io log writer support
+summary = NATS.io log writer support
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/zeek-log-writer-nats
+version = v0.2.0
+
 [corelight/zeek-long-connections]
 aliases = zeek-long-connections bro-long-connections
 depends = zkg >=2.0.7
@@ -807,7 +898,7 @@ description = Find and log long-lived connections into a "conn_long" log.
 script_dir = scripts
 tags = conn
 test_command = cd testing && btest -c btest.cfg
-version = v1.3.1
+version = v1.3.2
 url = https://github.com/corelight/zeek-long-connections
 
 [corelight/zeek-macho]
@@ -819,13 +910,17 @@ test_command = cd tests && btest
 url = https://github.com/corelight/zeek-macho
 version = v0.1.1
 
-[corelight/zeek-nats-log-writer]
+[corelight/zeek-mercury-npf]
 build_command = ./configure && cmake --build build
-description = NATS.io log writer support
-summary = NATS.io log writer support
+depends = 
+	zeek >=4.0.0
+description = TODO: A more detailed description of Mercury.
+	It can span multiple lines, with this indentation.
+script_dir = mercury
+summary = TODO: A summary of Mercury in one line
 test_command = cd testing && btest -c btest.cfg
-url = https://github.com/corelight/zeek-nats-log-writer
-version = v0.1.0
+url = https://github.com/corelight/zeek-mercury-npf
+version = main
 
 [corelight/zeek-netsupport-detector]
 depends = 
@@ -835,7 +930,7 @@ script_dir = scripts
 summary = A Zeek base NetSupport detector. NetSupport is often abused by attackers in malware.
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/zeek-netsupport-detector
-version = v0.1.0
+version = v0.1.2
 
 [corelight/zeek-notice-telegram]
 description = Package that extends the Notice Framework to include
@@ -844,6 +939,16 @@ script_dir = scripts
 summary = Send Notices over Telegram
 url = https://github.com/corelight/zeek-notice-telegram
 version = master
+
+[corelight/zeek-quasarrat-detector]
+depends = 
+	zeek >=4.0.0
+description = An QuasarRAT malware detector.
+script_dir = scripts
+summary = An QuasarRAT malware detector.
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/zeek-quasarrat-detector
+version = v0.1.3
 
 [corelight/zeek-quic]
 aliases = zeek-quic bro-quic
@@ -876,7 +981,7 @@ script_dir = analyzer
 summary = An IPSec Zeek protocol analyzer based on Spicy.
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/corelight/zeek-spicy-ipsec
-version = v0.2.22
+version = v0.2.24
 
 [corelight/zeek-spicy-openvpn]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
@@ -886,7 +991,7 @@ script_dir = analyzer
 summary = A Zeek OpenVPN protocol analyzer, based on Spicy.
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/corelight/zeek-spicy-openvpn
-version = v0.1.7
+version = v0.1.11
 
 [corelight/zeek-spicy-ospf]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
@@ -896,7 +1001,7 @@ script_dir = analyzer
 summary = A Zeek OSPF packet analyzer, based on Spicy.
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/corelight/zeek-spicy-ospf
-version = v0.1.5
+version = v0.1.6
 
 [corelight/zeek-spicy-stun]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
@@ -906,17 +1011,16 @@ script_dir = analyzer
 summary = A Zeek STUN protocol analyzer based on Spicy.
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/corelight/zeek-spicy-stun
-version = v0.2.11
+version = v0.2.13
 
 [corelight/zeek-spicy-wireguard]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
 description = A Wireguard VPN protocol analyzer, based on Spicy.
 plugin_dir = build/spicy-modules
 script_dir = analyzer
-summary = A Wireguard VPN protocol analyzer, based on Spicy.
-test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+test_command = cd testing && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/corelight/zeek-spicy-wireguard
-version = v0.1.4
+version = v0.1.8
 
 [corelight/zeek-strrat-detector]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
@@ -927,7 +1031,7 @@ script_dir = scripts
 summary = A Zeek based STRRAT malware detector.
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/zeek-strrat-detector
-version = v0.1.0
+version = v0.1.2
 
 [corelight/zeek-xor-exe-plugin]
 build_command = ./configure && make
@@ -954,7 +1058,7 @@ test_command = cd tests && btest -d -c btest.cfg -g smoke
 user_vars = 
 	nodejs_root_dir [] "Root directory of Node.js installation (leave blank for defaults)"
 url = https://github.com/corelight/zeekjs
-version = v0.12.0
+version = v0.22.1
 
 [corelight/zeekjs-notice-telegram]
 depends = zeekjs *
@@ -1224,7 +1328,7 @@ plugin_dir = ./build/ESnet_Zeek_Exporter.tgz
 tags = zeek plugin, performance, perf, stats, prometheus
 test_command = cd tests && btest -d
 url = https://github.com/esnet/zeek-exporter
-version = v0.6.0
+version = v0.8.0
 
 [esnet/zeek_perfsonar_owamp]
 build_command = ( ./configure --zeek-dist=%(zeek_dist)s && make )
@@ -1233,6 +1337,37 @@ tags = plugin, analyzer, owamp, perfsonar
 test_command = cd tests && btest
 url = https://github.com/esnet/zeek_perfsonar_owamp
 version = master
+
+[evantypanski/spicy-nats]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=4.0.0
+description = A NATS protocol parser!
+script_dir = scripts
+summary = A NATS protocol parser
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/evantypanski/spicy-nats
+version = main
+
+[evantypanski/spicy-redis]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=4.0.0
+description = Spicy-based analyzer for Redis
+script_dir = scripts
+summary = Spicy-based analyzer for Redis
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/evantypanski/spicy-redis
+version = main
+
+[evantypanski/xdp-zeek]
+build_command = ./configure && make
+description = XDP traffic shunter
+plugin_dir = build/XDP_Shunter.tgz
+script_dir = scripts
+test_command = cd tests && btest -c btest.cfg
+url = https://github.com/evantypanski/xdp-zeek
+version = main
 
 [fatemabw/bro-inventory-scripts]
 description = Find different type of OSes and AV software in your network traffic.
@@ -1251,7 +1386,7 @@ url = https://github.com/fatemabw/kyd
 
 [fdekeers/igmp]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
-credits = François De Keersmaeker <francois.dekeersmaeker@uclouvain.be>
+credits = François De Keersmaeker <francois.dekeersmaeker+github@proton.me>
 depends = 
 	zeek >=4.0.0
 description = A Spicy-based packet analyzer for the IGMP protocol.
@@ -1277,8 +1412,8 @@ credits = John Althouse
 depends = zeek >=5.0.0
 description = Official Zeek package for JA4+ network fingerprinting.
 script_dir = zeek
-tags = ja4, fingerprint, fingerprinting, ja4s, ja4h, ja4x, ja4ssh, ja4l, ja4t, ja4+, ja4plus, ja3
-version = v0.18.3
+tags = ja4, fingerprint, fingerprinting, ja4s, ja4h, ja4x, ja4ssh, ja4l, ja4t, ja4+, ja4plus, ja3, ja4d, ja4d6
+version = v0.18.8
 url = https://github.com/FoxIO-LLC/ja4
 
 [hhzzk/dns-tunnels]
@@ -1346,6 +1481,14 @@ script_dir = scripts
 tags = logging, log framework
 version = main
 url = https://github.com/hosom/log-filters
+
+[initconf/2024-09-cups-linux-rce]
+description = 
+script_dir = scripts
+tags = 
+test_command = ( cd tests && btest -d )
+version = main
+url = https://github.com/initconf/2024-09-cups-linux-rce
 
 [initconf/Apple-RDP-net-assistant-DoS.git]
 description = udp-3283-DoS
@@ -1445,7 +1588,7 @@ url = https://github.com/initconf/RDP-bruteforce
 description = scan detection in 2.x world. Forward porting of bro-1.5.3 scan.bro accompanied with new heuristics and quicker detections
 script_dir = scripts
 tags = scan detection
-version = master
+version = v3.0
 url = https://github.com/initconf/scan-NG
 
 [initconf/sip-attacks.git]
@@ -1689,7 +1832,7 @@ script_dir = scripts
 summary = A Zeek based Amadey malware detector.
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/keithjjones/zeek-amadey-detector
-version = v0.1.13
+version = v0.1.14
 
 [keithjjones/zeek-njrat-detector]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
@@ -1810,7 +1953,7 @@ script_dir = scripts
 tags = bro plugin, site, darknet
 test_command = (cd testing && btest -d)
 url = https://github.com/ncsa/bro-is-darknet
-version = 2.1
+version = 2.2
 
 [ncsa/bro-simple-scan]
 depends = 
@@ -1821,7 +1964,7 @@ script_dir = scripts
 tags = bro plugin, scan detection
 test_command = (cd testing && btest -d)
 url = https://github.com/ncsa/bro-simple-scan
-version = 4.0
+version = 4.1
 
 [ncsa/bro-zeromq-writer]
 build_command = ./configure --with-zmq=%(ZEROMQ_PREFIX)s && make
@@ -1958,6 +2101,18 @@ script_dir = scripts
 summary = TODO: A summary of zeek-parser-DHCPV6 in one line
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/nttcom/zeek-parser-DHCPv6-COM
+version = main
+
+[nttcom/zeek-parser-OmronFINS]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=4.0.0
+description = TODO: A more detailed description of zeek-parser-OmronFINS.
+	It can span multiple lines, with this indentation.
+script_dir = scripts
+summary = TODO: A summary of zeek-parser-OmronFINS in one line
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/nttcom/zeek-parser-OmronFINS
 version = main
 
 [nttcom/zeek-parser-SSDP-COM]
@@ -2274,6 +2429,16 @@ tags = statistics, stats, sumstats, standard_deviation, variance
 url = https://github.com/thibaultbl/variation_coefficient
 version = main
 
+[torqvana/zeek-pqc]
+alias = zeek-pqc pqc
+credits = Torqvana
+depends = zeek >=8.0.3
+description = Detection of Post-Quantum Cryptography (PQC) in SSL and SSH.
+script_dir = scripts
+tags = pqc discovery, pqc transition, key exchange, ssh, ssl
+url = https://github.com/torqvana/zeek-pqc
+version = main
+
 [ukncsc/zeek-plugin-ikev2]
 build_command = ( ./configure --bro-dist=%(bro_dist)s  && make )
 depends = 
@@ -2324,6 +2489,21 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/zeek/hello-world
 version = v1.0.0
 
+[zeek/logschema]
+depends = 
+	zeek >=5.2.0
+description = This package generates schemas for Zeek's logs.
+	For every log your Zeek installation produces, the schema describes each log
+	field including name, type, docstring, and more. The package supports JSON Schema,
+	CSV, a Zeek log to capture schema information, and a custom JSON representation.
+	It understands Zeek's log customization in detail. The schema export code is
+	extensible, allowing you to produce your own schemas.
+script_dir = scripts
+summary = Log data schema generation
+test_command = cd testing && ./btest.sh
+url = https://github.com/zeek/logschema
+version = v2.0.1
+
 [zeek/osquery-framework]
 depends = 
 	zeek >=3.0.0-rc1
@@ -2354,7 +2534,7 @@ script_dir = analyzer
 summary = Spicy-based analyzer for the DHCP protocol
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/zeek/spicy-dhcp
-version = v0.0.11
+version = v0.0.12
 
 [zeek/spicy-dns]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
@@ -2364,7 +2544,7 @@ script_dir = analyzer
 summary = Spicy-based analyzer for the DNS protocol
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/zeek/spicy-dns
-version = v0.0.9
+version = v0.0.12
 
 [zeek/spicy-http]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
@@ -2374,7 +2554,7 @@ script_dir = analyzer
 summary = Spicy-based analyzer for the HTTP protocol
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/zeek/spicy-http
-version = v0.0.9
+version = v0.0.12
 
 [zeek/spicy-ldap]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
@@ -2394,7 +2574,7 @@ script_dir = analyzer
 summary = Spicy-based analyzer for the Portable Executable (PE) image format
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/zeek/spicy-pe
-version = v0.0.12
+version = v0.0.15
 
 [zeek/spicy-plugin]
 build_command = unset -v CXX CXXFLAGS LD LDFLAGS && mkdir -p build && cd build && cmake .. && make -j "${SPICY_ZKG_PROCESSES:-4}"
@@ -2414,7 +2594,7 @@ script_dir = analyzer
 summary = Spicy-based analyzer for the PNG file format
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/zeek/spicy-png
-version = v0.0.6
+version = v0.0.8
 
 [zeek/spicy-tftp]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
@@ -2425,7 +2605,7 @@ script_dir = scripts
 summary = Spicy-based analyzer for the TFTP protocol
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/zeek/spicy-tftp
-version = v0.0.5
+version = v0.0.6
 
 [zeek/spicy-zip]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
@@ -2435,7 +2615,7 @@ script_dir = analyzer
 summary = Spicy-based analyzer for the ZIP file format
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/zeek/spicy-zip
-version = v0.0.6
+version = v0.0.9
 
 [zeek/zeek-af_packet-plugin]
 build_command = ./configure && make
@@ -2450,6 +2630,14 @@ test_command = cd tests && btest -d
 url = https://github.com/zeek/zeek-af_packet-plugin
 version = 4.0.0
 
+[zeek/zeek-cluster-backend-nats]
+build_command = ./configure && cmake --build build
+description = 
+summary = NATS.io based cluster backend
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/zeek/zeek-cluster-backend-nats
+version = v0.0.3
+
 [zeek/zeek-more-hashes]
 build_command = ./configure && cd build && make
 description = Additional hashing functions for Zeek, started with MurmurHash3.
@@ -2459,7 +2647,7 @@ script_dir = ./scripts/Zeek/MoreHashes
 tags = mmh3
 test_command = cd tests && btest -d -c btest.cfg
 url = https://github.com/zeek/zeek-more-hashes
-version = v0.2.0
+version = v0.3.0
 
 [zeek/zeek-netmap]
 build_command = ./configure --with-netmap=%(netmap_root_dir)s && cd build && make
@@ -2474,11 +2662,21 @@ user_vars =
 url = https://github.com/zeek/zeek-netmap
 version = v2.0.1
 
+[zeek/zeek-packet-source-udp]
+build_command = mkdir build && cd build && cmake ../ && make
+description = An opinionated Zeek packet source for the cloud.
+name = zeek-packet-source-udp
+plugin_dir = build
+tags = udp zeek vxlan geneve io_uring recvmmsg
+test_command = true
+url = https://github.com/zeek/zeek-packet-source-udp
+version = main
+
 [zeek/zeek-perf-support]
 build_command = ./configure && cmake --build build
 description = 
 summary = perf support
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/zeek/zeek-perf-support
-version = v0.2.0
+version = v0.9.1
 

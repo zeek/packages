@@ -1,0 +1,25 @@
+name: Test aggregation for PRs
+
+on:
+  pull_request
+
+jobs:
+  aggregate-metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Switch to valid git branch
+        run: |
+          # This forces git to recognize that we're on a branch when it tries to pull the
+          # local directory as the source.
+          git switch -c gh-action-${GITHUB_RUN_ID}
+      - name: Install zkg
+        run: |
+          pip3 install zkg
+      - name: zkg refresh
+        env:
+          # Override the default source used by 'zkg refresh' to point at the
+          # checkout for the PR.
+          ZKG_DEFAULT_SOURCE: "."
+        run: |
+          zkg -vvv refresh --aggregate --fail-on-aggregate-problems
