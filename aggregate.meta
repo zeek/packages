@@ -889,7 +889,7 @@ description = NATS.io log writer support
 summary = NATS.io log writer support
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/zeek-log-writer-nats
-version = v0.2.0
+version = v0.3.0
 
 [corelight/zeek-long-connections]
 aliases = zeek-long-connections bro-long-connections
