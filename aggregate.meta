@@ -255,6 +255,15 @@ tags = debugging, footprint, connection, memory
 url = https://github.com/awelzel/zeek-conn-footprint
 version = v0.2.1
 
+[awelzel/zeek-suspicious-arpa-query]
+depends = 
+	zeek >=8.0
+script_dir = scripts
+summary = Create a DNS::Supicious_Arpa_Query notice.log for non-PTR lookups of ip6.arpa and in-addr.arpa queries.
+test_command = cd testing && btest -d -c btest.cfg
+url = https://github.com/awelzel/zeek-suspicious-arpa-query
+version = v0.2.0
+
 [awelzel/zeekctl-systemd]
 description = A Zeekctl plugin that hooks install and start to run Zeek using systemd
 plugin_dir = plugin
