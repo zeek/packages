@@ -1872,6 +1872,17 @@ tags = smb, logging
 url = https://github.com/klehigh/find_smbv1
 version = 1.0.2
 
+[matchylabs/zeek-matchy-plugin]
+build_command = mkdir -p build && cd build && cmake .. && cmake --build . -- -j $(nproc 2>/dev/null || sysctl -n hw.ncpu 2>/dev/null || echo 4)
+description = High-performance threat intelligence matching for Zeek using Matchy databases. Drop-in alternative to the Intel Framework with shared-memory databases and automatic hot-reload.
+external_depends = cargo, cmake
+plugin_dir = build
+script_dir = scripts
+tags = intel, threat intelligence, matching, performance, matchy
+test_command = cd testing && btest
+url = https://github.com/matchylabs/zeek-matchy-plugin
+version = v0.3.0
+
 [mbispham/zeekjs-redis]
 build_command = ./configure && cd build && make
 depends = 
