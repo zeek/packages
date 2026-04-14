@@ -2541,6 +2541,17 @@ tags = osquery
 version = v0.4
 url = https://github.com/zeek/osquery-framework
 
+[zeek/redis-rce]
+depends = 
+	zeek >=8.0.0
+description = This detects a particular RCE exploit with Redis replication logic in
+	redis 4.0 and 5.0.
+script_dir = scripts
+summary = Detect Redis RCE
+test_command = cd tests && btest -c btest.cfg
+url = https://github.com/zeek/redis-rce
+version = main
+
 [zeek/spicy-analyzers]
 depends = http://github.com/zeek/spicy-dhcp >=0.0.1
 	http://github.com/zeek/spicy-dns >=0.0.2
