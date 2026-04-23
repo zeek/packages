@@ -2709,7 +2709,7 @@ plugin_dir = build
 tags = udp zeek vxlan geneve io_uring recvmmsg
 test_command = true
 url = https://github.com/zeek/zeek-packet-source-udp
-version = main
+version = v0.1.0
 
 [zeek/zeek-perf-support]
 build_command = ./configure && cmake --build build
