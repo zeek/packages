@@ -2527,10 +2527,9 @@ description = This package generates schemas for Zeek's logs.
 	It understands Zeek's log customization in detail. The schema export code is
 	extensible, allowing you to produce your own schemas.
 script_dir = scripts
-summary = Log data schema generation
 test_command = cd testing && ./btest.sh
 url = https://github.com/zeek/logschema
-version = v2.0.1
+version = v2.1.0
 
 [zeek/osquery-framework]
 depends = 
