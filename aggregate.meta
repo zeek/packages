@@ -998,9 +998,9 @@ description = A Zeek OpenVPN protocol analyzer, based on Spicy.
 plugin_dir = build/spicy-modules
 script_dir = analyzer
 summary = A Zeek OpenVPN protocol analyzer, based on Spicy.
-test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
+test_command = cd testing && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/corelight/zeek-spicy-openvpn
-version = v0.1.11
+version = v0.2.0
 
 [corelight/zeek-spicy-ospf]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
