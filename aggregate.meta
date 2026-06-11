@@ -1110,6 +1110,18 @@ tags = password, logging
 version = master
 url = https://github.com/cybera/zeek-sniffpass
 
+[detection-labs/spicy-whois]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
+depends = 
+	zeek >=6.1.0
+description = Spicy-based analyzer for the WHOIS (RFC 3912) protocol.
+script_dir = scripts
+summary = Spicy-based analyzer for the WHOIS protocol
+tags = whois, rfc 3912, spicy, protocol analyzer
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/detection-labs/spicy-whois
+version = main
+
 [dopheide/bro-quic]
 build_command = ( ./configure --bro-dist=%(bro_dist)s && make )
 description = Attempt to identify QUIC protocol
@@ -2328,14 +2340,6 @@ script_dir = scripts
 tags = log, logging, intel, intelligenece, threat intelligence, ti, CIF
 url = https://github.com/sfinlon/cif-zeek
 version = 1.0.1
-
-[shodan/shodan-zeek]
-build_command = ./configure && make
-description = Get IP address information from the Shodan InternetDB.
-script_dir = scripts
-tags = zeek plugin, zeek scripting
-url = https://gitlab.com/shodan-public/shodan-zeek/
-version = master
 
 [sithari/icmp-exfil-detection]
 credits = Rakesh Passa <rakesh4500@gmail.com>
