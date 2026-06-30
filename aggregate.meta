@@ -102,7 +102,7 @@ version = v0.1.0
 
 [Flowtriq/zeek-flowtriq]
 depends = 
-	zeek >=5.0.0
+	zeek >=5.2.0
 description = DDoS detection scripts for Zeek with Flowtriq webhook alerting.
 	Detects volumetric attacks including SYN floods, UDP floods, and ICMP floods,
 	and sends structured alerts to the Flowtriq platform for centralized
@@ -111,7 +111,7 @@ script_dir = scripts
 tags = ddos, flood detection, syn flood, udp flood, icmp flood, volumetric attack,
 	flowtriq, webhook, alerting, network security, traffic analytics
 url = https://github.com/Flowtriq/zeek-flowtriq
-version = master
+version = main
 
 [activecm/bro-mongodb.git]
 build_command = (./configure --bro-dist=%(bro_dist)s && make)
