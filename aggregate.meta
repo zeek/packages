@@ -1394,15 +1394,6 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/evantypanski/spicy-redis
 version = main
 
-[evantypanski/xdp-zeek]
-build_command = ./configure && make
-description = XDP traffic shunter
-plugin_dir = build/XDP_Shunter.tgz
-script_dir = scripts
-test_command = cd tests && btest -c btest.cfg
-url = https://github.com/evantypanski/xdp-zeek
-version = main
-
 [fatemabw/bro-inventory-scripts]
 description = Find different type of OSes and AV software in your network traffic.
 script_dir = scripts
@@ -2742,4 +2733,13 @@ summary = perf support
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/zeek/zeek-perf-support
 version = v0.10.0
+
+[zeek/zeek-xdp]
+build_command = ./configure && make
+description = XDP traffic shunter
+plugin_dir = build/XDP_Shunter.tgz
+script_dir = scripts
+test_command = cd tests && btest -c btest.cfg
+url = https://github.com/zeek/zeek-xdp
+version = main
 
