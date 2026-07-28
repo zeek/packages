@@ -936,10 +936,9 @@ version = v0.1.1
 build_command = ./configure && cmake --build build
 depends = 
 	zeek >=4.0.0
-description = TODO: A more detailed description of Mercury.
-	It can span multiple lines, with this indentation.
+description = This Zeek plugin implements the Network Fingerprinting (NPF) format as specified in the Mercury project.
 script_dir = mercury
-summary = TODO: A summary of Mercury in one line
+summary = Mercury fingerprints for Zeek
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/zeek-mercury-npf
 version = main
