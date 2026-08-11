@@ -297,12 +297,6 @@ script_dir = ./scripts
 url = https://github.com/awelzel/zeekjs-udp-logging
 version = main
 
-[bricata/flow_labels]
-description = Provides mechanisms for managing and using institutional knowledge about a monitored environment to make informed observations of normal and abnormal network activity.
-tags = input, labels
-url = https://github.com/bricata/flow_labels
-version = master
-
 [brimsec/geoip-conn]
 description = Adds additional fields to the conn.log for the data obtained via Zeek's GeoLocation feature (https://docs.zeek.org/en/current/frameworks/geoip.html).
 script_dir = zeek
@@ -377,18 +371,6 @@ script_dir = build/scripts/icsnpp/bsap
 tags = bsap, BSAP, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-bsap
-version = main
-
-[cisagov/icsnpp-c1222]
-build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
-depends = 
-	zeek >=4.0.0
-description = ANSI C12.22/IEEE Std 1703 describe a protocol for transporting ANSI C12.19 table data over networks,
-	for the purpose of interoperability among communications modules and meters.
-script_dir = scripts
-summary = ANSI C12.22 is the American National Standard for Protocol Specification for Interfacing to Data Communication Networks.
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/cisagov/icsnpp-c1222
 version = main
 
 [cisagov/icsnpp-dnp3]
@@ -487,18 +469,6 @@ test_command = cd tests && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-modbus
 version = v2.0.0
 
-[cisagov/icsnpp-omron-fins]
-build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
-depends = 
-	zeek >=6.1.0
-description = ICSNPP-Omron-FINS is a Spicy based Zeek plugin for
-	parsing and logging fields within the Omron FINS protocol.
-script_dir = scripts
-summary = ICSNPP-Omron-FINS (Factory Interface Network) over UDP
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/cisagov/icsnpp-omron-fins
-version = main
-
 [cisagov/icsnpp-opcua-binary]
 build_command = ./configure && make
 build_dir = build/ICSNPP_OPCUA_Binary.tgz
@@ -593,13 +563,6 @@ test_command = ( cd tests && btest -d )
 url = https://github.com/corelight/bro-drwatson
 version = master
 
-[corelight/bro-hardware]
-description = Scripts for cases where hardware device identifiers are discovered.
-script_dir = scripts
-tags = hardware
-version = master
-url = https://github.com/corelight/bro-hardware
-
 [corelight/bro-shellshock]
 description = Discover successful ShellShock attacks.
 script_dir = scripts
@@ -662,15 +625,6 @@ summary = A Zeek package which raises notices for RCE in Log4J (CVE-2021-44228).
 tags = HTTP, Apache, CVE, CVE-2021-44228, encoding, rapidresponse, Java, logging
 version = v0.7.0
 url = https://github.com/corelight/cve-2021-44228
-
-[corelight/cve-2022-21907]
-depends = 
-	zeek >=3.0.0
-description = A package to detect CVE-2022-21907
-script_dir = scripts
-summary = A package to detect CVE-2022-21907
-url = https://github.com/corelight/cve-2022-21907
-version = v0.1.3
 
 [corelight/cve-2022-22954]
 depends = 
@@ -755,16 +709,6 @@ tags = intel
 version = v4.1
 url = https://github.com/corelight/ExtendIntel
 
-[corelight/got_zoom]
-depends = 
-	bro >=2.5.5
-	ja3 *
-description = Detect Zoom traffic
-script_dir = scripts
-tags = TLS, SSL, JA3, Video conferencing, Video, Videoconferencing, Remote working, Zoom
-version = master
-url = https://github.com/corelight/got_zoom
-
 [corelight/hassh]
 depends = 
 	zeek >=4.0.0
@@ -845,16 +789,6 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/corelight/zeek-agenttesla-detector
 version = v0.1.1
 
-[corelight/zeek-asyncrat-detector]
-depends = 
-	zeek >=4.0.0
-description = An AsyncRAT malware detector.
-script_dir = scripts
-summary = An AsyncRAT malware detector.
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/corelight/zeek-asyncrat-detector
-version = v0.1.3
-
 [corelight/zeek-community-id]
 build_command = ./configure && cd build && make
 depends = 
@@ -931,17 +865,6 @@ tags = intel, files, mach-o, macho
 test_command = cd tests && btest
 url = https://github.com/corelight/zeek-macho
 version = v0.1.1
-
-[corelight/zeek-mercury-npf]
-build_command = ./configure && cmake --build build
-depends = 
-	zeek >=4.0.0
-description = This Zeek plugin implements the Network Fingerprinting (NPF) format as specified in the Mercury project.
-script_dir = mercury
-summary = Mercury fingerprints for Zeek
-test_command = cd testing && btest -c btest.cfg
-url = https://github.com/corelight/zeek-mercury-npf
-version = main
 
 [corelight/zeek-netsupport-detector]
 depends = 
@@ -1023,16 +946,6 @@ summary = A Zeek OSPF packet analyzer, based on Spicy.
 test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
 url = https://github.com/corelight/zeek-spicy-ospf
 version = v0.1.6
-
-[corelight/zeek-spicy-stun]
-build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
-description = A Zeek STUN protocol analyzer based on Spicy.
-plugin_dir = build/spicy-modules
-script_dir = analyzer
-summary = A Zeek STUN protocol analyzer based on Spicy.
-test_command = cd tests && PATH=$(zkg config plugin_dir)/packages/spicy-plugin/bin:$PATH btest -d -j $(nproc)
-url = https://github.com/corelight/zeek-spicy-stun
-version = v0.2.13
 
 [corelight/zeek-spicy-wireguard]
 build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build .
