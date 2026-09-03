@@ -2556,7 +2556,7 @@ description = This package generates schemas for Zeek's logs.
 script_dir = scripts
 test_command = cd testing && ./btest.sh
 url = https://github.com/zeek/logschema
-version = v2.1.0
+version = v2.2.0
 
 [zeek/osquery-framework]
 depends = 
