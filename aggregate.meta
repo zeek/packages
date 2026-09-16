@@ -2442,6 +2442,13 @@ tags = zeek plugin, Gateway IP, features extraction, notice
 version = 1.0.0
 url = https://github.com/stratosphereips/zeek-package-log-gateway-IP
 
+[sujalavnelavai/zeek-pqc-migration-observatory.git]
+description = Passive TLS cryptographic-migration observability for Zeek, including cryptographic capability, negotiated key exchange, classification, migration state, and fallback telemetry.
+script_dir = scripts
+tags = zeek scripting, tls, ssl, cryptography, pqc, post-quantum, hybrid, migration, logging
+url = https://github.com/sujalavnelavai/zeek-pqc-migration-observatory.git
+version = main
+
 [tenzir/zeek-mac-ages]
 script_dir = scripts/tenzir/mac-ages
 tags = conn, mac
