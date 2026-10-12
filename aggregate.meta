@@ -113,6 +113,20 @@ tags = ddos, flood detection, syn flood, udp flood, icmp flood, volumetric attac
 url = https://github.com/Flowtriq/zeek-flowtriq
 version = main
 
+[NicolasSb/zeek-hostprofile]
+depends = zeek >=8.0.0
+description = Writes hostprofile_features.log: every 5 minutes, one row of
+	17 features per active local host, from its connections, DNS queries
+	and TLS server names (volume, diversity, novelty, failures, rhythm and
+	beaconing), ready for anomaly detection or ML. Works standalone and on
+	Broker or ZeroMQ clusters.
+script_dir = scripts
+summary = Per-host behavioral feature vectors over tumbling time windows.
+tags = anomaly detection, machine learning, feature extraction, host profiling, beaconing, intrusion detection, conn, dns, tls
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/NicolasSb/zeek-hostprofile
+version = v0.1.1
+
 [activecm/bro-mongodb.git]
 build_command = (./configure --bro-dist=%(bro_dist)s && make)
 description = Bro IDS/ MongoDB connector.
