@@ -125,7 +125,7 @@ summary = Per-host behavioral feature vectors over tumbling time windows.
 tags = anomaly detection, machine learning, feature extraction, host profiling, beaconing, intrusion detection, conn, dns, tls
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/NicolasSb/zeek-hostprofile
-version = v0.1.1
+version = v0.1.2
 
 [activecm/bro-mongodb.git]
 build_command = (./configure --bro-dist=%(bro_dist)s && make)
