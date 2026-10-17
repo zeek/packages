@@ -508,7 +508,7 @@ depends =
 description = ICSNPP-Omron-FINS is a Spicy based Zeek plugin for
 	parsing and logging fields within the Omron FINS protocol.
 script_dir = scripts
-summary = ICSNPP-Omron-FINS (Factory Interface Network) over UDP
+summary = ICSNPP-Omron-FINS (Factory Interface Network) over TCP and UDP
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/cisagov/icsnpp-omron-fins
 version = main
