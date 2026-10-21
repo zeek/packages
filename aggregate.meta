@@ -833,6 +833,15 @@ tags = stats
 url = https://github.com/corelight/my_stats
 version = v0.0.3
 
+[corelight/php2shell-detect]
+depends = zeek >=7.0.0
+description = A Zeek package for detecting suspicious PHP HTTP request patterns related to CVE-2026-109618 / CVE-2026-109619 - Potential RCE in PHP longjmp() memory handling.
+script_dir = scripts
+tags = HTTP, PHP, CVE
+test_command = make test
+version = v1.0.0
+url = https://github.com/corelight/php2shell-detect
+
 [corelight/pingback]
 description = A Zeek package which detects ICMP ping tunnels created by the Pingback tool
 script_dir = scripts
