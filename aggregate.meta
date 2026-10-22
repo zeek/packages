@@ -773,6 +773,20 @@ script_dir = scripts
 url = https://github.com/corelight/detect-ransomware-filenames
 version = master
 
+[corelight/emudhra-weak-keys]
+depends = 
+	zeek >=8.0.0
+description = Raises a notice when encountering one of
+	the eMudhra intermediate CA certificates whose private keys were found to be
+	compromised due to flawed key generation (Mozilla Bugzilla 2083449),
+	e.g. as part of an SSL/TLS certificate chain.
+script_dir = scripts
+summary = Detect eMudhra intermediate CAs with compromised private keys, e.g. in TLS certificate chains.
+tags = ssl, tls, x509, certificate, emudhra, notice
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/corelight/emudhra-weak-keys
+version = main
+
 [corelight/ExtendIntel]
 description = v4.1 - A Zeek package to extend logging for Intel
 script_dir = scripts
