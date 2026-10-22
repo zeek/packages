@@ -88,6 +88,17 @@ test_command = cd tests && make
 version = main
 url = https://github.com/0xxon/zeek-tls-log-alternative
 
+[0xxon/zeek-x509-spki]
+depends = 
+	zeek >=4.0.0
+description = This package adds the Subject Public Key Info (SPKI) or each x509 certificate to x509.log.
+	It can span multiple lines, with this indentation.
+script_dir = scripts
+summary = Add Subject Public Key Info (SPKI) hash to x509.log
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/0xxon/zeek-x509-spki
+version = main
+
 [AmazingPP/zeek-capwap]
 build_command = ./configure && cd build && make
 depends = 
