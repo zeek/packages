@@ -138,6 +138,14 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/NicolasSb/zeek-hostprofile
 version = v0.1.2
 
+[Sadman-TheDentian/zeek-dectrax]
+depends = 
+	zeek >= 4.0.0
+description = Zeek package for DECTRAX Deception Telemetry and Honeytoken Decoy Monitoring
+tags = dectrax, deception, honeypot, threat-detection, intrusion-detection
+version = main
+url = https://github.com/Sadman-TheDentian/zeek-dectrax
+
 [activecm/bro-mongodb.git]
 build_command = (./configure --bro-dist=%(bro_dist)s && make)
 description = Bro IDS/ MongoDB connector.
