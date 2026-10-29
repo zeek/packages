@@ -240,6 +240,19 @@ tags = zeek plugin, protocol analyzer, log writer, tds
 url = https://github.com/amzn/zeek-plugin-tds
 version = 1.1.0
 
+[anant-sambhavna/zeek-other-conn]
+description = Logs the connections that Zeek's core conn.log does not record:
+	non-TCP/UDP/ICMP IP traffic (any IP protocol other than 1, 6, 17 and 58)
+	and pure L2 / non-IP Ethernet frames. Frames are aggregated into
+	bidirectional flows and written to other_conn.log using conn.log-style
+	column naming, extended with L2 telemetry (MAC addresses, VLAN, eth_type)
+	and the numeric L3 protocol number.
+script_dir = scripts
+tags = conn, logging, layer2, ethernet, vlan, non-ip, flow
+test_command = cd tests && btest -c btest.cfg
+url = https://github.com/anant-sambhavna/zeek-other-conn
+version = v1.0.0
+
 [anthonykasza/common-encodings]
 description = A Zeek package which provides common encodings and operations.
 script_dir = scripts
