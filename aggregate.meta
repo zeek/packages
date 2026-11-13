@@ -2251,6 +2251,15 @@ test_command = cd testing && btest -c btest.cfg
 url = https://github.com/nttcom/zeek-parser-SSDP-COM
 version = main
 
+[offseq/zeek-offseq-mirage]
+depends = 
+	zeek >=5.0.0
+description = Loads the OffSeq Mirage Feed (handshake-verified attacker IPs, payload URLs and malware hashes from a honeypot fleet, CC BY 4.0, no API key) into the Intel framework and keeps it refreshed.
+script_dir = scripts
+tags = intel, threat intelligence, ioc, honeypot, blocklist, offseq, mirage
+url = https://github.com/offseq/zeek-offseq-mirage
+version = v1.0.0
+
 [pgaulon/zeek-notice-slack]
 aliases = zeek-notice-slack bro-notice-slack
 description = Zeek Notices through Slack webhook
