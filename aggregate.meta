@@ -1587,6 +1587,31 @@ tags = logging, log framework
 version = main
 url = https://github.com/hosom/log-filters
 
+[idaholab/icsnpp-iccp]
+build_command = mkdir -p build && cd build && SPICYZ=$(command -v spicyz || echo %(package_base)s/spicy-plugin/build/bin/spicyz) cmake .. && cmake --build . --parallel 2
+depends = 
+	zeek >=8.0.0,<10.0.0
+description = A Spicy-based Zeek plugin for parsing and logging ICCP/TASE.2 traffic carried by MMS.
+plugin_dir = build/spicy-modules
+script_dir = scripts
+summary = ICSNPP ICCP/TASE.2 analyzer
+tags = ICCP, TASE.2, MMS, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, protocol analyzer, spicy
+test_command = cd testing && btest -d -c btest.cfg
+url = https://github.com/idaholab/icsnpp-iccp
+version = main
+
+[idaholab/icsnpp-mpls]
+build_command = ./configure && cmake --build build
+description = Parses MPLS unicast label stacks carried over Ethernet or VLANs
+	and records the decoded labels, traffic class values, bottom-of-stack flags,
+	and TTL values in mpls_header.log.
+script_dir = zkg-loader
+summary = Zeek plugin for parsing and logging MPLS label stacks
+tags = mpls, MPLS, ics, ICS, CISA, INL, ICSNPP, icsnpp, zeek plugin, log writer, packet analyzer
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/idaholab/icsnpp-mpls
+version = main
+
 [initconf/2024-09-cups-linux-rce]
 description = 
 script_dir = scripts
