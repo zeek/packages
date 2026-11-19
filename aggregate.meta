@@ -124,6 +124,22 @@ tags = ddos, flood detection, syn flood, udp flood, icmp flood, volumetric attac
 url = https://github.com/Flowtriq/zeek-flowtriq
 version = main
 
+[Johnbjoseph-cybersec/zeek-slmp]
+build_command = mkdir -p build && cd build && cmake .. && cmake --build .
+depends = 
+	zeek >=6.0.0
+description = Parses and logs the binary encoding of SLMP, the message
+	protocol used by Mitsubishi Electric MELSEC controllers and other
+	SLMP-compatible devices: 3E, 4E and station number extension frames,
+	command and subcommand, device access details and end codes. Writes
+	slmp.log with one line per request/response pair.
+script_dir = scripts
+summary = Spicy-based Zeek analyzer for SLMP (SeamLess Message Protocol), binary 3E/4E frames over TCP and UDP
+tags = ics, ot, scada, slmp, melsec, spicy, protocol-analyzer
+test_command = cd testing && btest -c btest.cfg
+url = https://github.com/Johnbjoseph-cybersec/zeek-slmp
+version = main
+
 [NicolasSb/zeek-hostprofile]
 depends = zeek >=8.0.0
 description = Writes hostprofile_features.log: every 5 minutes, one row of
@@ -137,6 +153,15 @@ tags = anomaly detection, machine learning, feature extraction, host profiling, 
 test_command = cd testing && btest -c btest.cfg
 url = https://github.com/NicolasSb/zeek-hostprofile
 version = v0.1.2
+
+[Pb-22/zeek-detections]
+depends = zeek >=9.0
+description = Passive network detections with publisher-selected modules and replay evidence
+script_dir = scripts
+tags = detection, kerberos, pkinit, u2u
+test_command = python3 -B -m unittest discover -s tests -v
+version = v1.0.1
+url = https://github.com/Pb-22/zeek-detections
 
 [Sadman-TheDentian/zeek-dectrax]
 depends = 
