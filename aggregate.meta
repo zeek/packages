@@ -158,9 +158,9 @@ version = v0.1.2
 depends = zeek >=9.0
 description = Passive network detections with publisher-selected modules and replay evidence
 script_dir = scripts
-tags = detection, kerberos, pkinit, u2u
+tags = detection, kerberos, pkinit, u2u, modbus, ics, ot
 test_command = python3 -B -m unittest discover -s tests -v
-version = v1.0.2
+version = v1.1.0
 url = https://github.com/Pb-22/zeek-detections
 
 [Sadman-TheDentian/zeek-dectrax]
