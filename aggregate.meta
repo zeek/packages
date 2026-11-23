@@ -171,6 +171,24 @@ tags = dectrax, deception, honeypot, threat-detection, intrusion-detection
 version = main
 url = https://github.com/Sadman-TheDentian/zeek-dectrax
 
+[ThreatDefence/agentic-attack-detections]
+credits = ThreatDefence and contributors
+description = Network detections for what agentic attack frameworks (ARTEX, Cairn,
+	PentAGI, HexStrike, CyberStrikeAI, Strix, Hermes Agent) have in common: servers
+	calling AI model APIs, an AI agent's page reader followed by attack traffic,
+	rotating proxy probing, backup files served and WSUS exposed, Kerberos
+	enumeration, SMB and WinRM fan-out, callbacks to a prober, and out-of-band
+	lookups. Each check raises a notice. Set AgenticBehaviors::server_nets after
+	loading. Tested on Zeek 9.0. The package is the behaviors/zeek folder of the
+	Agentic Attack Detections repository, which also has Suricata, Sigma, KQL and
+	YARA rules for the same frameworks.
+script_dir = behaviors/zeek/agentic-behaviors
+summary = Zeek notices for behaviors shared by AI agent attack frameworks
+tags = detection, notice, ai agents, agentic attack, llm, lateral movement, kerberos, dns, http, wsus
+test_command = bash behaviors/zeek/tests/run_tests.sh
+url = https://github.com/ThreatDefence/agentic-attack-detections
+version = v2.10.0
+
 [activecm/bro-mongodb.git]
 build_command = (./configure --bro-dist=%(bro_dist)s && make)
 description = Bro IDS/ MongoDB connector.
