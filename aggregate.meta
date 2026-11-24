@@ -187,7 +187,7 @@ summary = Zeek notices for behaviors shared by AI agent attack frameworks
 tags = detection, notice, ai agents, agentic attack, llm, lateral movement, kerberos, dns, http, wsus
 test_command = bash behaviors/zeek/tests/run_tests.sh
 url = https://github.com/ThreatDefence/agentic-attack-detections
-version = v2.10.0
+version = v2.11.0
 
 [activecm/bro-mongodb.git]
 build_command = (./configure --bro-dist=%(bro_dist)s && make)
